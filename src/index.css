@@ -1,0 +1,92 @@
+@import "@fontsource/syne";
+@import "@fontsource/outfit";
+@import "@fontsource/crimson-pro";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Warm Luxury Theme (Default) - Soft Stone / Off-White */
+    --background: 40 10% 97%;
+    /* #FAF9F6 */
+    --foreground: 0 0% 10%;
+    /* #1A1A1A */
+
+    --card: 0 0% 100%;
+    /* #FFFFFF */
+    --card-foreground: 0 0% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
+
+    --primary: 20 81% 54%;
+    /* #E86A2C */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 40 30% 93%;
+    /* #F2EFE9 Warm Beige */
+    --secondary-foreground: 0 0% 10%;
+
+    --muted: 40 30% 95%;
+    /* #F7F4F0 */
+    --muted-foreground: 0 0% 46%;
+    /* #757575 */
+
+    --accent: 40 30% 87%;
+    /* #E8DFD5 */
+    --accent-foreground: 0 0% 10%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 10%;
+    /* opacity controlled by tailwind or manual rgba later */
+    --input: 0 0% 96%;
+    --ring: 20 81% 54%;
+
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading tracking-tight;
+  }
+}
+
+/* Custom Scrollbar for Dark Mode */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary));
+}
+
+.text-balance {
+  text-wrap: balance;
+}

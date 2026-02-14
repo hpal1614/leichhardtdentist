@@ -38,10 +38,10 @@ export function Navbar() {
                 transition={{ duration: 0.35, ease: "easeInOut" }}
                 className="fixed top-6 left-0 right-0 z-50 flex justify-center px-4"
             >
-                <div className={`backdrop-blur-xl border rounded-full px-6 py-3 xl:px-8 xl:py-4 2xl:px-10 2xl:py-5 flex items-center justify-between gap-8 xl:gap-12 transition-all duration-300 max-w-5xl xl:max-w-6xl 2xl:max-w-7xl w-full ${scrolled ? "bg-white/80 border-black/5 shadow-2xl shadow-black/5" : "bg-white/5 border-white/10 shadow-2xl shadow-black/20"}`}>
+                <div className={`backdrop-blur-xl border rounded-full px-4 py-2 lg:px-6 lg:py-3 flex items-center justify-between gap-6 lg:gap-8 transition-all duration-300 max-w-4xl lg:max-w-5xl w-full ${scrolled ? "bg-white/80 border-black/5 shadow-2xl shadow-black/5" : "bg-white/5 border-white/10 shadow-2xl shadow-black/20"}`}>
                     {/* Logo / Brand */}
                     <div className="flex items-center gap-2">
-                        <div className={`h-10 w-10 xl:h-12 xl:w-12 2xl:h-14 2xl:w-14 flex items-center justify-center transition-colors duration-300`}>
+                        <div className={`h-8 w-8 lg:h-10 lg:w-10 flex items-center justify-center transition-colors duration-300`}>
                             <img src={logo} alt="Leichhardt Dental" className="w-full h-full object-contain" />
                         </div>
 
@@ -53,7 +53,7 @@ export function Navbar() {
                             <a
                                 key={item}
                                 href={`#${item.toLowerCase().replace(" ", "-")}`}
-                                className={`px-5 py-2 xl:px-6 xl:py-2.5 2xl:px-7 2xl:py-3 rounded-full text-sm xl:text-base 2xl:text-lg transition-all duration-300 ${scrolled ? "text-foreground/70 hover:text-foreground hover:bg-white" : "text-white/70 hover:text-white hover:bg-white/10"}`}
+                                className={`px-4 py-2 lg:px-5 lg:py-2 rounded-full text-sm transition-all duration-300 ${scrolled ? "text-foreground/70 hover:text-foreground hover:bg-white" : "text-white/70 hover:text-white hover:bg-white/10"}`}
                             >
                                 {item}
                             </a>
@@ -62,7 +62,7 @@ export function Navbar() {
 
                     {/* Action & Mobile Toggle */}
                     <div className="flex items-center gap-3">
-                        <Button onClick={openModal} className={`rounded-full px-5 py-2.5 xl:px-7 xl:py-3 text-xs xl:text-sm 2xl:text-base font-semibold uppercase tracking-wider transition-all duration-300 ${scrolled ? "bg-foreground text-background hover:bg-foreground/90" : "bg-white text-black hover:bg-white/90"}`}>
+                        <Button onClick={openModal} className={`rounded-full px-4 py-2 lg:px-6 lg:py-2.5 text-xs lg:text-sm font-semibold uppercase tracking-wider transition-all duration-300 ${scrolled ? "bg-foreground text-background hover:bg-foreground/90" : "bg-white text-black hover:bg-white/90"}`}>
                             Book Now
                         </Button>
                         <button

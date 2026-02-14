@@ -1,7 +1,6 @@
 import { ImageWithFallback } from "./figma/ImageWithFallback";
-import { motion, useScroll, useTransform } from "motion/react";
-import { Button } from "./ui/button";
-import { ArrowUpRight, ArrowRight } from "lucide-react";
+import { motion } from "motion/react";
+import { ArrowUpRight } from "lucide-react";
 
 import drNickImg from "../assets/dr-nick.jpg";
 
@@ -82,9 +81,9 @@ export function TeamSection() {
               </div>
 
               <div className="mt-8">
-                <Button variant="outline" className="rounded-full px-6 py-3 lg:px-8 lg:py-4 text-sm lg:text-base border-foreground/20 hover:bg-foreground hover:text-background transition-all duration-300 font-semibold uppercase tracking-widest">
+                <button className="inline-flex items-center justify-center rounded-full px-6 py-3 lg:px-8 lg:py-4 text-sm lg:text-base border border-foreground/20 bg-background text-foreground hover:bg-foreground hover:text-background transition-all duration-300 font-semibold uppercase tracking-widest">
                   Book with Dr. Nick <ArrowUpRight className="ml-2 w-4 h-4" />
-                </Button>
+                </button>
               </div>
             </div>
           </motion.div>

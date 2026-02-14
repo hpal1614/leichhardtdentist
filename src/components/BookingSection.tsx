@@ -1,6 +1,5 @@
 import { motion } from "motion/react";
 import { ArrowRight } from "lucide-react";
-import { Button } from "./ui/button";
 import { useBooking } from "./booking/BookingContext";
 
 export function BookingSection() {
@@ -29,12 +28,12 @@ export function BookingSection() {
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center gap-3 lg:gap-4">
-            <Button onClick={openModal} className="bg-primary text-white hover:bg-primary/90 text-sm lg:text-base px-6 py-3 lg:px-8 lg:py-4 rounded-full shadow-lg shadow-primary/25 transition-all duration-300 hover:scale-105 font-semibold uppercase tracking-widest">
+            <button onClick={openModal} className="inline-flex items-center justify-center bg-primary text-white hover:bg-primary/90 text-sm lg:text-base px-6 py-3 lg:px-8 lg:py-4 rounded-full shadow-lg shadow-primary/25 transition-all duration-300 hover:scale-105 font-semibold uppercase tracking-widest">
               Book Online Now
-            </Button>
-            <Button variant="outline" className="border-white/30 text-white hover:bg-white/10 text-sm lg:text-base px-6 py-3 lg:px-8 lg:py-4 rounded-full transition-all duration-300 font-semibold uppercase tracking-widest">
+            </button>
+            <button className="inline-flex items-center justify-center border border-white/30 bg-transparent text-white hover:bg-white/10 text-sm lg:text-base px-6 py-3 lg:px-8 lg:py-4 rounded-full transition-all duration-300 font-semibold uppercase tracking-widest">
               (02) 9560 1212 <ArrowRight className="ml-2 w-4 h-4" />
-            </Button>
+            </button>
           </div>
 
           <p className="mt-6 text-white/30 text-xs uppercase tracking-widest">

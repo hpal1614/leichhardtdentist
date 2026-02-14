@@ -33,8 +33,8 @@ export function ClinicExperience() {
                             viewport={{ once: true }}
                             transition={{ duration: 0.8 }}
                         >
-                            <span className="text-primary font-bold tracking-[0.2em] uppercase text-sm xl:text-base 2xl:text-lg mb-4 block">Our Space</span>
-                            <h2 className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-heading font-bold text-white leading-none">
+                            <span className="text-primary font-bold tracking-[0.2em] uppercase text-sm mb-3 block">Our Space</span>
+                            <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-heading font-bold text-white leading-none">
                                 A calm,<br />
                                 <span className="text-white/40">considered space.</span>
                             </h2>
@@ -44,9 +44,9 @@ export function ClinicExperience() {
             </div>
 
             {/* Content Section */}
-            <div className="relative bg-[#1a1a1a] py-20 lg:py-32">
+            <div className="relative bg-[#1a1a1a] py-16 lg:py-24">
                 <div className="max-w-[1800px] mx-auto px-6 lg:px-12">
-                    <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+                    <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
 
                         {/* Left: Description */}
                         <motion.div
@@ -54,15 +54,15 @@ export function ClinicExperience() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.8 }}
-                            className="space-y-6"
+                            className="space-y-4"
                         >
-                            <p className="text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl text-white/90 font-light leading-relaxed">
+                            <p className="text-lg lg:text-xl xl:text-2xl text-white/90 font-light leading-relaxed">
                                 The moment you walk through our frosted glass doors, you'll notice this isn't a typical dental clinic.
                             </p>
-                            <p className="text-lg xl:text-xl 2xl:text-2xl text-white/60 leading-relaxed">
+                            <p className="text-base lg:text-lg text-white/60 leading-relaxed">
                                 Warm timber flooring. Original contemporary artwork. A curved reception desk with soft ambient under-lighting. Comfortable terracotta accent chairs and natural light throughout.
                             </p>
-                            <p className="text-lg xl:text-xl 2xl:text-2xl text-white/40 leading-relaxed italic">
+                            <p className="text-base lg:text-lg text-white/40 leading-relaxed italic">
                                 Every detail is intentional. Every choice designed to help you relax.
                             </p>
                         </motion.div>
@@ -73,20 +73,20 @@ export function ClinicExperience() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.8, delay: 0.2 }}
-                            className="grid grid-cols-2 gap-6 lg:gap-8"
+                            className="grid grid-cols-2 gap-4 lg:gap-6"
                         >
                             {features.map((feature, idx) => (
                                 <div
                                     key={idx}
-                                    className="group p-6 lg:p-8 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-500"
+                                    className="group p-4 lg:p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-500"
                                 >
-                                    <span className="text-primary text-4xl xl:text-5xl 2xl:text-6xl font-heading font-bold block mb-2">
+                                    <span className="text-primary text-3xl lg:text-4xl font-heading font-bold block mb-2">
                                         0{idx + 1}
                                     </span>
-                                    <h3 className="text-white text-lg xl:text-xl 2xl:text-2xl font-semibold mb-1">
+                                    <h3 className="text-white text-base lg:text-lg font-semibold mb-1">
                                         {feature.label}
                                     </h3>
-                                    <p className="text-white/50 text-sm xl:text-base 2xl:text-lg">
+                                    <p className="text-white/50 text-sm">
                                         {feature.description}
                                     </p>
                                 </div>
@@ -95,7 +95,7 @@ export function ClinicExperience() {
                     </div>
 
                     {/* Bento Grid Gallery */}
-                    <div className="mt-20 lg:mt-32 grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6">
+                    <div className="mt-12 lg:mt-20 grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6">
                         {/* Large Left Image - Full Height */}
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
@@ -111,7 +111,7 @@ export function ClinicExperience() {
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                             <div className="absolute bottom-6 left-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                                <span className="text-white text-lg xl:text-xl font-medium">Reception & Waiting</span>
+                                <span className="text-white text-base lg:text-lg font-medium">Reception & Waiting</span>
                             </div>
                         </motion.div>
 
@@ -131,7 +131,7 @@ export function ClinicExperience() {
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                                 <div className="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                                    <span className="text-white text-base xl:text-lg font-medium">Patient Lounge</span>
+                                    <span className="text-white text-sm lg:text-base font-medium">Patient Lounge</span>
                                 </div>
                             </motion.div>
 
@@ -149,7 +149,7 @@ export function ClinicExperience() {
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                                 <div className="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                                    <span className="text-white text-base xl:text-lg font-medium">Treatment Suite</span>
+                                    <span className="text-white text-sm lg:text-base font-medium">Treatment Suite</span>
                                 </div>
                             </motion.div>
                         </div>
@@ -161,9 +161,9 @@ export function ClinicExperience() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
-                        className="mt-16 lg:mt-24 text-center max-w-3xl xl:max-w-4xl mx-auto"
+                        className="mt-12 lg:mt-16 text-center max-w-2xl lg:max-w-3xl mx-auto"
                     >
-                        <p className="text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl text-white/80 font-light leading-relaxed italic" style={{ fontFamily: "'Crimson Pro', serif" }}>
+                        <p className="text-xl lg:text-2xl xl:text-3xl text-white/80 font-light leading-relaxed italic" style={{ fontFamily: "'Crimson Pro', serif" }}>
                             "Because good dentistry starts with feeling comfortable enough to walk through the door."
                         </p>
                     </motion.div>

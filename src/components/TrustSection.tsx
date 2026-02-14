@@ -8,7 +8,7 @@ const stats = [
 
 export function TrustSection() {
     return (
-        <section className="py-20 bg-secondary/30 border-y border-border relative overflow-hidden">
+        <section className="py-12 lg:py-16 bg-secondary/30 border-y border-border relative overflow-hidden">
             <div className="max-w-[1800px] mx-auto px-6 lg:px-12">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 text-center md:divide-x divide-border">
                     {stats.map((stat, index) => (
@@ -20,10 +20,10 @@ export function TrustSection() {
                             transition={{ duration: 0.6, delay: index * 0.1 }}
                             className="flex flex-col items-center justify-center p-4"
                         >
-                            <span className="block text-4xl md:text-5xl xl:text-6xl 2xl:text-7xl font-heading font-bold text-foreground mb-2">
-                                {stat.value}<span className="text-primary text-3xl xl:text-4xl 2xl:text-5xl">{stat.suffix}</span>
+                            <span className="block text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-foreground mb-2">
+                                {stat.value}<span className="text-primary text-2xl md:text-3xl lg:text-4xl">{stat.suffix}</span>
                             </span>
-                            <span className="text-sm md:text-base xl:text-lg 2xl:text-xl text-muted-foreground uppercase tracking-widest font-medium">
+                            <span className="text-xs md:text-sm text-muted-foreground uppercase tracking-widest font-medium">
                                 {stat.label}
                             </span>
                         </motion.div>

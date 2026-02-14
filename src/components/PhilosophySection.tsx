@@ -3,7 +3,7 @@ import { motion } from "motion/react";
 
 export function PhilosophySection() {
   return (
-    <section className="relative py-32 md:py-44 overflow-hidden">
+    <section className="relative py-20 md:py-32 overflow-hidden">
       {/* Full background image */}
       <div className="absolute inset-0">
         <ImageWithFallback
@@ -15,13 +15,13 @@ export function PhilosophySection() {
       </div>
 
       {/* Centered content */}
-      <div className="relative z-10 max-w-4xl xl:max-w-5xl 2xl:max-w-6xl mx-auto px-6 lg:px-12 text-center">
+      <div className="relative z-10 max-w-3xl lg:max-w-4xl mx-auto px-6 lg:px-12 text-center">
         <motion.h2
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.9 }}
-          className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl text-white mb-12 leading-tight"
+          className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-white mb-8 lg:mb-10 leading-tight"
           style={{ fontFamily: "'Crimson Pro', serif", fontWeight: "300" }}
         >
           Gentle. Caring.
@@ -34,7 +34,7 @@ export function PhilosophySection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-base md:text-lg xl:text-xl 2xl:text-2xl text-white/80 leading-relaxed max-w-3xl xl:max-w-4xl mx-auto space-y-6 text-center"
+          className="text-sm md:text-base lg:text-lg text-white/80 leading-relaxed max-w-2xl lg:max-w-3xl mx-auto space-y-4 text-center"
         >
           <p>For many people, visiting the dentist isn't easy. That's why Dr. Nick and our team take a different approach.</p>
           <p>We take time. We listen. We explain every step.</p>

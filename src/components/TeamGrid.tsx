@@ -86,38 +86,38 @@ export function TeamGrid() {
     };
 
     return (
-        <section className="py-24 lg:py-32 bg-secondary/5 relative overflow-hidden">
+        <section className="py-16 lg:py-24 bg-secondary/5 relative overflow-hidden">
             <div className="max-w-[1800px] mx-auto px-6 lg:px-12">
 
-                <div className="flex flex-col md:flex-row justify-between items-end mb-12">
+                <div className="flex flex-col md:flex-row justify-between items-end mb-8 lg:mb-12">
                     <div>
-                        <h3 className="text-sm xl:text-base 2xl:text-lg font-bold tracking-[0.2em] text-primary uppercase mb-4">The Team</h3>
-                        <h2 className="text-4xl md:text-5xl xl:text-6xl 2xl:text-7xl font-heading font-bold text-foreground mb-4">
+                        <h3 className="text-sm font-bold tracking-[0.2em] text-primary uppercase mb-3">The Team</h3>
+                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-foreground mb-3">
                             Meet the associates.
                         </h2>
-                        <p className="text-lg xl:text-xl 2xl:text-2xl text-muted-foreground max-w-2xl xl:max-w-3xl font-light">
+                        <p className="text-base lg:text-lg text-muted-foreground max-w-2xl font-light">
                             Dr. Nick is supported by a team of experienced clinicians who share his patient-first philosophy.
                         </p>
                     </div>
                     {/* Navigation Buttons */}
-                    <div className="flex gap-3 mt-8 md:mt-0">
+                    <div className="flex gap-3 mt-6 md:mt-0">
                         <Button
                             variant="outline"
                             size="icon"
                             onClick={() => scroll("left")}
                             disabled={!canScrollLeft}
-                            className="rounded-full w-12 h-12 xl:w-14 xl:h-14 border-foreground/20 hover:bg-foreground hover:text-background transition-all duration-300 disabled:opacity-30 disabled:hover:bg-transparent disabled:hover:text-foreground"
+                            className="rounded-full w-10 h-10 lg:w-12 lg:h-12 border-foreground/20 hover:bg-foreground hover:text-background transition-all duration-300 disabled:opacity-30 disabled:hover:bg-transparent disabled:hover:text-foreground"
                         >
-                            <ArrowLeft className="w-5 h-5 xl:w-6 xl:h-6" />
+                            <ArrowLeft className="w-4 h-4 lg:w-5 lg:h-5" />
                         </Button>
                         <Button
                             variant="outline"
                             size="icon"
                             onClick={() => scroll("right")}
                             disabled={!canScrollRight}
-                            className="rounded-full w-12 h-12 xl:w-14 xl:h-14 border-foreground/20 hover:bg-foreground hover:text-background transition-all duration-300 disabled:opacity-30 disabled:hover:bg-transparent disabled:hover:text-foreground"
+                            className="rounded-full w-10 h-10 lg:w-12 lg:h-12 border-foreground/20 hover:bg-foreground hover:text-background transition-all duration-300 disabled:opacity-30 disabled:hover:bg-transparent disabled:hover:text-foreground"
                         >
-                            <ArrowRight className="w-5 h-5 xl:w-6 xl:h-6" />
+                            <ArrowRight className="w-4 h-4 lg:w-5 lg:h-5" />
                         </Button>
                     </div>
                 </div>
@@ -136,10 +136,10 @@ export function TeamGrid() {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1, duration: 0.6 }}
-                            className="group cursor-pointer min-w-[300px] md:min-w-[350px] xl:min-w-[400px] 2xl:min-w-[450px] snap-start"
+                            className="group cursor-pointer min-w-[280px] md:min-w-[320px] lg:min-w-[350px] snap-start"
                         >
                             {/* Image Card */}
-                            <div className="aspect-[3/4] overflow-hidden rounded-2xl mb-6 relative bg-gray-200 shadow-sm">
+                            <div className="aspect-[3/4] overflow-hidden rounded-2xl mb-4 relative bg-gray-200 shadow-sm">
                                 <img
                                     src={member.image}
                                     alt={member.name}
@@ -147,11 +147,11 @@ export function TeamGrid() {
                                 />
 
                                 {/* Hover Overlay with Details */}
-                                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8 xl:p-10 2xl:p-12">
-                                    <p className="text-white/80 text-xs xl:text-sm 2xl:text-base uppercase tracking-widest mb-2">Expertise</p>
+                                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6 lg:p-8">
+                                    <p className="text-white/80 text-xs uppercase tracking-widest mb-2">Expertise</p>
                                     <ul className="text-white space-y-1">
                                         {member.specialties.map(s => (
-                                            <li key={s} className="text-sm xl:text-base 2xl:text-lg font-medium">• {s}</li>
+                                            <li key={s} className="text-sm font-medium">• {s}</li>
                                         ))}
                                     </ul>
                                 </div>
@@ -159,10 +159,10 @@ export function TeamGrid() {
 
                             {/* Info Below */}
                             <div className="px-2">
-                                <h3 className="text-xl xl:text-2xl 2xl:text-3xl font-heading font-medium text-foreground mb-1 group-hover:text-primary transition-colors">
+                                <h3 className="text-lg lg:text-xl font-heading font-medium text-foreground mb-1 group-hover:text-primary transition-colors">
                                     {member.name}
                                 </h3>
-                                <p className="text-sm xl:text-base 2xl:text-lg text-muted-foreground uppercase tracking-widest font-light">
+                                <p className="text-xs lg:text-sm text-muted-foreground uppercase tracking-widest font-light">
                                     {member.role}
                                 </p>
                             </div>

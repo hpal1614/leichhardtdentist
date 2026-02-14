@@ -36,13 +36,13 @@ const reviews = [
 
 export function Testimonials() {
     return (
-        <section className="py-24 bg-white overflow-hidden relative border-t border-secondary/20">
-            <div className="max-w-[1800px] mx-auto px-6 lg:px-12 mb-12">
-                <span className="text-primary font-bold tracking-[0.2em] uppercase text-sm xl:text-base 2xl:text-lg mb-4 block">What Patients Say</span>
-                <h2 className="text-3xl md:text-4xl xl:text-5xl 2xl:text-6xl font-heading font-bold text-foreground mb-4">
+        <section className="py-16 lg:py-20 bg-white overflow-hidden relative border-t border-secondary/20">
+            <div className="max-w-[1800px] mx-auto px-6 lg:px-12 mb-10">
+                <span className="text-primary font-bold tracking-[0.2em] uppercase text-sm mb-3 block">What Patients Say</span>
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-foreground mb-3">
                     117 Five-Star Reviews.
                 </h2>
-                <p className="text-lg xl:text-xl 2xl:text-2xl text-muted-foreground max-w-2xl xl:max-w-3xl font-light">
+                <p className="text-base lg:text-lg text-muted-foreground max-w-2xl font-light">
                     Don't just take our word for it — here's what patients across Sydney's Inner West are saying.
                 </p>
             </div>
@@ -61,19 +61,19 @@ export function Testimonials() {
                     {[...reviews, ...reviews, ...reviews].map((review, i) => ( // Triple helpful for smooth loop
                         <div
                             key={i}
-                            className="w-[300px] md:w-[400px] xl:w-[500px] 2xl:w-[600px] flex-shrink-0 bg-secondary/5 p-8 xl:p-10 2xl:p-12 rounded-3xl border border-secondary/20"
+                            className="w-[280px] md:w-[350px] lg:w-[400px] flex-shrink-0 bg-secondary/5 p-6 lg:p-8 rounded-3xl border border-secondary/20"
                         >
-                            <div className="flex gap-1 mb-4 text-primary xl:text-lg 2xl:text-xl">
+                            <div className="flex gap-1 mb-3 text-primary text-base">
                                 {[1, 2, 3, 4, 5].map(star => (
                                     <span key={star}>★</span>
                                 ))}
                             </div>
-                            <p className="text-lg md:text-xl xl:text-2xl 2xl:text-3xl font-serif italic text-muted-foreground mb-6 leading-relaxed">
+                            <p className="text-base lg:text-lg font-serif italic text-muted-foreground mb-4 leading-relaxed">
                                 "{review.text}"
                             </p>
                             <div>
-                                <p className="font-bold text-foreground text-sm xl:text-base 2xl:text-lg uppercase tracking-widest">{review.author}</p>
-                                <p className="text-xs xl:text-sm 2xl:text-base text-muted-foreground">{review.location}</p>
+                                <p className="font-bold text-foreground text-sm uppercase tracking-widest">{review.author}</p>
+                                <p className="text-xs text-muted-foreground">{review.location}</p>
                             </div>
                         </div>
                     ))}
@@ -85,8 +85,8 @@ export function Testimonials() {
             </div>
 
             {/* CTA */}
-            <div className="max-w-[1800px] mx-auto px-6 lg:px-12 mt-12 text-center">
-                <p className="text-lg xl:text-xl 2xl:text-2xl text-muted-foreground font-light">
+            <div className="max-w-[1800px] mx-auto px-6 lg:px-12 mt-10 text-center">
+                <p className="text-base lg:text-lg text-muted-foreground font-light">
                     <a href="https://google.com/maps" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Read all 117 reviews on Google →</a>
                 </p>
             </div>

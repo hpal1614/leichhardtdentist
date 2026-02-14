@@ -236,17 +236,17 @@ export function ResultsGrid() {
         : stories.filter(s => s.category === activeCategory);
 
     return (
-        <section className="py-24 lg:py-32 bg-white relative">
+        <section className="py-16 lg:py-24 bg-white relative">
             <div className="max-w-[1800px] mx-auto px-6 lg:px-12">
 
                 {/* Header */}
-                <div className="flex flex-col lg:flex-row justify-between items-end mb-16 gap-8">
+                <div className="flex flex-col lg:flex-row justify-between items-end mb-12 gap-6">
                     <div>
-                        <span className="text-primary font-bold tracking-[0.2em] uppercase text-sm xl:text-base 2xl:text-lg mb-4 block">Real Results</span>
-                        <h2 className="text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-heading font-bold text-foreground mb-6">
+                        <span className="text-primary font-bold tracking-[0.2em] uppercase text-sm mb-3 block">Real Results</span>
+                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-foreground mb-4">
                             Stories of Transformation.
                         </h2>
-                        <p className="text-xl xl:text-2xl 2xl:text-3xl text-muted-foreground max-w-xl xl:max-w-2xl font-light leading-relaxed">
+                        <p className="text-base lg:text-lg text-muted-foreground max-w-xl font-light leading-relaxed">
                             Real patients. Real results. Real confidence restored. <br />
                             Over 100 five-star reviews from patients across Sydney's Inner West.
                         </p>
@@ -258,7 +258,7 @@ export function ResultsGrid() {
                             <button
                                 key={cat}
                                 onClick={() => setActiveCategory(cat)}
-                                className={`px-6 py-2.5 xl:px-8 xl:py-3 2xl:px-10 2xl:py-4 rounded-full text-sm xl:text-base 2xl:text-lg font-medium transition-all duration-300 ${activeCategory === cat
+                                className={`px-4 py-2 lg:px-6 lg:py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${activeCategory === cat
                                     ? "bg-foreground text-background shadow-lg"
                                     : "bg-secondary/20 text-muted-foreground hover:bg-secondary/40"
                                     }`}
@@ -297,8 +297,8 @@ export function ResultsGrid() {
                                         </>
                                     )}
 
-                                    <div className="absolute bottom-8 left-8 right-8 pointer-events-none z-10">
-                                        <p className="text-white text-2xl xl:text-3xl 2xl:text-4xl font-heading leading-tight mb-2">
+                                    <div className="absolute bottom-6 left-6 right-6 pointer-events-none z-10">
+                                        <p className="text-white text-lg lg:text-xl xl:text-2xl font-heading leading-tight mb-2">
                                             "{story.quote}"
                                         </p>
                                     </div>
@@ -308,8 +308,8 @@ export function ResultsGrid() {
                                 <div className="px-2">
                                     <div className="flex items-center justify-between">
                                         <div>
-                                            <p className="text-foreground font-bold text-lg xl:text-xl 2xl:text-2xl">{story.patient}</p>
-                                            <p className="text-primary text-sm xl:text-base 2xl:text-lg uppercase tracking-widest">{story.treatment}</p>
+                                            <p className="text-foreground font-bold text-base lg:text-lg">{story.patient}</p>
+                                            <p className="text-primary text-xs lg:text-sm uppercase tracking-widest">{story.treatment}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -318,9 +318,9 @@ export function ResultsGrid() {
                     </AnimatePresence>
                 </div>
 
-                <div className="flex justify-center mt-20">
-                    <Button variant="outline" className="rounded-full px-8 py-4 lg:px-10 lg:py-5 xl:px-12 xl:py-6 text-sm lg:text-base xl:text-lg 2xl:text-xl border-foreground/20 hover:bg-foreground hover:text-background transition-all duration-300 font-semibold uppercase tracking-widest">
-                        View All Stories <ArrowUpRight className="ml-3 w-4 h-4 lg:w-5 lg:h-5 xl:w-6 xl:h-6" />
+                <div className="flex justify-center mt-12 lg:mt-16">
+                    <Button variant="outline" className="rounded-full px-6 py-3 lg:px-8 lg:py-4 text-sm lg:text-base border-foreground/20 hover:bg-foreground hover:text-background transition-all duration-300 font-semibold uppercase tracking-widest">
+                        View All Stories <ArrowUpRight className="ml-2 w-4 h-4" />
                     </Button>
                 </div>
 

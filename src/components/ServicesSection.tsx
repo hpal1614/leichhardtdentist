@@ -52,7 +52,7 @@ export function ServicesSection() {
   const [activeService, setActiveService] = useState(services[0]);
 
   return (
-    <section id="services" className="py-24 lg:py-32 bg-secondary/30 relative z-20">
+    <section id="services" className="py-16 lg:py-24 bg-secondary/30 relative z-20">
       <div className="max-w-[1800px] mx-auto px-6 lg:px-12">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-start">
 
@@ -62,13 +62,13 @@ export function ServicesSection() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="mb-12"
+              className="mb-8 lg:mb-12"
             >
-              <span className="text-primary font-bold tracking-widest uppercase text-sm xl:text-base 2xl:text-lg mb-4 block">Comprehensive Care</span>
-              <h2 className="text-5xl md:text-7xl xl:text-8xl 2xl:text-9xl font-heading font-bold text-foreground leading-none mb-4">
+              <span className="text-primary font-bold tracking-widest uppercase text-sm mb-3 block">Comprehensive Care</span>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-heading font-bold text-foreground leading-none mb-3">
                 Services.
               </h2>
-              <p className="text-muted-foreground text-lg xl:text-xl 2xl:text-2xl font-light">Evidence-based dental care, delivered with patience and skill.</p>
+              <p className="text-muted-foreground text-base lg:text-lg font-light">Evidence-based dental care, delivered with patience and skill.</p>
             </motion.div>
 
             <div className="flex flex-col">
@@ -78,24 +78,24 @@ export function ServicesSection() {
                   className="group border-b border-black/10 last:border-0"
                   onMouseEnter={() => setActiveService(service)}
                 >
-                  <div className={`py-8 cursor-pointer transition-all duration-300 flex items-start justify-between ${activeService.id === service.id ? 'pl-4 lg:pl-8 border-l-4 border-l-primary bg-white/40' : 'hover:pl-4 hover:bg-white/20'}`}>
+                  <div className={`py-6 cursor-pointer transition-all duration-300 flex items-start justify-between ${activeService.id === service.id ? 'pl-4 lg:pl-6 border-l-4 border-l-primary bg-white/40' : 'hover:pl-4 hover:bg-white/20'}`}>
                     <div className="flex-1">
-                      <div className="flex items-baseline gap-4 mb-2">
-                        <span className={`text-sm xl:text-base 2xl:text-lg font-mono transition-colors duration-300 ${activeService.id === service.id ? 'text-primary' : 'text-muted-foreground/50'}`}>
+                      <div className="flex items-baseline gap-3 mb-1">
+                        <span className={`text-xs lg:text-sm font-mono transition-colors duration-300 ${activeService.id === service.id ? 'text-primary' : 'text-muted-foreground/50'}`}>
                           {service.id}
                         </span>
-                        <h3 className={`text-2xl md:text-3xl xl:text-4xl 2xl:text-5xl font-heading font-bold transition-colors duration-300 ${activeService.id === service.id ? 'text-foreground' : 'text-muted-foreground group-hover:text-foreground'}`}>
+                        <h3 className={`text-xl md:text-2xl lg:text-3xl font-heading font-bold transition-colors duration-300 ${activeService.id === service.id ? 'text-foreground' : 'text-muted-foreground group-hover:text-foreground'}`}>
                           {service.title}
                         </h3>
                       </div>
                       <div className={`overflow-hidden transition-all duration-500 ease-in-out ${activeService.id === service.id ? 'max-h-24 opacity-100 mt-2' : 'max-h-0 opacity-0'}`}>
-                        <p className="text-muted-foreground text-lg xl:text-xl 2xl:text-2xl leading-relaxed pl-8 md:pl-10">
+                        <p className="text-muted-foreground text-sm lg:text-base leading-relaxed pl-6 md:pl-8">
                           {service.description}
                         </p>
                       </div>
                     </div>
 
-                    <ArrowRight className={`w-5 h-5 transition-all duration-300 mt-2 mr-4 ${activeService.id === service.id ? 'text-primary opacity-100 rotate-0' : 'text-muted-foreground opacity-0 -translate-x-4'}`} />
+                    <ArrowRight className={`w-4 h-4 lg:w-5 lg:h-5 transition-all duration-300 mt-2 mr-3 ${activeService.id === service.id ? 'text-primary opacity-100 rotate-0' : 'text-muted-foreground opacity-0 -translate-x-4'}`} />
                   </div>
                 </div>
               ))}
@@ -125,10 +125,10 @@ export function ServicesSection() {
 
                 {/* Play Button / Indication */}
                 <div className="absolute bottom-12 left-12 flex items-center gap-4">
-                  <div className="w-16 h-16 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center">
-                    <Play className="w-6 h-6 fill-white text-white ml-1" />
+                  <div className="w-12 h-12 lg:w-14 lg:h-14 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center">
+                    <Play className="w-5 h-5 fill-white text-white ml-1" />
                   </div>
-                  <span className="text-white font-heading text-xl xl:text-2xl 2xl:text-3xl tracking-wide">{activeService.title}</span>
+                  <span className="text-white font-heading text-lg lg:text-xl tracking-wide">{activeService.title}</span>
                 </div>
               </motion.div>
             </AnimatePresence>

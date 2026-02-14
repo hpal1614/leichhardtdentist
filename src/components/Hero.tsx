@@ -140,16 +140,16 @@ export function Hero() {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="flex items-center gap-3 mb-6 lg:mb-8"
+            className="flex items-center gap-3 mb-4 lg:mb-6"
           >
-            <span className="w-8 lg:w-12 h-[1px] bg-primary" />
-            <span className="text-white/80 uppercase tracking-[0.2em] text-xs lg:text-sm xl:text-base 2xl:text-lg font-medium">
+            <span className="w-8 lg:w-10 h-[1px] bg-primary" />
+            <span className="text-white/80 uppercase tracking-[0.2em] text-xs lg:text-sm font-medium">
               Leichhardt Dental Centre
             </span>
           </motion.div>
 
           {/* Dynamic Headline */}
-          <div className="mb-6 flex flex-col justify-center">
+          <div className="mb-4 flex flex-col justify-center">
             <h1 className="font-heading font-bold text-white leading-tight tracking-tight">
               <AnimatePresence mode="wait">
                 <motion.span
@@ -158,7 +158,7 @@ export function Hero() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.5 }}
-                  className="block text-4xl md:text-6xl xl:text-7xl 2xl:text-8xl"
+                  className="block text-4xl md:text-5xl lg:text-6xl xl:text-7xl"
                 >
                   {heroSlides[currentSlide].headline}
                 </motion.span>
@@ -171,16 +171,16 @@ export function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8 }}
-            className="text-lg md:text-2xl xl:text-2xl 2xl:text-3xl text-white/80 max-w-lg xl:max-w-xl 2xl:max-w-2xl font-light leading-relaxed mb-10"
+            className="text-base md:text-lg lg:text-xl xl:text-2xl text-white/80 max-w-lg xl:max-w-xl font-light leading-relaxed mb-8"
           >
             {heroSlides[currentSlide].subhead}
           </motion.p>
 
-          <div className="flex flex-col sm:flex-row gap-4 lg:gap-5 w-full sm:w-auto">
-            <button onClick={openModal} className="bg-primary hover:bg-primary/90 text-white px-8 py-4 lg:px-10 lg:py-5 xl:px-12 xl:py-6 rounded-full text-sm lg:text-base xl:text-lg 2xl:text-xl font-semibold uppercase tracking-widest transition-all duration-300 hover:scale-105 active:scale-95 shadow-lg shadow-primary/25 flex items-center justify-center">
-              Book Appointment <ArrowRight className="ml-3 w-4 h-4 lg:w-5 lg:h-5 xl:w-6 xl:h-6" />
+          <div className="flex flex-col sm:flex-row gap-3 lg:gap-4 w-full sm:w-auto">
+            <button onClick={openModal} className="bg-primary hover:bg-primary/90 text-white px-6 py-3 lg:px-8 lg:py-4 rounded-full text-sm lg:text-base font-semibold uppercase tracking-widest transition-all duration-300 hover:scale-105 active:scale-95 shadow-lg shadow-primary/25 flex items-center justify-center">
+              Book Appointment <ArrowRight className="ml-2 w-4 h-4 lg:w-5 lg:h-5" />
             </button>
-            <button className="px-8 py-4 lg:px-10 lg:py-5 xl:px-12 xl:py-6 rounded-full border border-white/30 text-white hover:bg-white/10 text-sm lg:text-base xl:text-lg 2xl:text-xl font-semibold uppercase tracking-widest transition-all duration-300 flex items-center justify-center">
+            <button className="px-6 py-3 lg:px-8 lg:py-4 rounded-full border border-white/30 text-white hover:bg-white/10 text-sm lg:text-base font-semibold uppercase tracking-widest transition-all duration-300 flex items-center justify-center">
               {heroSlides[currentSlide].secondaryButton}
             </button>
           </div>
@@ -196,15 +196,15 @@ export function Hero() {
         <div className="flex gap-3">
           <button
             onClick={prevSlide}
-            className="w-12 h-12 xl:w-14 xl:h-14 rounded-full border border-white/30 hover:bg-white hover:text-black text-white flex items-center justify-center transition-all duration-300 cursor-pointer"
+            className="w-10 h-10 lg:w-12 lg:h-12 rounded-full border border-white/30 hover:bg-white hover:text-black text-white flex items-center justify-center transition-all duration-300 cursor-pointer"
           >
-            <ChevronLeft className="w-5 h-5 xl:w-6 xl:h-6" />
+            <ChevronLeft className="w-5 h-5" />
           </button>
           <button
             onClick={nextSlide}
-            className="w-12 h-12 xl:w-14 xl:h-14 rounded-full border border-white/30 hover:bg-white hover:text-black text-white flex items-center justify-center transition-all duration-300 cursor-pointer"
+            className="w-10 h-10 lg:w-12 lg:h-12 rounded-full border border-white/30 hover:bg-white hover:text-black text-white flex items-center justify-center transition-all duration-300 cursor-pointer"
           >
-            <ChevronRight className="w-5 h-5 xl:w-6 xl:h-6" />
+            <ChevronRight className="w-5 h-5" />
           </button>
         </div>
 

@@ -32,7 +32,7 @@ const stories: Story[] = [
         quote: "I avoided dentists for years. Dr. Nick changed that.",
         image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=80",
         type: "video",
-        videoSrc: "/videos/transformation-story.mp4",
+        videoSrc: "https://res.cloudinary.com/dtw9czgds/video/upload/v1771242541/dental-website/transformation-story-compressed.mp4",
         thumbnailTime: 4,
         startTime: 0,
         endTime: 15
@@ -45,7 +45,7 @@ const stories: Story[] = [
         quote: "One visit. Calm. Done.",
         image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=800&q=80",
         type: "video",
-        videoSrc: "/videos/transformation-story.mp4",
+        videoSrc: "https://res.cloudinary.com/dtw9czgds/video/upload/v1771242541/dental-website/transformation-story-compressed.mp4",
         segments: [
             { start: 16, end: 26 },
             { start: 47, end: 50 }
@@ -59,7 +59,7 @@ const stories: Story[] = [
         quote: "I feel like myself again.",
         image: "https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?w=800&q=80",
         type: "video",
-        videoSrc: "/videos/transformation-story-2.mov",
+        videoSrc: "https://res.cloudinary.com/dtw9czgds/video/upload/v1771242507/dental-website/transformation-story-2.mov",
         startTime: 42,
         thumbnailTime: 43
     },

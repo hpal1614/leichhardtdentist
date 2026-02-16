@@ -27,7 +27,7 @@ const heroSlides = [
   {
     id: 1,
     type: "video",
-    src: "/videos/transformation-story-2.mov",
+    src: "https://res.cloudinary.com/dtw9czgds/video/upload/v1771242507/dental-website/transformation-story-2.mov",
     alt: "Feel at ease",
     headline: "Feel at ease.",
     subhead: "You're in skilled hands. Expert dental care in Leichhardt's Inner West — delivered with precision, patience, and genuine care.",

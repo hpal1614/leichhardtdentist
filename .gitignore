@@ -25,3 +25,7 @@ npm-debug.log*
 # Large video files (exceed GitHub 100MB limit)
 public/videos/*.mp4
 public/videos/*.mov
+
+# Cloudinary upload files
+upload-videos.js
+cloudinary-urls.json

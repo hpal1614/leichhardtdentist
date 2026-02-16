@@ -1,5 +1,6 @@
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { motion } from "motion/react";
+import philosophyImg from "../assets/philosophy.webp";
 
 export function PhilosophySection() {
   return (
@@ -7,7 +8,7 @@ export function PhilosophySection() {
       {/* Full background image */}
       <div className="absolute inset-0">
         <ImageWithFallback
-          src="https://images.unsplash.com/photo-1760862652442-e8ff7ebdd2f8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBtaW5pbWFsJTIwaW50ZXJpb3IlMjB3YXJtJTIwdG9uZXMlMjBib3V0aXF1ZXxlbnwxfHx8fDE3NzA1Mjg1MTd8MA&ixlib=rb-4.1.0&q=80&w=1080"
+          src={philosophyImg}
           alt="Calm, modern interior"
           className="w-full h-full object-cover"
         />

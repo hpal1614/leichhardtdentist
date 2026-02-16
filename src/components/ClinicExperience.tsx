@@ -1,5 +1,8 @@
 
 import { motion } from "motion/react";
+import clinic1 from "../assets/clinic-1.jpg";
+import clinic2 from "../assets/clinic-2.webp";
+import clinic3 from "../assets/clinic-3.webp";
 
 const features = [
     { label: "Natural Light", description: "Floor-to-ceiling windows" },
@@ -18,7 +21,7 @@ export function ClinicExperience() {
                     whileInView={{ scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 1.5, ease: "easeOut" }}
-                    src="https://images.unsplash.com/photo-1600607686527-6fb886090705?w=1920&q=80"
+                    src={clinic1}
                     alt="Clinic Interior"
                     className="w-full h-full object-cover"
                 />
@@ -105,7 +108,7 @@ export function ClinicExperience() {
                             className="relative aspect-[4/3] lg:aspect-auto lg:h-full rounded-3xl overflow-hidden group"
                         >
                             <img
-                                src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1200&q=80"
+                                src={clinic2}
                                 alt="Reception"
                                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                             />
@@ -125,7 +128,7 @@ export function ClinicExperience() {
                                 className="relative aspect-[16/9] rounded-3xl overflow-hidden group"
                             >
                                 <img
-                                    src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80"
+                                    src={clinic3}
                                     alt="Lounge"
                                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                                 />

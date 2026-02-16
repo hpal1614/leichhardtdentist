@@ -1,6 +1,6 @@
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { motion } from "motion/react";
-import philosophyImg from "../assets/philosophy.webp";
+import philosophyImg from "../assets/philosophy.png";
 
 export function PhilosophySection() {
   return (

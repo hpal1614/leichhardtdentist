@@ -32,35 +32,36 @@ const SLUG = "all-on-4-implants";
 
 const journeySteps = [
   {
-    title: "Consultation & 3D CBCT imaging",
+    title: "Clinical assessment (Day 1)",
     description:
-      "A private review with Dr. Nick. On-site 3D cone-beam imaging maps your bone volume, sinus position, and nerve anatomy with sub-millimetre accuracy.",
+      "Your consultation with Dr. Nick begins with an on-site 3D CBCT scan that maps your bone structure and nerve pathways. He reviews your suitability, discusses whether any natural teeth can be preserved, and you leave with a transparent, fixed-price written quote.",
   },
   {
-    title: "Digital surgical planning",
+    title: "Surgical appointment (procedure day)",
     description:
-      "Your final smile is designed digitally first. Implant positions are then planned around that design — not the other way round.",
+      "Under your chosen level of anaesthesia or IV sedation, Dr. Nick precisely places 4–6 titanium implants per arch. Most patients opt for sleep-dentistry pathways for comfort — you remain relaxed throughout the morning.",
   },
   {
-    title: "Implant surgery",
+    title: "Phase 1 — your immediate smile (within 24–48 hours)",
     description:
-      "Four implants placed per arch under sedation or general anaesthetic for comfort. Any compromised teeth are removed at the same time.",
+      "Your long-term provisional bridge (high-strength acrylic) is fitted. You walk out with a fixed, functional set of teeth and can begin eating a soft-food diet and smiling that day.",
   },
   {
-    title: "Same-day provisional teeth",
+    title: "Healing & integration (3–6 months)",
     description:
-      "High-strength provisional teeth are fitted within 24–48 hours of surgery. You leave with a working set of teeth, not dentures.",
+      "Your titanium implants undergo osseointegration — fusing with the surrounding jawbone. We see you for minor check-ups to monitor healing while you wear the provisional teeth.",
   },
   {
-    title: "Healing (3–6 months)",
+    title: "Phase 2 — the definitive bridge (final appointment)",
     description:
-      "Implants integrate with bone. You wear the provisional teeth and return for routine reviews while we plan your final restoration.",
+      "Once healing is complete and your gum tissue has stabilised, we take final impressions and craft your titanium-reinforced definitive bridge. You choose between the Titanium Signature (PMMA) and the Zirconia Prestige for the final restoration — designed for long-term durability and matched to your face.",
   },
-  {
-    title: "Final fixed prosthesis",
-    description:
-      "Your provisional is replaced with the definitive restoration — titanium or zirconia, depending on the option you choose at planning.",
-  },
+];
+
+const timelineStats = [
+  { label: "Total surgical time", value: "2–4 hrs" },
+  { label: "Time to first smile", value: "24–48 hrs" },
+  { label: "Time to final restoration", value: "3–6 mo" },
 ];
 
 const techPoints = [
@@ -447,9 +448,44 @@ export function AllOnFourPage() {
       {/* Process */}
       <ProcessSteps
         eyebrow="Your journey"
-        title="From first scan to final smile."
+        title="The path to your new smile."
         steps={journeySteps}
       />
+
+      {/* Timeline summary */}
+      <section className="py-16 lg:py-20 bg-secondary/30 border-y border-foreground/[0.04]">
+        <div className="max-w-[1800px] mx-auto px-6 lg:px-12">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.7 }}
+            className="grid sm:grid-cols-3 gap-5 lg:gap-6"
+          >
+            {timelineStats.map((stat, i) => (
+              <motion.div
+                key={stat.label}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ duration: 0.6, delay: i * 0.08 }}
+                className="p-8 lg:p-10 rounded-3xl bg-background border border-foreground/[0.04] text-center"
+              >
+                <span className="block text-xs uppercase tracking-[0.25em] text-muted-foreground font-semibold mb-4">
+                  {stat.label}
+                </span>
+                <span className="block text-4xl lg:text-5xl font-heading font-bold text-foreground">
+                  {stat.value}
+                </span>
+              </motion.div>
+            ))}
+          </motion.div>
+          <p className="mt-8 text-xs text-muted-foreground/80 italic max-w-3xl mx-auto text-center leading-relaxed">
+            Indicative timings only. Individual pathways vary based on healing,
+            health, and clinical findings.
+          </p>
+        </div>
+      </section>
 
       {/* Consultation card */}
       <section className="py-20 lg:py-28 bg-background">

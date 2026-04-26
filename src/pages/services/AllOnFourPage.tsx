@@ -8,6 +8,11 @@ import {
   ScanSearch,
   HeartHandshake,
   Phone,
+  ShoppingCart,
+  Home,
+  Pill,
+  Car,
+  Sparkles,
 } from "lucide-react";
 
 import { Seo } from "../../components/Seo";
@@ -62,6 +67,65 @@ const timelineStats = [
   { label: "Total surgical time", value: "2–4 hrs" },
   { label: "Time to first smile", value: "24–48 hrs" },
   { label: "Time to final restoration", value: "3–6 mo" },
+];
+
+const prepChecklist = [
+  {
+    icon: ShoppingCart,
+    number: "01",
+    title: "Grocery & nutrition prep",
+    intro:
+      "You'll be on a no-chew diet for the first few days, so a stocked kitchen makes a real difference.",
+    items: [
+      "Liquid staples — high-protein shakes (Up&Go, Optifast), Greek yoghurt, smooth apple sauce",
+      "Pureed options — smooth soups (pumpkin, tomato, chicken broth) with no chunks or seeds",
+      "Hydration — coconut water or electrolyte drinks for easy hydration without chewing",
+      "Soft transition foods — eggs, avocados, mashed-potato ingredients for Day 3 onwards",
+    ],
+  },
+  {
+    icon: Home,
+    number: "02",
+    title: "Home comfort setup",
+    intro: "A dedicated recovery zone where you can rest undisturbed.",
+    items: [
+      "Pillow stack — 2–3 firm pillows to keep your head elevated, which helps reduce post-op swelling",
+      "Entertainment — podcasts, audiobooks, or movies downloaded so you can rest your body and your mind",
+      "Ice packs — at least two cold compresses ready in the freezer so you can rotate them",
+    ],
+  },
+  {
+    icon: Pill,
+    number: "03",
+    title: "Pharmacy & essentials",
+    intro: "A small kit ready by the bedside means no chemist runs on the day.",
+    items: [
+      "Prescriptions — any pre-op medications from Dr. Nick filled and ready",
+      "Lip care — a quality lip balm or petroleum jelly for dry lips after sedation",
+      "Soft toothbrush — we provide a post-op kit, but an extra ultra-soft brush helps",
+    ],
+  },
+  {
+    icon: Car,
+    number: "04",
+    title: "Surgery day logistics",
+    intro: "Particularly important if you're choosing sedation or sleep dentistry.",
+    items: [
+      "Support driver — a responsible adult to drive you home and stay with you for the first 4–6 hours after IV sedation. We can't release you to a taxi or rideshare alone.",
+      "What to wear — loose, comfortable clothing with sleeves that roll up easily for the IV or blood-pressure cuff",
+      "Fasting — if you're having sedation, follow the specific fasting instructions our team gives you (typically no food or water for 6 hours beforehand)",
+      "Valuables — leave jewellery and watches at home",
+    ],
+  },
+  {
+    icon: Sparkles,
+    number: "05",
+    title: "The mental prep",
+    intro: "The unglamorous bit — but worth a moment.",
+    items: [
+      "Remember why you're doing this. The first few days are an investment in years of better function. Coming in calm and prepared makes the early recovery easier and quicker.",
+    ],
+  },
 ];
 
 const techPoints = [
@@ -483,6 +547,82 @@ export function AllOnFourPage() {
           <p className="mt-8 text-xs text-muted-foreground/80 italic max-w-3xl mx-auto text-center leading-relaxed">
             Indicative timings only. Individual pathways vary based on healing,
             health, and clinical findings.
+          </p>
+        </div>
+      </section>
+
+      {/* Surgery day preparation checklist */}
+      <section className="py-20 lg:py-28 bg-background">
+        <div className="max-w-[1800px] mx-auto px-6 lg:px-12">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.7 }}
+            className="max-w-2xl mb-14 lg:mb-20"
+          >
+            <span className="text-primary font-bold tracking-[0.25em] uppercase text-xs mb-5 block">
+              Once you've booked
+            </span>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-foreground leading-[1.02] mb-6">
+              Your surgery day<br />preparation checklist.
+            </h2>
+            <p className="text-base lg:text-lg text-muted-foreground font-light leading-relaxed">
+              Small steps that make a real difference. We recommend completing
+              this checklist about 48 hours before your scheduled procedure.
+              Your formal pre-op letter from Dr. Nick takes precedence wherever
+              the two differ.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 gap-5 lg:gap-6">
+            {prepChecklist.map((card, i) => {
+              const Icon = card.icon;
+              return (
+                <motion.div
+                  key={card.number}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-60px" }}
+                  transition={{ duration: 0.6, delay: i * 0.06 }}
+                  className="p-8 lg:p-10 rounded-3xl bg-secondary/40 border border-foreground/[0.04]"
+                >
+                  <div className="flex items-start justify-between gap-4 mb-6">
+                    <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center shrink-0">
+                      <Icon className="w-5 h-5 text-primary" />
+                    </div>
+                    <span className="text-primary font-mono text-xs tracking-widest uppercase">
+                      {card.number}
+                    </span>
+                  </div>
+                  <h3 className="text-xl lg:text-2xl font-heading font-bold text-foreground mb-3 leading-tight">
+                    {card.title}
+                  </h3>
+                  <p className="text-sm lg:text-base text-muted-foreground leading-relaxed font-light mb-6">
+                    {card.intro}
+                  </p>
+                  <ul className="space-y-3">
+                    {card.items.map((item, j) => (
+                      <li
+                        key={j}
+                        className="flex items-start gap-3 text-sm lg:text-base text-foreground/80 font-light leading-relaxed"
+                      >
+                        <Check className="w-4 h-4 text-primary mt-1 shrink-0" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </motion.div>
+              );
+            })}
+          </div>
+
+          <p className="mt-10 text-xs text-muted-foreground/80 italic max-w-3xl leading-relaxed">
+            This is general guidance only. Your specific pre-op instructions —
+            including any prescriptions, fasting requirements, and stopping or
+            adjusting routine medications — will be confirmed in writing by Dr.
+            Nick before your procedure. Always follow that written plan if it
+            differs from anything here.
           </p>
         </div>
       </section>

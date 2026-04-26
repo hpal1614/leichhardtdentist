@@ -3,7 +3,29 @@ import type { PillarData } from "./pillar";
 import clinic1 from "../assets/clinic-1.jpg";
 import clinic2 from "../assets/clinic-2.webp";
 import clinic3 from "../assets/clinic-3.webp";
-import drNickImg from "../assets/dr-nick.jpg";
+import philosophyImg from "../assets/philosophy.jpg";
+
+// Pexels — free for commercial use, no attribution required.
+// All hand-picked: dental tools / lab / clinical close-ups, NO recognisable
+// patient faces. Replace with real practice photography when commissioned.
+const PX = (id: number, w = 1600) =>
+  `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=${w}`;
+
+const IMG = {
+  toolsBlue: PX(4946338),         // tools on blue surface
+  toolsColorful: PX(4297522),     // colourful dental tools on white
+  equipmentClose: PX(6627724),    // dental equipment on blue background
+  toolsTray: PX(17112256),        // tools on a sterile tray
+  instrumentsSteel: PX(6812483),  // stainless steel instruments
+  toolsBlueClotn: PX(4270969),    // tools on blue cloth
+  jawModel: PX(16309612),         // gloved hand holding jaw model
+  glovedEquipment: PX(6627662),   // gloved hands operating equipment
+  dentureFitting: PX(6502631),    // denture being fitted
+  technicianMaking: PX(13085186), // technician making clear aligner
+  implantMaking: PX(7788493),     // unrecognisable dentist making implant
+  dentalModel: PX(6502634),       // dental model with equipment
+  modelEquipment: PX(6502633),    // dental model with lab equipment
+};
 
 export const GENERAL_DENTISTRY: PillarData = {
   number: "01",
@@ -21,6 +43,7 @@ export const GENERAL_DENTISTRY: PillarData = {
     {
       id: "checkup",
       slug: "check-up-and-clean",
+      imageUrl: IMG.toolsBlue,
       name: "Check-up & Clean",
       description:
         "Every six months. A careful examination, professional scale and polish, oral cancer screening, and X-rays where clinically indicated. Preventive care is the single highest-value thing we do.",
@@ -39,6 +62,7 @@ export const GENERAL_DENTISTRY: PillarData = {
     {
       id: "fillings",
       slug: "dental-fillings",
+      imageUrl: IMG.equipmentClose,
       name: "Dental Fillings",
       description:
         "Tooth-coloured composite resin bonded directly to the tooth to restore structure after decay or minor damage. Conservative, blended to your natural shade.",
@@ -57,6 +81,7 @@ export const GENERAL_DENTISTRY: PillarData = {
     {
       id: "bridges",
       slug: "dental-bridges",
+      imageUrl: IMG.dentalModel,
       name: "Dental Bridges",
       description:
         "A fixed, custom-made prosthesis that spans a gap where one or more teeth are missing. Anchored to the neighbouring teeth, designed to look and feel like your own.",
@@ -74,6 +99,7 @@ export const GENERAL_DENTISTRY: PillarData = {
     {
       id: "wisdom",
       slug: "wisdom-teeth",
+      imageUrl: IMG.toolsTray,
       name: "Wisdom Teeth",
       description:
         "Assessment and removal when impaction, crowding, or recurrent infection call for it. Not every wisdom tooth needs to come out — a careful review comes first.",
@@ -91,6 +117,7 @@ export const GENERAL_DENTISTRY: PillarData = {
     {
       id: "root-canal",
       slug: "root-canal-treatment",
+      imageUrl: IMG.instrumentsSteel,
       name: "Root Canal Treatment",
       description:
         "When infection reaches the nerve of a tooth, root canal treatment removes the infection and preserves the tooth. Modern techniques make the procedure more comfortable than its reputation suggests.",
@@ -108,6 +135,7 @@ export const GENERAL_DENTISTRY: PillarData = {
     {
       id: "family",
       slug: "preventative-and-family-dentistry",
+      imageUrl: IMG.toolsColorful,
       name: "Preventative & Family Dentistry",
       description:
         "Care for patients of all ages, including children. Mouthguards for sport, occlusal splints for grinding, early orthodontic screening, fissure sealants.",
@@ -189,6 +217,7 @@ export const DENTAL_IMPLANTS: PillarData = {
     {
       id: "single",
       slug: "single-tooth-implants",
+      imageUrl: IMG.implantMaking,
       name: "Single Tooth Implants",
       description:
         "A titanium post placed where the tooth root used to be, topped with a custom crown. The teeth either side are left untouched — unlike a bridge, which requires preparing adjacent teeth.",
@@ -212,6 +241,7 @@ export const DENTAL_IMPLANTS: PillarData = {
     {
       id: "overdentures",
       slug: "implant-supported-overdentures",
+      imageUrl: IMG.dentureFitting,
       name: "Implant-Supported Overdentures",
       description:
         "A denture that clips onto two or more implants instead of resting on the gums. Dramatically more stable than a conventional denture; still removable for cleaning.",
@@ -365,6 +395,7 @@ export const SINGLE_VISIT_CROWNS: PillarData = {
     {
       id: "crowns",
       slug: "cerec-same-day-crowns",
+      imageUrl: IMG.technicianMaking,
       name: "CEREC Same-Day Crowns",
       description:
         "A full-coverage ceramic crown designed, milled, and bonded in a single appointment. For teeth that need more than a filling can provide.",
@@ -389,6 +420,7 @@ export const SINGLE_VISIT_CROWNS: PillarData = {
     {
       id: "impressions",
       slug: "digital-impressions",
+      imageUrl: IMG.glovedEquipment,
       name: "Digital Impressions",
       description:
         "A small wand-shaped scanner captures your tooth in 3D — no putty, no gag reflex, no waiting for a lab. The data feeds directly into the design software.",
@@ -406,6 +438,7 @@ export const SINGLE_VISIT_CROWNS: PillarData = {
     {
       id: "inlays",
       slug: "ceramic-inlays-onlays",
+      imageUrl: IMG.jawModel,
       name: "Ceramic Inlays & Onlays",
       description:
         "A more conservative alternative to a full crown, where only the damaged part of the tooth is replaced with a custom ceramic restoration.",
@@ -490,13 +523,14 @@ export const SAME_DAY_SMILE: PillarData = {
     "Full-arch smile design for patients ready for a complete change. Planned meticulously, delivered together.",
   intro:
     "For patients ready for a significant aesthetic change — a carefully planned combination of CEREC ceramics, whitening, bonding, and laser gum contouring delivered in a single day. Serious work, planned properly, delivered together.",
-  image: drNickImg,
+  image: philosophyImg,
   bentoSpan: "md:col-span-2 lg:col-span-12",
   bentoAspect: "aspect-[4/5] md:aspect-[16/9] lg:aspect-[21/9]",
   subTreatments: [
     {
       id: "cerec",
       slug: "cerec-crowns-veneers",
+      imageUrl: IMG.modelEquipment,
       name: "CEREC Crowns & Veneers",
       description:
         "Designed on screen, milled from a solid ceramic block, and bonded the same day. The backbone of most smile makeovers we do.",
@@ -514,6 +548,7 @@ export const SAME_DAY_SMILE: PillarData = {
     {
       id: "whitening",
       slug: "professional-whitening",
+      imageUrl: IMG.toolsBlueClotn,
       name: "Professional Whitening",
       description:
         "In-chair Philips ZOOM whitening to lighten the shade of your teeth before restorations are matched. Sensitivity is managed with desensitising gels.",
@@ -531,6 +566,7 @@ export const SAME_DAY_SMILE: PillarData = {
     {
       id: "bonding",
       slug: "composite-bonding",
+      imageUrl: IMG.toolsBlue,
       name: "Composite Bonding",
       description:
         "Tooth-coloured resin sculpted onto the tooth to repair chips, cracks, or small shape changes. Reversible, conservative, and often part of a makeover plan.",
@@ -548,6 +584,7 @@ export const SAME_DAY_SMILE: PillarData = {
     {
       id: "gum-contouring",
       slug: "laser-gum-contouring",
+      imageUrl: IMG.instrumentsSteel,
       name: "Laser Gum Contouring",
       description:
         "Reshaping the gum line with a dental laser to correct a gummy smile or uneven gum heights. Healing is quick and usually doesn't require stitches.",
@@ -565,6 +602,7 @@ export const SAME_DAY_SMILE: PillarData = {
     {
       id: "cleaning",
       slug: "professional-scale-and-polish",
+      imageUrl: IMG.toolsTray,
       name: "Professional Scale & Polish",
       description:
         "A thorough clean before any aesthetic work. Removes surface stain and plaque so the final result photographs the way it looks in the chair.",

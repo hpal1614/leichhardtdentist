@@ -24,6 +24,11 @@ const SubTreatmentPage = lazy(() =>
     default: m.SubTreatmentPage,
   }))
 );
+const AllOnFourPage = lazy(() =>
+  import("./pages/services/AllOnFourPage").then((m) => ({
+    default: m.AllOnFourPage,
+  }))
+);
 const NotFound = lazy(() =>
   import("./pages/NotFound").then((m) => ({ default: m.NotFound }))
 );
@@ -56,6 +61,11 @@ export const router = createBrowserRouter([
       { path: "/services/dental-implants", element: withSuspense(<DentalImplants />) },
       { path: "/services/single-visit-crowns", element: withSuspense(<SingleVisitCrowns />) },
       { path: "/services/same-day-smile", element: withSuspense(<SameDaySmile />) },
+      // Dedicated landing page — must come before the catch-all sub-treatment route
+      {
+        path: "/services/dental-implants/all-on-4-implants",
+        element: withSuspense(<AllOnFourPage />),
+      },
       {
         path: "/services/:pillarSlug/:subSlug",
         element: withSuspense(<SubTreatmentPage />),

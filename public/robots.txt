@@ -1,0 +1,94 @@
+# robots.txt — Leichhardt Dental Centre
+# We welcome indexing by search engines AND generative-AI crawlers so the
+# practice shows up when people ask Google, ChatGPT, Gemini, Claude, or
+# Perplexity for dental care in Sydney's Inner West.
+
+# ─── Traditional search engines ────────────────────────────────────────
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+# ─── Generative-AI crawlers (citation & retrieval) ─────────────────────
+# OpenAI — ChatGPT & API real-time browsing
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# OpenAI — training corpus crawler
+User-agent: GPTBot
+Allow: /
+
+# Anthropic — Claude
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# Google — Gemini & AI Overviews training/retrieval
+User-agent: Google-Extended
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# Common Crawl (feeds many AI systems)
+User-agent: CCBot
+Allow: /
+
+# You.com
+User-agent: YouBot
+Allow: /
+
+# Meta AI
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+# Apple Intelligence
+User-agent: Applebot-Extended
+Allow: /
+
+# Bytespider (TikTok / Doubao)
+User-agent: Bytespider
+Allow: /
+
+# Mistral
+User-agent: MistralAI-User
+Allow: /
+
+# Cohere
+User-agent: cohere-ai
+Allow: /
+
+# Amazon (Alexa, Kindle AI summaries)
+User-agent: Amazonbot
+Allow: /
+
+# ─── Everyone else ─────────────────────────────────────────────────────
+User-agent: *
+Allow: /
+
+# Don't crawl the CMS Studio (not user-facing content)
+Disallow: /studio
+
+Sitemap: https://leichhardtdentist.com/sitemap.xml

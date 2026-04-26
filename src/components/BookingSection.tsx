@@ -1,12 +1,12 @@
 import { motion } from "motion/react";
-import { ArrowRight } from "lucide-react";
-import { useBooking } from "./booking/BookingContext";
+import { ArrowRight, Phone } from "lucide-react";
+import { BOOKING_LINK_PROPS } from "../lib/booking";
+import { usePractice } from "../lib/usePractice";
 
 export function BookingSection() {
-  const { openModal } = useBooking();
+  const practice = usePractice();
   return (
-    <section className="relative py-20 lg:py-32 bg-[#1a1a1a] overflow-hidden">
-      {/* Background Ambience */}
+    <section id="book" className="relative py-20 lg:py-32 bg-[#1a1a1a] overflow-hidden scroll-mt-24">
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/20 rounded-full blur-[120px] opacity-20" />
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-white/5 rounded-full blur-[100px] opacity-10" />
 
@@ -28,17 +28,20 @@ export function BookingSection() {
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center gap-3 lg:gap-4">
-            <button onClick={openModal} className="inline-flex items-center justify-center bg-primary text-white hover:bg-primary/90 text-sm lg:text-base px-6 py-3 lg:px-8 lg:py-4 rounded-full shadow-lg shadow-primary/25 transition-all duration-300 hover:scale-105 font-semibold uppercase tracking-widest">
+            <a
+              {...BOOKING_LINK_PROPS}
+              className="inline-flex items-center justify-center bg-primary text-white hover:bg-primary/90 text-sm lg:text-base px-6 py-3 lg:px-8 lg:py-4 rounded-full shadow-lg shadow-primary/25 transition-all duration-300 hover:scale-105 font-semibold uppercase tracking-widest"
+            >
               Book Online Now
-            </button>
-            <button className="inline-flex items-center justify-center border border-white/30 bg-transparent text-white hover:bg-white/10 text-sm lg:text-base px-6 py-3 lg:px-8 lg:py-4 rounded-full transition-all duration-300 font-semibold uppercase tracking-widest">
-              (02) 9560 1212 <ArrowRight className="ml-2 w-4 h-4" />
-            </button>
+              <ArrowRight className="ml-2 w-4 h-4" />
+            </a>
+            <a
+              href={`tel:${practice.phoneIntl}`}
+              className="inline-flex items-center justify-center border border-white/30 bg-transparent text-white hover:bg-white/10 text-sm lg:text-base px-6 py-3 lg:px-8 lg:py-4 rounded-full transition-all duration-300 font-semibold uppercase tracking-widest"
+            >
+              <Phone className="mr-2 w-4 h-4" /> {practice.phone}
+            </a>
           </div>
-
-          <p className="mt-6 text-white/30 text-xs uppercase tracking-widest">
-            Availability for New Patients: <span className="text-primary">Open</span>
-          </p>
         </motion.div>
       </div>
     </section>

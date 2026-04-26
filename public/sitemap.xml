@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://leichhardtdentist.com/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://leichhardtdentist.com/about</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://leichhardtdentist.com/contact</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Pillar pages -->
+  <url>
+    <loc>https://leichhardtdentist.com/services/general-dentistry</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://leichhardtdentist.com/services/dental-implants</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://leichhardtdentist.com/services/single-visit-crowns</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://leichhardtdentist.com/services/same-day-smile</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- General Dentistry sub-treatments -->
+  <url><loc>https://leichhardtdentist.com/services/general-dentistry/check-up-and-clean</loc><priority>0.8</priority></url>
+  <url><loc>https://leichhardtdentist.com/services/general-dentistry/dental-fillings</loc><priority>0.8</priority></url>
+  <url><loc>https://leichhardtdentist.com/services/general-dentistry/dental-bridges</loc><priority>0.8</priority></url>
+  <url><loc>https://leichhardtdentist.com/services/general-dentistry/wisdom-teeth</loc><priority>0.8</priority></url>
+  <url><loc>https://leichhardtdentist.com/services/general-dentistry/root-canal-treatment</loc><priority>0.8</priority></url>
+  <url><loc>https://leichhardtdentist.com/services/general-dentistry/preventative-and-family-dentistry</loc><priority>0.8</priority></url>
+
+  <!-- Dental Implants sub-treatments -->
+  <url><loc>https://leichhardtdentist.com/services/dental-implants/single-tooth-implants</loc><priority>0.8</priority></url>
+  <url><loc>https://leichhardtdentist.com/services/dental-implants/implant-supported-overdentures</loc><priority>0.8</priority></url>
+  <url><loc>https://leichhardtdentist.com/services/dental-implants/all-on-4-implants</loc><priority>0.8</priority></url>
+
+  <!-- Single Visit Crowns sub-treatments -->
+  <url><loc>https://leichhardtdentist.com/services/single-visit-crowns/cerec-same-day-crowns</loc><priority>0.8</priority></url>
+  <url><loc>https://leichhardtdentist.com/services/single-visit-crowns/digital-impressions</loc><priority>0.8</priority></url>
+  <url><loc>https://leichhardtdentist.com/services/single-visit-crowns/ceramic-inlays-onlays</loc><priority>0.8</priority></url>
+
+  <!-- Same Day Smile sub-treatments -->
+  <url><loc>https://leichhardtdentist.com/services/same-day-smile/cerec-crowns-veneers</loc><priority>0.8</priority></url>
+  <url><loc>https://leichhardtdentist.com/services/same-day-smile/professional-whitening</loc><priority>0.8</priority></url>
+  <url><loc>https://leichhardtdentist.com/services/same-day-smile/composite-bonding</loc><priority>0.8</priority></url>
+  <url><loc>https://leichhardtdentist.com/services/same-day-smile/laser-gum-contouring</loc><priority>0.8</priority></url>
+  <url><loc>https://leichhardtdentist.com/services/same-day-smile/professional-scale-and-polish</loc><priority>0.8</priority></url>
+
+  <!-- Legal -->
+  <url><loc>https://leichhardtdentist.com/privacy</loc><priority>0.3</priority></url>
+  <url><loc>https://leichhardtdentist.com/terms</loc><priority>0.3</priority></url>
+</urlset>

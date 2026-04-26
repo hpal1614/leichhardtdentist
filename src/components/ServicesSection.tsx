@@ -1,153 +1,150 @@
-import { motion, AnimatePresence } from "motion/react";
-import { ArrowRight, Star, ShieldCheck, Clock, Zap, Play } from "lucide-react";
-import { useRef, useState } from "react";
-// Link removed as it is not used
+import { motion } from "motion/react";
+import { ArrowUpRight } from "lucide-react";
+import { Link } from "react-router-dom";
+import { ImageWithFallback } from "./figma/ImageWithFallback";
 
-const services = [
-  {
-    id: "01",
-    title: "General & Family Dentistry",
-    description: "Thorough examinations, gentle cleanings, and honest advice. Preventive care that protects your long-term health.",
-    image: "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=800&q=80",
-  },
-  {
-    id: "02",
-    title: "Dental Implants",
-    description: "Advanced techniques for natural-looking, long-lasting results that feel secure and stable.",
-    image: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&q=80",
-  },
-  {
-    id: "03",
-    title: "CEREC — Single Visit",
-    description: "Custom ceramic restorations designed, crafted, and fitted in a single visit. Fewer appointments, durable results.",
-    image: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=800&q=80",
-  },
-  {
-    id: "04",
-    title: "Aesthetic Dentistry",
-    description: "Veneers, whitening, bonding — designed to enhance your natural smile, not change who you are.",
-    image: "https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=800&q=80",
-  },
-  {
-    id: "05",
-    title: "Oral Health Makeovers",
-    description: "Comprehensive treatment plans for complex cases. Function, health, and aesthetics — expertly delivered.",
-    image: "https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=800&q=80",
-  },
-  {
-    id: "06",
-    title: "Root Canal Treatment",
-    description: "Modern techniques make treatment far more comfortable. Save the tooth, eliminate the pain.",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=80",
-  },
-  {
-    id: "07",
-    title: "ZOOM Teeth Whitening",
-    description: "Professional whitening customized to your goals. No sensitivity, just a brighter, more confident smile.",
-    image: "https://images.unsplash.com/photo-1606811971618-4486d14f3f99?w=800&q=80",
-  },
-];
+import { useSanityDoc } from "../lib/useSanityDoc";
+import { SERVICE_PILLARS_QUERY } from "../lib/queries";
+import { mergePillarList, type PillarSanity } from "../lib/pillar";
+import { ALL_PILLARS } from "../lib/pillar-fallbacks";
 
 export function ServicesSection() {
-  const [activeService, setActiveService] = useState(services[0]);
+  const remote = useSanityDoc<PillarSanity[]>(SERVICE_PILLARS_QUERY);
+  const pillars = mergePillarList(remote, ALL_PILLARS);
 
   return (
-    <section id="services" className="py-16 lg:py-24 bg-secondary/30 relative z-20">
+    <section
+      id="services"
+      className="relative py-20 lg:py-32 bg-secondary/30 overflow-hidden"
+    >
       <div className="max-w-[1800px] mx-auto px-6 lg:px-12">
-        <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-start">
+        {/* Header */}
+        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-10 mb-14 lg:mb-20">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.8 }}
+            className="max-w-2xl"
+          >
+            <span className="text-primary font-bold tracking-[0.25em] uppercase text-xs mb-5 block">
+              Comprehensive Care
+            </span>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-heading font-bold text-foreground leading-[1.02] mb-6">
+              Four ways we<br />care for your smile.
+            </h2>
+            <p className="text-base lg:text-lg text-muted-foreground font-light leading-relaxed">
+              Every treatment we offer falls under one of four pillars — each one
+              practised personally by Dr. Nick, and backed by evidence-based dentistry.
+            </p>
+          </motion.div>
 
-          {/* Left Column: List */}
-          <div className="lg:col-span-5 flex flex-col justify-center h-full">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mb-8 lg:mb-12"
-            >
-              <span className="text-primary font-bold tracking-widest uppercase text-sm mb-3 block">Comprehensive Care</span>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-heading font-bold text-foreground leading-none mb-3">
-                Services.
-              </h2>
-              <p className="text-muted-foreground text-base lg:text-lg font-light">Evidence-based dental care, delivered with patience and skill.</p>
-            </motion.div>
-
-            <div className="flex flex-col">
-              {services.map((service) => (
-                <div
-                  key={service.id}
-                  className="group border-b border-black/10 last:border-0"
-                  onMouseEnter={() => setActiveService(service)}
-                >
-                  <div className={`py-6 cursor-pointer transition-all duration-300 flex items-start justify-between ${activeService.id === service.id ? 'pl-4 lg:pl-6 border-l-4 border-l-primary bg-white/40' : 'hover:pl-4 hover:bg-white/20'}`}>
-                    <div className="flex-1">
-                      <div className="flex items-baseline gap-3 mb-1">
-                        <span className={`text-xs lg:text-sm font-mono transition-colors duration-300 ${activeService.id === service.id ? 'text-primary' : 'text-muted-foreground/50'}`}>
-                          {service.id}
-                        </span>
-                        <h3 className={`text-xl md:text-2xl lg:text-3xl font-heading font-bold transition-colors duration-300 ${activeService.id === service.id ? 'text-foreground' : 'text-muted-foreground group-hover:text-foreground'}`}>
-                          {service.title}
-                        </h3>
-                      </div>
-                      <div className={`overflow-hidden transition-all duration-500 ease-in-out ${activeService.id === service.id ? 'max-h-24 opacity-100 mt-2' : 'max-h-0 opacity-0'}`}>
-                        <p className="text-muted-foreground text-sm lg:text-base leading-relaxed pl-6 md:pl-8">
-                          {service.description}
-                        </p>
-                      </div>
-                    </div>
-
-                    <ArrowRight className={`w-4 h-4 lg:w-5 lg:h-5 transition-all duration-300 mt-2 mr-3 ${activeService.id === service.id ? 'text-primary opacity-100 rotate-0' : 'text-muted-foreground opacity-0 -translate-x-4'}`} />
-                  </div>
-                </div>
-              ))}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.8, delay: 0.15 }}
+            className="hidden lg:block"
+          >
+            <div className="flex items-center gap-3 text-sm text-muted-foreground">
+              <span className="w-10 h-[1px] bg-muted-foreground/40" />
+              <span className="uppercase tracking-[0.2em] text-xs">
+                Scroll to explore
+              </span>
             </div>
-          </div>
-
-          {/* Right Column: Sticky Media Display */}
-          <div className="lg:col-span-7 relative h-[600px] lg:h-[800px] w-full lg:sticky lg:top-32 hidden lg:block rounded-3xl overflow-hidden shadow-2xl">
-            <AnimatePresence mode="popLayout">
-              <motion.div
-                key={activeService.id}
-                initial={{ opacity: 0, scale: 1.05 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.6, ease: "easeInOut" }}
-                className="absolute inset-0 w-full h-full bg-black/5"
-              >
-                {/* Background Image */}
-                <img
-                  src={activeService.image}
-                  alt={activeService.title}
-                  className="absolute inset-0 w-full h-full object-cover"
-                />
-
-                {/* Overlay Gradient */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60" />
-
-                {/* Play Button / Indication */}
-                <div className="absolute bottom-12 left-12 flex items-center gap-4">
-                  <div className="w-12 h-12 lg:w-14 lg:h-14 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center">
-                    <Play className="w-5 h-5 fill-white text-white ml-1" />
-                  </div>
-                  <span className="text-white font-heading text-lg lg:text-xl tracking-wide">{activeService.title}</span>
-                </div>
-              </motion.div>
-            </AnimatePresence>
-          </div>
-
-          {/* Mobile Media (Visible only on small screens below list) */}
-          <div className="lg:hidden h-[300px] rounded-2xl overflow-hidden relative shadow-lg mt-8">
-            <img
-              src={activeService.image}
-              alt={activeService.title}
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-black/20" />
-            <div className="absolute bottom-6 left-6 text-white font-bold text-xl">
-              {activeService.title}
-            </div>
-          </div>
-
+          </motion.div>
         </div>
+
+        {/* Bento Grid — 1 col mobile, 2 col tablet, 12 col desktop */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 lg:grid-rows-[auto_auto] gap-5 lg:gap-6">
+          {pillars.map((pillar, i) => (
+            <motion.div
+              key={pillar.slug}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.7, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
+              className={`group relative ${pillar.bentoSpan} ${pillar.bentoAspect} rounded-[2rem] overflow-hidden bg-foreground/5 isolate`}
+            >
+              {/* Background image */}
+              <ImageWithFallback
+                src={pillar.image}
+                alt=""
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1400ms] ease-out group-hover:scale-[1.05]"
+              />
+
+              {/* Dark overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a] via-[#1a1a1a]/60 to-[#1a1a1a]/30 transition-opacity duration-700 group-hover:opacity-90" />
+
+              {/* Card-level link — covers the whole card via ::after pseudo-element.
+                  Children with pointer-events-auto (the chips) stay independently clickable. */}
+              <Link
+                to={`/services/${pillar.slug}`}
+                aria-label={`${pillar.title} — ${pillar.tagline}`}
+                className="absolute inset-0 z-[1] rounded-[2rem] focus:outline-none focus-visible:ring-4 focus-visible:ring-primary/40"
+              />
+
+              {/* Number — decorative, let clicks pass through to the card link */}
+              <div className="absolute top-6 left-6 lg:top-8 lg:left-8 z-10 pointer-events-none">
+                <span className="text-white/60 font-mono text-sm tracking-wider">
+                  {pillar.number}
+                </span>
+              </div>
+
+              {/* Arrow — decorative */}
+              <div className="absolute top-6 right-6 lg:top-8 lg:right-8 z-10 pointer-events-none w-11 h-11 lg:w-12 lg:h-12 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center transition-all duration-500 group-hover:bg-primary group-hover:border-primary group-hover:scale-110 group-hover:rotate-45">
+                <ArrowUpRight className="w-4 h-4 lg:w-5 lg:h-5 text-white" />
+              </div>
+
+              {/* Bottom content — text is decorative, chips are real links */}
+              <div className="absolute inset-x-6 bottom-6 lg:inset-x-8 lg:bottom-8 z-10 flex flex-col pointer-events-none">
+                <p className="text-white/70 text-[11px] lg:text-xs uppercase tracking-[0.25em] mb-3 font-medium">
+                  {pillar.tagline}
+                </p>
+                <h3 className="font-heading font-bold text-white text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-[0.95] mb-4 lg:mb-5">
+                  {pillar.title.replace(/\.$/, "")}
+                </h3>
+
+                <p className="text-white/75 text-sm lg:text-base font-light leading-relaxed max-w-md mb-5 lg:mb-6">
+                  {pillar.shortDescription}
+                </p>
+
+                <div className="flex flex-wrap gap-2 max-w-2xl pointer-events-auto">
+                  {pillar.subTreatments.map((t) => (
+                    <Link
+                      key={t.id}
+                      to={`/services/${pillar.slug}/${t.slug}`}
+                      className="relative z-[2] inline-flex items-center rounded-full border border-white/25 bg-white/10 backdrop-blur-sm px-3 py-1.5 text-xs text-white/90 font-medium tracking-wide transition-all duration-300 hover:bg-primary hover:border-primary hover:text-white hover:scale-[1.03] focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/70 focus-visible:ring-offset-2 focus-visible:ring-offset-[#1a1a1a]"
+                    >
+                      {t.name}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Footer row */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="mt-14 lg:mt-20 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 pt-10 border-t border-foreground/10"
+        >
+          <p className="text-sm lg:text-base text-muted-foreground font-light max-w-xl leading-relaxed">
+            Not sure where to start? Every visit begins with a careful conversation —
+            we'll explain your options before any treatment is planned.
+          </p>
+          <a
+            href="#book"
+            className="inline-flex items-center gap-2 text-sm uppercase tracking-[0.2em] text-foreground font-semibold border-b border-foreground/40 pb-1 hover:border-primary hover:text-primary transition-colors duration-300"
+          >
+            Book a consultation
+            <ArrowUpRight className="w-4 h-4" />
+          </a>
+        </motion.div>
       </div>
     </section>
   );

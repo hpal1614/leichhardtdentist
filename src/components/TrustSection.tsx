@@ -1,9 +1,9 @@
 import { motion } from "motion/react";
 
 const stats = [
-    { label: "117 Verified Google Reviews", value: "5.0", suffix: " ★★★★★" },
+    { label: "Clinical Experience", value: "20", suffix: "+ Years" },
     { label: "Serving Leichhardt's Inner West", value: "", suffix: "" },
-    { label: "Clinical Experience", value: "20+", suffix: " Years" },
+    { label: "Dentist", value: "Dr. Nick", suffix: " Kulkarni" },
 ];
 
 export function TrustSection() {

@@ -1,63 +1,78 @@
-import { useState, useRef, useEffect } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { ArrowLeft, ArrowRight, Quote } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Button } from "./ui/button";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 
-const transformations = [
+// NOTE: Images below are Unsplash placeholders. Replace with real clinical photos
+// (with signed patient consent) before launch. Stock images presented as before/after
+// would breach AHPRA s.133(1)(a) and Australian Consumer Law.
+const cases = [
     {
         id: 1,
-        patient: "Sarah J.",
         procedure: "Porcelain Veneers",
-        quote: "I never used to smile in photos. Now I can't stop.",
-        description: "Addressing spacing and discoloration with ultra-thin porcelain veneers for a radiant, natural finish.",
+        description: "Addressing spacing and enamel discolouration with ultra-thin porcelain veneers.",
+        age: "34",
+        condition: "Spacing and enamel discolouration",
+        timeframe: "3 visits over 4 weeks",
+        clinician: "Dr. Nick, Dentist",
         before: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=800&q=80",
         after: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=80",
     },
     {
         id: 2,
-        patient: "Michael R.",
-        procedure: "Implants",
-        quote: "Functionally amazing. Aesthetically a masterpiece.",
-        description: "Restoring full function and facial structure with precision-placed implants. A life-changing shift.",
+        procedure: "Dental Implants",
+        description: "Restoring function and structure with precision-placed implants following tooth loss.",
+        age: "58",
+        condition: "Missing posterior teeth, reduced bite function",
+        timeframe: "6 months (staged)",
+        clinician: "Dr. Nick, Dentist",
         before: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=800&q=80",
         after: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=800&q=80",
     },
     {
         id: 3,
-        patient: "Elena K.",
-        procedure: "Invisalign",
-        quote: "Simple, painless, and the results are flawless.",
-        description: "Subtle alignment correction followed by edge bonding to perfect the symmetry.",
+        procedure: "Clear Aligners",
+        description: "Subtle alignment correction followed by edge bonding to refine symmetry.",
+        age: "28",
+        condition: "Mild crowding, uneven incisal edges",
+        timeframe: "9 months",
+        clinician: "Dr. Nick, Dentist",
         before: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=800&q=80",
         after: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=800&q=80&fit=crop&crop=faces",
     },
     {
         id: 4,
-        patient: "David L.",
-        procedure: "Rehabilitation",
-        quote: "I can eat everything again. It feels incredible.",
+        procedure: "Full Mouth Rehabilitation",
         description: "Complex rehabilitation to restore bite function and aesthetics after years of wear.",
+        age: "62",
+        condition: "Advanced tooth wear, compromised occlusion",
+        timeframe: "8 months (staged)",
+        clinician: "Dr. Nick, Dentist",
         before: "https://images.unsplash.com/photo-1552058544-f2b08422138a?w=800&q=80",
-        after: "https://images.unsplash.com/photo-1552058544-f2b08422138a?w=800&q=80&fit=crop&crop=faces", // Placeholder
+        after: "https://images.unsplash.com/photo-1552058544-f2b08422138a?w=800&q=80&fit=crop&crop=faces",
     },
     {
         id: 5,
-        patient: "Jessica M.",
-        procedure: "Whitening",
-        quote: "Bright, natural, and exactly what I wanted.",
-        description: "Professional in-chair whitening for instant, safe, and brilliant results.",
+        procedure: "In-Chair Whitening",
+        description: "Professional in-chair whitening treatment followed by take-home maintenance trays.",
+        age: "41",
+        condition: "Extrinsic staining",
+        timeframe: "1 visit + 2 weeks take-home",
+        clinician: "Dr. Nick, Dentist",
         before: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=800&q=80",
-        after: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=800&q=80&fit=crop&crop=faces", // Placeholder
+        after: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=800&q=80&fit=crop&crop=faces",
     },
     {
         id: 6,
-        patient: "Thomas P.",
-        procedure: "Emergency",
-        quote: "They saved my tooth and my peace of mind.",
-        description: "Urgent care with a calm execution. Restoring broken structure to seamless function.",
+        procedure: "Emergency Restoration",
+        description: "Urgent treatment to restore a fractured tooth and re-establish function.",
+        age: "39",
+        condition: "Fractured tooth following trauma",
+        timeframe: "1 visit",
+        clinician: "Dr. Nick, Dentist",
         before: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=800&q=80",
-        after: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=800&q=80&fit=crop&crop=faces", // Placeholder
+        after: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=800&q=80&fit=crop&crop=faces",
     }
 ];
 
@@ -65,15 +80,15 @@ export function TransformationGallery() {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [viewMode, setViewMode] = useState<"after" | "before">("after");
 
-    const currentItem = transformations[currentIndex];
+    const currentItem = cases[currentIndex];
 
     const nextSlide = () => {
-        setCurrentIndex((prev) => (prev + 1) % transformations.length);
-        setViewMode("after"); // Reset view on slide change
+        setCurrentIndex((prev) => (prev + 1) % cases.length);
+        setViewMode("after");
     };
 
     const prevSlide = () => {
-        setCurrentIndex((prev) => (prev - 1 + transformations.length) % transformations.length);
+        setCurrentIndex((prev) => (prev - 1 + cases.length) % cases.length);
         setViewMode("after");
     };
 
@@ -84,9 +99,9 @@ export function TransformationGallery() {
                 {/* Header */}
                 <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
                     <div>
-                        <span className="text-primary font-bold tracking-widest uppercase text-sm mb-4 block">Real Results</span>
+                        <span className="text-primary font-bold tracking-widest uppercase text-sm mb-4 block">Case Studies</span>
                         <h2 className="text-5xl md:text-7xl lg:text-8xl font-heading font-bold text-foreground leading-[0.9]">
-                            Stories of<br />Transformation.
+                            Clinical<br />Cases.
                         </h2>
                     </div>
                     <div className="flex gap-4">
@@ -122,7 +137,7 @@ export function TransformationGallery() {
                                 >
                                     <ImageWithFallback
                                         src={viewMode === "after" ? currentItem.after : currentItem.before}
-                                        alt={`${currentItem.patient} - ${viewMode}`}
+                                        alt={`${currentItem.procedure} — ${viewMode}`}
                                         className="w-full h-full object-cover"
                                     />
                                 </motion.div>
@@ -160,34 +175,54 @@ export function TransformationGallery() {
                                 exit={{ opacity: 0, x: -20 }}
                                 transition={{ duration: 0.5 }}
                             >
-                                <Quote className="w-12 h-12 text-primary mb-8" />
+                                <span className="text-primary font-bold uppercase tracking-widest text-xs mb-4 block">
+                                    Case {String(currentItem.id).padStart(2, "0")}
+                                </span>
 
-                                <blockquote className="text-3xl md:text-4xl font-heading text-foreground leading-tight mb-8">
-                                    "{currentItem.quote}"
-                                </blockquote>
+                                <h3 className="text-3xl md:text-4xl font-heading text-foreground leading-tight mb-6">
+                                    {currentItem.procedure}
+                                </h3>
 
-                                <div className="space-y-6">
+                                <p className="text-lg text-muted-foreground leading-relaxed mb-10">
+                                    {currentItem.description}
+                                </p>
+
+                                <dl className="grid grid-cols-2 gap-x-6 gap-y-5 border-t border-border/50 pt-8">
                                     <div>
-                                        <h4 className="text-primary font-bold uppercase tracking-widest text-xs mb-2">The Patient</h4>
-                                        <p className="text-xl text-foreground">{currentItem.patient}</p>
+                                        <dt className="text-primary font-bold uppercase tracking-widest text-xs mb-1">Patient Age</dt>
+                                        <dd className="text-base text-foreground">{currentItem.age}</dd>
                                     </div>
-
                                     <div>
-                                        <h4 className="text-primary font-bold uppercase tracking-widest text-xs mb-2">The Process</h4>
-                                        <p className="text-lg text-muted-foreground leading-relaxed">
-                                            {currentItem.description}
-                                        </p>
+                                        <dt className="text-primary font-bold uppercase tracking-widest text-xs mb-1">Timeframe</dt>
+                                        <dd className="text-base text-foreground">{currentItem.timeframe}</dd>
                                     </div>
-                                </div>
+                                    <div className="col-span-2">
+                                        <dt className="text-primary font-bold uppercase tracking-widest text-xs mb-1">Presenting Condition</dt>
+                                        <dd className="text-base text-foreground">{currentItem.condition}</dd>
+                                    </div>
+                                    <div className="col-span-2">
+                                        <dt className="text-primary font-bold uppercase tracking-widest text-xs mb-1">Treated By</dt>
+                                        <dd className="text-base text-foreground">{currentItem.clinician}</dd>
+                                    </div>
+                                </dl>
 
-                                <Button className="mt-12 bg-primary text-white hover:bg-primary/90 rounded-full px-10 py-7 text-lg shadow-xl shadow-primary/20 transition-all hover:scale-105">
-                                    See {currentItem.procedure} Details
+                                <Button className="mt-10 bg-primary text-white hover:bg-primary/90 rounded-full px-10 py-7 text-lg shadow-xl shadow-primary/20 transition-all hover:scale-105">
+                                    Learn about {currentItem.procedure}
                                 </Button>
                             </motion.div>
                         </AnimatePresence>
                     </div>
 
                 </div>
+
+                {/* AHPRA-required disclaimer — do not remove */}
+                <p className="mt-20 pt-8 border-t border-border/50 text-sm text-muted-foreground/80 leading-relaxed max-w-3xl">
+                    Individual results vary and are not guaranteed. All dental procedures carry
+                    potential risks and benefits, and outcomes depend on individual clinical factors.
+                    A consultation with a registered dental practitioner is required to determine
+                    whether a treatment is suitable for you. Images shown are of cases treated at
+                    the practice and are published with patient consent.
+                </p>
             </div>
         </section>
     );

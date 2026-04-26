@@ -87,24 +87,36 @@ const faqs = [
     a: "All-on-4 is delivered in two phases. Phase 1 (the initial surgery, four implants per arch and same-day provisional teeth) is from $19,500 per arch. Phase 2 — the final restoration after healing — is either $8,000 (titanium signature) or $10,000 (zirconia prestige). All prices are subject to your individual clinical assessment and are confirmed in writing after a consultation.",
   },
   {
-    q: "How long is the procedure?",
-    a: "Implant surgery is typically a single full day. Provisional teeth are fitted within 24–48 hours. The final prosthesis is fitted 3–6 months later, once your implants have integrated with bone.",
+    q: "Am I a candidate if I have significant bone loss?",
+    a: "Often, yes. One of the practical advantages of the All-on-4 technique is that it can frequently bypass the need for extensive bone grafting. By angling the rear implants, we can use the denser bone in the front of the jaw. During your on-site 3D CBCT assessment, Dr. Nick maps your bone volume precisely and tells you honestly whether this protocol is suitable for your case — and what the alternatives are if it isn't.",
   },
   {
-    q: "Will I be awake during surgery?",
-    a: "It's your choice. Local anaesthetic is sufficient for many patients. For longer cases or those with dental anxiety, IV sedation or general anaesthesia is available so you remain comfortable throughout.",
+    q: "Is All-on-X my only option for replacing missing teeth?",
+    a: "Not at all. All-on-X is one of several pathways. During your on-site CBCT assessment, Dr. Nick reviews your situation and recommends the option that best fits your clinical needs, lifestyle, and budget. Alternatives may include: single or multiple implants (where healthy natural teeth remain, individual implants or implant-supported bridges can preserve them); implant-retained overdentures (a removable denture secured by 2–4 implants — significantly more stable than a conventional denture, typically at a lower price point than All-on-X); traditional crown & bridge work (when healthy tooth roots remain either side of a gap); and advanced periodontal therapy (sometimes a referral to a periodontist for gum treatment can save natural teeth before extractions are even considered). Our approach is evidence-based — we only recommend All-on-X when it's the most appropriate long-term solution for your oral health.",
   },
   {
-    q: "What is Dr. Nick's training in implant surgery?",
-    a: "Dr. Nick Kulkarni holds a Graduate Diploma in Clinical Dentistry — Oral Implants from the University of Sydney, a Fellowship from the International Congress of Oral Implantologists, and additional training at the Misch Implant Institute (USA) and Walpole Institute (London). He has over 20 years of clinical experience and trains other dentists in implant protocols.",
+    q: "How long do All-on-4 implants last?",
+    a: "With diligent oral hygiene and regular maintenance visits, titanium implants are designed for very long-term function. Long-term clinical studies report implant survival rates above 95% at 10 years for All-on-4 cases, though individual outcomes vary based on health, smoking, hygiene, and bite forces. The prosthetic bridge attached to the implants experiences normal wear and is typically refurbished or replaced every 10–15 years, similar to other restorations.",
   },
   {
-    q: "Why two phases?",
-    a: "The two-phase pathway gives implants time to fully integrate with bone before they take the load of a permanent restoration. This staged approach is widely supported by the clinical evidence as the most reliable route to long-term success.",
+    q: "Will I be in pain during or after the procedure?",
+    a: "The surgery itself is performed under local anaesthesia or IV sedation, so the procedure is not painful. Most patients report that post-operative discomfort is manageable with standard pain relief. Swelling typically peaks on day 2–3 and settles within a week. We give you a clear written aftercare plan and a number to call if you have any concerns.",
   },
   {
-    q: "What if I don't have enough bone?",
-    a: "The 3D CBCT scan answers this question precisely. In some cases, bone grafting or alternative implant techniques (including zygomatic implants for the upper jaw) make treatment possible where bone is limited. Your consultation will tell you what's clinically feasible.",
+    q: "What can I eat after the surgery?",
+    a: "For the first 24–72 hours, a liquid diet (smoothies, lukewarm broths, protein shakes) protects the surgical sites. Once the long-term provisional bridge is fitted, you can move to 'fork-mashable' soft foods — scrambled eggs, soft pasta, steamed fish. Hard, crunchy, or sticky foods should be avoided for the first three months while the implants integrate with bone.",
+  },
+  {
+    q: "How do I clean the new teeth if they don't come out?",
+    a: "You care for them much like natural teeth, with a couple of additions. Twice-daily brushing with a soft-bristled brush, plus a water flosser (Waterpik) or specialised floss to clean under the bridge. Because we use the staged Phase 1 and Phase 2 protocol, the definitive bridge is designed with hygiene access in mind, making daily maintenance straightforward.",
+  },
+  {
+    q: "Is there an age limit for this treatment?",
+    a: "There's no upper age limit. Suitability is determined by your general health and jawbone condition, not your age. We've treated patients in their 70s and 80s and beyond. Your consultation and 3D scan tell us what's clinically feasible in your case.",
+  },
+  {
+    q: "What is Dr. Nick's training in implant dentistry?",
+    a: "Dr. Nick Kulkarni holds a Graduate Diploma in Clinical Dentistry (Oral Implants) from the University of Sydney, a Fellowship from the International Congress of Oral Implantologists, and additional training at the Misch Implant Institute (USA) and Walpole Institute (London). He has over 20 years of clinical experience and trains other dentists in implant protocols through First Implant.",
   },
 ];
 

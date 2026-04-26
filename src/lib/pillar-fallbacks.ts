@@ -339,6 +339,10 @@ export const DENTAL_IMPLANTS: PillarData = {
       q: "What if I don't have enough bone?",
       a: "Bone grafting or specific techniques (like zygomatic implants for the upper jaw) can sometimes make implants possible even where bone is limited. The 3D scan tells us what's feasible.",
     },
+    {
+      q: "Is full-arch implant restoration my only option for missing teeth?",
+      a: "Not at all. Several pathways exist depending on what's left in your mouth and your goals. Where healthy natural teeth remain, single implants or implant-supported bridges can preserve them. Implant-retained overdentures use 2–4 implants to secure a removable denture — far more stable than a conventional denture and typically at a lower price point than full-arch (All-on-X) treatment. Where healthy tooth roots remain either side of a gap, a traditional crown and bridge can be the right call. And sometimes a referral to a periodontist for advanced gum treatment can save natural teeth before any extractions are considered. Dr. Nick reviews all of these at your consultation and recommends the option that best fits your clinical situation, lifestyle, and budget.",
+    },
   ],
   ctaHeadline: "Thinking about an implant?",
   ctaSubhead:

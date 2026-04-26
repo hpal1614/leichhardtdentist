@@ -1,7 +1,7 @@
 import { motion, useScroll, useMotionValueEvent, AnimatePresence } from "motion/react";
 import { useState } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Button } from "./ui/button";
 import { BOOKING_LINK_PROPS } from "../lib/booking";
 import logo from "../assets/logo.svg";
@@ -20,8 +20,14 @@ const navItems = [
 
 export function Navbar() {
     const { scrollY } = useScroll();
+    const { pathname } = useLocation();
+    // Home page has a dark hero behind the navbar — keep the translucent/light-text
+    // look until the user scrolls. Every other route has a light page surface
+    // immediately behind the navbar, so we go opaque/dark-text from the start.
+    const homepage = pathname === "/";
     const [hidden, setHidden] = useState(false);
-    const [scrolled, setScrolled] = useState(false);
+    const [scrolledRaw, setScrolledRaw] = useState(false);
+    const scrolled = homepage ? scrolledRaw : true;
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [servicesOpen, setServicesOpen] = useState(false);
 
@@ -34,9 +40,9 @@ export function Navbar() {
         }
 
         if (latest > 50) {
-            setScrolled(true);
+            setScrolledRaw(true);
         } else {
-            setScrolled(false);
+            setScrolledRaw(false);
         }
     });
 

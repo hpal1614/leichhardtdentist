@@ -6,10 +6,11 @@ import { Button } from "./ui/button";
 import { BOOKING_LINK_PROPS } from "../lib/booking";
 import logo from "../assets/logo.svg";
 
+const ALL_ON_4_HREF = "/services/dental-implants/all-on-4-implants";
+
 const services = [
   { label: "General Dentistry", href: "/services/general-dentistry" },
   { label: "Dental Implants", href: "/services/dental-implants" },
-  { label: "All-on-4", href: "/services/dental-implants/all-on-4-implants" },
   { label: "Single Visit Crowns", href: "/services/single-visit-crowns" },
   { label: "Same Day Smile", href: "/services/same-day-smile" },
 ];
@@ -68,6 +69,13 @@ export function Navbar() {
 
                     {/* Desktop Links - Capsule Style */}
                     <div className={`hidden md:flex items-center rounded-full px-1 p-1 border transition-all duration-300 ${scrolled ? "bg-black/5 border-black/5" : "bg-white/5 border-white/5"}`}>
+                        {/* All-on-4 — promoted to top-level */}
+                        <Link
+                            to={ALL_ON_4_HREF}
+                            className={`px-4 py-2 lg:px-5 lg:py-2 rounded-full text-sm transition-all duration-300 ${scrolled ? "text-foreground/70 hover:text-foreground hover:bg-white" : "text-white/70 hover:text-white hover:bg-white/10"}`}
+                        >
+                            All-on-4
+                        </Link>
                         {/* Services dropdown */}
                         <div
                             className="relative"
@@ -147,6 +155,14 @@ export function Navbar() {
                         </button>
 
                         <div className="flex flex-col items-center gap-5 max-h-[80vh] overflow-y-auto px-6">
+                            <Link
+                                to={ALL_ON_4_HREF}
+                                onClick={() => setMobileMenuOpen(false)}
+                                className="text-3xl md:text-4xl font-heading font-bold text-primary hover:text-primary/80 transition-colors duration-300 text-center mb-3"
+                            >
+                                All-on-4
+                            </Link>
+                            <div className="w-16 h-[1px] bg-white/20 mb-2" />
                             <span className="text-xs uppercase tracking-[0.3em] text-white/40 mb-1">Services</span>
                             {services.map((s) => (
                                 <Link

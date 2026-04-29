@@ -2,6 +2,7 @@ import { motion } from "motion/react";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { urlFor } from "../lib/sanity";
+import { optimizeVideoUrl } from "../lib/cloudinary";
 import { BOOKING_LINK_PROPS } from "../lib/booking";
 
 import drNickImg from "../assets/dr-nick.jpg";
@@ -44,7 +45,7 @@ export function Hero({ data }: HeroProps = {}) {
   const eyebrow = data?.eyebrow || DEFAULTS.eyebrow;
   const headline = data?.headline || DEFAULTS.headline;
   const subhead = data?.subhead || DEFAULTS.subhead;
-  const videoUrl = data?.videoUrl || DEFAULT_HERO_VIDEO;
+  const videoUrl = optimizeVideoUrl(data?.videoUrl || DEFAULT_HERO_VIDEO)!;
   const primaryCta = data?.primaryCtaLabel || DEFAULTS.primaryCtaLabel;
   const secondaryCta = data?.secondaryCtaLabel || DEFAULTS.secondaryCtaLabel;
   const secondaryAnchor =
@@ -68,6 +69,7 @@ export function Hero({ data }: HeroProps = {}) {
           muted
           loop
           playsInline
+          preload="auto"
           aria-hidden="true"
         />
         {/* Left-weighted gradient for text legibility */}

@@ -2,6 +2,7 @@ import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Button } from "./ui/button";
 import { ArrowUpRight, Play, Pause, Volume2, VolumeX } from "lucide-react";
+import { optimizeVideoUrl } from "../lib/cloudinary";
 
 interface VideoSegment {
     start: number;
@@ -189,11 +190,12 @@ function VideoStoryCard({ story }: { story: Story }) {
         <div className="relative w-full h-full group bg-black">
             <video
                 ref={videoRef}
-                src={story.videoSrc}
+                src={optimizeVideoUrl(story.videoSrc)}
                 className={`w-full h-full object-cover transition-all duration-300 group-hover:scale-105 ${opacity === 0 ? 'opacity-0' : 'opacity-100'}`}
                 loop={segments.length === 0} // Native loop only if no segments
                 muted={isMuted}
                 playsInline
+                preload="metadata"
                 onLoadedMetadata={handleLoadedMetadata}
                 onTimeUpdate={handleTimeUpdate}
             // Removed poster to show video frame

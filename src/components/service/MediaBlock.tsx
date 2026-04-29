@@ -2,6 +2,7 @@ import { Play } from "lucide-react";
 import { useState } from "react";
 import { ImageWithFallback } from "../figma/ImageWithFallback";
 import { VideoLightbox } from "../VideoLightbox";
+import { optimizeVideoUrl } from "../../lib/cloudinary";
 
 type Props = {
   videoUrl?: string;
@@ -56,7 +57,7 @@ export function MediaBlock({
       return (
         <div className={`relative w-full h-full overflow-hidden ${className}`}>
           <video
-            src={videoUrl}
+            src={optimizeVideoUrl(videoUrl)}
             poster={videoPoster}
             className="w-full h-full object-cover"
             playsInline
@@ -70,7 +71,7 @@ export function MediaBlock({
     return (
       <div className={`relative w-full h-full overflow-hidden ${className}`}>
         <iframe
-          src={yt ? toEmbedUrl(videoUrl!) : videoUrl}
+          src={yt ? toEmbedUrl(videoUrl!) : optimizeVideoUrl(videoUrl)}
           title={alt || "Video"}
           className="w-full h-full"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -115,7 +116,7 @@ export function MediaBlock({
             open
               ? yt
                 ? toEmbedUrl(videoUrl!)
-                : videoUrl!
+                : optimizeVideoUrl(videoUrl) ?? null
               : null
           }
           poster={videoPoster}

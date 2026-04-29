@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from "motion/react";
-import { useEffect } from "react";
+import { useEffect, type ReactNode } from "react";
 import { X } from "lucide-react";
 
 type Props = {
@@ -7,21 +7,31 @@ type Props = {
   poster?: string;
   embed?: boolean; // true for YouTube/Vimeo iframe sources
   onClose: () => void;
+  /**
+   * Optional explainer panel rendered alongside the video. When present,
+   * the modal becomes a 2-column flex layout (video left, copy right).
+   * When absent, the video is centered as a single block.
+   */
+  sidebar?: {
+    title?: string;
+    body: ReactNode;
+  };
 };
 
 /**
  * Full-screen, accessible video modal.
  *  - Native HTML5 <video controls> (no third-party branding)
- *  - Esc to close, click-outside to close
+ *  - Esc / click-outside / X to close
  *  - Body scroll locked while open
- *  - Falls back to <iframe> when `embed` is true (YouTube/Vimeo)
- *
- * Hosting: videos are served from Cloudinary (the same CDN that already
- * serves the homepage hero clip). Free tier is generous; paste a direct
- * .mp4/.mov URL into Sanity's `videoUrl` field on a sub-treatment to wire
- * a new clip in.
+ *  - Optional `sidebar` prop renders explainer copy beside the video
  */
-export function VideoLightbox({ videoUrl, poster, embed, onClose }: Props) {
+export function VideoLightbox({
+  videoUrl,
+  poster,
+  embed,
+  onClose,
+  sidebar,
+}: Props) {
   useEffect(() => {
     if (!videoUrl) return;
     const handleKey = (e: KeyboardEvent) => {
@@ -34,6 +44,25 @@ export function VideoLightbox({ videoUrl, poster, embed, onClose }: Props) {
       document.body.style.overflow = "";
     };
   }, [videoUrl, onClose]);
+
+  const videoEl = embed ? (
+    <iframe
+      src={videoUrl ?? ""}
+      title="Video player"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+      allowFullScreen
+      className="w-full h-full"
+    />
+  ) : (
+    <video
+      src={videoUrl ?? ""}
+      poster={poster}
+      controls
+      autoPlay
+      playsInline
+      className="w-full h-full object-contain bg-black"
+    />
+  );
 
   return (
     <AnimatePresence>
@@ -63,25 +92,30 @@ export function VideoLightbox({ videoUrl, poster, embed, onClose }: Props) {
             exit={{ scale: 0.96, opacity: 0 }}
             transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1] }}
             onClick={(e) => e.stopPropagation()}
-            className="w-full max-w-6xl rounded-2xl overflow-hidden shadow-2xl bg-black aspect-video"
+            className={
+              sidebar
+                ? "w-full max-w-7xl flex flex-col lg:flex-row gap-5 lg:gap-8 max-h-full"
+                : "w-full max-w-6xl rounded-2xl overflow-hidden shadow-2xl bg-black aspect-video"
+            }
           >
-            {embed ? (
-              <iframe
-                src={videoUrl}
-                title="Video player"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
-                allowFullScreen
-                className="w-full h-full"
-              />
+            {sidebar ? (
+              <>
+                <div className="lg:flex-[2] aspect-video rounded-2xl overflow-hidden shadow-2xl bg-black">
+                  {videoEl}
+                </div>
+                <aside className="lg:flex-1 lg:max-w-md text-white p-6 lg:p-8 rounded-2xl bg-white/[0.04] border border-white/10 overflow-y-auto">
+                  {sidebar.title && (
+                    <h3 className="text-xs uppercase tracking-[0.25em] text-primary font-bold mb-4">
+                      {sidebar.title}
+                    </h3>
+                  )}
+                  <div className="text-sm lg:text-base text-white/85 font-light leading-relaxed space-y-4">
+                    {sidebar.body}
+                  </div>
+                </aside>
+              </>
             ) : (
-              <video
-                src={videoUrl}
-                poster={poster}
-                controls
-                autoPlay
-                playsInline
-                className="w-full h-full object-contain bg-black"
-              />
+              videoEl
             )}
           </motion.div>
         </motion.div>

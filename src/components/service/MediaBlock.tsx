@@ -1,5 +1,5 @@
 import { Play } from "lucide-react";
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import { ImageWithFallback } from "../figma/ImageWithFallback";
 import { VideoLightbox } from "../VideoLightbox";
 import { optimizeVideoUrl } from "../../lib/cloudinary";
@@ -13,6 +13,11 @@ type Props = {
   className?: string;
   /** When true (default for service pages), clicking play opens the video in a full-screen lightbox modal with native HTML5 controls. */
   lightbox?: boolean;
+  /** Optional explanation panel rendered beside the video in the lightbox. */
+  lightboxSidebar?: {
+    title?: string;
+    body: ReactNode;
+  };
 };
 
 const isNativeVideo = (url?: string) =>
@@ -42,6 +47,7 @@ export function MediaBlock({
   alt = "",
   className = "",
   lightbox = true,
+  lightboxSidebar,
 }: Props) {
   const [open, setOpen] = useState(false);
 
@@ -121,6 +127,7 @@ export function MediaBlock({
           }
           poster={videoPoster}
           embed={yt || vm}
+          sidebar={lightboxSidebar}
           onClose={() => setOpen(false)}
         />
       </>

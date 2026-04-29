@@ -38,8 +38,11 @@ const SLUG = "all-on-4-implants";
 // The All-on-4 explainer (DENTAL PROJ 2 — close-up before/afters with description)
 // lives only on this page, not on the homepage. The "Story of Transformation"
 // narrative video is on the homepage's Stories of Transformation section instead.
-const BEFORE_AFTER_VIDEO =
+const HERO_VIDEO =
   "https://res.cloudinary.com/dzydzte9h/video/upload/dental-website/all-on-4/before-and-after/case-1.mp4";
+// Cloudinary extracts a poster frame at 0.33s — Nick's chosen thumbnail moment.
+const HERO_VIDEO_POSTER =
+  "https://res.cloudinary.com/dzydzte9h/video/upload/so_0.33/dental-website/all-on-4/before-and-after/case-1.jpg";
 
 const journeySteps = [
   {
@@ -272,7 +275,32 @@ export function AllOnFourPage() {
               transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
               className="lg:col-span-5 aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl bg-foreground/5"
             >
-              <MediaBlock fallbackImage={clinic2} alt="On-site implant surgery suite" />
+              <MediaBlock
+                videoUrl={HERO_VIDEO}
+                videoPoster={HERO_VIDEO_POSTER}
+                fallbackImage={clinic2}
+                alt="All-on-4 close-up before and after"
+                lightboxSidebar={{
+                  title: "Real clinical cases",
+                  body: (
+                    <>
+                      <p>
+                        Close-up before and after — a real All-on-4 case
+                        treated at the practice. Dr. Nick walks through the
+                        change in form, function, and aesthetics.
+                      </p>
+                      <p className="text-white/70 italic">
+                        Individual results may vary. The cases shown are real
+                        and published with patient consent. It's wise to seek
+                        a second opinion before embarking on any significant
+                        treatment. All dental procedures carry potential
+                        risks and benefits — a consultation is required to
+                        determine whether All-on-4 is suitable for you.
+                      </p>
+                    </>
+                  ),
+                }}
+              />
             </motion.div>
           </div>
         </div>
@@ -819,49 +847,6 @@ export function AllOnFourPage() {
               are available so your treatment can be calm and dignified.
             </p>
           </motion.div>
-        </div>
-      </section>
-
-      {/* Real clinical cases — before/after video */}
-      <section className="py-20 lg:py-28 bg-secondary/30">
-        <div className="max-w-[1800px] mx-auto px-6 lg:px-12">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.7 }}
-            className="max-w-2xl mb-14 lg:mb-20"
-          >
-            <span className="text-primary font-bold tracking-[0.25em] uppercase text-xs mb-5 block">
-              Real clinical cases
-            </span>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-foreground leading-[1.02]">
-              Close-up: before and after.
-            </h2>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, scale: 0.96 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.9 }}
-            className="aspect-video rounded-[2rem] overflow-hidden shadow-2xl bg-foreground/5 max-w-5xl mx-auto"
-          >
-            <MediaBlock
-              videoUrl={BEFORE_AFTER_VIDEO}
-              fallbackImage={clinic2}
-              alt="Close-up before and after — All-on-4 clinical case"
-            />
-          </motion.div>
-
-          <p className="mt-10 text-sm text-muted-foreground/80 italic max-w-3xl mx-auto leading-relaxed text-center">
-            Individual results may vary. The cases shown are real and
-            published with patient consent. It's wise to seek a second
-            opinion before embarking on any significant treatment. All
-            dental procedures carry potential risks and benefits — a
-            consultation is required to determine whether All-on-4 is
-            suitable for you.
-          </p>
         </div>
       </section>
 

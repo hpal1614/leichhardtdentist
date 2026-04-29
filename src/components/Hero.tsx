@@ -7,7 +7,7 @@ import { BOOKING_LINK_PROPS } from "../lib/booking";
 import drNickImg from "../assets/dr-nick.jpg";
 
 const DEFAULT_HERO_VIDEO =
-  "https://res.cloudinary.com/dzydzte9h/video/upload/dental-website/transformation-story-2.mov";
+  "https://res.cloudinary.com/dzydzte9h/video/upload/dental-website/home/hero/ambient.mov";
 
 const DEFAULTS = {
   eyebrow: "Leichhardt Dental Centre · Inner West Sydney",

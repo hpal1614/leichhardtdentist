@@ -35,12 +35,9 @@ import clinic2 from "../../assets/clinic-2.webp";
 
 const SLUG = "all-on-4-implants";
 
-// Cloudinary URLs for media supplied by Dr. Nick. Filenames are predictable —
-// drop a file with one of these names into the matching media/all-on-4/<folder>/
-// directory and run `npm run sync-media` to upload. The page picks them up
-// automatically once they exist on the CDN.
-const TRANSFORMATION_STORY_VIDEO =
-  "https://res.cloudinary.com/dzydzte9h/video/upload/dental-website/all-on-4/transformation-story/story.mp4";
+// The All-on-4 explainer (DENTAL PROJ 2 — close-up before/afters with description)
+// lives only on this page, not on the homepage. The "Story of Transformation"
+// narrative video is on the homepage's Stories of Transformation section instead.
 const BEFORE_AFTER_VIDEO =
   "https://res.cloudinary.com/dzydzte9h/video/upload/dental-website/all-on-4/before-and-after/case-1.mp4";
 
@@ -344,10 +341,10 @@ export function AllOnFourPage() {
               transition={{ duration: 1, delay: 0.15 }}
               className="lg:col-span-5 order-1 lg:order-2 aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl bg-foreground/5"
             >
-              <MediaBlock
-                videoUrl={TRANSFORMATION_STORY_VIDEO}
-                fallbackImage={drNickImg}
-                alt="A patient's story of transformation"
+              <ImageWithFallback
+                src={drNickImg}
+                alt="A calm, supportive room with Dr. Nick"
+                className="w-full h-full object-cover"
               />
             </motion.div>
           </div>

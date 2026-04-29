@@ -27,23 +27,21 @@ interface Story {
 const stories: Story[] = [
     {
         id: 1,
-        category: "Makeover",
-        treatment: "Smile Makeover",
-        patient: "Sarah",
-        quote: "I avoided dentists for years. Dr. Nick changed that.",
+        category: "Implants",
+        treatment: "Story of Transformation",
+        patient: "",
+        quote: "",
         image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=80",
         type: "video",
-        videoSrc: "https://res.cloudinary.com/dzydzte9h/video/upload/dental-website/home/case-studies/placeholder-1.mp4",
-        thumbnailTime: 4,
-        startTime: 0,
-        endTime: 15
+        videoSrc: "https://res.cloudinary.com/dzydzte9h/video/upload/dental-website/home/case-studies/story-of-transformation.mp4",
+        thumbnailTime: 2,
     },
     {
         id: 2,
         category: "CEREC",
         treatment: "CEREC Restoration",
-        patient: "James",
-        quote: "One visit. Calm. Done.",
+        patient: "",
+        quote: "",
         image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=800&q=80",
         type: "video",
         videoSrc: "https://res.cloudinary.com/dzydzte9h/video/upload/dental-website/home/case-studies/placeholder-1.mp4",
@@ -56,8 +54,8 @@ const stories: Story[] = [
         id: 3,
         category: "Implants",
         treatment: "Dental Implants",
-        patient: "Elena",
-        quote: "I feel like myself again.",
+        patient: "",
+        quote: "",
         image: "https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?w=800&q=80",
         type: "video",
         videoSrc: "https://res.cloudinary.com/dzydzte9h/video/upload/dental-website/home/hero/ambient.mov",
@@ -68,24 +66,24 @@ const stories: Story[] = [
         id: 4,
         category: "Veneers",
         treatment: "Veneers",
-        patient: "Michael",
-        quote: "The confidence shift was instant.",
+        patient: "",
+        quote: "",
         image: "https://images.unsplash.com/photo-1563237023-b1e970526dcb?w=800&q=80",
     },
     {
         id: 5,
         category: "Invisalign",
         treatment: "Invisalign",
-        patient: "Emma",
-        quote: "Invisible, comfortable, perfect.",
+        patient: "",
+        quote: "",
         image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=800&q=80",
     },
     {
         id: 6,
         category: "Bonding",
         treatment: "Bonding",
-        patient: "David",
-        quote: "Small change, huge difference.",
+        patient: "",
+        quote: "",
         image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=800&q=80",
     },
 ];
@@ -249,8 +247,8 @@ export function ResultsGrid() {
                             Stories of Transformation.
                         </h2>
                         <p className="text-base lg:text-lg text-muted-foreground max-w-xl font-light leading-relaxed">
-                            Real patients. Real results. Real confidence restored. <br />
-                            Over 100 five-star reviews from patients across Sydney's Inner West.
+                            A look at the work that happens in our practice.
+                            Cases shown are real and published with patient consent.
                         </p>
                     </div>
 
@@ -292,28 +290,18 @@ export function ResultsGrid() {
                                         <>
                                             <img
                                                 src={story.image}
-                                                alt={`${story.patient} - ${story.treatment}`}
+                                                alt={story.treatment}
                                                 className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
                                             />
                                             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 transition-opacity duration-300 group-hover:opacity-70" />
                                         </>
                                     )}
-
-                                    <div className="absolute bottom-6 left-6 right-6 pointer-events-none z-10">
-                                        <p className="text-white text-lg lg:text-xl xl:text-2xl font-heading leading-tight mb-2">
-                                            "{story.quote}"
-                                        </p>
-                                    </div>
                                 </div>
 
                                 {/* Details */}
                                 <div className="px-2">
-                                    <div className="flex items-center justify-between">
-                                        <div>
-                                            <p className="text-foreground font-bold text-base lg:text-lg">{story.patient}</p>
-                                            <p className="text-primary text-xs lg:text-sm uppercase tracking-widest">{story.treatment}</p>
-                                        </div>
-                                    </div>
+                                    <p className="text-foreground font-bold text-base lg:text-lg">{story.treatment}</p>
+                                    <p className="text-primary text-xs lg:text-sm uppercase tracking-widest">{story.category}</p>
                                 </div>
                             </motion.div>
                         ))}

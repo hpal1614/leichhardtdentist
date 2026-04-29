@@ -59,6 +59,7 @@ export function VideoLightbox({
       poster={poster}
       controls
       autoPlay
+      muted
       playsInline
       className="w-full h-full object-contain bg-black"
     />

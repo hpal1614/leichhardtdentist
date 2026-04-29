@@ -9,7 +9,7 @@ import logo from "../assets/logo.svg";
 const services = [
   { label: "General Dentistry", href: "/services/general-dentistry" },
   { label: "Dental Implants", href: "/services/dental-implants" },
-  { label: "All on 4 / All Implants", href: "/services/dental-implants/all-on-4-implants" },
+  { label: "All-on-4", href: "/services/dental-implants/all-on-4-implants" },
   { label: "Single Visit Crowns", href: "/services/single-visit-crowns" },
   { label: "Same Day Smile", href: "/services/same-day-smile" },
 ];

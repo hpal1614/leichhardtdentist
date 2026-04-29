@@ -48,11 +48,21 @@ const IMAGE_EXT = /\.(jpg|jpeg|png|webp|gif|avif)$/i;
 const VIDEO_COMPRESS_THRESHOLD = 80 * 1024 * 1024; // 80 MB
 const SKIP = new Set([".gitkeep", ".DS_Store", "Thumbs.db"]);
 
-const mediaRoot = path.join(__dirname, "media");
+// Where to read files from. Defaults to ./media in the project, but can be
+// pointed at a synced Google Drive folder via MEDIA_DIR in .env, e.g.:
+//   MEDIA_DIR="/Users/you/Library/CloudStorage/GoogleDrive-.../My Drive/media"
+const mediaRoot = process.env.MEDIA_DIR
+  ? path.resolve(process.env.MEDIA_DIR)
+  : path.join(__dirname, "media");
+
 if (!fs.existsSync(mediaRoot)) {
-  console.error(`\n❌ ${mediaRoot} doesn't exist.\n`);
+  console.error(
+    `\n❌ Media folder not found: ${mediaRoot}\n` +
+    `   Set MEDIA_DIR in .env or create ./media in the project root.\n`
+  );
   process.exit(1);
 }
+console.log(`📂 Reading from: ${mediaRoot}`);
 
 function walk(dir, files = []) {
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {

@@ -2,6 +2,7 @@ import { lazy, Suspense } from "react";
 import { createBrowserRouter } from "react-router-dom";
 import { SiteLayout } from "./components/layout/SiteLayout";
 import { Home } from "./pages/Home";
+import { RouteError } from "./pages/RouteError";
 
 const About = lazy(() => import("./pages/About").then((m) => ({ default: m.About })));
 const Contact = lazy(() => import("./pages/Contact").then((m) => ({ default: m.Contact })));
@@ -51,6 +52,7 @@ const withSuspense = (el: React.ReactElement) => (
 export const router = createBrowserRouter([
   {
     element: <SiteLayout />,
+    errorElement: <RouteError />,
     children: [
       { path: "/", element: <Home /> },
       { path: "/about", element: withSuspense(<About />) },
@@ -75,5 +77,5 @@ export const router = createBrowserRouter([
     ],
   },
   // Sanity Studio — mounted outside the SiteLayout so the Navbar/Footer don't wrap it.
-  { path: "/studio/*", element: withSuspense(<StudioPage />) },
+  { path: "/studio/*", element: withSuspense(<StudioPage />), errorElement: <RouteError /> },
 ]);

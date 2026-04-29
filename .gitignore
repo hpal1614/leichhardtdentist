@@ -26,6 +26,11 @@ npm-debug.log*
 public/videos/*.mp4
 public/videos/*.mov
 
-# Cloudinary upload files
-upload-videos.js
+# Media staging — folder structure is committed (.gitkeep files), but actual
+# files Nick uploads stay local until pushed to Cloudinary via sync-media.js.
+media/**/*
+!media/**/
+!media/**/.gitkeep
+
+# Cloudinary URL map (regenerated on each upload run)
 cloudinary-urls.json

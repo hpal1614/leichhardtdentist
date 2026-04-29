@@ -76,6 +76,7 @@
       },
       "scripts": {
             "dev": "vite",
-            "build": "vite build"
+            "build": "vite build",
+            "sync-media": "node --env-file=.env sync-media.js"
       }
 }

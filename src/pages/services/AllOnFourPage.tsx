@@ -35,6 +35,15 @@ import clinic2 from "../../assets/clinic-2.webp";
 
 const SLUG = "all-on-4-implants";
 
+// Cloudinary URLs for media supplied by Dr. Nick. Filenames are predictable —
+// drop a file with one of these names into the matching media/all-on-4/<folder>/
+// directory and run `npm run sync-media` to upload. The page picks them up
+// automatically once they exist on the CDN.
+const TRANSFORMATION_STORY_VIDEO =
+  "https://res.cloudinary.com/dzydzte9h/video/upload/dental-website/all-on-4/transformation-story/story.mp4";
+const BEFORE_AFTER_VIDEO =
+  "https://res.cloudinary.com/dzydzte9h/video/upload/dental-website/all-on-4/before-and-after/case-1.mp4";
+
 const journeySteps = [
   {
     title: "Clinical assessment (Day 1)",
@@ -267,6 +276,79 @@ export function AllOnFourPage() {
               className="lg:col-span-5 aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl bg-foreground/5"
             >
               <MediaBlock fallbackImage={clinic2} alt="On-site implant surgery suite" />
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Restoring more than teeth — empathy section */}
+      <section className="py-20 lg:py-28 bg-background">
+        <div className="max-w-[1800px] mx-auto px-6 lg:px-12">
+          <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.9 }}
+              className="lg:col-span-7 order-2 lg:order-1"
+            >
+              <span className="text-primary font-bold tracking-[0.3em] uppercase text-xs mb-5 block">
+                Why we do this work
+              </span>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-foreground leading-[1.02] mb-8">
+                Restoring more than just teeth.
+              </h2>
+
+              <div className="space-y-5 text-base lg:text-lg text-muted-foreground leading-relaxed font-light max-w-2xl">
+                <p>
+                  Our work centres on restoring something deeper than function
+                  — comfort, confidence, and a sense of self.
+                </p>
+                <p>
+                  To someone who has never lost their teeth, dentures may seem
+                  like a simple solution. For people who live with them every
+                  day, the experience can be very different — the quiet
+                  embarrassment, the fear of smiling, laughing, or speaking
+                  freely, the worry that they might slip or move at the worst
+                  possible moment.
+                </p>
+                <p>
+                  Losing your teeth can take away something deeply personal —
+                  the ability to feel like yourself.
+                </p>
+                <p>
+                  Dental implants offer an alternative pathway. Fixed, secure
+                  teeth can support eating, speaking, and smiling more
+                  naturally than removable dentures — for many patients, that
+                  returns a sense of normality they had been missing.
+                </p>
+                <p>
+                  In our practice, you are never judged and never rushed. The
+                  team treats every patient with the patience and respect we
+                  would want for our own family. Your comfort, emotional
+                  well-being, and peace of mind matter as much as the clinical
+                  outcome.
+                </p>
+                <p className="text-foreground/85 italic">
+                  You don't have to live with loose dentures or silent
+                  embarrassment. We are here to help — in a safe, supportive,
+                  and unhurried environment.
+                </p>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.96 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 1, delay: 0.15 }}
+              className="lg:col-span-5 order-1 lg:order-2 aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl bg-foreground/5"
+            >
+              <MediaBlock
+                videoUrl={TRANSFORMATION_STORY_VIDEO}
+                fallbackImage={drNickImg}
+                alt="A patient's story of transformation"
+              />
             </motion.div>
           </div>
         </div>
@@ -740,6 +822,49 @@ export function AllOnFourPage() {
               are available so your treatment can be calm and dignified.
             </p>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Real clinical cases — before/after video */}
+      <section className="py-20 lg:py-28 bg-secondary/30">
+        <div className="max-w-[1800px] mx-auto px-6 lg:px-12">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.7 }}
+            className="max-w-2xl mb-14 lg:mb-20"
+          >
+            <span className="text-primary font-bold tracking-[0.25em] uppercase text-xs mb-5 block">
+              Real clinical cases
+            </span>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-foreground leading-[1.02]">
+              Close-up: before and after.
+            </h2>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.96 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.9 }}
+            className="aspect-video rounded-[2rem] overflow-hidden shadow-2xl bg-foreground/5 max-w-5xl mx-auto"
+          >
+            <MediaBlock
+              videoUrl={BEFORE_AFTER_VIDEO}
+              fallbackImage={clinic2}
+              alt="Close-up before and after — All-on-4 clinical case"
+            />
+          </motion.div>
+
+          <p className="mt-10 text-sm text-muted-foreground/80 italic max-w-3xl mx-auto leading-relaxed text-center">
+            Individual results may vary. The cases shown are real and
+            published with patient consent. It's wise to seek a second
+            opinion before embarking on any significant treatment. All
+            dental procedures carry potential risks and benefits — a
+            consultation is required to determine whether All-on-4 is
+            suitable for you.
+          </p>
         </div>
       </section>
 

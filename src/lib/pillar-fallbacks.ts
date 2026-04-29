@@ -259,6 +259,7 @@ export const DENTAL_IMPLANTS: PillarData = {
     {
       id: "all-on-4",
       slug: "all-on-4-implants",
+      imageUrl: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/all-on-4/before-and-after/case-2.jpg",
       name: "All-on-4 Implants",
       description:
         "A fixed full arch of teeth supported by four or more implants per jaw. For patients missing most or all of their teeth, or whose current teeth cannot be saved.",
@@ -395,7 +396,7 @@ export const SINGLE_VISIT_CROWNS: PillarData = {
     {
       id: "crowns",
       slug: "cerec-same-day-crowns",
-      imageUrl: IMG.technicianMaking,
+      imageUrl: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/single-visit-crowns/cerec-same-day/vita-furnace.jpg",
       name: "CEREC Same-Day Crowns",
       description:
         "A full-coverage ceramic crown designed, milled, and bonded in a single appointment. For teeth that need more than a filling can provide.",
@@ -530,7 +531,7 @@ export const SAME_DAY_SMILE: PillarData = {
     {
       id: "cerec",
       slug: "cerec-crowns-veneers",
-      imageUrl: IMG.modelEquipment,
+      imageUrl: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/cerec-crowns-veneers/case-1.jpg",
       name: "CEREC Crowns & Veneers",
       description:
         "Designed on screen, milled from a solid ceramic block, and bonded the same day. The backbone of most smile makeovers we do.",
@@ -548,7 +549,7 @@ export const SAME_DAY_SMILE: PillarData = {
     {
       id: "whitening",
       slug: "professional-whitening",
-      imageUrl: IMG.toolsBlueClotn,
+      imageUrl: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/whitening/case-1.jpg",
       name: "Professional Whitening",
       description:
         "In-chair Philips ZOOM whitening to lighten the shade of your teeth before restorations are matched. Sensitivity is managed with desensitising gels.",
@@ -566,7 +567,7 @@ export const SAME_DAY_SMILE: PillarData = {
     {
       id: "bonding",
       slug: "composite-bonding",
-      imageUrl: IMG.toolsBlue,
+      imageUrl: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/bonding/case-1.jpg",
       name: "Composite Bonding",
       description:
         "Tooth-coloured resin sculpted onto the tooth to repair chips, cracks, or small shape changes. Reversible, conservative, and often part of a makeover plan.",

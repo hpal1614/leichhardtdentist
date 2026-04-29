@@ -68,15 +68,15 @@ const stories: Story[] = [
         treatment: "Veneers",
         patient: "",
         quote: "",
-        image: "https://images.unsplash.com/photo-1563237023-b1e970526dcb?w=800&q=80",
+        image: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/home/case-studies/veneers-case.jpg",
     },
     {
         id: 5,
-        category: "Invisalign",
-        treatment: "Invisalign",
+        category: "Makeover",
+        treatment: "Smile Makeover",
         patient: "",
         quote: "",
-        image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=800&q=80",
+        image: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/home/case-studies/makeover-case.jpg",
     },
     {
         id: 6,
@@ -84,11 +84,11 @@ const stories: Story[] = [
         treatment: "Bonding",
         patient: "",
         quote: "",
-        image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=800&q=80",
+        image: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/home/case-studies/bonding-case.jpg",
     },
 ];
 
-const categories = ["All", "Veneers", "Bonding", "Implants", "Invisalign"];
+const categories = ["All", "Veneers", "Bonding", "Implants", "Makeover"];
 
 function VideoStoryCard({ story }: { story: Story }) {
     const videoRef = useRef<HTMLVideoElement>(null);

@@ -259,7 +259,7 @@ export const DENTAL_IMPLANTS: PillarData = {
     {
       id: "all-on-4",
       slug: "all-on-4-implants",
-      name: "All-on-4 & All-on-X",
+      name: "All-on-4 Implants",
       description:
         "A fixed full arch of teeth supported by four or more implants per jaw. For patients missing most or all of their teeth, or whose current teeth cannot be saved.",
       longDescription:
@@ -371,7 +371,7 @@ export const DENTAL_IMPLANTS: PillarData = {
     },
     {
       q: "Is full-arch implant restoration my only option for missing teeth?",
-      a: "Not at all. Several pathways exist depending on what's left in your mouth and your goals. Where healthy natural teeth remain, single implants or implant-supported bridges can preserve them. Implant-retained overdentures use 2–4 implants to secure a removable denture — far more stable than a conventional denture and typically at a lower price point than full-arch (All-on-X) treatment. Where healthy tooth roots remain either side of a gap, a traditional crown and bridge can be the right call. And sometimes a referral to a periodontist for advanced gum treatment can save natural teeth before any extractions are considered. Dr. Nick reviews all of these at your consultation and recommends the option that best fits your clinical situation, lifestyle, and budget.",
+      a: "Not at all. Several pathways exist depending on what's left in your mouth and your goals. Where healthy natural teeth remain, single implants or implant-supported bridges can preserve them. Implant-retained overdentures use 2–4 implants to secure a removable denture — far more stable than a conventional denture and typically at a lower price point than full-arch (All-on-4) treatment. Where healthy tooth roots remain either side of a gap, a traditional crown and bridge can be the right call. And sometimes a referral to a periodontist for advanced gum treatment can save natural teeth before any extractions are considered. Dr. Nick reviews all of these at your consultation and recommends the option that best fits your clinical situation, lifestyle, and budget.",
     },
   ],
   ctaHeadline: "Thinking about an implant?",

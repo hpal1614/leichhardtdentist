@@ -156,8 +156,8 @@ const faqs = [
     a: "Often, yes. One of the practical advantages of the All-on-4 technique is that it can frequently bypass the need for extensive bone grafting. By angling the rear implants, we can use the denser bone in the front of the jaw. During your on-site 3D CBCT assessment, Dr. Nick maps your bone volume precisely and tells you honestly whether this protocol is suitable for your case — and what the alternatives are if it isn't.",
   },
   {
-    q: "Is All-on-X my only option for replacing missing teeth?",
-    a: "Not at all. All-on-X is one of several pathways. During your on-site CBCT assessment, Dr. Nick reviews your situation and recommends the option that best fits your clinical needs, lifestyle, and budget. Alternatives may include: single or multiple implants (where healthy natural teeth remain, individual implants or implant-supported bridges can preserve them); implant-retained overdentures (a removable denture secured by 2–4 implants — significantly more stable than a conventional denture, typically at a lower price point than All-on-X); traditional crown & bridge work (when healthy tooth roots remain either side of a gap); and advanced periodontal therapy (sometimes a referral to a periodontist for gum treatment can save natural teeth before extractions are even considered). Our approach is evidence-based — we only recommend All-on-X when it's the most appropriate long-term solution for your oral health.",
+    q: "Is All-on-4 my only option for replacing missing teeth?",
+    a: "Not at all. All-on-4 is one of several pathways. During your on-site CBCT assessment, Dr. Nick reviews your situation and recommends the option that best fits your clinical needs, lifestyle, and budget. Alternatives may include: single or multiple implants (where healthy natural teeth remain, individual implants or implant-supported bridges can preserve them); implant-retained overdentures (a removable denture secured by 2–4 implants — significantly more stable than a conventional denture, typically at a lower price point than full-arch implants); traditional crown & bridge work (when healthy tooth roots remain either side of a gap); and advanced periodontal therapy (sometimes a referral to a periodontist for gum treatment can save natural teeth before extractions are even considered). Our approach is evidence-based — we only recommend full-arch implants when they're the most appropriate long-term solution for your oral health.",
   },
   {
     q: "How long do All-on-4 implants last?",
@@ -195,7 +195,7 @@ export function AllOnFourPage() {
   return (
     <>
       <Seo
-        title="All-on-4 & All-on-X Full-Arch Implants — Leichhardt Dental, Dr. Nick Kulkarni"
+        title="All-on-4 Full-Arch Implants — Leichhardt Dental, Dr. Nick Kulkarni"
         description="Full-arch implant rehabilitation in Sydney's Inner West. Two-phase pathway from $19,500 per arch. Planned and placed by Dr. Nick Kulkarni, Fellow of the International Congress of Oral Implantologists."
         path={`/services/dental-implants/${SLUG}`}
       />
@@ -218,7 +218,7 @@ export function AllOnFourPage() {
             <ChevronRight className="w-3.5 h-3.5" />
             <Link to="/services/dental-implants" className="hover:text-primary transition-colors">Dental Implants</Link>
             <ChevronRight className="w-3.5 h-3.5" />
-            <span className="text-foreground">All-on-4 & All-on-X</span>
+            <span className="text-foreground">All-on-4 Implants</span>
           </motion.nav>
 
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
@@ -232,7 +232,7 @@ export function AllOnFourPage() {
                 Full-Arch Implant Restoration
               </span>
               <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-heading font-bold text-foreground leading-[0.98] tracking-tight mb-8">
-                All-on-4 &<br />All-on-X.
+                All-on-4<br />Implants.
               </h1>
               <p className="text-lg lg:text-xl text-primary font-light italic mb-6">
                 A long-term smile, built on clinical precision.
@@ -503,7 +503,7 @@ export function AllOnFourPage() {
           <p className="mt-10 text-xs text-muted-foreground/80 italic max-w-3xl leading-relaxed">
             All prices indicative and in Australian dollars. Final fees are
             confirmed in a written treatment plan after clinical assessment.
-            Suitability for All-on-4 / All-on-X depends on your individual
+            Suitability for All-on-4 depends on your individual
             clinical situation; not all patients are candidates.
           </p>
         </div>
@@ -745,7 +745,7 @@ export function AllOnFourPage() {
 
       {/* Risks */}
       <RisksSection
-        content="All-on-4 and All-on-X are major surgical procedures. Risks include bleeding, infection, swelling, transient nerve sensitivity, sinus involvement in the upper jaw, and — uncommonly — failure of one or more implants to integrate, which may require replacement. Long-term success depends on oral hygiene, general health, smoking status, and regular maintenance visits. Suitability for full-arch implant restoration is determined on a case-by-case basis after a clinical assessment and 3D imaging."
+        content="All-on-4 is a major surgical procedure. Risks include bleeding, infection, swelling, transient nerve sensitivity, sinus involvement in the upper jaw, and — uncommonly — failure of one or more implants to integrate, which may require replacement. Long-term success depends on oral hygiene, general health, smoking status, and regular maintenance visits. Suitability for full-arch implant restoration is determined on a case-by-case basis after a clinical assessment and 3D imaging."
       />
 
       <ServiceFAQ title="Common questions about All-on-4." faqs={faqs} />

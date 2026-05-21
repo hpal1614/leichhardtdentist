@@ -1,5 +1,5 @@
 import { lazy, Suspense } from "react";
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, Navigate } from "react-router-dom";
 import { SiteLayout } from "./components/layout/SiteLayout";
 import { Home } from "./pages/Home";
 import { RouteError } from "./pages/RouteError";
@@ -14,11 +14,11 @@ const GeneralDentistry = lazy(() =>
 const DentalImplants = lazy(() =>
   import("./pages/services/DentalImplants").then((m) => ({ default: m.DentalImplants }))
 );
-const SingleVisitCrowns = lazy(() =>
-  import("./pages/services/SingleVisitCrowns").then((m) => ({ default: m.SingleVisitCrowns }))
-);
 const SameDaySmile = lazy(() =>
   import("./pages/services/SameDaySmile").then((m) => ({ default: m.SameDaySmile }))
+);
+const Orthodontics = lazy(() =>
+  import("./pages/services/Orthodontics").then((m) => ({ default: m.Orthodontics }))
 );
 const SubTreatmentPage = lazy(() =>
   import("./pages/services/SubTreatmentPage").then((m) => ({
@@ -28,6 +28,11 @@ const SubTreatmentPage = lazy(() =>
 const AllOnFourPage = lazy(() =>
   import("./pages/services/AllOnFourPage").then((m) => ({
     default: m.AllOnFourPage,
+  }))
+);
+const Overdentures = lazy(() =>
+  import("./pages/services/Overdentures").then((m) => ({
+    default: m.Overdentures,
   }))
 );
 const NotFound = lazy(() =>
@@ -61,12 +66,24 @@ export const router = createBrowserRouter([
       { path: "/terms", element: withSuspense(<Terms />) },
       { path: "/services/general-dentistry", element: withSuspense(<GeneralDentistry />) },
       { path: "/services/dental-implants", element: withSuspense(<DentalImplants />) },
-      { path: "/services/single-visit-crowns", element: withSuspense(<SingleVisitCrowns />) },
       { path: "/services/same-day-smile", element: withSuspense(<SameDaySmile />) },
-      // Dedicated landing page — must come before the catch-all sub-treatment route
+      { path: "/services/orthodontics", element: withSuspense(<Orthodontics />) },
+      // Dedicated landing pages — must come before the catch-all sub-treatment route
       {
         path: "/services/dental-implants/all-on-4-implants",
         element: withSuspense(<AllOnFourPage />),
+      },
+      {
+        path: "/services/dental-implants/implant-supported-overdentures",
+        element: withSuspense(<Overdentures />),
+      },
+      // Inlays/onlays live under same-day-smile only — redirect the old
+      // general-dentistry URL so it isn't a dead duplicate.
+      {
+        path: "/services/general-dentistry/ceramic-inlays-onlays",
+        element: (
+          <Navigate to="/services/same-day-smile/ceramic-inlays-onlays" replace />
+        ),
       },
       {
         path: "/services/:pillarSlug/:subSlug",

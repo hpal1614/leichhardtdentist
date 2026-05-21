@@ -71,7 +71,7 @@ export function RouteError() {
           <span className="text-primary font-bold tracking-[0.3em] uppercase text-xs mb-6 block">
             {status ? `Error ${status}` : "Something went wrong"}
           </span>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-foreground leading-[1.05] mb-6">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-foreground leading-[1.05] mb-6">
             {chunkLoad
               ? "Refreshing for the latest version..."
               : "We hit a snag loading that page."}

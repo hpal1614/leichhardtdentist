@@ -25,7 +25,7 @@ export function ProcessSteps({ eyebrow = "The process", title, steps }: Props) {
           <span className="text-primary font-bold tracking-[0.25em] uppercase text-xs mb-5 block">
             {eyebrow}
           </span>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold leading-[1.02]">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold leading-[1.02]">
             {title}
           </h2>
         </motion.div>

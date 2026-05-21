@@ -1,7 +1,7 @@
 import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Button } from "./ui/button";
-import { ArrowUpRight, Play, Pause, Volume2, VolumeX } from "lucide-react";
+import { Play, Pause, Volume2, VolumeX } from "lucide-react";
 import { optimizeVideoUrl } from "../lib/cloudinary";
 
 interface VideoSegment {
@@ -34,7 +34,7 @@ const stories: Story[] = [
         image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=80",
         type: "video",
         videoSrc: "https://res.cloudinary.com/dzydzte9h/video/upload/dental-website/home/case-studies/story-of-transformation.mp4",
-        thumbnailTime: 2,
+        thumbnailTime: 24,
     },
     {
         id: 2,
@@ -45,8 +45,9 @@ const stories: Story[] = [
         image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=800&q=80",
         type: "video",
         videoSrc: "https://res.cloudinary.com/dzydzte9h/video/upload/dental-website/home/case-studies/placeholder-1.mp4",
+        thumbnailTime: 18, // poster frame shown when paused
         segments: [
-            { start: 16, end: 26 },
+            { start: 18, end: 26 }, // starts where the poster is
             { start: 47, end: 50 }
         ]
     },
@@ -58,9 +59,8 @@ const stories: Story[] = [
         quote: "",
         image: "https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?w=800&q=80",
         type: "video",
-        videoSrc: "https://res.cloudinary.com/dzydzte9h/video/upload/dental-website/home/hero/ambient.mov",
-        startTime: 42,
-        thumbnailTime: 43
+        videoSrc: "https://res.cloudinary.com/dzydzte9h/video/upload/download_srxu4c.mp4",
+        thumbnailTime: 4, // poster frame shown when paused (clip is only ~12.4s, plays full on loop)
     },
     {
         id: 4,
@@ -185,7 +185,13 @@ function VideoStoryCard({ story }: { story: Story }) {
     };
 
     return (
-        <div className="relative w-full h-full group bg-black">
+        // The whole surface toggles play/pause on click (pointer/touch affordance).
+        // Keyboard users use the focusable play/pause button below, so the
+        // container stays a plain div to avoid nested interactive controls.
+        <div
+            onClick={togglePlay}
+            className="relative w-full h-full group bg-black cursor-pointer"
+        >
             <video
                 ref={videoRef}
                 src={optimizeVideoUrl(story.videoSrc)}
@@ -199,7 +205,7 @@ function VideoStoryCard({ story }: { story: Story }) {
             // Removed poster to show video frame
             />
             {/* Controls Overlay - Visible on Group Hover */}
-            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
+            <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
                 <Button
                     onClick={togglePlay}
                     variant="ghost"
@@ -252,21 +258,7 @@ export function ResultsGrid() {
                         </p>
                     </div>
 
-                    {/* Filters */}
-                    <div className="flex flex-wrap gap-2">
-                        {categories.map((cat) => (
-                            <button
-                                key={cat}
-                                onClick={() => setActiveCategory(cat)}
-                                className={`px-4 py-2 lg:px-6 lg:py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${activeCategory === cat
-                                    ? "bg-foreground text-background shadow-lg"
-                                    : "bg-secondary/20 text-muted-foreground hover:bg-secondary/40"
-                                    }`}
-                            >
-                                {cat}
-                            </button>
-                        ))}
-                    </div>
+                    {/* Category filters hidden for now — only 6 cards. Restore from git history to re-enable. */}
                 </div>
 
                 {/* Grid */}
@@ -308,11 +300,9 @@ export function ResultsGrid() {
                     </AnimatePresence>
                 </div>
 
-                <div className="flex justify-center mt-12 lg:mt-16">
-                    <Button variant="outline" className="rounded-full px-6 py-3 lg:px-8 lg:py-4 text-sm lg:text-base border-foreground/20 hover:bg-foreground hover:text-background transition-all duration-300 font-semibold uppercase tracking-widest">
-                        View All Stories <ArrowUpRight className="ml-2 w-4 h-4" />
-                    </Button>
-                </div>
+                <p className="mt-12 lg:mt-16 text-center text-xs text-muted-foreground/80 italic max-w-3xl mx-auto leading-relaxed">
+                    Individual results vary — this is not a guarantee of outcome. The cases shown are real, unaltered, and published with patient consent.
+                </p>
 
             </div>
         </section>

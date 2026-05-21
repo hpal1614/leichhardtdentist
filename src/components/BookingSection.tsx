@@ -20,7 +20,7 @@ export function BookingSection() {
           <p className="text-primary font-bold tracking-[0.2em] uppercase text-sm mb-4">
             Book Now
           </p>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-heading font-bold text-white mb-6 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-heading font-bold text-white mb-6 tracking-tight">
             We'd love to <br /> <span className="text-white/40 italic font-serif">meet you.</span>
           </h2>
           <p className="text-base md:text-lg lg:text-xl text-white/60 max-w-2xl mx-auto mb-8 font-light leading-relaxed">

@@ -1,12 +1,13 @@
 import { motion } from "motion/react";
 import { useRef, useState, useEffect } from "react";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
+import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
 import { Button } from "./ui/button";
 
 import { ClinicianPortrait } from "./clinician/ClinicianPortrait";
 import { useSanityDoc } from "../lib/useSanityDoc";
 import { CLINICIANS_QUERY } from "../lib/queries";
-import { mergeClinicians, type ClinicianSanity } from "../lib/clinician";
+import { clinicianAnchor, mergeClinicians, type ClinicianSanity } from "../lib/clinician";
 import { ALL_CLINICIANS } from "../lib/clinician-fallbacks";
 
 export function TeamGrid() {
@@ -89,7 +90,7 @@ export function TeamGrid() {
         <div
           ref={scrollRef}
           onScroll={checkScroll}
-          className="flex gap-8 overflow-x-auto pb-12 snap-x snap-mandatory scrollbar-hide -mx-6 px-6 lg:-mx-12 lg:px-12"
+          className="flex gap-6 lg:gap-8 overflow-x-auto pb-12 snap-x snap-mandatory scrollbar-hide pl-1 pr-6 scroll-pl-1 scroll-pr-6 lg:-mx-12 lg:px-12 lg:scroll-pl-12"
           style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         >
           {associates.map((member, index) => (
@@ -99,38 +100,52 @@ export function TeamGrid() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1, duration: 0.6 }}
-              className="group cursor-pointer min-w-[280px] md:min-w-[320px] lg:min-w-[350px] snap-start"
+              className="min-w-[280px] md:min-w-[320px] lg:min-w-[350px] snap-start"
             >
-              <div className="aspect-[3/4] overflow-hidden rounded-2xl mb-4 relative bg-secondary/40 shadow-sm">
-                <ClinicianPortrait
-                  src={member.portrait}
-                  name={member.name}
-                  className="grayscale group-hover:grayscale-0 transition-all duration-700 ease-out transform group-hover:scale-105"
-                />
+              <Link
+                to={`/about#${clinicianAnchor(member.name)}`}
+                aria-label={`Learn more about ${member.name}`}
+                className="group block focus:outline-none focus-visible:ring-4 focus-visible:ring-primary/30 rounded-2xl"
+              >
+                <div className="aspect-[3/4] overflow-hidden rounded-2xl mb-4 relative bg-secondary/40 shadow-sm">
+                  <ClinicianPortrait
+                    src={member.portrait}
+                    name={member.name}
+                    className="grayscale group-hover:grayscale-0 transition-all duration-700 ease-out transform group-hover:scale-105"
+                  />
 
-                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6 lg:p-8">
-                  <p className="text-white/80 text-xs uppercase tracking-widest mb-2">
-                    Focus
-                  </p>
-                  <p className="text-white text-sm leading-relaxed font-light">
-                    {member.focus}
-                  </p>
+                  <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6 lg:p-8">
+                    <p className="text-white/80 text-xs uppercase tracking-widest mb-2">
+                      Focus
+                    </p>
+                    <p className="text-white text-sm leading-relaxed font-light">
+                      {member.focus}
+                    </p>
+                  </div>
+
+                  {/* Always-visible "Know more" affordance */}
+                  <div className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/90 backdrop-blur-sm border border-black/5 flex items-center justify-center transition-all duration-300 group-hover:bg-primary group-hover:border-primary group-hover:rotate-45 shadow-sm">
+                    <ArrowUpRight className="w-4 h-4 text-foreground/70 group-hover:text-white transition-colors" />
+                  </div>
                 </div>
-              </div>
 
-              <div className="px-2">
-                <h3 className="text-lg lg:text-xl font-heading font-medium text-foreground mb-1 group-hover:text-primary transition-colors">
-                  {member.name}
-                </h3>
-                <p className="text-xs lg:text-sm text-muted-foreground uppercase tracking-widest font-light">
-                  {member.role}
-                </p>
-                {member.qualifications && (
-                  <p className="text-xs text-muted-foreground/70 mt-1.5 font-mono">
-                    {member.qualifications}
+                <div className="px-2">
+                  <h3 className="text-lg lg:text-xl font-heading font-medium text-foreground mb-1 group-hover:text-primary transition-colors">
+                    {member.name}
+                  </h3>
+                  <p className="text-xs lg:text-sm text-muted-foreground uppercase tracking-widest font-light">
+                    {member.role}
                   </p>
-                )}
-              </div>
+                  {member.qualifications && (
+                    <p className="text-xs text-muted-foreground/70 mt-1.5 font-mono">
+                      {member.qualifications}
+                    </p>
+                  )}
+                  <span className="mt-3 inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    Know more <ArrowUpRight className="w-3.5 h-3.5" />
+                  </span>
+                </div>
+              </Link>
             </motion.div>
           ))}
         </div>

@@ -55,6 +55,7 @@
             "react-router-dom": "^7.14.0",
             "recharts": "^2.15.2",
             "sanity": "^3.99.0",
+            "sanity-plugin-media": "^4.2.0",
             "sonner": "^2.0.3",
             "styled-components": "^6.4.0",
             "tailwind-merge": "*",
@@ -77,6 +78,7 @@
       "scripts": {
             "dev": "vite",
             "build": "vite build",
-            "sync-media": "node --env-file=.env sync-media.js"
+            "sync-media": "node --env-file=.env sync-media.js",
+            "seed": "node --env-file=.env scripts/seed-sanity.mjs"
       }
 }

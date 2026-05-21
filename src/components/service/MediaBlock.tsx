@@ -107,13 +107,16 @@ export function MediaBlock({
           ) : (
             <div className="absolute inset-0 bg-gradient-to-br from-secondary/60 to-secondary/30" />
           )}
-          <div className="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
-            <span className="w-20 h-20 lg:w-24 lg:h-24 rounded-full bg-white/95 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-2xl">
-              <Play className="w-7 h-7 lg:w-8 lg:h-8 text-foreground ml-1" fill="currentColor" />
-            </span>
-          </div>
-          <span className="absolute bottom-4 left-4 px-3 py-1 rounded-full bg-white/90 backdrop-blur-sm text-[10px] uppercase tracking-[0.25em] font-semibold text-foreground">
-            Watch
+          {/* subtle gradient so the control reads against any poster */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent transition-colors duration-300 group-hover:from-black/55" />
+          {/* "Video" tag, top-left — signals this is a playable video */}
+          <span className="absolute top-4 left-4 z-10 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/50 backdrop-blur-md text-[10px] uppercase tracking-[0.2em] font-semibold text-white">
+            <Play className="w-2.5 h-2.5 fill-current" />
+            Video
+          </span>
+          {/* glass play button, bottom-right — matches the homepage video cards */}
+          <span className="absolute bottom-4 right-4 lg:bottom-5 lg:right-5 w-14 h-14 lg:w-16 lg:h-16 rounded-full bg-white/20 group-hover:bg-white/30 backdrop-blur-md border border-white/30 flex items-center justify-center transition-all duration-300 group-hover:scale-110">
+            <Play className="w-6 h-6 lg:w-7 lg:h-7 text-white ml-1 fill-current" />
           </span>
         </button>
 

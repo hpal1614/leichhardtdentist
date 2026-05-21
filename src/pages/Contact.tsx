@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 import { useState } from "react";
-import { Phone, Mail, MapPin, Clock, ArrowRight } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, ArrowRight, Check, Loader2 } from "lucide-react";
 import { Seo } from "../components/Seo";
 import { PageHero } from "../components/layout/PageHero";
 import { BOOKING_LINK_PROPS } from "../lib/booking";
@@ -15,14 +15,44 @@ export function Contact() {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
+  const [hp, setHp] = useState(""); // honeypot — bots fill this, humans don't
+  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  // Real delivery via FormSubmit (no backend needed). Submissions are emailed
+  // to practice.email. NOTE: the first submission triggers a one-time
+  // activation email to that inbox — click "Activate Form" once and all
+  // subsequent enquiries are delivered.
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const subject = encodeURIComponent(`Website enquiry from ${name || "a visitor"}`);
-    const body = encodeURIComponent(
-      `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\n\nMessage:\n${message}`
-    );
-    window.location.href = `mailto:${practice.email}?subject=${subject}&body=${body}`;
+    if (hp) return; // honeypot tripped — silently drop (likely a bot)
+    setStatus("sending");
+    try {
+      const res = await fetch(`https://formsubmit.co/ajax/${practice.email}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          name,
+          email,
+          phone: phone || "—",
+          message,
+          _subject: `Website enquiry from ${name || "a visitor"}`,
+          _template: "table",
+          _captcha: "false",
+        }),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (res.ok && (data.success === true || data.success === "true")) {
+        setStatus("success");
+        setName("");
+        setEmail("");
+        setPhone("");
+        setMessage("");
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
   };
 
   return (
@@ -195,70 +225,125 @@ export function Contact() {
                 Tell us what's on your mind.
               </h2>
 
-              <div className="grid sm:grid-cols-2 gap-5 mb-5">
-                <label className="block">
-                  <span className="text-xs uppercase tracking-wider text-muted-foreground font-semibold mb-2 block">
-                    Name
+              {status === "success" ? (
+                <div className="rounded-2xl bg-primary/10 border border-primary/20 p-6 lg:p-8 flex items-start gap-4">
+                  <span className="w-9 h-9 rounded-full bg-primary/15 border border-primary/30 flex items-center justify-center shrink-0">
+                    <Check className="w-4 h-4 text-primary" />
                   </span>
+                  <div>
+                    <p className="font-heading font-bold text-foreground text-lg mb-1">
+                      Message sent — thank you.
+                    </p>
+                    <p className="text-sm text-muted-foreground font-light leading-relaxed">
+                      We've received your enquiry and will be in touch shortly.
+                      For anything urgent, please call {practice.phone}.
+                    </p>
+                  </div>
+                </div>
+              ) : (
+                <>
+                  {/* Honeypot — hidden from real users; bots that fill it are dropped */}
                   <input
                     type="text"
-                    required
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    className="w-full px-4 py-3 rounded-xl bg-background border border-foreground/10 text-foreground focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
+                    name="_honey"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    aria-hidden="true"
+                    value={hp}
+                    onChange={(e) => setHp(e.target.value)}
+                    className="hidden"
                   />
-                </label>
-                <label className="block">
-                  <span className="text-xs uppercase tracking-wider text-muted-foreground font-semibold mb-2 block">
-                    Email
-                  </span>
-                  <input
-                    type="email"
-                    required
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    className="w-full px-4 py-3 rounded-xl bg-background border border-foreground/10 text-foreground focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
-                  />
-                </label>
-              </div>
 
-              <label className="block mb-5">
-                <span className="text-xs uppercase tracking-wider text-muted-foreground font-semibold mb-2 block">
-                  Phone <span className="text-muted-foreground/60 normal-case tracking-normal">(optional)</span>
-                </span>
-                <input
-                  type="tel"
-                  value={phone}
-                  onChange={(e) => setPhone(e.target.value)}
-                  className="w-full px-4 py-3 rounded-xl bg-background border border-foreground/10 text-foreground focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
-                />
-              </label>
+                  <div className="grid sm:grid-cols-2 gap-5 mb-5">
+                    <label className="block">
+                      <span className="text-xs uppercase tracking-wider text-muted-foreground font-semibold mb-2 block">
+                        Name
+                      </span>
+                      <input
+                        type="text"
+                        required
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        className="w-full px-4 py-3 rounded-xl bg-background border border-foreground/10 text-foreground focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
+                      />
+                    </label>
+                    <label className="block">
+                      <span className="text-xs uppercase tracking-wider text-muted-foreground font-semibold mb-2 block">
+                        Email
+                      </span>
+                      <input
+                        type="email"
+                        required
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        className="w-full px-4 py-3 rounded-xl bg-background border border-foreground/10 text-foreground focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
+                      />
+                    </label>
+                  </div>
 
-              <label className="block mb-8">
-                <span className="text-xs uppercase tracking-wider text-muted-foreground font-semibold mb-2 block">
-                  Message
-                </span>
-                <textarea
-                  required
-                  rows={5}
-                  value={message}
-                  onChange={(e) => setMessage(e.target.value)}
-                  className="w-full px-4 py-3 rounded-xl bg-background border border-foreground/10 text-foreground focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all resize-none"
-                />
-              </label>
+                  <label className="block mb-5">
+                    <span className="text-xs uppercase tracking-wider text-muted-foreground font-semibold mb-2 block">
+                      Phone <span className="text-muted-foreground/60 normal-case tracking-normal">(optional)</span>
+                    </span>
+                    <input
+                      type="tel"
+                      value={phone}
+                      onChange={(e) => setPhone(e.target.value)}
+                      className="w-full px-4 py-3 rounded-xl bg-background border border-foreground/10 text-foreground focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
+                    />
+                  </label>
 
-              <button
-                type="submit"
-                className="group bg-primary hover:bg-primary/90 text-white px-7 py-4 rounded-full text-sm font-semibold uppercase tracking-[0.18em] transition-all duration-300 active:scale-95 shadow-[0_20px_40px_-12px_rgba(232,106,44,0.5)] inline-flex items-center"
-              >
-                Send message
-                <ArrowRight className="ml-2.5 w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-              </button>
+                  <label className="block mb-8">
+                    <span className="text-xs uppercase tracking-wider text-muted-foreground font-semibold mb-2 block">
+                      Message
+                    </span>
+                    <textarea
+                      required
+                      rows={5}
+                      value={message}
+                      onChange={(e) => setMessage(e.target.value)}
+                      className="w-full px-4 py-3 rounded-xl bg-background border border-foreground/10 text-foreground focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all resize-none"
+                    />
+                  </label>
 
-              <p className="mt-6 text-xs text-muted-foreground/80 leading-relaxed">
-                This form opens your email client. For appointment bookings,
-                using the Book button is quicker.
-              </p>
+                  {status === "error" && (
+                    <p className="mb-5 text-sm text-red-600 leading-relaxed">
+                      Sorry — something went wrong sending your message. Please call{" "}
+                      <a href={`tel:${practice.phoneIntl}`} className="underline font-semibold">
+                        {practice.phone}
+                      </a>{" "}
+                      or email{" "}
+                      <a href={`mailto:${practice.email}`} className="underline font-semibold">
+                        {practice.email}
+                      </a>{" "}
+                      directly.
+                    </p>
+                  )}
+
+                  <button
+                    type="submit"
+                    disabled={status === "sending"}
+                    className="group bg-primary hover:bg-primary/90 text-white px-7 py-4 rounded-full text-sm font-semibold uppercase tracking-[0.18em] transition-all duration-300 active:scale-95 shadow-[0_20px_40px_-12px_rgba(232,106,44,0.5)] inline-flex items-center disabled:opacity-60 disabled:cursor-not-allowed disabled:active:scale-100"
+                  >
+                    {status === "sending" ? (
+                      <>
+                        <Loader2 className="mr-2.5 w-4 h-4 animate-spin" />
+                        Sending…
+                      </>
+                    ) : (
+                      <>
+                        Send message
+                        <ArrowRight className="ml-2.5 w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+                      </>
+                    )}
+                  </button>
+
+                  <p className="mt-6 text-xs text-muted-foreground/80 leading-relaxed">
+                    We typically reply within one business day. For appointment
+                    bookings, the Book button is quicker.
+                  </p>
+                </>
+              )}
             </motion.form>
           </div>
         </div>
@@ -272,7 +357,7 @@ export function Contact() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.9 }}
-            className="aspect-[21/9] rounded-[2rem] overflow-hidden border border-foreground/[0.06] shadow-2xl"
+            className="aspect-video md:aspect-[21/9] rounded-[2rem] overflow-hidden border border-foreground/[0.06] shadow-2xl"
           >
             <iframe
               title="Leichhardt Dental Centre — map"

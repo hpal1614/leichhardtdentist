@@ -9,6 +9,8 @@ export type SubTreatment = {
   videoUrl?: string;
   videoPoster?: string;
   imageUrl?: string;
+  gallery?: string[];
+  pricing?: PricingTier[];
   whatToExpect?: string[];
   processSteps?: ProcessStep[];
   risksContent?: string;
@@ -16,6 +18,14 @@ export type SubTreatment = {
 };
 export type ProcessStep = { title: string; description: string };
 export type FAQ = { q: string; a: string };
+export type PricingTier = {
+  name: string;
+  price: string;
+  priceLabel?: string;
+  unit?: string;
+  description?: string;
+  items?: string[];
+};
 
 /** Shape consumed by page components. Images already resolved to URL strings. */
 export type PillarData = {
@@ -81,6 +91,8 @@ function cleanTreatments(
       videoUrl: i.videoUrl,
       videoPoster: i.videoPoster,
       imageUrl: i.imageUrl,
+      gallery: i.gallery,
+      pricing: cleanPricing(i.pricing) ?? undefined,
       whatToExpect: i.whatToExpect,
       processSteps: cleanSteps(i.processSteps) ?? undefined,
       risksContent: i.risksContent,
@@ -103,6 +115,22 @@ function cleanFaqs(items: Partial<FAQ>[] | undefined): FAQ[] | null {
   const cleaned = items?.filter(
     (i): i is FAQ => Boolean(i.q && i.a)
   );
+  return cleaned?.length ? cleaned : null;
+}
+
+function cleanPricing(
+  items: Partial<PricingTier>[] | undefined
+): PricingTier[] | null {
+  const cleaned = items
+    ?.filter((i): i is PricingTier => Boolean(i.name && i.price))
+    .map((i) => ({
+      name: i.name,
+      price: i.price,
+      priceLabel: i.priceLabel,
+      unit: i.unit,
+      description: i.description,
+      items: i.items,
+    }));
   return cleaned?.length ? cleaned : null;
 }
 

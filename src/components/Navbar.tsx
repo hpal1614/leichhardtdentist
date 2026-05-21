@@ -11,8 +11,8 @@ const ALL_ON_4_HREF = "/services/dental-implants/all-on-4-implants";
 const services = [
   { label: "General Dentistry", href: "/services/general-dentistry" },
   { label: "Dental Implants", href: "/services/dental-implants" },
-  { label: "Single Visit Crowns", href: "/services/single-visit-crowns" },
   { label: "Same Day Smile", href: "/services/same-day-smile" },
+  { label: "Orthodontics", href: "/services/orthodontics" },
 ];
 
 const navItems = [

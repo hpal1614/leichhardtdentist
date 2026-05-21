@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Instagram, Facebook, Phone, Mail, MapPin, Twitter } from "lucide-react";
-import logo from "../assets/logo.svg";
+import logoBadge from "../assets/logo-badge.jpg";
 import { usePractice } from "../lib/usePractice";
 
 const TikTokIcon = (props: React.SVGProps<SVGSVGElement>) => (
@@ -12,8 +12,8 @@ const TikTokIcon = (props: React.SVGProps<SVGSVGElement>) => (
 const services = [
   { label: "General Dentistry", to: "/services/general-dentistry" },
   { label: "Dental Implants", to: "/services/dental-implants" },
-  { label: "Single Visit Crowns", to: "/services/single-visit-crowns" },
   { label: "Same Day Smile", to: "/services/same-day-smile" },
+  { label: "Orthodontics", to: "/services/orthodontics" },
 ];
 
 const practiceLinks = [
@@ -33,9 +33,9 @@ export function Footer() {
           <div className="col-span-2 lg:col-span-4">
             <Link to="/" className="inline-block mb-6" aria-label="Leichhardt Dental — home">
               <img
-                src={logo}
+                src={logoBadge}
                 alt="Leichhardt Dental Centre"
-                className="h-14 w-auto brightness-200"
+                className="h-16 w-16 rounded-full object-cover"
               />
             </Link>
             <p className="text-white/50 leading-relaxed max-w-sm text-sm lg:text-base mb-6 font-light">

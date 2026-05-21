@@ -35,7 +35,7 @@ export function NotFound() {
               <span className="text-primary font-bold tracking-[0.3em] uppercase text-xs mb-6 block">
                 404 · Page not found
               </span>
-              <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-heading font-bold text-foreground leading-[0.95] tracking-tight mb-8">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-heading font-bold text-foreground leading-[0.95] tracking-tight mb-8">
                 Couldn't find that one.
               </h1>
               <p className="text-lg lg:text-xl text-muted-foreground leading-relaxed max-w-2xl mb-10 font-light">

@@ -30,7 +30,7 @@ export function ServicePageHero({ pillarNumber, title, tagline, intro, image }: 
           <span className="text-foreground">{title}</span>
         </motion.nav>
 
-        <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-end">
+        <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
           {/* Copy */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -41,10 +41,10 @@ export function ServicePageHero({ pillarNumber, title, tagline, intro, image }: 
             <span className="text-primary font-bold tracking-[0.3em] uppercase text-xs mb-6 block">
               Pillar {pillarNumber} of 04
             </span>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-heading font-bold text-foreground leading-[0.95] tracking-tight mb-8">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-heading font-bold text-foreground leading-[0.98] tracking-tight mb-8">
               {title}
             </h1>
-            <p className="text-xl lg:text-2xl text-primary font-light italic mb-6">
+            <p className="text-lg lg:text-xl text-primary font-light italic mb-6">
               {tagline}
             </p>
             <p className="text-base lg:text-lg text-muted-foreground leading-relaxed max-w-2xl">

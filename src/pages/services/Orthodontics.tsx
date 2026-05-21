@@ -10,19 +10,19 @@ import { ServiceCTA } from "../../components/service/ServiceCTA";
 import { useSanityDoc } from "../../lib/useSanityDoc";
 import { SERVICE_PILLAR_BY_SLUG_QUERY } from "../../lib/queries";
 import { mergePillar, type PillarSanity } from "../../lib/pillar";
-import { SINGLE_VISIT_CROWNS } from "../../lib/pillar-fallbacks";
+import { ORTHODONTICS } from "../../lib/pillar-fallbacks";
 
-export function SingleVisitCrowns() {
+export function Orthodontics() {
   const remote = useSanityDoc<PillarSanity>(SERVICE_PILLAR_BY_SLUG_QUERY, {
-    slug: SINGLE_VISIT_CROWNS.slug,
+    slug: ORTHODONTICS.slug,
   });
-  const data = mergePillar(remote, SINGLE_VISIT_CROWNS);
+  const data = mergePillar(remote, ORTHODONTICS);
 
   return (
     <>
       <Seo
-        title="CEREC Single Visit Crowns — Leichhardt Dental"
-        description="Custom ceramic crowns designed, milled, and bonded in a single appointment using CEREC technology. No impressions, no temporary, no second visit."
+        title="Orthodontics — Invisalign & Early Intervention · Leichhardt Dental"
+        description="Orthodontic care with visiting clinician Dr. Sagar (Jimmy) Rao. Invisalign clear aligners for adults, early interventive orthodontics for children, and airway-focused care."
         path={`/services/${data.slug}`}
       />
       <FAQStructuredData faqs={data.faqs} />
@@ -33,13 +33,16 @@ export function SingleVisitCrowns() {
         intro={data.intro}
         image={data.image}
       />
-      <SubTreatmentGrid eyebrow="What CEREC covers" title="Three restorations, one appointment." items={data.subTreatments} pillarSlug={data.slug} fallbackImage={data.image} />
-      <ProcessSteps eyebrow="The process" title="Five steps, one visit." steps={data.processSteps} />
-      {data.secondaryProcessSteps && data.secondaryProcessTitle && (
-        <ProcessSteps title={data.secondaryProcessTitle} steps={data.secondaryProcessSteps} />
-      )}
+      <SubTreatmentGrid
+        eyebrow="Three paths"
+        title="From clear aligners to airway-focused care."
+        items={data.subTreatments}
+        pillarSlug={data.slug}
+        fallbackImage={data.image}
+      />
+      <ProcessSteps eyebrow="Your journey" title="How orthodontic care runs." steps={data.processSteps} />
       <RisksSection content={data.risksContent} />
-      <ServiceFAQ title="Common questions about CEREC." faqs={data.faqs} />
+      <ServiceFAQ title="Common questions about orthodontics." faqs={data.faqs} />
       <ServiceCTA headline={data.ctaHeadline} subhead={data.ctaSubhead} />
     </>
   );

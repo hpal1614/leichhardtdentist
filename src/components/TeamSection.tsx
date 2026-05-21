@@ -1,4 +1,5 @@
 import { motion } from "motion/react";
+import { Link } from "react-router-dom";
 import { PortableText } from "@portabletext/react";
 import { ArrowUpRight } from "lucide-react";
 
@@ -27,7 +28,7 @@ export function TeamSection() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 1 }}
-            className="relative h-[80vh] lg:h-screen max-h-[1000px] rounded-3xl overflow-hidden group"
+            className="relative h-[60vh] md:h-[80vh] lg:h-screen max-h-[1000px] rounded-3xl overflow-hidden group"
           >
             <ClinicianPortrait
               src={principal.portrait}
@@ -37,7 +38,7 @@ export function TeamSection() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 pointer-events-none" />
             <div className="absolute bottom-8 lg:bottom-12 left-8 lg:left-12 right-8 lg:right-12">
               <p className="text-white/80 text-xs lg:text-sm uppercase tracking-[0.3em] mb-3">The Clinician</p>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-heading font-bold text-white mb-4">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-heading font-bold text-white mb-4">
                 Dr. {firstName}.
               </h2>
             </div>
@@ -82,7 +83,7 @@ export function TeamSection() {
 
               <div className="flex flex-col sm:flex-row gap-8">
                 <div>
-                  <span className="block text-2xl lg:text-3xl font-heading font-bold text-foreground">20+</span>
+                  <span className="block text-2xl lg:text-3xl font-heading font-bold text-foreground">25</span>
                   <span className="text-xs lg:text-sm text-muted-foreground uppercase tracking-wider">Years Practising</span>
                 </div>
                 <div>
@@ -91,13 +92,19 @@ export function TeamSection() {
                 </div>
               </div>
 
-              <div className="mt-8">
+              <div className="mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <a
                   {...BOOKING_LINK_PROPS}
+                  className="inline-flex items-center justify-center rounded-full px-6 py-3 lg:px-8 lg:py-4 text-sm lg:text-base bg-primary text-white hover:bg-primary/90 transition-all duration-300 font-semibold uppercase tracking-widest shadow-[0_20px_40px_-12px_rgba(232,106,44,0.5)]"
+                >
+                  Book an appointment <ArrowUpRight className="ml-2 w-4 h-4" />
+                </a>
+                <Link
+                  to="/about#dr-nick"
                   className="inline-flex items-center justify-center rounded-full px-6 py-3 lg:px-8 lg:py-4 text-sm lg:text-base border border-foreground/20 bg-background text-foreground hover:bg-foreground hover:text-background transition-all duration-300 font-semibold uppercase tracking-widest"
                 >
-                  Book with Dr. {firstName} <ArrowUpRight className="ml-2 w-4 h-4" />
-                </a>
+                  Know more <ArrowUpRight className="ml-2 w-4 h-4" />
+                </Link>
               </div>
             </div>
           </motion.div>

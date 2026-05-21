@@ -2,6 +2,7 @@ import { Outlet, ScrollRestoration } from "react-router-dom";
 import { Navbar } from "../Navbar";
 import { Footer } from "../Footer";
 import { StickyBookButton } from "../StickyBookButton";
+import { ScrollToHash } from "./ScrollToHash";
 
 export function SiteLayout() {
   return (
@@ -12,7 +13,15 @@ export function SiteLayout() {
       </main>
       <Footer />
       <StickyBookButton />
-      <ScrollRestoration />
+      <ScrollRestoration
+        getKey={(location) => {
+          // Treat each unique pathname+hash as its own scroll position
+          // so navigating to /about#dr-jimmy doesn't get clobbered by the
+          // default top-of-page restoration.
+          return location.pathname + location.hash;
+        }}
+      />
+      <ScrollToHash />
     </div>
   );
 }

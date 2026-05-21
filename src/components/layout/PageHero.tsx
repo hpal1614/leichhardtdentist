@@ -47,7 +47,7 @@ export function PageHero({ eyebrow, title, intro, crumbs }: Props) {
           <span className="text-primary font-bold tracking-[0.3em] uppercase text-xs mb-6 block">
             {eyebrow}
           </span>
-          <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-heading font-bold text-foreground leading-[0.95] tracking-tight mb-8">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-heading font-bold text-foreground leading-[0.95] tracking-tight mb-8">
             {title}
           </h1>
           {intro && (

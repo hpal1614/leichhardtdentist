@@ -71,3 +71,16 @@ export function initialsFor(name: string): string {
   if (parts.length === 1) return parts[0][0]!.toUpperCase();
   return (parts[0][0]! + parts[parts.length - 1]![0]!).toUpperCase();
 }
+
+/**
+ * Returns a stable URL anchor for a clinician (e.g. "dr-nick", "dr-jimmy").
+ * Prefers a parenthetical nickname when present — "Dr. Sagar (Jimmy) Rao" → "dr-jimmy".
+ */
+export function clinicianAnchor(name: string): string {
+  const stripped = name.replace(/^Dr\.?\s+/i, "").trim();
+  const nicknameMatch = stripped.match(/\(([^)]+)\)/);
+  const firstName = nicknameMatch
+    ? nicknameMatch[1]!
+    : stripped.split(/\s+/)[0]!;
+  return `dr-${firstName.toLowerCase()}`;
+}

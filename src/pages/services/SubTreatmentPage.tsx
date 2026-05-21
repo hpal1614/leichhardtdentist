@@ -9,6 +9,8 @@ import { ProcessSteps } from "../../components/service/ProcessSteps";
 import { RisksSection } from "../../components/service/RisksSection";
 import { ServiceFAQ } from "../../components/service/ServiceFAQ";
 import { ServiceCTA } from "../../components/service/ServiceCTA";
+import { PricingCards } from "../../components/service/PricingCards";
+import { ImageWithFallback } from "../../components/figma/ImageWithFallback";
 
 import { useSanityDoc } from "../../lib/useSanityDoc";
 import { SERVICE_PILLAR_BY_SLUG_QUERY } from "../../lib/queries";
@@ -87,7 +89,7 @@ export function SubTreatmentPage() {
               <span className="text-primary font-bold tracking-[0.3em] uppercase text-xs mb-6 block">
                 {pillar.title.replace(/\.$/, "")}
               </span>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-heading font-bold text-foreground leading-[0.98] tracking-tight mb-8">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-heading font-bold text-foreground leading-[0.98] tracking-tight mb-8">
                 {sub.name}.
               </h1>
               <p className="text-base lg:text-lg text-muted-foreground leading-relaxed max-w-2xl mb-8">
@@ -155,6 +157,57 @@ export function SubTreatmentPage() {
             </div>
           </div>
         </section>
+      )}
+
+      {/* Photo gallery (optional) */}
+      {sub.gallery && sub.gallery.length > 0 && (
+        <section className="py-20 lg:py-28 bg-secondary/30">
+          <div className="max-w-[1800px] mx-auto px-6 lg:px-12">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.7 }}
+              className="max-w-2xl mb-12 lg:mb-16"
+            >
+              <span className="text-primary font-bold tracking-[0.25em] uppercase text-xs mb-5 block">
+                Gallery
+              </span>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-foreground leading-[1.02]">
+                A closer look.
+              </h2>
+            </motion.div>
+
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
+              {sub.gallery.map((src, i) => (
+                <motion.div
+                  key={src}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-60px" }}
+                  transition={{ duration: 0.6, delay: i * 0.06 }}
+                  className="aspect-square rounded-2xl overflow-hidden bg-foreground/5 border border-foreground/[0.04]"
+                >
+                  <ImageWithFallback
+                    src={src}
+                    alt={`${sub.name} — image ${i + 1}`}
+                    className="w-full h-full object-cover"
+                  />
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Pricing (optional, card-based — matches the All-on-4 design) */}
+      {sub.pricing && sub.pricing.length > 0 && (
+        <PricingCards
+          eyebrow="Pricing"
+          title="Transparent pricing."
+          tiers={sub.pricing}
+          footnote="All prices are in Australian dollars and are a guide — your exact fee depends on the size and complexity of your case and is confirmed before treatment."
+        />
       )}
 
       {/* Process steps (sub-specific if present, else pillar) */}

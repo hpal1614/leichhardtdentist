@@ -1,8 +1,13 @@
 
+import { useRef, useState } from "react";
 import { motion } from "motion/react";
+import { Play, Pause, Maximize2 } from "lucide-react";
+import { Button } from "./ui/button";
+import { VideoLightbox } from "./VideoLightbox";
 import clinic1 from "../assets/clinic-1.jpg";
-import clinic2 from "../assets/clinic-2.webp";
-import clinic3 from "../assets/clinic-3.webp";
+
+const AMBIENT_VIDEO =
+    "https://res.cloudinary.com/dzydzte9h/video/upload/q_auto,f_auto/dental-website/home/hero/ambient.mov";
 
 const features = [
     { label: "Natural Light", description: "Floor-to-ceiling windows" },
@@ -12,10 +17,26 @@ const features = [
 ];
 
 export function ClinicExperience() {
+    const videoRef = useRef<HTMLVideoElement>(null);
+    const [isPlaying, setIsPlaying] = useState(true);
+    const [lightboxOpen, setLightboxOpen] = useState(false);
+
+    const togglePlay = () => {
+        const video = videoRef.current;
+        if (!video) return;
+        if (video.paused) {
+            void video.play();
+            setIsPlaying(true);
+        } else {
+            video.pause();
+            setIsPlaying(false);
+        }
+    };
+
     return (
         <section className="relative overflow-hidden bg-[#1a1a1a]">
             {/* Hero Image with Overlay */}
-            <div className="relative h-[70vh] lg:h-[85vh] overflow-hidden">
+            <div className="relative h-[55vh] md:h-[70vh] lg:h-[85vh] overflow-hidden">
                 <motion.img
                     initial={{ scale: 1.1 }}
                     whileInView={{ scale: 1 }}
@@ -37,7 +58,7 @@ export function ClinicExperience() {
                             transition={{ duration: 0.8 }}
                         >
                             <span className="text-primary font-bold tracking-[0.2em] uppercase text-sm mb-3 block">Our Space</span>
-                            <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-heading font-bold text-white leading-none">
+                            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-heading font-bold text-white leading-none">
                                 A calm,<br />
                                 <span className="text-white/40">considered space.</span>
                             </h2>
@@ -97,66 +118,53 @@ export function ClinicExperience() {
                         </motion.div>
                     </div>
 
-                    {/* Bento Grid Gallery */}
-                    <div className="mt-12 lg:mt-20 grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6">
-                        {/* Large Left Image - Full Height */}
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.6 }}
-                            className="relative aspect-[4/3] lg:aspect-auto lg:h-full rounded-3xl overflow-hidden group"
-                        >
-                            <img
-                                src={clinic2}
-                                alt="Reception"
-                                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                            <div className="absolute bottom-6 left-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                                <span className="text-white text-base lg:text-lg font-medium">Reception & Waiting</span>
-                            </div>
-                        </motion.div>
+                    {/* Single ambient video — replaces previous 3-card bento gallery */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8 }}
+                        className="group mt-12 lg:mt-20 relative aspect-video rounded-3xl overflow-hidden shadow-2xl bg-black"
+                    >
+                        <video
+                            ref={videoRef}
+                            src={AMBIENT_VIDEO}
+                            className="w-full h-full object-cover"
+                            autoPlay
+                            muted
+                            loop
+                            playsInline
+                            preload="metadata"
+                            onPlay={() => setIsPlaying(true)}
+                            onPause={() => setIsPlaying(false)}
+                        />
 
-                        {/* Right Stack - Vertical */}
-                        <div className="grid grid-cols-1 gap-4 lg:gap-6">
-                            <motion.div
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.6, delay: 0.1 }}
-                                className="relative aspect-[16/9] rounded-3xl overflow-hidden group"
+                        {/* Controls cluster — bottom right, same control style as the Stories of Transformation cards */}
+                        <div className="absolute bottom-4 right-4 flex items-center gap-2 opacity-0 group-hover:opacity-100 focus-within:opacity-100 transition-opacity duration-300 z-20">
+                            <Button
+                                onClick={togglePlay}
+                                variant="ghost"
+                                size="icon"
+                                aria-label={isPlaying ? "Pause video" : "Play video"}
+                                className="w-10 h-10 rounded-full bg-black/40 hover:bg-black/60 backdrop-blur-md text-white border border-white/10"
                             >
-                                <img
-                                    src={clinic3}
-                                    alt="Lounge"
-                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                                <div className="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                                    <span className="text-white text-sm lg:text-base font-medium">Patient Lounge</span>
-                                </div>
-                            </motion.div>
-
-                            <motion.div
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.6, delay: 0.2 }}
-                                className="relative aspect-[16/9] rounded-3xl overflow-hidden group"
+                                {isPlaying ? (
+                                    <Pause className="w-5 h-5 fill-current" />
+                                ) : (
+                                    <Play className="w-5 h-5 ml-0.5 fill-current" />
+                                )}
+                            </Button>
+                            <Button
+                                onClick={() => setLightboxOpen(true)}
+                                variant="ghost"
+                                size="icon"
+                                aria-label="Open video fullscreen"
+                                className="w-10 h-10 rounded-full bg-black/40 hover:bg-black/60 backdrop-blur-md text-white border border-white/10"
                             >
-                                <img
-                                    src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800&q=80"
-                                    alt="Treatment Room"
-                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                                <div className="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                                    <span className="text-white text-sm lg:text-base font-medium">Treatment Suite</span>
-                                </div>
-                            </motion.div>
+                                <Maximize2 className="w-5 h-5" />
+                            </Button>
                         </div>
-                    </div>
+                    </motion.div>
 
                     {/* Bottom Quote */}
                     <motion.div
@@ -172,6 +180,12 @@ export function ClinicExperience() {
                     </motion.div>
                 </div>
             </div>
+
+            {/* Fullscreen overlay opened by the maximize button */}
+            <VideoLightbox
+                videoUrl={lightboxOpen ? AMBIENT_VIDEO : null}
+                onClose={() => setLightboxOpen(false)}
+            />
         </section>
     );
 }

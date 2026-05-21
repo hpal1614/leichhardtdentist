@@ -40,9 +40,20 @@ const SLUG = "all-on-4-implants";
 // narrative video is on the homepage's Stories of Transformation section instead.
 const HERO_VIDEO =
   "https://res.cloudinary.com/dzydzte9h/video/upload/dental-website/all-on-4/before-and-after/case-1.mp4";
-// Cloudinary extracts a poster frame at 0.33s — Nick's chosen thumbnail moment.
+// Poster: an illustrative older-adult portrait (not a patient, not Dr. Nick) —
+// warm and demographic-appropriate, and lower-risk than a patient "after" as
+// the headline image. Capped at w_1400 since the source is large.
 const HERO_VIDEO_POSTER =
-  "https://res.cloudinary.com/dzydzte9h/video/upload/so_0.33/dental-website/all-on-4/before-and-after/case-1.jpg";
+  "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto,w_1400/dental-website/shared/lifestyle/senior-portrait-smile.jpg";
+
+// Real patient before/after pairs — consented, published with the disclaimer
+// below. No patient quotes (would make them testimonials under s.133(1)(c)).
+const BA_BASE =
+  "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/all-on-4/before-and-after";
+const beforeAfterCases = [
+  { before: `${BA_BASE}/case-a-before.jpg`, after: `${BA_BASE}/case-a-after.jpg` },
+  { before: `${BA_BASE}/case-b-before.jpg`, after: `${BA_BASE}/case-b-after.jpg` },
+];
 
 const journeySteps = [
   {
@@ -190,7 +201,7 @@ const faqs = [
   },
   {
     q: "What is Dr. Nick's training in implant dentistry?",
-    a: "Dr. Nick Kulkarni holds a Graduate Diploma in Clinical Dentistry (Oral Implants) from the University of Sydney, a Fellowship from the International Congress of Oral Implantologists, and additional training at the Misch Implant Institute (USA) and Walpole Institute (London). He has over 20 years of clinical experience and trains other dentists in implant protocols through First Implant.",
+    a: "Dr. Nick Kulkarni holds a Graduate Diploma in Clinical Dentistry (Oral Implants) from the University of Sydney, a Fellowship from the International Congress of Oral Implantologists, and additional training at the Misch Implant Institute (USA) and Walpole Institute (London). He has 25 years of clinical experience and trains other dentists in implant protocols through First Implant.",
   },
 ];
 
@@ -240,7 +251,7 @@ export function AllOnFourPage() {
               <span className="text-primary font-bold tracking-[0.3em] uppercase text-xs mb-6 block">
                 Full-Arch Implant Restoration
               </span>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-heading font-bold text-foreground leading-[0.98] tracking-tight mb-8">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-heading font-bold text-foreground leading-[0.98] tracking-tight mb-8">
                 All-on-4<br />Implants.
               </h1>
               <p className="text-lg lg:text-xl text-primary font-light italic mb-6">
@@ -279,7 +290,7 @@ export function AllOnFourPage() {
                 videoUrl={HERO_VIDEO}
                 videoPoster={HERO_VIDEO_POSTER}
                 fallbackImage={clinic2}
-                alt="All-on-4 close-up before and after"
+                alt="All-on-4 full-arch implant treatment"
                 lightboxSidebar={{
                   title: "Real clinical cases",
                   body: (
@@ -334,13 +345,13 @@ export function AllOnFourPage() {
               <span className="text-primary font-bold tracking-[0.3em] uppercase text-xs mb-5 block">
                 Your dentist
               </span>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-foreground leading-[1.02] mb-8">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-foreground leading-[1.02] mb-8">
                 Dr. Nick Kulkarni.
               </h2>
 
               <div className="space-y-4 text-base lg:text-lg text-muted-foreground leading-relaxed font-light mb-10">
                 <p>
-                  Dr. Nick has 20+ years of clinical experience across four
+                  Dr. Nick has 25 years of clinical experience across four
                   continents. He holds a Graduate Diploma in Clinical Dentistry
                   (Oral Implants) from the University of Sydney and a Fellowship
                   from the International Congress of Oral Implantologists.
@@ -373,6 +384,77 @@ export function AllOnFourPage() {
         </div>
       </section>
 
+      {/* Real patient results — before/after (consented, contextualised, disclaimed, no quotes) */}
+      <section className="py-20 lg:py-28 bg-secondary/30">
+        <div className="max-w-[1800px] mx-auto px-6 lg:px-12">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.7 }}
+            className="max-w-2xl mb-12 lg:mb-16"
+          >
+            <span className="text-primary font-bold tracking-[0.25em] uppercase text-xs mb-5 block">
+              Real patient results
+            </span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-foreground leading-[1.02] mb-6">
+              Before &amp; after.
+            </h2>
+            <p className="text-base lg:text-lg text-muted-foreground font-light leading-relaxed">
+              Real patients treated at Leichhardt Dental Centre with full-arch
+              implant treatment — restoring the ability to eat, speak, and smile.
+            </p>
+          </motion.div>
+
+          <div className="space-y-5 lg:space-y-8">
+            {beforeAfterCases.map((c, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ duration: 0.6, delay: i * 0.08 }}
+                className="grid sm:grid-cols-2 gap-4 lg:gap-6"
+              >
+                <figure className="relative rounded-[2rem] overflow-hidden bg-foreground/5">
+                  <span className="absolute top-4 left-4 z-10 px-3 py-1 rounded-full bg-black/60 backdrop-blur-sm text-[10px] uppercase tracking-[0.25em] font-semibold text-white">
+                    Before
+                  </span>
+                  <div className="aspect-[4/5] overflow-hidden">
+                    <ImageWithFallback
+                      src={c.before}
+                      alt={`Before full-arch implant treatment — case ${i + 1}`}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </figure>
+                <figure className="relative rounded-[2rem] overflow-hidden bg-foreground/5">
+                  <span className="absolute top-4 left-4 z-10 px-3 py-1 rounded-full bg-primary text-[10px] uppercase tracking-[0.25em] font-semibold text-white">
+                    After
+                  </span>
+                  <div className="aspect-[4/5] overflow-hidden">
+                    <ImageWithFallback
+                      src={c.after}
+                      alt={`After full-arch implant treatment — case ${i + 1}`}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </figure>
+              </motion.div>
+            ))}
+          </div>
+
+          <p className="mt-8 text-xs lg:text-sm text-muted-foreground/80 italic max-w-3xl leading-relaxed">
+            Individual results vary — this is not a guarantee of outcome. These
+            are real, unaltered photographs of patients treated at this practice
+            with full-arch implant treatment, published with their consent. What
+            is achievable in your own case can only be determined at a
+            consultation, and it is wise to seek a second opinion before any
+            significant treatment.
+          </p>
+        </div>
+      </section>
+
       {/* Technology + care */}
       <section className="py-20 lg:py-28 bg-secondary/30">
         <div className="max-w-[1800px] mx-auto px-6 lg:px-12">
@@ -386,7 +468,7 @@ export function AllOnFourPage() {
             <span className="text-primary font-bold tracking-[0.25em] uppercase text-xs mb-5 block">
               The Leichhardt standard
             </span>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-foreground leading-[1.02]">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-foreground leading-[1.02]">
               Technology in service of care.
             </h2>
           </motion.div>
@@ -438,7 +520,7 @@ export function AllOnFourPage() {
             <span className="text-primary font-bold tracking-[0.25em] uppercase text-xs mb-5 block">
               Your treatment roadmap
             </span>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-foreground leading-[1.02] mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-foreground leading-[1.02] mb-6">
               Two phases. Transparent pricing.
             </h2>
             <p className="text-base lg:text-lg text-muted-foreground font-light leading-relaxed">
@@ -598,7 +680,7 @@ export function AllOnFourPage() {
             <span className="text-primary font-bold tracking-[0.25em] uppercase text-xs mb-5 block">
               Once you've booked
             </span>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-foreground leading-[1.02] mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-foreground leading-[1.02] mb-6">
               Your surgery day<br />preparation checklist.
             </h2>
             <p className="text-base lg:text-lg text-muted-foreground font-light leading-relaxed">

@@ -22,7 +22,7 @@ export function PhilosophySection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.9 }}
-          className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-white mb-8 lg:mb-10 leading-tight"
+          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-white mb-8 lg:mb-10 leading-tight"
           style={{ fontFamily: "'Crimson Pro', serif", fontWeight: "300" }}
         >
           Gentle. Caring.

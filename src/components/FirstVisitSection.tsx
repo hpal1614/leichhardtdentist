@@ -37,7 +37,7 @@ export function FirstVisitSection() {
           className="text-center mb-16 md:mb-20"
         >
           <h2
-            className="text-4xl md:text-5xl lg:text-6xl mb-4"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-4"
             style={{ fontFamily: "'Crimson Pro', serif", fontWeight: "300" }}
           >
             No surprises

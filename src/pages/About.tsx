@@ -9,10 +9,10 @@ import { MapPin, GraduationCap, Globe, Users } from "lucide-react";
 
 import { useSanityDoc } from "../lib/useSanityDoc";
 import { CLINICIANS_QUERY } from "../lib/queries";
-import { mergeClinicians, type ClinicianSanity } from "../lib/clinician";
+import { clinicianAnchor, mergeClinicians, type ClinicianSanity } from "../lib/clinician";
 import { ALL_CLINICIANS, NICK } from "../lib/clinician-fallbacks";
 
-import clinic1 from "../assets/clinic-1.jpg";
+import teamBanner from "../assets/team-banner.jpg";
 
 const trainingStops = [
   { location: "University of Sydney", detail: "BDS, Graduate Diploma (Clinical Dentistry — Oral Implants)" },
@@ -66,7 +66,7 @@ export function About() {
     <>
       <Seo
         title="About Dr. Nick Kulkarni — Leichhardt Dental Centre"
-        description="Dr. Nick Kulkarni has been practising dentistry for 20+ years, with training at the University of Sydney, Misch Institute (Florida), and Walpole Institute (London). Fellow, International Congress of Oral Implantologists."
+        description="Dr. Nick Kulkarni has been practising dentistry for 25 years, with training at the University of Sydney, Misch Institute (Florida), and Walpole Institute (London). Fellow, International Congress of Oral Implantologists."
         path="/about"
       />
       <PageHero
@@ -100,7 +100,7 @@ export function About() {
               <span className="text-primary font-bold tracking-[0.3em] uppercase text-xs mb-5 block">
                 The Principal
               </span>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-foreground leading-[1.02] mb-8">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-foreground leading-[1.02] mb-8">
                 {principal.name}.
               </h2>
 
@@ -183,7 +183,7 @@ export function About() {
             <span className="text-primary font-bold tracking-[0.25em] uppercase text-xs mb-5 block">
               What to expect
             </span>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-foreground leading-[1.02]">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-foreground leading-[1.02]">
               Four things you'll find here.
             </h2>
           </motion.div>
@@ -216,80 +216,121 @@ export function About() {
         </div>
       </section>
 
-      {/* Team */}
-      <section id="team" className="py-20 lg:py-28 bg-background scroll-mt-24">
-        <div className="max-w-[1800px] mx-auto px-6 lg:px-12">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.7 }}
-            className="grid lg:grid-cols-12 gap-10 mb-14 lg:mb-20"
-          >
-            <div className="lg:col-span-7">
-              <span className="text-primary font-bold tracking-[0.25em] uppercase text-xs mb-5 block">
-                The team
-              </span>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-foreground leading-[1.02] mb-6">
-                Led by Dr. Nick.<br />Supported by experienced dentists.
-              </h2>
-            </div>
-            <div className="lg:col-span-5 lg:pt-4">
-              <p className="text-base lg:text-lg text-muted-foreground font-light leading-relaxed">
-                You'll usually see Dr. Nick. For specific treatments — prosthetic
-                rehabilitation, endodontics, emergencies — you may be seen by a
-                colleague with particular expertise in that area. Every decision is
-                still discussed with you first.
-              </p>
-            </div>
-          </motion.div>
+      {/* Team — banner with team photo + overlay text */}
+      <section
+        id="team"
+        className="relative scroll-mt-24 overflow-hidden bg-[#1a1a1a]"
+      >
+        {/* Aspect ratio stays close to the photo's natural 3:2 on every
+            breakpoint so faces never crop. `object-[center_25%]` biases any
+            residual crop toward the lower half (floor/scrubs) and away from
+            the heads. */}
+        <div className="relative w-full aspect-[3/2] lg:aspect-[5/3] xl:aspect-[16/9] max-h-[820px]">
+          <ImageWithFallback
+            src={teamBanner}
+            alt="The Leichhardt Dental team"
+            className="absolute inset-0 w-full h-full object-cover object-[center_25%]"
+          />
+          {/* Bottom-weighted gradient for legibility */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-            {team.map((member, i) => (
+          <div className="absolute inset-x-0 bottom-0">
+            <div className="max-w-[1800px] mx-auto px-6 lg:px-12 pb-6 sm:pb-10 lg:pb-16">
               <motion.div
-                key={member._id ?? member.name}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.6, delay: i * 0.08 }}
-                className="p-8 lg:p-10 rounded-3xl bg-secondary/40 border border-foreground/[0.04]"
+                viewport={{ once: true, margin: "-80px" }}
+                transition={{ duration: 0.7 }}
+                className="max-w-3xl"
               >
-                <h3 className="text-2xl lg:text-3xl font-heading font-bold text-foreground mb-2 leading-tight">
-                  {member.name}
-                </h3>
-                <p className="text-sm text-primary font-semibold tracking-wide uppercase mb-5">
-                  {member.role}
-                </p>
-                <p className="text-sm text-muted-foreground mb-5 font-mono">
-                  {member.qualifications}
-                </p>
-                <p className="text-base text-foreground/80 leading-relaxed font-light">
-                  {member.focus}
-                </p>
+                <span className="text-primary font-bold tracking-[0.25em] uppercase text-[10px] lg:text-xs mb-2 lg:mb-5 block">
+                  The team
+                </span>
+                <h2 className="text-xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-heading font-bold text-white leading-[1.05]">
+                  Led by Dr. Nick.<br />Supported by experienced dentists.
+                </h2>
               </motion.div>
-            ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Practice photo strip */}
-      <section className="py-16 lg:py-24 bg-secondary/30">
-        <div className="max-w-[1800px] mx-auto px-6 lg:px-12">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.96 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 1 }}
-            className="aspect-[21/9] rounded-[2rem] overflow-hidden shadow-2xl"
+      {/* Each non-principal clinician gets a full editorial section */}
+      {team.filter((m) => !m.isPrincipal).map((member, i) => {
+        const imageRight = i % 2 === 0; // alternate: 1st right, 2nd left, 3rd right
+        const sectionBg = i % 2 === 0 ? "bg-background" : "bg-secondary/30";
+        return (
+          <section
+            key={member._id ?? member.name}
+            id={clinicianAnchor(member.name)}
+            className={`py-16 lg:py-24 scroll-mt-28 ${sectionBg}`}
           >
-            <ImageWithFallback
-              src={clinic1}
-              alt="The practice"
-              className="w-full h-full object-cover"
-            />
-          </motion.div>
-        </div>
-      </section>
+            <div className="max-w-[1800px] mx-auto px-6 lg:px-12">
+              <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+                {/* Portrait */}
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.96 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true, margin: "-80px" }}
+                  transition={{ duration: 0.9 }}
+                  className={`lg:col-span-5 aspect-[4/5] rounded-[2rem] overflow-hidden shadow-xl ${
+                    imageRight ? "lg:order-2" : "lg:order-1"
+                  }`}
+                >
+                  <ClinicianPortrait src={member.portrait} name={member.name} />
+                </motion.div>
+
+                {/* Info */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-80px" }}
+                  transition={{ duration: 0.8, delay: 0.1 }}
+                  className={`lg:col-span-7 ${imageRight ? "lg:order-1" : "lg:order-2"}`}
+                >
+                  <span className="text-primary font-bold tracking-[0.3em] uppercase text-xs mb-5 block">
+                    {member.role}
+                  </span>
+                  <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-foreground leading-[1.02] mb-4">
+                    {member.name}.
+                  </h2>
+                  <p className="text-sm text-muted-foreground font-mono mb-8">
+                    {member.qualifications}
+                  </p>
+
+                  <div className="space-y-4 text-base lg:text-lg text-foreground/80 leading-relaxed font-light mb-8">
+                    {member.bio ? (
+                      <PortableText value={member.bio as never} />
+                    ) : (
+                      member.bioFallback.map((p, idx) => <p key={idx}>{p}</p>)
+                    )}
+                  </div>
+
+                  {member.quote && (
+                    <blockquote className="border-l-4 border-primary pl-5 py-1 mb-8">
+                      <p className="text-lg lg:text-xl font-heading italic text-foreground leading-snug mb-2">
+                        "{member.quote}"
+                      </p>
+                      <cite className="text-sm text-muted-foreground not-italic">
+                        — {member.name}
+                      </cite>
+                    </blockquote>
+                  )}
+
+                  <div className="pt-6 border-t border-foreground/10">
+                    <h3 className="text-xs uppercase tracking-[0.25em] text-primary font-bold mb-3">
+                      Clinical focus
+                    </h3>
+                    <p className="text-base lg:text-lg text-foreground/80 leading-relaxed font-light">
+                      {member.focus}
+                    </p>
+                  </div>
+                </motion.div>
+              </div>
+            </div>
+          </section>
+        );
+      })}
 
       <ServiceCTA
         headline="Come and meet us."

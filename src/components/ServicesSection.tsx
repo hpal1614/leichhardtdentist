@@ -30,7 +30,7 @@ export function ServicesSection() {
             <span className="text-primary font-bold tracking-[0.25em] uppercase text-xs mb-5 block">
               Comprehensive Care
             </span>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-heading font-bold text-foreground leading-[1.02] mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-heading font-bold text-foreground leading-[1.02] mb-6">
               Four ways we<br />care for your smile.
             </h2>
             <p className="text-base lg:text-lg text-muted-foreground font-light leading-relaxed">
@@ -101,7 +101,7 @@ export function ServicesSection() {
                 <p className="text-white/70 text-[11px] lg:text-xs uppercase tracking-[0.25em] mb-3 font-medium">
                   {pillar.tagline}
                 </p>
-                <h3 className="font-heading font-bold text-white text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-[0.95] mb-4 lg:mb-5">
+                <h3 className="font-heading font-bold text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-[0.95] mb-4 lg:mb-5">
                   {pillar.title.replace(/\.$/, "")}
                 </h3>
 

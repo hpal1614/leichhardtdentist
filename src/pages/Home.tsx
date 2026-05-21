@@ -19,7 +19,7 @@ export function Home() {
     <>
       <Seo
         title="Leichhardt Dental Centre — General & Implant Dentistry, Inner West Sydney"
-        description="General and implant dentistry in Leichhardt, led by Dr. Nick Kulkarni. Evidence-based care, calm approach, 20+ years of practice in Sydney's Inner West."
+        description="General and implant dentistry in Leichhardt, led by Dr. Nick Kulkarni. Evidence-based care, calm approach, 25 years of practice in Sydney's Inner West."
         path="/"
       />
       <DentistStructuredData />

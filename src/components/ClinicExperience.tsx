@@ -124,7 +124,7 @@ export function ClinicExperience() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
-                        className="group mt-12 lg:mt-20 relative aspect-video rounded-3xl overflow-hidden shadow-2xl bg-black"
+                        className="group mt-12 lg:mt-20 relative aspect-[4/5] md:aspect-video rounded-3xl overflow-hidden shadow-2xl bg-black"
                     >
                         <video
                             ref={videoRef}

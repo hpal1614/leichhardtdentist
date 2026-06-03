@@ -10,6 +10,7 @@ export type SubTreatment = {
   videoPoster?: string;
   imageUrl?: string;
   gallery?: string[];
+  beforeAfter?: BeforeAfterPair[];
   pricing?: PricingTier[];
   whatToExpect?: string[];
   processSteps?: ProcessStep[];
@@ -25,6 +26,10 @@ export type PricingTier = {
   unit?: string;
   description?: string;
   items?: string[];
+};
+export type BeforeAfterPair = {
+  before: string;
+  after: string;
 };
 
 /** Shape consumed by page components. Images already resolved to URL strings. */
@@ -92,6 +97,7 @@ function cleanTreatments(
       videoPoster: i.videoPoster,
       imageUrl: i.imageUrl,
       gallery: i.gallery,
+      beforeAfter: cleanBeforeAfter(i.beforeAfter) ?? undefined,
       pricing: cleanPricing(i.pricing) ?? undefined,
       whatToExpect: i.whatToExpect,
       processSteps: cleanSteps(i.processSteps) ?? undefined,
@@ -115,6 +121,15 @@ function cleanFaqs(items: Partial<FAQ>[] | undefined): FAQ[] | null {
   const cleaned = items?.filter(
     (i): i is FAQ => Boolean(i.q && i.a)
   );
+  return cleaned?.length ? cleaned : null;
+}
+
+function cleanBeforeAfter(
+  items: Partial<BeforeAfterPair>[] | undefined
+): BeforeAfterPair[] | null {
+  const cleaned = items
+    ?.filter((i): i is BeforeAfterPair => Boolean(i.before && i.after))
+    .map((i) => ({ before: i.before, after: i.after }));
   return cleaned?.length ? cleaned : null;
 }
 

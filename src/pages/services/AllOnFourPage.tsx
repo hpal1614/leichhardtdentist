@@ -51,8 +51,39 @@ const HERO_VIDEO_POSTER =
 const BA_BASE =
   "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/all-on-4/before-and-after";
 const beforeAfterCases = [
-  { before: `${BA_BASE}/case-a-before.jpg`, after: `${BA_BASE}/case-a-after.jpg` },
-  { before: `${BA_BASE}/case-b-before.jpg`, after: `${BA_BASE}/case-b-after.jpg` },
+  {
+    before: `${BA_BASE}/case-1-before.jpg`,
+    after: `${BA_BASE}/case-1-after.jpg`,
+    caption:
+      "All-on-4 for the upper jaw with conservative management of the existing lower teeth. The upper teeth were failing, with some already lost due to gum disease.",
+    detail: [
+      { src: `${BA_BASE}/case-1-xray.jpg`, label: "X-ray" },
+      { src: `${BA_BASE}/case-1-detail-before.jpg`, label: "Before · close-up" },
+      { src: `${BA_BASE}/case-1-detail-after.jpg`, label: "After · close-up" },
+    ],
+  },
+  {
+    before: `${BA_BASE}/case-2-before.jpg`,
+    after: `${BA_BASE}/case-2-after.jpg`,
+    caption: "Infected, painful teeth replaced with full-arch implants.",
+    detail: [
+      { src: `${BA_BASE}/case-2-xray.jpg`, label: "X-ray" },
+      { src: `${BA_BASE}/case-2-detail-before.jpg`, label: "Before · close-up" },
+      { src: `${BA_BASE}/case-2-detail-after.jpg`, label: "After · close-up" },
+    ],
+  },
+  {
+    // ?v=2 cache-bust on the rotated face shots (source is correct, browsers/CDN
+    // were holding the old upside-down copy under the unversioned URL).
+    before: `${BA_BASE}/case-3-before.jpg?v=2`,
+    after: `${BA_BASE}/case-3-after.jpg?v=2`,
+    caption:
+      "Most teeth had been lost over time as a result of dental work performed overseas; some existing teeth could be preserved.",
+    detail: [
+      { src: `${BA_BASE}/case-3-xray.jpg`, label: "X-ray" },
+      { src: `${BA_BASE}/case-3-detail-after.jpg`, label: "After · close-up" },
+    ],
+  },
 ];
 
 const journeySteps = [
@@ -406,7 +437,7 @@ export function AllOnFourPage() {
             </p>
           </motion.div>
 
-          <div className="space-y-5 lg:space-y-8">
+          <div className="space-y-10 lg:space-y-14">
             {beforeAfterCases.map((c, i) => (
               <motion.div
                 key={i}
@@ -414,32 +445,61 @@ export function AllOnFourPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ duration: 0.6, delay: i * 0.08 }}
-                className="grid sm:grid-cols-2 gap-4 lg:gap-6"
               >
-                <figure className="relative rounded-[2rem] overflow-hidden bg-foreground/5">
-                  <span className="absolute top-4 left-4 z-10 px-3 py-1 rounded-full bg-black/60 backdrop-blur-sm text-[10px] uppercase tracking-[0.25em] font-semibold text-white">
-                    Before
-                  </span>
-                  <div className="aspect-[4/5] overflow-hidden">
-                    <ImageWithFallback
-                      src={c.before}
-                      alt={`Before full-arch implant treatment — case ${i + 1}`}
-                      className="w-full h-full object-cover"
-                    />
+                <div className="grid sm:grid-cols-2 gap-4 lg:gap-6">
+                  <figure className="relative rounded-[2rem] overflow-hidden bg-foreground/5">
+                    <span className="absolute top-4 left-4 z-10 px-3 py-1 rounded-full bg-black/60 backdrop-blur-sm text-[10px] uppercase tracking-[0.25em] font-semibold text-white">
+                      Before
+                    </span>
+                    <div className="aspect-[4/5] overflow-hidden">
+                      <ImageWithFallback
+                        src={c.before}
+                        alt={`Before full-arch implant treatment — case ${i + 1}`}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  </figure>
+                  <figure className="relative rounded-[2rem] overflow-hidden bg-foreground/5">
+                    <span className="absolute top-4 left-4 z-10 px-3 py-1 rounded-full bg-primary text-[10px] uppercase tracking-[0.25em] font-semibold text-white">
+                      After
+                    </span>
+                    <div className="aspect-[4/5] overflow-hidden">
+                      <ImageWithFallback
+                        src={c.after}
+                        alt={`After full-arch implant treatment — case ${i + 1}`}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  </figure>
+                </div>
+                {/* Clinical detail strip — X-ray + intra-oral close-ups */}
+                {c.detail && c.detail.length > 0 && (
+                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 lg:gap-4 mt-4 lg:mt-5">
+                    {c.detail.map((d, j) => (
+                      <figure
+                        key={j}
+                        className="rounded-2xl overflow-hidden bg-foreground/5 border border-foreground/[0.04]"
+                      >
+                        <div className="aspect-[3/2] overflow-hidden bg-black/90">
+                          <ImageWithFallback
+                            src={d.src}
+                            alt={`${d.label} — case ${i + 1}`}
+                            className="w-full h-full object-contain"
+                          />
+                        </div>
+                        <figcaption className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground font-semibold py-2 px-3 text-center">
+                          {d.label}
+                        </figcaption>
+                      </figure>
+                    ))}
                   </div>
-                </figure>
-                <figure className="relative rounded-[2rem] overflow-hidden bg-foreground/5">
-                  <span className="absolute top-4 left-4 z-10 px-3 py-1 rounded-full bg-primary text-[10px] uppercase tracking-[0.25em] font-semibold text-white">
-                    After
-                  </span>
-                  <div className="aspect-[4/5] overflow-hidden">
-                    <ImageWithFallback
-                      src={c.after}
-                      alt={`After full-arch implant treatment — case ${i + 1}`}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                </figure>
+                )}
+                {c.caption && (
+                  <p className="mt-4 lg:mt-5 text-sm lg:text-base text-muted-foreground font-light leading-relaxed max-w-3xl">
+                    <span className="font-semibold text-foreground/80 mr-2">Case {i + 1}.</span>
+                    {c.caption}
+                  </p>
+                )}
               </motion.div>
             ))}
           </div>

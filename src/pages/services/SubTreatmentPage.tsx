@@ -159,6 +159,77 @@ export function SubTreatmentPage() {
         </section>
       )}
 
+      {/* Real patient before/after results (optional, mirrors All-on-4 design) */}
+      {sub.beforeAfter && sub.beforeAfter.length > 0 && (
+        <section className="py-20 lg:py-28 bg-secondary/30">
+          <div className="max-w-[1800px] mx-auto px-6 lg:px-12">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.7 }}
+              className="max-w-2xl mb-12 lg:mb-16"
+            >
+              <span className="text-primary font-bold tracking-[0.25em] uppercase text-xs mb-5 block">
+                Real patient results
+              </span>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-foreground leading-[1.02] mb-6">
+                Before &amp; after.
+              </h2>
+              <p className="text-base lg:text-lg text-muted-foreground font-light leading-relaxed">
+                Real {sub.name.toLowerCase()} cases treated at Leichhardt Dental Centre.
+              </p>
+            </motion.div>
+
+            <div className="space-y-5 lg:space-y-8">
+              {sub.beforeAfter.map((c, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-60px" }}
+                  transition={{ duration: 0.6, delay: i * 0.06 }}
+                  className="grid sm:grid-cols-2 gap-4 lg:gap-6"
+                >
+                  <figure className="relative rounded-[2rem] overflow-hidden bg-foreground/5">
+                    <span className="absolute top-4 left-4 z-10 px-3 py-1 rounded-full bg-black/60 backdrop-blur-sm text-[10px] uppercase tracking-[0.25em] font-semibold text-white">
+                      Before
+                    </span>
+                    <div className="aspect-[4/5] overflow-hidden">
+                      <ImageWithFallback
+                        src={c.before}
+                        alt={`Before ${sub.name.toLowerCase()} treatment — case ${i + 1}`}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  </figure>
+                  <figure className="relative rounded-[2rem] overflow-hidden bg-foreground/5">
+                    <span className="absolute top-4 left-4 z-10 px-3 py-1 rounded-full bg-primary text-[10px] uppercase tracking-[0.25em] font-semibold text-white">
+                      After
+                    </span>
+                    <div className="aspect-[4/5] overflow-hidden">
+                      <ImageWithFallback
+                        src={c.after}
+                        alt={`After ${sub.name.toLowerCase()} treatment — case ${i + 1}`}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  </figure>
+                </motion.div>
+              ))}
+            </div>
+
+            <p className="mt-8 text-xs lg:text-sm text-muted-foreground/80 italic max-w-3xl leading-relaxed">
+              Individual results vary — this is not a guarantee of outcome. These
+              are real, unaltered photographs of patients treated at this practice,
+              published with their consent. What is achievable in your own case can
+              only be determined at a consultation, and it is wise to seek a second
+              opinion before any significant treatment.
+            </p>
+          </div>
+        </section>
+      )}
+
       {/* Photo gallery (optional) */}
       {sub.gallery && sub.gallery.length > 0 && (
         <section className="py-20 lg:py-28 bg-secondary/30">

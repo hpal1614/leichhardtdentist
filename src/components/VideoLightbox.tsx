@@ -101,7 +101,7 @@ export function VideoLightbox({
           >
             {sidebar ? (
               <>
-                <div className="lg:flex-[2] aspect-video rounded-2xl overflow-hidden shadow-2xl bg-black">
+                <div className="lg:flex-[2] h-[68vh] lg:h-auto lg:aspect-video rounded-2xl overflow-hidden shadow-2xl bg-black">
                   {videoEl}
                 </div>
                 <aside className="lg:flex-1 lg:max-w-md text-white p-6 lg:p-8 rounded-2xl bg-white/[0.04] border border-white/10 overflow-y-auto">

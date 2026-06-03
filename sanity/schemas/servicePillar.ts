@@ -144,6 +144,22 @@ export const servicePillar = defineType({
               description: "Extra images shown in a gallery on the treatment sub-page. Paste direct image URLs (Cloudinary or the practice's own photos).",
             },
             {
+              name: "beforeAfter",
+              type: "array",
+              title: "Before / after pairs (optional)",
+              description: "Real consented patient before/after cases shown in a dedicated section (matches the All-on-4 design). Each entry is one case with two image URLs.",
+              of: [
+                {
+                  type: "object",
+                  fields: [
+                    { name: "before", type: "url", title: "Before image URL" },
+                    { name: "after", type: "url", title: "After image URL" },
+                  ],
+                  preview: { select: { title: "before" } },
+                },
+              ],
+            },
+            {
               name: "pricing",
               type: "array",
               title: "Pricing tiers (optional)",

@@ -39,7 +39,7 @@ const SLUG = "all-on-4-implants";
 // lives only on this page, not on the homepage. The "Story of Transformation"
 // narrative video is on the homepage's Stories of Transformation section instead.
 const HERO_VIDEO =
-  "https://res.cloudinary.com/dzydzte9h/video/upload/dental-website/all-on-4/before-and-after/case-1.mp4";
+  "https://res.cloudinary.com/dzydzte9h/video/upload/dental-website/all-on-4/before-and-after/dr-nick-explainer.mp4";
 // Poster: an illustrative older-adult portrait (not a patient, not Dr. Nick) —
 // warm and demographic-appropriate, and lower-risk than a patient "after" as
 // the headline image. Capped at w_1400 since the source is large.

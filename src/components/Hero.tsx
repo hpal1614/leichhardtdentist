@@ -11,7 +11,7 @@ import { clinicianAnchor, mergeClinicians, type ClinicianSanity } from "../lib/c
 import { ALL_CLINICIANS } from "../lib/clinician-fallbacks";
 
 const DEFAULT_HERO_VIDEO =
-  "https://res.cloudinary.com/dzydzte9h/video/upload/dental-website/home/hero/ambient.mov";
+  "https://res.cloudinary.com/dzydzte9h/video/upload/dental-website/home/hero/hero-main.mp4";
 
 const DEFAULTS = {
   eyebrow: "Leichhardt Dental Centre · Inner West Sydney",

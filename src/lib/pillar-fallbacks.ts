@@ -67,33 +67,32 @@ export const GENERAL_DENTISTRY: PillarData = {
       description:
         "Amalgam-free composite fillings using 3M ESPE and Ivoclar premium materials — designed to blend naturally with your tooth and bonded in a single visit.",
       longDescription:
-        "We are a proudly amalgam-free practice — no silver-mercury fillings. Instead, we exclusively use BPA-safe composite resins from 3M ESPE and Ivoclar — premium materials that preserve more of your natural tooth structure and are designed to mimic the strength and light-reflection of natural enamel. Composite is layered and bonded directly to the remaining tooth, then cured with a curing light. Shade-matching uses what's sometimes called the \"chameleon effect\" — the filling blends with your tooth's unique shade rather than looking like a flat white patch. Most fillings are completed in a single 30–45 minute appointment under local anaesthetic.",
+        "We are a proudly Amalgam-Free practice. We do not use traditional silver-mercury fillings. Instead, we exclusively use premium, BPA-safe composite resins and ceramics. These materials are not only safer and more biocompatible but also allow us to preserve more of your natural tooth structure during the restoration process. At Leichhardt Dental, we don't believe in \"standard\" fillings. To ensure your restoration lasts longer and looks completely natural, we use only world-leading materials from 3M ESPE and Ivoclar. These premium composites mimic the strength and light-reflection of natural enamel, so your filling is as durable as it is beautiful.",
       whatToExpect: [
-        "Amalgam-free, BPA-safe composites (3M ESPE / Ivoclar)",
-        "Local anaesthetic for comfort",
-        "Composite layered and shade-matched to your tooth",
-        "Polished, cured, and adjusted to your bite",
-        "Usually 30–45 minutes per tooth",
+        "The \"Chameleon Effect\": these materials blend seamlessly into your tooth's unique shade, making the filling virtually invisible",
+        "Nano-Technology: ultra-fine particles make the filling smoother and more resistant to staining and wear over time",
+        "Better Comfort: advanced bonding technology reduces the \"shrinkage\" that causes post-treatment sensitivity",
+        "Amalgam-free and BPA-safe composites (3M ESPE / Ivoclar)",
       ],
       pricing: [
-        { name: "Small · single-surface", price: "$200", description: "For minor decay or a small chip on the biting surface." },
-        { name: "Medium · two-surface", price: "$280–$360", description: "When decay has spread between two teeth." },
-        { name: "Large · complex", price: "Up to $490", description: "Significant structural repair across multiple surfaces of the tooth." },
+        { name: "Small / Single-Surface Filling", price: "$200", description: "Ideal for minor decay or small chips on the biting surface." },
+        { name: "Medium / Two-Surface Filling", price: "$280–$360", description: "Used when decay has spread between two teeth." },
+        { name: "Large / Complex Filling", price: "Up to $490", description: "Required for significant structural repair involving multiple surfaces of the tooth." },
       ],
       risksContent:
-        "Post-operative sensitivity for a few days is common, particularly with deeper fillings. Rarely, a tooth with extensive decay may later need root canal treatment if the nerve is affected. If more than ~50% of the tooth structure is missing or weakened, a CEREC same-day crown or onlay may be a better long-term option than a large filling — we'll talk through both at consultation.",
+        "Post-operative sensitivity for a few days is common, particularly with deeper fillings. Rarely, a tooth with extensive decay may later need root canal treatment if the nerve is affected. If more than 50% of the tooth structure is missing or weakened, a Same-Day CEREC Crown may be a better long-term option than a large filling — we'll talk through both at consultation.",
       faqs: [
         {
           q: "How long does a filling take?",
-          a: "Most fillings are completed in a single 30–45 minute appointment. Because we use high-performance curing lights, the filling hardens instantly and you can eat on it almost immediately.",
+          a: "Most fillings are completed in a single 30 to 45-minute appointment. Because we use high-performance curing lights, your filling is hardened instantly, and you can eat on it almost immediately.",
         },
         {
-          q: "What's the difference between a large filling and a CEREC crown or onlay?",
-          a: "A filling is an affordable way to repair a tooth. However, if more than ~50% of the tooth is missing or weakened, our evidence-based advice may be to consider a same-day CEREC crown or ceramic onlay instead — these provide structural reinforcement and reduce the risk of fracture under heavy chewing.",
+          q: "What is the difference between a large filling and a CEREC crown?",
+          a: "A large filling is an excellent, affordable way to repair a tooth. However, if more than 50% of the tooth is missing or weakened, our evidence-based advice may be to consider a Same-Day CEREC Crown. This provides 360-degree protection to prevent the tooth from fracturing under heavy chewing pressure.",
         },
         {
           q: "Can I claim this on my health fund?",
-          a: "Yes. We process HICAPS on the spot. Most fillings use item codes 521 through 535. Because we provide upfront pricing, you can check your exact gap payment with your provider before treatment.",
+          a: "Yes. We process HICAPS on the spot. Most fillings use item codes 521 through 535. Because we provide upfront pricing, you can check your exact \"gap\" payment with your provider before we even start.",
         },
       ],
     },
@@ -115,30 +114,50 @@ export const GENERAL_DENTISTRY: PillarData = {
       ],
       risksContent:
         "Preparation of neighbouring teeth is permanent — the shape cannot be undone. Bridges are durable but not lifetime devices; expect to need replacement or adjustment over 10–15 years depending on hygiene and bite forces. Where implants are clinically suitable they may offer better long-term jawbone preservation — we'll cover both options honestly at consultation.",
+      beforeAfter: [
+        {
+          before: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/general-dentistry/dental-bridges/before-and-after/case-1-before.jpg",
+          after: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/general-dentistry/dental-bridges/before-and-after/case-1-after.jpg",
+          caption: "If teeth adjacent to the missing teeth need restoration, a dental bridge can be a quick, cost-effective and aesthetically pleasing way of maximising treatment outcomes.",
+        },
+        {
+          before: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/general-dentistry/dental-bridges/before-and-after/case-2-before.jpg",
+          after: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/general-dentistry/dental-bridges/before-and-after/case-2-after.jpg",
+          caption: "Significant transformation achieved by a dental bridge with minimal intervention. Well-made bridges can serve 10–15 years before they need replacement.",
+        },
+      ],
       faqs: [
         {
-          q: "What's the difference between a dental bridge and an implant?",
-          a: "A bridge uses adjacent teeth for support and requires shaping those teeth to receive crowns. An implant is an independent titanium root placed directly into the jawbone, preserving the surrounding teeth. Bridges are faster; implants generally preserve more bone over the long term.",
+          q: "What is the difference between a dental bridge and an implant?",
+          a: "A bridge uses adjacent teeth for support and requires grinding down healthy enamel. An implant is an independent titanium root placed directly into the jawbone, preserving surrounding teeth.",
         },
         {
-          q: "Is a bridge or an implant better for me?",
-          a: "It depends on your situation. Implants are often preferred for long-term jawbone preservation, but bridges are an excellent solution if the adjacent teeth already need crowns, or where surgery isn't suitable. We'll talk through both at consultation.",
+          q: "Is a dental bridge or an implant better for me?",
+          a: "Our evidence-based approach prioritizes your long-term bone health and budget. Implants are often superior for preserving jawbone, but bridges provide an excellent, fast solution if adjacent teeth already need crowns.",
         },
         {
-          q: "How much does a dental bridge cost?",
-          a: "Typically $5,000–$7,000 for a standard single-tooth or short bridge in Sydney, depending on the number of units and materials. We provide a complete itemised quote at consultation, with flexible payment plans from approximately $45/week.",
+          q: "How much does a dental bridge cost in Sydney?",
+          a: "The investment depends on the number of missing teeth and the materials used. We provide a complete, transparent fee breakdown during your consultation, so you face zero financial surprises. Typically, a dental bridge to replace a single or a couple of teeth can cost about AUD 5,000–7,000, depending on the amount of work required. With payment plans this cost can be broken down to as little as AUD 45/week.",
         },
         {
           q: "Can I get a dental bridge made on the same day?",
-          a: "In many cases, yes. Our in-house CEREC digital scanner and milling machine can scan, design, and mill your custom porcelain bridge chairside — eliminating temporary bridges and a second appointment two weeks later.",
+          a: "Yes, in many cases. Using our advanced in-house CEREC digital technology, we can scan your mouth, design, and mill your custom porcelain bridge right here in the clinic. This eliminates the need for temporary bridges or a second appointment two weeks later.",
+        },
+        {
+          q: "How does CEREC technology work for bridges?",
+          a: "Instead of messy, uncomfortable putty impressions, we use a high-precision 3D intraoral scanner. Our computer-aided design (CAD) software creates a 3D blueprint of your bridge, which is instantly carved from a solid block of durable, tooth-coloured ceramic in our milling machine.",
         },
         {
           q: "Does private health insurance cover dental bridges?",
-          a: "Dental bridges fall under Major Dental coverage on most extras policies. We process HICAPS on the spot so you can claim your health-fund rebate instantly and only pay the remaining gap. Standard item codes are 615 (for the pontic) and two counts of 613 or 618 (for the retaining crowns).",
+          a: "Yes. Dental bridges fall under Major Dental coverage. We provide HICAPS processing on-the-spot, allowing you to claim your health fund rebate instantly at checkout and only pay the remaining gap.",
         },
         {
-          q: "Do you offer payment plans?",
-          a: "Yes — flexible interest-free payment plans are available so you can spread the cost over weekly or fortnightly instalments. We can show you the options at consultation.",
+          q: "What item numbers are used for a dental bridge?",
+          a: "For your health fund check, a standard 3-unit bridge typically uses code 615 (for the pontic/floating tooth) and two counts of code 613 or 618 (for the retaining crowns). We will give you an exact list of codes at your consultation.",
+        },
+        {
+          q: "Do you offer flexible payment plans?",
+          a: "Yes. To ensure our evidence-based care remains accessible and affordable, we offer flexible, interest-free payment plans. This allows you to spread the cost of your treatment over manageable weekly or fortnightly instalments.",
         },
       ],
     },
@@ -191,32 +210,36 @@ export const GENERAL_DENTISTRY: PillarData = {
         "Modern root canal treatment is generally safe and well-tolerated. Documented success rates are high but not absolute — complex cases, re-treatments, or unusual anatomy may be referred to an endodontic specialist. A tooth that has had root canal treatment is more brittle and benefits from a protective crown to reduce the risk of fracture.",
       faqs: [
         {
-          q: "Does a root canal hurt?",
-          a: "Modern local anaesthetics and precise rotary techniques mean the procedure typically feels no different to having a standard filling. The treatment relieves the severe pain caused by the infected nerve — most patients are relieved to start.",
+          q: "Does a root canal treatment hurt?",
+          a: "No. This is a common dental myth. Because we use modern local anaesthetics and precise techniques, the procedure feels no different than getting a standard filling. The treatment actually relieves the severe throbbing pain caused by the infected nerve.",
         },
         {
-          q: "Why use a rubber dam?",
-          a: "A rubber dam is a thin protective sheet placed over the tooth being treated. It isolates the tooth, keeps it dry and free from saliva bacteria, and protects your throat and tongue. It's considered the standard of care for root canal treatment.",
+          q: "What is a rubber dam, and why do you use it?",
+          a: "A rubber dam is a thin, protective sheet placed over your tooth during the procedure. It isolates the tooth being treated, keeping it completely dry and sterile from saliva bacteria. It also protects your throat and tongue, making the treatment much safer and more comfortable for you.",
         },
         {
-          q: "Why do you sometimes recommend a 3D CBCT scan?",
-          a: "Traditional 2D X-rays can hide overlapping structures. Complex teeth — especially back molars — can have hidden or microscopic canals that 2D imaging misses. A 3D CBCT scan maps every canal before treatment, helping ensure the full infection is cleaned out and significantly improving long-term success.",
+          q: "What are rotary files?",
+          a: "Traditional root canals used rigid hand tools. We use advanced, flexible rotary files made of modern nickel-titanium. Driven by a precise electric motor, these flexible files navigate curved root canals smoothly, cleaning out infections faster, more thoroughly, and with significantly less vibration.",
+        },
+        {
+          q: "Why do I need a 3D CBCT scan instead of a normal X-ray?",
+          a: "Traditional 2D X-rays are excellent for detecting standard cavities, but they overlap anatomical structures. A 3D CBCT scan lets us virtually rotate your jaw on our screens. This means we can view your anatomy from every possible angle, revealing hidden infections, bone density levels, and precise nerve positions that standard X-rays completely miss. Complex teeth often have hidden, microscopic, or curved root canals; CBCT maps these pathways instantly, ensuring we clean out 100% of the infection and drastically improving the long-term success rate of your treatment.",
         },
         {
           q: "How many appointments will I need?",
-          a: "Most root canal treatments are completed across two visits. The first removes the infection and relieves the pain. The second seals the canals once the tooth is fully comfortable.",
+          a: "Most root canal treatments are completed across two comfortable visits. The first visit removes the infection and relieves your pain. The second visit ensures the canals are sterile before permanently sealing them.",
         },
         {
           q: "Do I need a crown after a root canal?",
-          a: "In almost all cases, yes. The tooth becomes more brittle once the nerve is removed. A tooth-coloured crown protects the tooth from fracture; with our in-house CEREC technology we can usually design and fit it in a single visit.",
+          a: "Yes, in almost all cases. A tooth becomes brittle and fragile once its living nerve is removed. To protect your investment and prevent the tooth from cracking, we strongly recommend placing a tooth-coloured crown. Thanks to our in-house CEREC technology, we can often design and fit this custom crown in a single visit.",
         },
         {
-          q: "How much does a root canal cost?",
-          a: "Typically $1,200–$1,800 depending on the complexity of the tooth (front teeth with a single canal sit at the lower end; molars with three or four canals are more involved). We use the 3D CBCT scan during your consultation to give you a fixed, itemised quote before treatment begins.",
+          q: "How much does a Root Canal cost?",
+          a: "At Leichhardt Dental, we believe in honest advice and no financial surprises. Our root canal treatments generally range between $1,200 and $1,800, depending on the complexity of the tooth. Front teeth usually have a single canal and are at the lower end of the range; back molars are more complex, often having three or four canals, which requires more time and precision.",
         },
         {
-          q: "What if I don't have a root canal?",
-          a: "An untreated nerve infection won't resolve on its own. The bacteria will eventually destroy the surrounding jawbone and cause severe swelling. The alternative at that stage is removing the tooth — which usually means more expensive implant or bridge work to fix later.",
+          q: "What happens if I choose not to get a root canal?",
+          a: "An untreated inner-tooth infection will not clear up on its own. The bacteria will eventually destroy the surrounding jawbone, causing severe swelling and abscesses. The only alternative at that stage is extracting the tooth completely, which requires more expensive implant or bridge work to fix.",
         },
       ],
     },
@@ -297,7 +320,7 @@ export const DENTAL_IMPLANTS: PillarData = {
   shortDescription:
     "Titanium roots that restore function and structure — from a single tooth to a full arch. Planned with in-house 3D CBCT, EthOss synthetic bone grafting where needed, and zirconia crowns made locally in Sydney.",
   intro:
-    "A dental implant is a small titanium post that replaces the root of a missing tooth. It fuses with the surrounding jawbone, giving a stable foundation for a custom crown, bridge, or full arch of teeth. Every implant case at Leichhardt Dental is planned and placed by Dr. Nick Kulkarni — a registered specialist prosthodontist with 25+ years of international clinical experience and a Fellow of the International Congress of Oral Implantologists. Our implant approach rests on three pillars: in-house 3D CBCT imaging for sub-millimetre accuracy; EthOss synthetic bone regeneration (no animal or donor tissue) where grafting is needed; and zirconia crowns custom-milled locally in Sydney — no overseas lab work. Flexible payment plans are available through TLC Finance.",
+    "Missing teeth shouldn't hold you back from eating, smiling, or living with confidence. At Leichhardt Dental, dental implantology is the primary focus of our clinical practice. Led by Dr Nick Kulkarni — a registered specialist prosthodontist with over 25 years of extensive international clinical experience and a Fellow of the International Congress of Oral Implantologists — we combine world-class 3D imaging with advanced surgical techniques to restore your smile's permanent strength. We achieve predictable, long-term results by focusing on three strict pillars of care: unrivalled accuracy with in-house 3D CBCT imaging; 100% synthetic bone regeneration with EthOss (no donor or animal tissue); and premium Zirconia crowns, 100% made in Sydney by master technicians — we do not outsource our restorations to cheap overseas labs. We also offer metal-free zirconia implants for patients who prefer a non-metal option. Flexible payment plans are available through TLC Finance.",
   image: clinic2,
   bentoSpan: "md:col-span-1 lg:col-span-5 lg:row-span-1",
   bentoAspect: "aspect-[4/5] md:aspect-[5/4]",
@@ -310,21 +333,105 @@ export const DENTAL_IMPLANTS: PillarData = {
       description:
         "A titanium post placed where the tooth root used to be, topped with a zirconia crown made locally in Sydney. Teeth either side are left untouched — unlike a bridge.",
       longDescription:
-        "A single-tooth implant replaces one missing tooth with a titanium post placed directly into the jawbone, topped with a custom zirconia crown. Unlike a bridge, the neighbouring teeth are untouched. Once healed, the implant behaves like a natural tooth — you brush, floss, and eat with it as normal. At Leichhardt Dental every implant is planned with an in-house 3D CBCT scan, placed by Dr. Nick under local anaesthetic, and finished with a custom zirconia crown milled by local Sydney master technicians (no overseas lab work). Where the bone needs reinforcement, we use EthOss — a synthetic biomaterial with no animal or donor tissue. Typical investment: $5,000–$6,500+ for a complete single-implant case (3D scan, implant placement, abutment, and zirconia crown). Flexible payment plans available through TLC Finance — manageable weekly or fortnightly instalments.",
+        "If you have a single missing tooth, or a tooth that is badly broken and cannot be saved, you do not have to rely on traditional options. At Leichhardt Dental Centre, we offer single dental implants. This modern treatment replaces one missing tooth from the root up, giving you a fixed, natural tooth-like solution that looks, feels, and functions just like a real tooth. Every single implant procedure at our clinic is personally looked after by our principal dentist, Dr Nick Kulkarni. The most critical part of a successful result is careful planning, correct surgical technique, and respecting your natural biology. Dr Nick uses proven scientific evidence to ensure your new tooth works in harmony with your body, looking beautiful and working perfectly. To keep you completely safe, every single implant placement is done under full hospital-grade sterile conditions, meeting the highest cleanliness standards. We exclusively use world-class, premium brands like BioHorizons and Implant Direct — high-quality, American-made systems backed by rigorous quality assurance. We use our own advanced 3D scanner (CBCT) right here in the office, creating a highly detailed 3D digital map of your mouth so Dr Nick can check the exact shape, density, and height of your foundations before any treatment begins. Where there is not enough natural foundation left, we rebuild the area using an advanced, 100% synthetic material called EthOss — because it is entirely lab-made, it completely removes the risk of cross-contamination linked to older human or animal materials, and over time your body fully absorbs it, turning it into your own natural, healthy tissue. A single implant is made of three simple parts: the Anchor, a tiny, medical-grade metal anchor that sits gently below your gums; the Connector, a small attachment piece that sits just above the gum line; and the New Tooth, a custom-made porcelain crown designed to match the shape and colour of your surrounding teeth exactly.",
       whatToExpect: [
-        "Low-dose 3D CT scan for precise planning",
-        "Implant placed under local anaesthetic",
-        "3–6 months for bone to fuse (osseointegration)",
-        "Custom crown bonded to the implant",
+        "Personally looked after by Dr Nick Kulkarni",
+        "Full hospital-grade sterile conditions",
+        "World-class, premium brands (BioHorizons & Implant Direct)",
+        "Advanced in-house CBCT for perfect accuracy",
+        "100% synthetic EthOss bone grafting where needed",
+        "A journey of 3 to 6 months from start to finish",
+      ],
+      pricing: [
+        { name: "Single dental implant", price: "$5,000–$7,500", description: "The final amount depends entirely on the unique complexity of your specific procedure, such as the amount of bone grafting needed to create a strong foundation." },
       ],
       processSteps: [
-        { title: "Consultation & 3D scan", description: "Review your bone, bite, and medical history; plan the position digitally." },
-        { title: "Implant placement", description: "Minor surgical procedure under local anaesthetic. Home the same day." },
-        { title: "Healing (3–6 months)", description: "Bone fuses to the implant. A temporary tooth is often worn during this phase." },
-        { title: "Final crown", description: "Custom-made and shade-matched, bonded to the implant." },
+        { title: "Step 1: The Plan", description: "Dr Nick takes a digital 3D look at your mouth to map out the safest spot for your new tooth." },
+        { title: "Step 2: The Placement", description: "The small anchor and the protective synthetic material are gently placed into the mouth under local numbing." },
+        { title: "Step 3: The Healing", description: "We wait a few months to let everything settle and bond completely with your body." },
+        { title: "Step 4: The Final Touch", description: "Your precision-crafted, custom tooth is securely attached to the anchor, completing your smile." },
       ],
       risksContent:
         "Implant surgery is generally safe and well-established. Risks include infection, swelling, transient nerve sensitivity, and — rarely — implant failure where the bone does not fuse with the titanium.",
+      faqs: [
+        {
+          q: "How can I find out if an implant is right for me?",
+          a: "We offer a complimentary 30-minute consultation for new implant patients. This visit includes a free 3D scan using our in-house machine. Dr Nick will personally look at your foundations, talk through your goals, and let you know if a dental implant is the absolute best option for your smile.",
+        },
+        {
+          q: "Why choose an implant over a bridge?",
+          a: "Older dental bridges require grinding down the healthy neighboring teeth to hold the new tooth in place. An implant stands completely on its own. Unlike a loose plate, an implant stays in your mouth — it does not slide around, click when you talk, or need to be taken out at night. And you can bite into apples, steak, or crunchy foods without any fear of your tooth shifting or coming loose.",
+        },
+        {
+          q: "How do I care for my implant?",
+          a: "Caring for a dental implant is incredibly easy. Because it acts just like a real tooth, you look after it the same way: brush twice a day with regular toothpaste, floss daily around the area to keep your gums healthy, and visit our team for your regular 6-month checkups and professional cleans.",
+        },
+        {
+          q: "How much does a single dental implant cost?",
+          a: "The investment for a single dental implant generally varies between $5,000 and $7,500. The final amount depends entirely on the unique complexity of your specific procedure, such as the amount of bone grafting needed to create a strong foundation.",
+        },
+        {
+          q: "Are there payment plans available?",
+          a: "Yes. We believe quality care should be accessible. We offer flexible payment plans through our trusted financing partners, TLC Finance. This allows you to break down the cost of your treatment into manageable pieces, starting from as little as $50 per week.",
+        },
+      ],
+    },
+    {
+      id: "zirconia",
+      slug: "zirconia-implants",
+      imageUrl: IMG.modelEquipment,
+      name: "Zirconia (Metal-Free) Implants",
+      description:
+        "At Leichhardt Dental Centre, we offer advanced zirconia implant solutions for patients seeking durable, highly aesthetic, and completely metal-free options to restore missing teeth. We use the Straumann® Pure Ceramic system.",
+      longDescription:
+        "Over the past 60 years, dental implantology has evolved into one of the most highly researched and predictable fields of modern dentistry. While titanium has long been the traditional cornerstone of tooth replacement, modern innovation has introduced a high-performance alternative: Zirconia (ceramic) implants. At Leichhardt Dental Centre, we offer advanced zirconia implant solutions for patients seeking durable, highly aesthetic, and completely metal-free options to restore missing teeth. Both titanium and zirconia possess a critical property known as osseointegration—the biological process where your natural jawbone securely grows around and fuses to the implant surface. Because the body does not recognize either material as a foreign object, both offer highly stable foundations for replacement teeth. However, zirconia implants are rapidly emerging as the preferred choice for individuals who prioritize non-metal dental treatments or have specific systemic sensitivities. While titanium is generally well-tolerated, clinical studies indicate that titanium hypersensitivity affects roughly 0.6% of the population, and for patients with known metal allergies or multi-system chemical sensitivities, non-metallic zirconia eliminates the risk of a localized hypersensitive reaction. While zirconia is incredibly strong and highly resistant to wear, it possesses less material flexibility than titanium; because of this structural stiffness, long-term clinical data (currently spanning 5 to 10 years) suggests they should be selected with precise clinical oversight, and zirconia implants require careful placement planning, particularly when replacing heavy-stress back molars or when treating patients who chronically clench or grind their teeth (bruxism). In Sydney, a single complete Straumann® Pure Ceramic Zirconia implant—including the surgical fixture, abutment, and premium porcelain crown—typically ranges from $5,500 to $7,500.",
+      whatToExpect: [
+        "Premium Aesthetics: naturally white and opaque for a flawless cosmetic finish at the gumline",
+        "Corrosion Resistance: a bio-inert ceramic that does not corrode or release metallic ions",
+        "Superior Hygiene & Health: accumulates significantly less bacterial plaque than titanium",
+        "Completely metal-free — Straumann® Pure Ceramic",
+        "Long-term clinical data currently spanning 5 to 10 years",
+      ],
+      pricing: [
+        { name: "Single complete Straumann® Pure Ceramic Zirconia implant", price: "$5,500–$7,500", description: "Includes the surgical fixture, abutment, and premium porcelain crown. Zirconia reflects a 20% to 30% premium over titanium ($4,000–$6,500). Your exact investment depends on the location of the missing tooth and your jawbone density." },
+        { name: "Bone grafting or sinus lift (if required)", price: "$500–$2,500", description: "If a tooth was lost long ago and the jawbone has receded, supportive procedures may be needed before placement. Dr Nick identifies this during your initial 3D scan." },
+      ],
+      processSteps: [
+        { title: "Structural Jaw Scan", description: "We take precise digital imaging to evaluate the exact volume and density of your jawbone." },
+        { title: "Bite & Force Analysis", description: "Dr Nick assesses your bite relationship to ensure your jaw joint (TMJ) can safely support a ceramic restoration without excessive stress or grinding wear." },
+        { title: "Tailored Treatment Blueprint", description: "We map out an evidence-based timeline and provide a fully itemised cost breakdown, including specific dental item codes for your private health fund." },
+      ],
+      risksContent:
+        "Zirconia implant surgery carries the same general risks as any implant — infection, swelling, transient nerve sensitivity, and, rarely, failure of the implant to fuse with the bone. Because zirconia is stiffer and less flexible than titanium, it requires careful case selection and may be less suited to people who heavily clench or grind, or to some high-load back-tooth positions. Long-term clinical data currently spans roughly 5–10 years. Dr. Nick assesses your bite and jaw structure at consultation to confirm whether a ceramic implant is appropriate for you.",
+      beforeAfter: [
+        {
+          before: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/dental-implants/zirconia/before-and-after/case-1-before.jpg",
+          after: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/dental-implants/zirconia/before-and-after/case-1-after.jpg",
+          caption: "Metal-free zirconia implant for a patient with a titanium allergy, shown at an 8-year follow-up.",
+        },
+      ],
+      faqs: [
+        {
+          q: "How much do Zirconia dental implants cost compared to Titanium?",
+          a: "In Australia, the cost of a single, complete traditional titanium implant generally falls between $4,000 and $6,500. Because zirconia is an advanced ceramic material requiring complex diamond-tooled manufacturing and custom laboratory processing, zirconia implants reflect a 20% to 30% premium. In Sydney, a single complete Straumann® Pure Ceramic Zirconia implant—including the surgical fixture, abutment, and premium porcelain crown—typically ranges from $5,500 to $7,500. Your exact investment depends entirely on the anatomical location of the missing tooth and your unique jawbone density.",
+        },
+        {
+          q: "What is included in the total treatment cost?",
+          a: "At Leichhardt Dental Centre, we practice full financial transparency. Your comprehensive zirconia implant package covers: Advanced Digital Diagnostics (high-resolution intraoral 3D scanning and treatment mapping); Premium Componentry (the genuine, Swiss-engineered Straumann® Pure Ceramic implant fixture); Surgical Placement (the physical implant surgery and all necessary post-operative clinical review checks with Dr Nick); and The Final Restoration (a custom-milled, highly aesthetic porcelain crown designed to match your surrounding teeth seamlessly).",
+        },
+        {
+          q: "Are there any hidden or additional costs?",
+          a: "Some patients may require supportive therapies to ensure a stable, long-term foundation before the implant can be placed. If a tooth was lost long ago, the jawbone may have naturally receded. If required, supportive procedures like localized bone grafting or a sinus lift generally add between $500 and $2,500 to the treatment plan. Dr Nick will identify if these supportive steps are clinically necessary during your initial 3D x-ray scan.",
+        },
+        {
+          q: "Is the cost covered by Private Health Insurance?",
+          a: "Yes, most major Australian health funds provide partial rebates for dental implant surgery and crown restorations under Major Dental Extras Cover. We give you an itemised treatment plan at your consultation so you can verify your exact out-of-pocket rebate directly with your fund before starting care.",
+        },
+        {
+          q: "Do you offer flexible dental payment options?",
+          a: "Absolutely. We believe that choosing premium, bio-inert dental care should fit comfortably within your family budget. We offer interest-free dental payment plans that allow you to distribute the cost of your premium ceramic implant into structured weekly or monthly instalments over your active healing period.",
+        },
+      ],
     },
     {
       id: "overdentures",
@@ -475,7 +582,7 @@ export const DENTAL_IMPLANTS: PillarData = {
     },
     {
       q: "How much does a single implant cost?",
-      a: "As a guide, a complete single-tooth implant ranges from about $5,000 to $6,500+, depending on bone quality and any grafting needed. That covers your 3D planning scans, the titanium implant fixture, the custom abutment, and your locally made zirconia crown. You'll receive a fully itemised written quote upfront.",
+      a: "An investment for a complete single dental implant ranges from $5,000 to $6,500+. This includes your initial 3D planning scans, the surgical placement of the premium titanium implant fixture, the custom abutment, and your locally made Zirconia crown. We provide fully itemized quotes upfront with zero hidden fees.",
     },
     {
       q: "Do you offer payment plans?",
@@ -563,6 +670,43 @@ export const SAME_DAY_SMILE: PillarData = {
       ],
       risksContent:
         "Preparation of the tooth for veneers involves removing a thin layer of enamel — this is permanent and cannot be undone. Risks include post-operative sensitivity, the possibility of root canal treatment if the nerve is affected, and chipping or debonding over time. Cases requiring complex layering or specialty aesthetics may be referred to a ceramist for traditional lab-made veneers.",
+      beforeAfter: [
+        {
+          before: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/cerec-crowns-veneers/before-and-after/case-1-before.jpg",
+          after: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/cerec-crowns-veneers/before-and-after/case-1-after.jpg",
+          caption: "Premium Emax ceramic veneers for a durable, natural smile makeover. The after photo was taken at a 10-year follow-up appointment.",
+        },
+        {
+          before: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/cerec-crowns-veneers/before-and-after/case-2-before.jpg",
+          after: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/cerec-crowns-veneers/before-and-after/case-2-after.jpg",
+          caption: "Premium ceramic veneers standing the test of time — in service for 10 years and continuing to do so.",
+        },
+        {
+          before: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/cerec-crowns-veneers/before-and-after/case-3-before.jpg",
+          after: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/cerec-crowns-veneers/before-and-after/case-3-after.jpg",
+          caption: "Same-day smile transformation with Emax veneers and Zoom whitening for the lower teeth — fixing broken-down, chipped teeth and faded colour in one efficient treatment.",
+        },
+        {
+          before: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/cerec-crowns-veneers/before-and-after/case-4-before.jpg",
+          after: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/cerec-crowns-veneers/before-and-after/case-4-after.jpg",
+          caption: "Emax veneers made with the CEREC machine — all in one day.",
+        },
+        {
+          before: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/cerec-crowns-veneers/before-and-after/case-5-before.jpg",
+          after: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/cerec-crowns-veneers/before-and-after/case-5-after.jpg",
+          caption: "A well-deserved 60th birthday present — delivered in one day with premium Emax veneers.",
+        },
+        {
+          before: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/cerec-crowns-veneers/before-and-after/case-6-before.jpg",
+          after: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/cerec-crowns-veneers/before-and-after/case-6-after.jpg",
+          caption: "A retirement gift to self — a veneer smile makeover with premium Emax ceramic.",
+        },
+        {
+          before: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/cerec-crowns-veneers/before-and-after/case-7-before.jpg",
+          after: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/cerec-crowns-veneers/before-and-after/case-7-after.jpg",
+          caption: "A close-up of the transformation with Emax ceramic veneers, done with our in-house Same Day Smile technology.",
+        },
+      ],
     },
     {
       id: "inlays",
@@ -572,14 +716,13 @@ export const SAME_DAY_SMILE: PillarData = {
       description:
         "A custom Ivoclar e.max ceramic restoration that sits between a filling and a full crown — designed and milled chairside with CEREC and bonded in a single ~90-minute visit, keeping more of your natural tooth than a crown.",
       longDescription:
-        "When a tooth is too damaged for a simple filling but still has enough healthy structure that it doesn't need a full crown, an inlay or onlay is a conservative, evidence-based option — think of it as a \"partial crown\". An inlay sits within the grooves on top of the tooth; an onlay also covers one or more of the biting points (cusps) to reinforce the tooth. We use Ivoclar e.max — a high-strength lithium-disilicate glass-ceramic that is widely used and well documented — chosen for its strength under the heavy biting forces of back teeth and because it closely matches the translucency of natural enamel. Using our in-house CEREC workflow we 3D-scan the tooth (no putty impressions), design the restoration on screen to match your bite, mill it from a solid Ivoclar block in the practice, and bond it the same day — so there's no two-week wait and no temporary. Each restoration is planned and placed by Dr. Nick Kulkarni, a registered specialist prosthodontist. A typical inlay or onlay is approximately $1,500–$1,700.",
+        "When a tooth is too damaged for a simple filling but still has enough healthy structure that it doesn't quite need a full crown, an Inlay or Onlay is the ideal evidence-based solution. Think of it as a \"partial crown\" or a custom-engineered puzzle piece. An Inlay sits inside the grooves of your tooth, while an Onlay (often called a \"three-quarter crown\") covers one or more of the biting points (cusps) to provide structural reinforcement. At Leichhardt Dental, we do not use generic lab-processed ceramics. For every restoration, we exclusively use Ivoclar e.max®—widely considered the world's best-selling and most reliable glass-ceramic. We chose Ivoclar e.max® for two critical reasons: unrivalled strength, designed to withstand the heavy biting forces of back teeth and significantly reduce the risk of your tooth fracturing; and natural aesthetics, mimicking the translucency and light-reflection of real tooth enamel so perfectly that the restoration is virtually invisible once bonded. By combining Ivoclar materials with our in-house CEREC technology, we 3D-scan your tooth (no putty required), precision-design your restoration on screen to match your bite perfectly, mill it from a solid Ivoclar e.max block in our clinic, and fit and bond it in a single 90-minute visit. A typical inlay or onlay is approximately $1,500–$1,700.",
       whatToExpect: [
-        "Conservative — only the damaged part of the tooth is removed",
-        "Digital 3D scan — no putty impressions",
-        "Designed and milled chairside with CEREC",
-        "Single ~90-minute visit — no temporary, no second appointment",
-        "High-strength Ivoclar e.max ceramic, no metal",
-        "Approximately $1,500–$1,700 per restoration",
+        "Maximum Tooth Preservation: we only remove the decayed part, keeping most of your healthy natural enamel",
+        "No \"Putty\" Impressions: a digital 3D scanner — faster, more comfortable, and more accurate than traditional moulds",
+        "Perfect Bite Alignment: designed to the micron so your bite feels perfectly balanced",
+        "Exceptional Durability: high-strength Ivoclar e.max — doesn't shrink, leak, or stain, providing a permanent seal against future decay",
+        "Bonded in a single 90-minute visit — no temporary, no second appointment",
       ],
       processSteps: [
         { title: "3D scan", description: "We capture a high-definition digital scan of your prepared tooth — no putty impressions needed." },
@@ -591,7 +734,7 @@ export const SAME_DAY_SMILE: PillarData = {
         "As with crowns, possible risks include transient sensitivity after preparation, the small chance the nerve is affected and root canal treatment becomes necessary, and — uncommonly — chipping or debonding of the restoration over time. How long a restoration lasts depends on your bite, oral hygiene, and regular check-ups. A consultation determines whether an inlay or onlay is the right option for your tooth.",
       faqs: [
         { q: "What's the difference between an inlay, an onlay, and a crown?", a: "An inlay sits within the grooves on the top of the tooth; an onlay also covers one or more of the biting cusps to reinforce the tooth; a crown covers the whole tooth. Inlays and onlays are more conservative than a crown — we keep more of your healthy natural tooth." },
-        { q: "Why do you use Ivoclar e.max?", a: "It's a high-strength lithium-disilicate glass-ceramic that's widely used and well documented in dentistry. It stands up to the heavy biting forces of back teeth and closely matches the translucency of natural enamel, so the restoration blends in. We mill it in-house with CEREC." },
+        { q: "Why do you use Ivoclar e.max?", a: "Ivoclar e.max® is widely considered the world's best-selling and most reliable glass-ceramic — the gold standard in material. It has unrivalled strength to withstand the heavy biting forces of back teeth, and its natural aesthetics mimic the translucency and light-reflection of real tooth enamel so the restoration is virtually invisible once bonded. We mill it in-house with CEREC." },
         { q: "Do I need a temporary or a second appointment?", a: "No. Because we design and mill your restoration chairside with CEREC, it's bonded the same day — typically a single ~90-minute visit. There's no two-week wait, no temporary filling, and no second round of numbing." },
         { q: "Why choose an onlay over a large filling?", a: "A large composite filling costs less upfront (around $490) and can be the right choice for a smaller cavity. For a more heavily damaged tooth, a bonded ceramic onlay (around $1,500–$1,700) restores more of the tooth's strength and is designed to last longer. We'll talk through which is appropriate for your specific tooth at your consultation." },
         { q: "How long will it last?", a: "Ivoclar e.max restorations are durable and designed to be long-lasting, but longevity varies with your bite, habits, and oral hygiene. Regular check-ups help us keep an eye on them." },
@@ -665,17 +808,27 @@ export const SAME_DAY_SMILE: PillarData = {
       ],
       name: "Composite Bonding",
       description:
-        "Tooth-coloured 3M / Ivoclar composite resin sculpted onto the tooth to repair chips, close small gaps, or refine shape. Single-visit, often reversible.",
+        "Composite veneering / dental bonding — an affordable, single-visit solution for immediate smile enhancement, sculpted by hand and polished the same day.",
       longDescription:
-        "Composite bonding (also known as composite veneering) is a conservative, single-visit way to repair chips, close small gaps, or refine the shape of a tooth. We use 3M ESPE and Ivoclar premium composite resins — sculpted directly onto the tooth, cured with a light, then polished. Often reversible — the bonding can be removed without damaging the underlying tooth — which makes it a good first step for patients considering more significant changes. Typical investment: from approximately $550 per tooth; with proper care, composite bonding typically lasts 5–7 years before refresh or transition to ceramic.",
+        "Dental bonding, also referred to as composite veneering, provides an affordable, single-visit solution for immediate smile enhancement. Individuals with generally healthy teeth exhibiting minor wear, slight chipping, or a somewhat dulled appearance are ideal candidates. Addressing these concerns through composite resin application is both straightforward and highly effective. Those who are not yet prepared—emotionally or financially—to pursue ceramic veneers will find this an excellent interim option for improving their smile. With proper care, a composite smile design typically maintains its results for approximately 5–7 years before a transition to ceramic alternatives becomes advisable. A combined approach incorporating both ceramic and composite veneering is a strategy we frequently recommend: ceramic veneers are placed on the front 2–4 teeth requiring the most significant cosmetic improvement, while the remaining visible teeth are treated with composite bonding — delivering optimal results from both techniques while managing your total investment.",
       whatToExpect: [
-        "Usually no anaesthetic needed",
-        "30–60 minutes per tooth",
-        "Reversible — tooth structure preserved",
-        "From ~$550 per tooth",
+        "Personalised Consultation: we discuss your aesthetic goals, select the ideal shade match, and map out your custom smile design",
+        "Surface Preparation: we gently clean and prepare the tooth surface to ensure a strong, long-lasting bond",
+        "Artistic Sculpting: our dentist meticulously layers the composite resin, shaping it by hand to match your facial features",
+        "Curing & Final Polish: a specialized light hardens the resin instantly, followed by high-gloss polishing for a smooth, natural sheen",
+      ],
+      pricing: [
+        { name: "Composite Veneers / Bonding", price: "Approx. $550 AUD", description: "Per tooth. Flexible financing can reduce costs to as little as $60 AUD per week." },
+        { name: "Ceramic Veneers", price: "Approx. $1,600 AUD", description: "Per tooth, for the most significant cosmetic improvement on the front teeth." },
       ],
       risksContent:
-        "Composite bonding can chip, stain, or wear over several years and may need replacement or re-polishing. Bonding doesn't match ceramic for long-term durability but is far more conservative. Avoid coffee, tea, red wine, and dark sauces for the first 48 hours after treatment.",
+        "Your composite resin requires a short window to fully cure and stabilize. For the first 48 hours, avoid staining materials (coffee, tea, red wine, berries, and dark sauces), expect mild temporary sensitivity to hot or cold foods, stick to softer foods, and do not bite down hard on your front teeth. Long-term, brush and floss daily with a non-abrasive fluoride toothpaste, limit staining agents and tobacco, refrain from biting hard objects like ice, pens, or fingernails, wear a custom nightguard if you grind your teeth, and visit us every six months for professional cleaning and veneer maintenance.",
+      faqs: [
+        { q: "How long do composite veneers last?", a: "With proper care, a composite smile design typically maintains its results for approximately 5–7 years before a transition to ceramic alternatives becomes advisable." },
+        { q: "How much does composite bonding cost?", a: "Composite veneers / bonding are approximately $550 AUD per tooth, while ceramic veneers are approximately $1,600 AUD per tooth. Flexible financing is available across all treatment options, with the potential to reduce costs to as little as $60 AUD per week." },
+        { q: "Can I combine ceramic and composite veneers?", a: "Yes — a combined approach is a strategy we frequently recommend. Ceramic veneers are placed on the front 2–4 teeth requiring the most significant cosmetic improvement, and the remaining visible teeth are treated with composite bonding. This delivers optimal results from both techniques while managing your total investment." },
+        { q: "How do I get started?", a: "Should you wish to explore a meaningful yet cost-conscious enhancement, we welcome you to schedule a complimentary 30-minute assessment to determine whether dental bonding or composite veneering is the most suitable option for your needs." },
+      ],
     },
   ],
   processSteps: [
@@ -743,9 +896,9 @@ export const ORTHODONTICS: PillarData = {
   slug: "orthodontics",
   tagline: "A healthy bite, a balanced airway.",
   shortDescription:
-    "Clear aligners for adults, early interventive orthodontics for children, and airway-focused care — visiting orthodontic clinician Dr. Sagar (Jimmy) Rao.",
+    "Clear aligners for adults, early interventive orthodontics and palatal expanders for children, and adult airway, snoring & sleep care — visiting orthodontic clinician Dr. Sagar (Jimmy) Rao.",
   intro:
-    "Orthodontics at Leichhardt Dental is led by visiting clinician Dr. Sagar (Jimmy) Rao, who comes in once a month for orthodontic reviews and consultations. The approach is evidence-based and family-focused, with a strong emphasis on airway health and functional alignment — not just a straight smile. For adults seeking discreet teeth straightening we use Invisalign clear aligners; for children, we focus on early interventive orthodontics to guide jaw growth and prevent more invasive treatment later.",
+    "Orthodontics at Leichhardt Dental is led by visiting clinician Dr. Sagar (Jimmy) Rao, who comes in once a month for orthodontic reviews and consultations. The approach is evidence-based and family-focused, with a strong emphasis on airway health and functional alignment — not just a straight smile. For adults seeking discreet teeth straightening we use Invisalign clear aligners, and we screen for snoring and sleep-disordered breathing with custom appliances where indicated. For children, we focus on early interventive orthodontics — guiding jaw growth and airway development, with custom palatal expanders where needed — to help prevent more invasive treatment later.",
   image: philosophyImg,
   bentoSpan: "md:col-span-2 lg:col-span-12",
   bentoAspect: "aspect-[4/5] md:aspect-[16/9] lg:aspect-[21/9]",
@@ -758,16 +911,46 @@ export const ORTHODONTICS: PillarData = {
       description:
         "Discreet teeth straightening with custom clear-tray aligners. Planned digitally with 3D scans, reviewed monthly by Dr. Jimmy.",
       longDescription:
-        "Invisalign uses a series of custom clear aligners to gradually move your teeth into a better position — without metal brackets or wires. We begin with a 3D digital scan and Invisalign's planning software to map your tooth movements before treatment starts, so you can see the projected result. You wear each tray for about two weeks before progressing to the next, and Dr. Jimmy reviews your progress at his monthly visits. Most adult cases take 6–18 months depending on complexity.",
+        "Invisalign uses a series of custom clear aligners to gradually move your teeth into a better position — without metal brackets or wires. We begin with a 3D digital scan and Invisalign's planning software to map your tooth movements before treatment starts, so you can see the projected result and estimated timeline at your first planning consultation. You wear each set of trays for about one to two weeks, around 22 hours a day, removing them only to eat, drink, brush, and floss. Dr. Jimmy reviews your progress every 6–8 weeks at his monthly visits and hands over your next sets. Most adult cases take 6–18 months depending on complexity. For many adults, aligners do more than straighten teeth — gently widening a narrow upper arch can create \"tongue space\" that supports clearer nighttime breathing. Treatment is fully bundled: all 3D scans and planning, your complete aligner series, progress checkups, any end-of-treatment refinement aligners, and a set of retainers to hold your result.",
       whatToExpect: [
-        "Initial 3D scan and digital preview of the projected result",
-        "Custom clear trays — virtually invisible day-to-day",
-        "Trays worn 20–22 hours per day; removed for meals",
-        "Monthly reviews with Dr. Jimmy",
-        "Typical treatment 6–18 months for adults",
+        "Virtually Invisible: the clear material lets you undergo treatment discreetly, without impacting your professional or social life",
+        "Completely Removable: take your aligners out to eat, drink, brush, and floss normally, making it easier to maintain excellent oral hygiene",
+        "Enhanced Comfort: custom-moulded from smooth medical-grade plastic, eliminating the painful lip and cheek irritation often caused by metal wires and brackets",
+        "Worn around 22 hours per day; reviews every 6–8 weeks with Dr. Jimmy",
+        "Refinement aligners and retainers included; typically 6–18 months for adults",
+      ],
+      pricing: [
+        { name: "Minor cases", price: "$3,500–$5,000", description: "Mild crowding, small gaps, or minor cosmetic alignment of the front teeth." },
+        { name: "Moderate cases", price: "$5,000–$7,500", description: "Noticeable crowding, prominent spacing, and mild bite issues." },
+        { name: "Comprehensive cases", price: "$7,500–$9,500+", description: "Full-arch correction for complex crowding or deeper bite misalignment." },
+      ],
+      processSteps: [
+        { title: "Initial assessment", description: "Dr. Jimmy evaluates your teeth, bite, and airway to confirm clear aligners are the right fit for you." },
+        { title: "Digital scan & plan", description: "A fast, comfortable 3D scan programmes your custom aligner series — and previews the projected result and timeline." },
+        { title: "Daily wear", description: "Wear your aligners around 22 hours a day, changing to the next set roughly every one to two weeks as directed." },
+        { title: "Progress checks", description: "Every 6–8 weeks Dr. Jimmy reviews your movement and hands over your next sets of aligners." },
+        { title: "Retention", description: "Any refinement aligners are made at the end of active treatment, then a set of retainers holds your new smile in place." },
       ],
       risksContent:
         "Clear-aligner treatment requires consistent daily wear to be effective. Risks include mild discomfort with each new tray, transient lisping in the first week, gum irritation if a tray edge is rough, and treatment delays if trays aren't worn as prescribed. Some complex bite issues may not be suitable for clear aligners and may require referral to a specialist orthodontist.",
+      faqs: [
+        {
+          q: "How much does Invisalign cost?",
+          a: "In Australia, Invisalign typically ranges from $3,500 to $9,500+ depending on the complexity of your case — roughly $3,500–$5,000 for minor cases, $5,000–$7,500 for moderate cases, and $7,500–$9,500+ for comprehensive full-arch correction. Dr. Jimmy gives you an itemised quote at your 3D planning consultation.",
+        },
+        {
+          q: "What's included in the price?",
+          a: "Your plan is fully bundled: all 3D scans and planning, your complete series of clear aligners, every progress checkup with Dr. Jimmy, any refinement aligners at the end of treatment, and a set of retainers to stabilise your result.",
+        },
+        {
+          q: "Will private health insurance help?",
+          a: "If your policy includes Major Dental or Orthodontic Extras cover, your fund will usually contribute a rebate toward clear-aligner therapy — commonly $1,000–$3,000 depending on your fund and tier. We print your item codes at consultation so you can confirm your rebate beforehand.",
+        },
+        {
+          q: "Are payment plans available?",
+          a: "Yes — interest-free payment plans let you split the cost of treatment into manageable weekly or monthly instalments across your treatment timeline.",
+        },
+      ],
     },
     {
       id: "early-intervention",
@@ -775,36 +958,102 @@ export const ORTHODONTICS: PillarData = {
       imageUrl: IMG.toolsColorful,
       name: "Early Interventive Orthodontics",
       description:
-        "Guiding jaw growth and tooth eruption in children to prevent more invasive treatment later. Ideally assessed from age 7.",
+        "Guiding jaw growth, tooth eruption, and airway development in children to help prevent more invasive treatment later. Ideally assessed from age 7, with custom palatal expanders where indicated.",
       longDescription:
-        "Dr. Jimmy's philosophy on paediatric orthodontics is simple: the less time a child spends in treatment, the better. By intervening early in jaw and dental development, we can often guide tooth eruption and jaw growth so that more invasive treatment isn't needed later in the teenage years. The Australian Society of Orthodontists recommends an initial orthodontic assessment around age 7 — well before any visible crowding becomes obvious. Treatment may involve simple appliances, growth-guidance plates, or watchful monitoring; not every child will need active treatment.",
+        "Dr. Jimmy's philosophy on paediatric orthodontics is simple: the less time a child spends in treatment, the better. By assessing development early, we look at how the jaw, palate, and airway are growing together — not just whether the teeth are straight. The Australian Society of Orthodontists recommends a first orthodontic evaluation between ages 7 and 8, once the first permanent molars have erupted, well before visible crowding becomes obvious. Catching structural issues early — while the facial bones are still highly adaptable — can resolve crossbites and crowding and often simplifies or reduces the need for extensive braces or extractions later. We also screen for persistent mouth breathing, which can be a sign of a restricted airway (narrow passages, enlarged tonsils, or allergies) and, left unaddressed, may contribute to a narrow palate, a recessed lower jaw, severe crowding, and disrupted sleep. Where a child has a narrow upper jaw or a crossbite, a custom palatal expander can gently widen the upper arch — because the two halves of a child's upper jaw don't fully fuse until puberty. This creates room for incoming permanent teeth and widens the floor of the nasal cavity, which can make nasal breathing easier. Our expanders are fixed appliances made with a 3D digital scan and CAD/CAM manufacturing rather than messy putty, so they work consistently without relying on a child to wear a removable plate. Not every child needs active treatment — sometimes watchful monitoring is the right call.",
       whatToExpect: [
-        "Initial assessment from age 7",
+        "First evaluation from age 7–8",
         "Gentle, conversational appointments",
+        "Screening for mouth breathing and airway development",
+        "Custom CAD/CAM palatal expanders where clearly indicated",
         "Watchful monitoring rather than over-treatment",
-        "Growth-guidance appliances only where clearly indicated",
         "Coordinated with your general dentist for ongoing care",
+      ],
+      pricing: [
+        { name: "Early interventive treatment / palatal expander", price: "$2,800–$5,500", description: "Varies with the complexity of your child's case. Includes the digital workflow, fitting, monitoring adjustments, and the 6–9 month stabilisation phase." },
+      ],
+      processSteps: [
+        { title: "First screening", description: "A relaxed assessment of your child's bite, jaw relationships, and airway development — identifying crossbites, narrow arches, or mouth-breathing signs while the bones are still adaptable." },
+        { title: "Digital 3D workflow", description: "If an appliance is indicated, a 3D intraoral scan (no putty) is used to custom-design a fixed expander with CAD/CAM manufacturing for an accurate, comfortable fit." },
+        { title: "Fitting & monitoring", description: "The fixed expander is placed and gently widens the upper arch, with routine progress adjustments." },
+        { title: "Retention & stabilisation", description: "Continued monitoring over roughly 6–9 months so the structural changes settle safely." },
       ],
       risksContent:
         "Early orthodontic treatment is conservative and reversible where appliances are used. The main consideration is that not every developmental issue is best addressed in early childhood — some are better watched and treated later. Dr. Jimmy will give you a clear, honest read on whether your child needs treatment now, watchful monitoring, or no intervention at all.",
+      faqs: [
+        {
+          q: "What is the right age for a first orthodontic evaluation?",
+          a: "The Australian Society of Orthodontists recommends a first evaluation between ages 7 and 8. By then the first permanent molars have usually erupted, so we can accurately assess your child's bite, jaw relationships, and airway development — and most children won't need active treatment yet.",
+        },
+        {
+          q: "Why do you screen for mouth breathing?",
+          a: "Persistent mouth breathing can be a sign of a restricted airway — narrow passages, enlarged tonsils, or chronic allergies. Left unaddressed it may contribute to a narrow palate, a recessed lower jaw, severe crowding, and disrupted sleep. Screening early helps us catch these developmental issues when they're gentler to manage.",
+        },
+        {
+          q: "What is a palatal expander and how does it help?",
+          a: "It's a custom appliance that gently widens a child's narrow upper jaw — possible because the two halves of the upper jaw don't fully fuse until puberty. It creates space for incoming permanent teeth (reducing crowding) and widens the floor of the nasal cavity, which can make nasal breathing easier.",
+        },
+        {
+          q: "How much does early interventive treatment cost?",
+          a: "Because every child's development is different, costs vary with complexity. In Australia, early interceptive treatment or a fixed palatal expander typically ranges from $2,800 to $5,500. We give you a complete, itemised breakdown at your child's first screening, and interest-free payment plans are available.",
+        },
+        {
+          q: "Is it covered by private health insurance?",
+          a: "If your family has Major Dental or Orthodontic Extras cover, your fund will generally cover a portion. We offer on-the-spot HICAPS claiming, and because rebate limits vary widely we recommend checking with your fund beforehand.",
+        },
+      ],
     },
     {
       id: "airway",
       slug: "airway-and-functional-alignment",
       imageUrl: IMG.glovedEquipment,
-      name: "Airway & Functional Alignment",
+      name: "Airway, Snoring & Sleep (Adults)",
       description:
-        "Assessment and management of airway issues — mouth breathing, snoring, suspected sleep-disordered breathing — alongside orthodontic care.",
+        "Adult airway and functional alignment — screening for snoring and sleep-disordered breathing, Arise home sleep studies, and custom Mandibular Advancement Splints (MAS) where indicated.",
       longDescription:
-        "Dr. Jimmy is particularly passionate about the link between dental development and the airway. Mouth breathing, snoring, restless sleep, and crowded jaws in children can be early signs of airway compromise that contribute to broader health issues later in life. Orthodontic care at Leichhardt Dental considers the airway from the start — not as an afterthought. Where airway issues are suspected, we may refer for sleep studies or ENT review alongside any orthodontic planning, so treatment addresses the whole picture rather than just tooth alignment.",
+        "Adult dental care is about more than worn or crooked teeth. The structural position of your jaws, tongue, and bite affects how well you breathe and sleep. A narrow upper arch, a recessed lower jaw, or a deep overbite leaves less room for your tongue — and during sleep, when the throat muscles relax, the tongue can fall back and restrict the airway. That can show up as chronic snoring, obstructive sleep apnoea (OSA — where the airway partly or fully collapses and briefly cuts off oxygen), and daytime fatigue, brain fog, or morning headaches. We assess this airway picture as part of adult orthodontic care. Where sleep-disordered breathing is suspected, we partner with Arise to arrange a medical-grade home sleep study: you pick up a lightweight kit from the clinic, wear the non-invasive sensors for one night in your own bed, then drop it back the next morning — and the data is analysed by independent, qualified sleep physicians. We don't diagnose sleep conditions in-house. If a study confirms snoring or mild-to-moderate OSA, a custom Mandibular Advancement Splint (MAS) is one evidence-based option: a slim nighttime appliance that holds your lower jaw and tongue gently forward to keep the airway open. Adult Invisalign — widening a narrow arch to create \"tongue space\" — is another pathway. A custom MAS typically ranges from $1,800 to $2,500.",
       whatToExpect: [
-        "Airway-aware orthodontic assessment",
-        "Education on mouth breathing and oral myofunctional habits",
-        "Referral to sleep medicine or ENT where clinically indicated",
-        "Treatment that considers jaw growth, bite, and airway together",
+        "Airway-aware assessment of jaw structure and bite",
+        "Arise medical-grade home sleep study (analysed by sleep physicians)",
+        "Custom Mandibular Advancement Splint (MAS) where indicated",
+        "Adult Invisalign arch-widening as an alternative pathway",
+        "Diagnosis of sleep conditions referred to medical specialists",
+        "Custom MAS typically $1,800–$2,500",
+      ],
+      pricing: [
+        { name: "Custom Mandibular Advancement Splint (MAS)", price: "$1,800–$2,500", description: "Medical-grade, custom-engineered nighttime appliance. Includes the digital scan, lab fabrication, fitting and titration, and follow-up reviews over the first 6 months." },
+      ],
+      processSteps: [
+        { title: "Airway screening", description: "An initial assessment at Leichhardt Dental Centre. If a sleep issue is suspected, you're set up with an Arise home sleep study kit to take away." },
+        { title: "Home sleep study", description: "You wear the lightweight, non-invasive sensors for a single night in your own bed, then drop the kit back the next morning. The data is analysed by independent, qualified sleep physicians." },
+        { title: "Digital scan & fabrication", description: "If a MAS is indicated, a 3D intraoral scan (no putty) is used to custom-make a slim, medical-grade appliance." },
+        { title: "Fitting & titration", description: "The appliance is fitted and gradually fine-tuned over the first few months to bring your jaw to the optimal breathing position." },
+        { title: "Follow-up care", description: "Regular reviews over the first 6 months track your sleep improvements and protect your jaw joint health." },
       ],
       risksContent:
-        "Airway-focused orthodontic care is non-invasive at the assessment stage. Where active treatment is recommended, the same considerations apply as for general orthodontics. Diagnosis of sleep-disordered breathing requires referral to an appropriate medical specialist — we don't diagnose sleep conditions in-house.",
+        "Diagnosis of sleep-disordered breathing requires referral to an appropriate medical specialist — we don't diagnose sleep conditions in-house, and any home sleep study is analysed by independent sleep physicians. A MAS suits snoring and mild-to-moderate OSA; severe OSA is generally better managed with CPAP, and we refer accordingly. A MAS can cause temporary jaw or tooth discomfort, increased salivation, or minor bite changes, which titration and regular reviews help manage. It isn't suitable for everyone — your jaw-joint health and bite are assessed first.",
+      faqs: [
+        {
+          q: "CPAP machine or a Mandibular Advancement Splint — which is right for me?",
+          a: "CPAP uses continuous air pressure through a mask to hold the airway open and is the standard for severe sleep apnoea, though some people find the mask hard to tolerate long-term — clinical trials show up to around half of patients struggle with ongoing use. A custom MAS holds the lower jaw forward to keep the airway open; it suits snoring and mild-to-moderate OSA, or people who can't tolerate CPAP. Because it's cordless, quiet, and travel-friendly, many people wear it more consistently — and for the right candidates a MAS can achieve similar real-world results. Dr. Jimmy and your sleep physician help you choose the right pathway.",
+        },
+        {
+          q: "What is an Arise home sleep study?",
+          a: "It's a medical-grade sleep study you do from your own bed instead of an overnight hospital lab. You pick up a lightweight kit from us, wear the non-invasive sensors for one night, and drop it back the next morning. The recording — your breathing, oxygen levels, and sleep cycles — is analysed by independent, qualified sleep physicians who provide the diagnosis.",
+        },
+        {
+          q: "How much does a custom MAS cost?",
+          a: "In Australia a custom-engineered, medical-grade Mandibular Advancement Splint typically ranges from $1,800 to $2,500, depending on the appliance design and the complexity of your bite. We provide an itemised breakdown before starting any treatment.",
+        },
+        {
+          q: "What's included in the cost?",
+          a: "The fee covers your digital 3D scan, the precision lab fabrication of the appliance, fitting and titration (fine-tuning the jaw position over the first few months), and follow-up reviews over the first 6 months to track your progress and protect your jaw joint.",
+        },
+        {
+          q: "Is a MAS covered by private health insurance?",
+          a: "Usually, yes. Because a custom MAS is an evidence-based treatment for diagnosed snoring and sleep apnoea, most Australian funds offer a rebate under Major Dental or Orthodontic Extras cover. We provide the specific item numbers so you can confirm your out-of-pocket cost with your fund beforehand. Interest-free payment plans are also available.",
+        },
+      ],
     },
   ],
   processSteps: [
@@ -854,7 +1103,11 @@ export const ORTHODONTICS: PillarData = {
     },
     {
       q: "How much does Invisalign treatment cost?",
-      a: "Investment varies with complexity — typically $6,000–$9,000 for a full treatment course. We provide a detailed written quote at consultation, plus information on flexible payment plans.",
+      a: "Investment varies with complexity — typically $3,500–$5,000 for minor cases, $5,000–$7,500 for moderate cases, and $7,500–$9,500+ for comprehensive full-arch correction. We provide a detailed written quote at consultation, plus information on flexible payment plans.",
+    },
+    {
+      q: "Do you treat snoring and sleep apnoea?",
+      a: "We screen adults for snoring and sleep-disordered breathing as part of airway-focused orthodontic care, and can arrange a medical-grade Arise home sleep study (analysed by independent sleep physicians). Where snoring or mild-to-moderate sleep apnoea is confirmed, a custom Mandibular Advancement Splint is one option we offer. We don't diagnose sleep conditions in-house — diagnosis is made by an appropriate medical specialist.",
     },
   ],
   ctaHeadline: "Curious about orthodontics for you or your child?",

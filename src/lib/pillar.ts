@@ -30,6 +30,7 @@ export type PricingTier = {
 export type BeforeAfterPair = {
   before: string;
   after: string;
+  caption?: string;
 };
 
 /** Shape consumed by page components. Images already resolved to URL strings. */
@@ -129,7 +130,7 @@ function cleanBeforeAfter(
 ): BeforeAfterPair[] | null {
   const cleaned = items
     ?.filter((i): i is BeforeAfterPair => Boolean(i.before && i.after))
-    .map((i) => ({ before: i.before, after: i.after }));
+    .map((i) => ({ before: i.before, after: i.after, caption: i.caption }));
   return cleaned?.length ? cleaned : null;
 }
 

@@ -154,8 +154,9 @@ export const servicePillar = defineType({
                   fields: [
                     { name: "before", type: "url", title: "Before image URL" },
                     { name: "after", type: "url", title: "After image URL" },
+                    { name: "caption", type: "string", title: "Case caption / description (optional)" },
                   ],
-                  preview: { select: { title: "before" } },
+                  preview: { select: { title: "caption", subtitle: "before" } },
                 },
               ],
             },

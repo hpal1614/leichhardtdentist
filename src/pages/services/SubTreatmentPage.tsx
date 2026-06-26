@@ -189,32 +189,38 @@ export function SubTreatmentPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-60px" }}
                   transition={{ duration: 0.6, delay: i * 0.06 }}
-                  className="grid sm:grid-cols-2 gap-4 lg:gap-6"
                 >
-                  <figure className="relative rounded-[2rem] overflow-hidden bg-foreground/5">
-                    <span className="absolute top-4 left-4 z-10 px-3 py-1 rounded-full bg-black/60 backdrop-blur-sm text-[10px] uppercase tracking-[0.25em] font-semibold text-white">
-                      Before
-                    </span>
-                    <div className="aspect-[4/5] overflow-hidden">
-                      <ImageWithFallback
-                        src={c.before}
-                        alt={`Before ${sub.name.toLowerCase()} treatment — case ${i + 1}`}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                  </figure>
-                  <figure className="relative rounded-[2rem] overflow-hidden bg-foreground/5">
-                    <span className="absolute top-4 left-4 z-10 px-3 py-1 rounded-full bg-primary text-[10px] uppercase tracking-[0.25em] font-semibold text-white">
-                      After
-                    </span>
-                    <div className="aspect-[4/5] overflow-hidden">
-                      <ImageWithFallback
-                        src={c.after}
-                        alt={`After ${sub.name.toLowerCase()} treatment — case ${i + 1}`}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                  </figure>
+                  <div className="grid sm:grid-cols-2 gap-4 lg:gap-6">
+                    <figure className="relative rounded-[2rem] overflow-hidden bg-foreground/5">
+                      <span className="absolute top-4 left-4 z-10 px-3 py-1 rounded-full bg-black/60 backdrop-blur-sm text-[10px] uppercase tracking-[0.25em] font-semibold text-white">
+                        Before
+                      </span>
+                      <div className="aspect-[4/5] overflow-hidden">
+                        <ImageWithFallback
+                          src={c.before}
+                          alt={`Before ${sub.name.toLowerCase()} treatment — case ${i + 1}`}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                    </figure>
+                    <figure className="relative rounded-[2rem] overflow-hidden bg-foreground/5">
+                      <span className="absolute top-4 left-4 z-10 px-3 py-1 rounded-full bg-primary text-[10px] uppercase tracking-[0.25em] font-semibold text-white">
+                        After
+                      </span>
+                      <div className="aspect-[4/5] overflow-hidden">
+                        <ImageWithFallback
+                          src={c.after}
+                          alt={`After ${sub.name.toLowerCase()} treatment — case ${i + 1}`}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                    </figure>
+                  </div>
+                  {c.caption && (
+                    <p className="mt-3 lg:mt-4 text-sm lg:text-base text-muted-foreground leading-relaxed max-w-3xl">
+                      {c.caption}
+                    </p>
+                  )}
                 </motion.div>
               ))}
             </div>

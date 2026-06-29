@@ -5,6 +5,7 @@ import { Seo } from "../components/Seo";
 import { PageHero } from "../components/layout/PageHero";
 import { BOOKING_LINK_PROPS } from "../lib/booking";
 import { usePractice } from "../lib/usePractice";
+import { ENQUIRY_DELIVERY_EMAIL } from "../lib/practice";
 
 const MAP_EMBED =
   "https://www.google.com/maps?q=Shop+4+39-45+Norton+Street+Leichhardt+NSW+2040&output=embed";
@@ -19,15 +20,14 @@ export function Contact() {
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
 
   // Real delivery via FormSubmit (no backend needed). Submissions are emailed
-  // to practice.email. NOTE: the first submission triggers a one-time
-  // activation email to that inbox — click "Activate Form" once and all
-  // subsequent enquiries are delivered.
+  // to ENQUIRY_DELIVERY_EMAIL (the monitored leads inbox), which is kept
+  // separate from the public-facing practice.email shown on the page.
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (hp) return; // honeypot tripped — silently drop (likely a bot)
     setStatus("sending");
     try {
-      const res = await fetch(`https://formsubmit.co/ajax/${practice.email}`, {
+      const res = await fetch(`https://formsubmit.co/ajax/${ENQUIRY_DELIVERY_EMAIL}`, {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({

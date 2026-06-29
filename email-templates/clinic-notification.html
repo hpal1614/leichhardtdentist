@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<!--
+  EMAIL 1 of 2 — CLINIC NOTIFICATION (premium)
+  The email the practice/leads inbox receives on each form submission.
+  EmailJS variables: {{name}} {{email}} {{phone}} {{message}}
+  In EmailJS set: To = your leads inbox, Reply To = {{email}},
+  Subject = "New website enquiry from {{name}}".
+-->
+<html lang="en-AU">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>New website enquiry</title>
+  </head>
+  <body style="margin:0; padding:0; background-color:#FAF9F6; -webkit-font-smoothing:antialiased;">
+    <div style="display:none; max-height:0; overflow:hidden; opacity:0; color:#FAF9F6; font-size:1px; line-height:1px;">New enquiry from {{name}} — reply directly from your inbox.</div>
+
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:#FAF9F6;">
+      <tr>
+        <td align="center" style="padding:40px 16px;">
+
+          <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="width:600px; max-width:600px; background-color:#FFFFFF; border:1px solid #EDE8E1; border-radius:18px; overflow:hidden;">
+
+            <!-- Top accent bar -->
+            <tr><td style="height:4px; line-height:4px; font-size:4px; background-color:#B94A13;">&nbsp;</td></tr>
+
+            <!-- Header -->
+            <tr>
+              <td align="center" style="padding:44px 48px 22px 48px;">
+                <img src="https://res.cloudinary.com/dzydzte9h/image/upload/w_360,q_auto,f_png/dental-website/brand/logo.png" alt="Leichhardt Dental Centre" width="172" style="display:block; width:172px; max-width:58%; height:auto; margin:0 auto;" />
+                <p style="margin:18px 0 0 0; font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:10px; letter-spacing:3px; text-transform:uppercase; color:#A99E8E;">General &amp; Implant Dentistry &middot; Leichhardt</p>
+              </td>
+            </tr>
+            <tr><td style="padding:0 48px;"><div style="border-top:1px solid #EDE8E1; font-size:0; line-height:0;">&nbsp;</div></td></tr>
+
+            <!-- Title -->
+            <tr>
+              <td style="padding:34px 48px 0 48px;">
+                <p style="margin:0 0 12px 0; font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:11px; letter-spacing:2.5px; text-transform:uppercase; color:#B94A13; font-weight:700;">New enquiry</p>
+                <h1 style="margin:0; font-family:Georgia,'Times New Roman',serif; font-size:30px; line-height:1.22; color:#1A1A1A; font-weight:normal;">You have a new enquiry.</h1>
+                <p style="margin:14px 0 0 0; font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:15px; line-height:1.65; color:#6E665B;">Submitted just now through the contact form on leichhardtdentist.com.</p>
+              </td>
+            </tr>
+
+            <!-- Details -->
+            <tr>
+              <td style="padding:26px 48px 0 48px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td style="padding:14px 0; border-bottom:1px solid #F0EBE4; font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:#A99E8E; width:92px; vertical-align:middle;">Name</td>
+                    <td style="padding:14px 0; border-bottom:1px solid #F0EBE4; font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:16px; color:#1A1A1A; font-weight:600; vertical-align:middle;">{{name}}</td>
+                  </tr>
+                  <tr>
+                    <td style="padding:14px 0; border-bottom:1px solid #F0EBE4; font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:#A99E8E; vertical-align:middle;">Email</td>
+                    <td style="padding:14px 0; border-bottom:1px solid #F0EBE4; font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:16px; vertical-align:middle;"><a href="mailto:{{email}}" style="color:#B94A13; text-decoration:none; font-weight:600;">{{email}}</a></td>
+                  </tr>
+                  <tr>
+                    <td style="padding:14px 0; border-bottom:1px solid #F0EBE4; font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:#A99E8E; vertical-align:middle;">Phone</td>
+                    <td style="padding:14px 0; border-bottom:1px solid #F0EBE4; font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:16px; vertical-align:middle;"><a href="tel:{{phone}}" style="color:#B94A13; text-decoration:none; font-weight:600;">{{phone}}</a></td>
+                  </tr>
+                </table>
+                <p style="margin:24px 0 10px 0; font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:#A99E8E;">Message</p>
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:#FAF8F4; border-radius:12px;">
+                  <tr><td style="padding:18px 22px; border-left:3px solid #B94A13; border-top-left-radius:12px; border-bottom-left-radius:12px; font-family:Georgia,'Times New Roman',serif; font-size:16px; line-height:1.6; color:#3A352E; font-style:italic;">{{message}}</td></tr>
+                </table>
+              </td>
+            </tr>
+
+            <!-- CTA -->
+            <tr>
+              <td align="center" style="padding:30px 48px 42px 48px;">
+                <table role="presentation" cellpadding="0" cellspacing="0">
+                  <tr><td align="center" style="border-radius:999px; background-color:#B94A13;">
+                    <a href="mailto:{{email}}" style="display:inline-block; padding:16px 40px; font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:12px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#FFFFFF; text-decoration:none; border-radius:999px;">Reply to {{name}}</a>
+                  </td></tr>
+                </table>
+              </td>
+            </tr>
+
+            <!-- Charcoal footer -->
+            <tr>
+              <td style="background-color:#1A1A1A; padding:32px 48px;">
+                <p style="margin:0 0 8px 0; font-family:Georgia,'Times New Roman',serif; font-size:17px; color:#FFFFFF;">Leichhardt Dental Centre</p>
+                <p style="margin:0; font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:13px; line-height:1.8; color:#9C958B;">Shop 4/39&ndash;45 Norton Street, Leichhardt NSW 2040<br />02 9568 3593 &nbsp;&middot;&nbsp; leichhardtdentist@gmail.com<br />Mon&ndash;Fri 9am&ndash;6pm &nbsp;&middot;&nbsp; Sat 9am&ndash;4pm</p>
+                <p style="margin:18px 0 0 0; font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:11px; line-height:1.6; color:#5F5950;">Automated notification from your website contact form.</p>
+              </td>
+            </tr>
+
+          </table>
+
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

@@ -77,7 +77,8 @@
       },
       "scripts": {
             "dev": "vite",
-            "build": "vite build",
+            "generate-sitemap": "node scripts/generate-sitemap.mjs",
+            "build": "node scripts/generate-sitemap.mjs && vite build",
             "sync-media": "node --env-file=.env sync-media.js",
             "seed": "node --env-file=.env scripts/seed-sanity.mjs"
       }

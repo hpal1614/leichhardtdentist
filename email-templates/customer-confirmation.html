@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<!--
+  EMAIL 2 of 2 — CUSTOMER CONFIRMATION / auto-reply (premium)
+  The email the visitor receives right after submitting the form.
+  EmailJS variables: {{name}} {{message}}
+  In EmailJS set: To = {{email}}, From Name = "Leichhardt Dental Centre",
+  Reply To = your practice inbox, Subject = "We've received your message".
+-->
+<html lang="en-AU">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>We've received your message</title>
+  </head>
+  <body style="margin:0; padding:0; background-color:#FAF9F6; -webkit-font-smoothing:antialiased;">
+    <div style="display:none; max-height:0; overflow:hidden; opacity:0; color:#FAF9F6; font-size:1px; line-height:1px;">Thanks for contacting Leichhardt Dental Centre — we'll be in touch shortly.</div>
+
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:#FAF9F6;">
+      <tr>
+        <td align="center" style="padding:40px 16px;">
+
+          <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="width:600px; max-width:600px; background-color:#FFFFFF; border:1px solid #EDE8E1; border-radius:18px; overflow:hidden;">
+
+            <!-- Top accent bar -->
+            <tr><td style="height:4px; line-height:4px; font-size:4px; background-color:#B94A13;">&nbsp;</td></tr>
+
+            <!-- Header -->
+            <tr>
+              <td align="center" style="padding:44px 48px 22px 48px;">
+                <img src="https://res.cloudinary.com/dzydzte9h/image/upload/w_360,q_auto,f_png/dental-website/brand/logo.png" alt="Leichhardt Dental Centre" width="172" style="display:block; width:172px; max-width:58%; height:auto; margin:0 auto;" />
+                <p style="margin:18px 0 0 0; font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:10px; letter-spacing:3px; text-transform:uppercase; color:#A99E8E;">General &amp; Implant Dentistry &middot; Leichhardt</p>
+              </td>
+            </tr>
+            <tr><td style="padding:0 48px;"><div style="border-top:1px solid #EDE8E1; font-size:0; line-height:0;">&nbsp;</div></td></tr>
+
+            <!-- Greeting -->
+            <tr>
+              <td style="padding:34px 48px 0 48px;">
+                <p style="margin:0 0 12px 0; font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:11px; letter-spacing:2.5px; text-transform:uppercase; color:#B94A13; font-weight:700;">Message received</p>
+                <h1 style="margin:0; font-family:Georgia,'Times New Roman',serif; font-size:30px; line-height:1.28; color:#1A1A1A; font-weight:normal;">Thank you, {{name}}.</h1>
+                <p style="margin:16px 0 0 0; font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:16px; line-height:1.72; color:#4A443C;">We've received your enquiry and a member of our team will be in touch &mdash; usually within one business day.</p>
+              </td>
+            </tr>
+
+            <!-- Their message -->
+            <tr>
+              <td style="padding:24px 48px 0 48px;">
+                <p style="margin:0 0 10px 0; font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:#A99E8E;">Your message</p>
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:#FAF8F4; border-radius:12px;">
+                  <tr><td style="padding:18px 22px; border-left:3px solid #B94A13; border-top-left-radius:12px; border-bottom-left-radius:12px; font-family:Georgia,'Times New Roman',serif; font-size:16px; line-height:1.6; color:#3A352E; font-style:italic;">{{message}}</td></tr>
+                </table>
+              </td>
+            </tr>
+
+            <!-- Urgent note -->
+            <tr>
+              <td style="padding:24px 48px 0 48px;">
+                <p style="margin:0; font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:15px; line-height:1.72; color:#4A443C;">If your matter is urgent or you're in pain, please call us on <a href="tel:+61295683593" style="color:#B94A13; text-decoration:none; font-weight:600;">02&nbsp;9568&nbsp;3593</a> during opening hours. You're also welcome to book online any time:</p>
+              </td>
+            </tr>
+
+            <!-- Book CTA -->
+            <tr>
+              <td align="center" style="padding:26px 48px 6px 48px;">
+                <table role="presentation" cellpadding="0" cellspacing="0">
+                  <tr><td align="center" style="border-radius:999px; background-color:#B94A13;">
+                    <a href="https://www.centaurportal.com/d4w/org-262/extended_search?location=283&amp;shortVer=true" target="_blank" style="display:inline-block; padding:16px 40px; font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:12px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#FFFFFF; text-decoration:none; border-radius:999px;">Book an appointment online</a>
+                  </td></tr>
+                </table>
+              </td>
+            </tr>
+
+            <!-- Sign-off -->
+            <tr>
+              <td style="padding:26px 48px 38px 48px;">
+                <p style="margin:0; font-family:Georgia,'Times New Roman',serif; font-size:16px; line-height:1.6; color:#1A1A1A;">Warm regards,<br /><span style="color:#B94A13;">The team at Leichhardt Dental Centre</span></p>
+              </td>
+            </tr>
+
+            <!-- Charcoal footer -->
+            <tr>
+              <td style="background-color:#1A1A1A; padding:32px 48px;">
+                <p style="margin:0 0 8px 0; font-family:Georgia,'Times New Roman',serif; font-size:17px; color:#FFFFFF;">Leichhardt Dental Centre</p>
+                <p style="margin:0; font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:13px; line-height:1.8; color:#9C958B;">
+                  <a href="https://maps.google.com/?q=Shop+4+39-45+Norton+Street+Leichhardt+NSW+2040" target="_blank" style="color:#9C958B; text-decoration:none;">Shop 4/39&ndash;45 Norton Street, Leichhardt NSW 2040</a><br />
+                  <a href="tel:+61295683593" style="color:#9C958B; text-decoration:none;">02 9568 3593</a> &nbsp;&middot;&nbsp; <a href="mailto:leichhardtdentist@gmail.com" style="color:#9C958B; text-decoration:none;">leichhardtdentist@gmail.com</a><br />
+                  Mon&ndash;Fri 9am&ndash;6pm &nbsp;&middot;&nbsp; Sat 9am&ndash;4pm &nbsp;&middot;&nbsp; Sun closed
+                </p>
+                <p style="margin:16px 0 0 0; font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:13px;">
+                  <a href="https://www.facebook.com/leichhardtdentalcentre" target="_blank" style="color:#E86A2C; text-decoration:none; font-weight:600;">Facebook</a> &nbsp;&middot;&nbsp;
+                  <a href="https://www.instagram.com/leichhardt_dental/" target="_blank" style="color:#E86A2C; text-decoration:none; font-weight:600;">Instagram</a> &nbsp;&middot;&nbsp;
+                  <a href="https://www.tiktok.com/@leichhardtdentalcentre" target="_blank" style="color:#E86A2C; text-decoration:none; font-weight:600;">TikTok</a>
+                </p>
+                <p style="margin:18px 0 0 0; font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:11px; line-height:1.6; color:#5F5950;">You're receiving this because you contacted us through leichhardtdentist.com. If this wasn't you, please ignore this message.</p>
+              </td>
+            </tr>
+
+          </table>
+
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

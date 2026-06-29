@@ -1,11 +1,20 @@
 import { Studio } from "sanity";
+import { Helmet } from "react-helmet-async";
 import config from "../../sanity.config";
 import { isSanityConfigured } from "../lib/sanity";
 
 export function StudioPage() {
+  // The CMS admin should never be indexed by search engines.
+  const noIndex = (
+    <Helmet>
+      <meta name="robots" content="noindex,nofollow" />
+    </Helmet>
+  );
   if (!isSanityConfigured) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-background p-6">
+      <>
+        {noIndex}
+        <div className="min-h-screen flex items-center justify-center bg-background p-6">
         <div className="max-w-xl text-center">
           <h1 className="text-3xl font-heading font-bold text-foreground mb-4">
             Studio is not configured.
@@ -21,8 +30,14 @@ export function StudioPage() {
             for step-by-step instructions.
           </p>
         </div>
-      </div>
+        </div>
+      </>
     );
   }
-  return <Studio config={config} />;
+  return (
+    <>
+      {noIndex}
+      <Studio config={config} />
+    </>
+  );
 }

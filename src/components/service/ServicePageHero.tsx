@@ -61,7 +61,7 @@ export function ServicePageHero({ pillarNumber, title, tagline, intro, image }: 
           >
             <ImageWithFallback
               src={image}
-              alt=""
+              alt={`${title} at Leichhardt Dental Centre`}
               className="w-full h-full object-cover"
             />
           </motion.div>

@@ -13,6 +13,8 @@ type Props = {
   className?: string;
   /** When true (default for service pages), clicking play opens the video in a full-screen lightbox modal with native HTML5 controls. */
   lightbox?: boolean;
+  /** When true, the video plays inline in place on tap (no modal, no autoplay) — for hero tiles that should play where they sit. Native video only. */
+  inline?: boolean;
   /** Optional explanation panel rendered beside the video in the lightbox. */
   lightboxSidebar?: {
     title?: string;
@@ -49,6 +51,7 @@ export function MediaBlock({
   alt = "",
   className = "",
   lightbox = true,
+  inline = false,
   lightboxSidebar,
   posterFit = "cover",
 }: Props) {
@@ -59,6 +62,21 @@ export function MediaBlock({
   const vm = isVimeo(videoUrl);
   const hasVideo = native || yt || vm;
   const previewImage = videoPoster || imageUrl || fallbackImage;
+
+  // Click-to-play inline — plays in place on tap (no modal, no autoplay).
+  // For native video only; loads nothing until the visitor presses play.
+  if (hasVideo && native && inline) {
+    return (
+      <InlineClickToPlayVideo
+        videoUrl={videoUrl}
+        videoPoster={videoPoster}
+        previewImage={previewImage}
+        className={className}
+        alt={alt}
+        posterFit={posterFit}
+      />
+    );
+  }
 
   // Inline mode (the old behaviour) — ambient autoplay video with controls.
   if (hasVideo && !lightbox) {
@@ -203,6 +221,7 @@ function InlineNativeVideo({
         muted
         loop
         autoPlay
+        preload="metadata"
         onPlay={() => setIsPlaying(true)}
         onPause={() => setIsPlaying(false)}
       />
@@ -242,5 +261,71 @@ function InlineNativeVideo({
         )}
       </button>
     </div>
+  );
+}
+
+/**
+ * Click-to-play inline video: shows a poster tile with a play button; on tap it
+ * swaps in a native <video controls> that plays in place (no modal). Nothing
+ * downloads until the visitor presses play (preload only starts then).
+ */
+function InlineClickToPlayVideo({
+  videoUrl,
+  videoPoster,
+  previewImage,
+  className = "",
+  alt = "",
+  posterFit = "cover",
+}: {
+  videoUrl?: string;
+  videoPoster?: string;
+  previewImage?: string;
+  className?: string;
+  alt?: string;
+  posterFit?: "cover" | "contain";
+}) {
+  const [playing, setPlaying] = useState(false);
+
+  if (playing) {
+    return (
+      <div className={`relative w-full h-full overflow-hidden bg-black ${className}`}>
+        <video
+          src={optimizeVideoUrl(videoUrl)}
+          poster={videoPoster}
+          className="w-full h-full object-cover"
+          controls
+          autoPlay
+          playsInline
+          preload="auto"
+        />
+      </div>
+    );
+  }
+
+  return (
+    <button
+      type="button"
+      onClick={() => setPlaying(true)}
+      aria-label={`Play ${alt || "video"}`}
+      className={`group relative w-full h-full overflow-hidden ${className}`}
+    >
+      {previewImage ? (
+        <ImageWithFallback
+          src={previewImage}
+          alt={alt}
+          className={`absolute inset-0 w-full h-full ${posterFit === "contain" ? "object-contain" : "object-cover"} transition-transform duration-[1400ms] ease-out group-hover:scale-[1.04]`}
+        />
+      ) : (
+        <div className="absolute inset-0 bg-gradient-to-br from-secondary/60 to-secondary/30" />
+      )}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent transition-colors duration-300 group-hover:from-black/55" />
+      <span className="absolute top-4 left-4 z-10 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/50 backdrop-blur-md text-[10px] uppercase tracking-[0.2em] font-semibold text-white">
+        <Play className="w-2.5 h-2.5 fill-current" />
+        Video
+      </span>
+      <span className="absolute bottom-4 right-4 lg:bottom-5 lg:right-5 w-14 h-14 lg:w-16 lg:h-16 rounded-full bg-white/20 group-hover:bg-white/30 backdrop-blur-md border border-white/30 flex items-center justify-center transition-all duration-300 group-hover:scale-110">
+        <Play className="w-6 h-6 lg:w-7 lg:h-7 text-white ml-1 fill-current" />
+      </span>
+    </button>
   );
 }

@@ -90,5 +90,6 @@ Allow: /
 
 # Don't crawl the CMS Studio (not user-facing content)
 Disallow: /studio
+Disallow: /studio/
 
 Sitemap: https://leichhardtdentist.com/sitemap.xml

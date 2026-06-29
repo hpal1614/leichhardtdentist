@@ -7,7 +7,7 @@ import { VideoLightbox } from "./VideoLightbox";
 import clinic1 from "../assets/clinic-1.jpg";
 
 const AMBIENT_VIDEO =
-    "https://res.cloudinary.com/dzydzte9h/video/upload/q_auto,f_auto/dental-website/home/hero/ambient.mov";
+    "https://res.cloudinary.com/dzydzte9h/video/upload/q_auto,f_auto,w_1280,c_limit/dental-website/home/hero/ambient.mov";
 
 const features = [
     { label: "Natural Light", description: "Floor-to-ceiling windows" },
@@ -44,6 +44,7 @@ export function ClinicExperience() {
                     transition={{ duration: 1.5, ease: "easeOut" }}
                     src={clinic1}
                     alt="Clinic Interior"
+                    loading="lazy"
                     className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a] via-[#1a1a1a]/40 to-transparent" />

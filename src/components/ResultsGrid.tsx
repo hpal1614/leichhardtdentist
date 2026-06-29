@@ -2,7 +2,7 @@ import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Button } from "./ui/button";
 import { Play, Pause, Volume2, VolumeX } from "lucide-react";
-import { optimizeVideoUrl } from "../lib/cloudinary";
+import { optimizeVideoUrl, videoPosterUrl } from "../lib/cloudinary";
 
 interface VideoSegment {
     start: number;
@@ -44,7 +44,7 @@ const stories: Story[] = [
         quote: "",
         image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=800&q=80",
         type: "video",
-        videoSrc: "https://res.cloudinary.com/dzydzte9h/video/upload/dental-website/home/case-studies/placeholder-1.mp4",
+        videoSrc: "https://res.cloudinary.com/dzydzte9h/video/upload/dental-website/home/case-studies/all-on-4-case.mp4",
         thumbnailTime: 18, // poster frame shown when paused
         segments: [
             { start: 18, end: 26 }, // starts where the poster is
@@ -59,7 +59,7 @@ const stories: Story[] = [
         quote: "",
         image: "https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?w=800&q=80",
         type: "video",
-        videoSrc: "https://res.cloudinary.com/dzydzte9h/video/upload/download_srxu4c.mp4",
+        videoSrc: "https://res.cloudinary.com/dzydzte9h/video/upload/dental-website/home/case-studies/same-day-smile-story.mp4",
         thumbnailTime: 4, // poster frame shown when paused (clip is only ~12.4s, plays full on loop)
     },
     {
@@ -194,15 +194,15 @@ function VideoStoryCard({ story }: { story: Story }) {
         >
             <video
                 ref={videoRef}
-                src={optimizeVideoUrl(story.videoSrc)}
+                src={optimizeVideoUrl(story.videoSrc, { width: 900 })}
+                poster={videoPosterUrl(story.videoSrc, { second: story.thumbnailTime ?? 0, width: 900 })}
                 className={`w-full h-full object-cover transition-all duration-300 group-hover:scale-105 ${opacity === 0 ? 'opacity-0' : 'opacity-100'}`}
                 loop={segments.length === 0} // Native loop only if no segments
                 muted={isMuted}
                 playsInline
-                preload="metadata"
+                preload="none"
                 onLoadedMetadata={handleLoadedMetadata}
                 onTimeUpdate={handleTimeUpdate}
-            // Removed poster to show video frame
             />
             {/* Controls Overlay - Visible on Group Hover */}
             <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
@@ -285,6 +285,8 @@ export function ResultsGrid() {
                                             <img
                                                 src={story.image}
                                                 alt={story.treatment}
+                                                loading="lazy"
+                                                decoding="async"
                                                 className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
                                             />
                                             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 transition-opacity duration-300 group-hover:opacity-70" />

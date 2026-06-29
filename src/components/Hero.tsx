@@ -53,7 +53,7 @@ export function Hero({ data }: HeroProps = {}) {
   const headline = data?.headline || DEFAULTS.headline;
   const subhead = data?.subhead || DEFAULTS.subhead;
   const rawVideo = data?.videoUrl || DEFAULT_HERO_VIDEO;
-  const videoUrl = optimizeVideoUrl(rawVideo)!;
+  const videoUrl = optimizeVideoUrl(rawVideo, { width: 1600 })!;
   // A still frame painted instantly under the video — avoids a black flash on
   // load and gives the hero a fast LCP element while the video buffers.
   const heroPoster = rawVideo.includes("/video/upload/")

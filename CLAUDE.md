@@ -2,6 +2,8 @@
 
 A single-page React/Vite marketing site for an Australian dental practice. **Because this is a regulated health service advertisement, all copy, imagery, and features on this site must comply with AHPRA / the Health Practitioner Regulation National Law.** Read [.claude/context/ahpra-compliance.md](.claude/context/ahpra-compliance.md) before changing any user-visible content.
 
+> **Operating protocol:** This project is managed for a non-technical owner. Before investigating or changing anything, follow [.claude/context/working-protocol.md](.claude/context/working-protocol.md) — evidence over assumption, read before you change, investigate→plan→approve→change→verify, stay in scope, never publish without permission. These rules bind the main assistant and every sub-agent.
+
 ## Stack
 - React 18 + TypeScript (strict) + Vite 6 (SWC)
 - Tailwind CSS 3 + Radix UI / shadcn wrappers in [src/components/ui/](src/components/ui/)

@@ -129,7 +129,7 @@ export function Navbar() {
                             <a {...BOOKING_LINK_PROPS}>Book Now</a>
                         </Button>
                         <button
-                            className={`md:hidden w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ${scrolled ? "bg-black/5 text-foreground" : "bg-white/10 text-white"}`}
+                            className={`md:hidden w-11 h-11 rounded-full flex items-center justify-center transition-all duration-300 ${scrolled ? "bg-black/5 text-foreground" : "bg-white/10 text-white"}`}
                             onClick={() => setMobileMenuOpen(true)}
                             aria-label="Open menu"
                         >

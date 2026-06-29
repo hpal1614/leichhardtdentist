@@ -1,0 +1,13 @@
+{
+  "name": "Leichhardt Dental Centre",
+  "short_name": "Leichhardt Dental",
+  "description": "General and implant dentistry in Leichhardt, Inner West Sydney — led by Dr. Nick Kulkarni.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FAF9F6",
+  "theme_color": "#1a1a1a",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

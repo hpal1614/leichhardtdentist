@@ -7,7 +7,7 @@ import { BOOKING_LINK_PROPS } from "../lib/booking";
 const helpfulLinks = [
   { label: "General Dentistry", to: "/services/general-dentistry" },
   { label: "Dental Implants", to: "/services/dental-implants" },
-  { label: "Single Visit Crowns", to: "/services/single-visit-crowns" },
+  { label: "Orthodontics", to: "/services/orthodontics" },
   { label: "Same Day Smile", to: "/services/same-day-smile" },
   { label: "About Dr. Nick", to: "/about" },
   { label: "Contact", to: "/contact" },

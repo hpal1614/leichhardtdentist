@@ -321,26 +321,7 @@ export function AllOnFourPage() {
                 videoPoster={HERO_VIDEO_POSTER}
                 fallbackImage={clinic2}
                 alt="All-on-4 full-arch implant treatment"
-                lightboxSidebar={{
-                  title: "Real clinical cases",
-                  body: (
-                    <>
-                      <p>
-                        Close-up before and after — a real All-on-4 case
-                        treated at the practice. Dr. Nick walks through the
-                        change in form, function, and aesthetics.
-                      </p>
-                      <p className="text-white/70 italic">
-                        Individual results may vary. The cases shown are real
-                        and published with patient consent. It's wise to seek
-                        a second opinion before embarking on any significant
-                        treatment. All dental procedures carry potential
-                        risks and benefits — a consultation is required to
-                        determine whether All-on-4 is suitable for you.
-                      </p>
-                    </>
-                  ),
-                }}
+                inline
               />
             </motion.div>
           </div>

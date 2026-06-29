@@ -18,6 +18,8 @@ type Props = {
     title?: string;
     body: ReactNode;
   };
+  /** How the poster image fits its container. Defaults to "cover" (fills, may crop). Use "contain" to letterbox so the whole image is visible. */
+  posterFit?: "cover" | "contain";
 };
 
 const isNativeVideo = (url?: string) =>
@@ -48,6 +50,7 @@ export function MediaBlock({
   className = "",
   lightbox = true,
   lightboxSidebar,
+  posterFit = "cover",
 }: Props) {
   const [open, setOpen] = useState(false);
 
@@ -97,7 +100,7 @@ export function MediaBlock({
             <ImageWithFallback
               src={previewImage}
               alt={alt}
-              className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1400ms] ease-out group-hover:scale-[1.04]"
+              className={`absolute inset-0 w-full h-full ${posterFit === "contain" ? "object-contain" : "object-cover"} transition-transform duration-[1400ms] ease-out group-hover:scale-[1.04]`}
             />
           ) : (
             <div className="absolute inset-0 bg-gradient-to-br from-secondary/60 to-secondary/30" />

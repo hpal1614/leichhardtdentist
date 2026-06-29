@@ -315,13 +315,14 @@ export function AllOnFourPage() {
               initial={{ opacity: 0, scale: 0.96 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-              className="lg:col-span-5 aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl bg-foreground/5"
+              className="lg:col-span-5 aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl bg-black"
             >
               <MediaBlock
                 videoUrl={HERO_VIDEO}
                 videoPoster={HERO_VIDEO_POSTER}
                 fallbackImage={clinic2}
                 alt="All-on-4 full-arch implant treatment"
+                posterFit="contain"
                 lightboxSidebar={{
                   title: "Real clinical cases",
                   body: (

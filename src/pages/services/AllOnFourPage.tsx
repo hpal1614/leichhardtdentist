@@ -40,11 +40,10 @@ const SLUG = "all-on-4-implants";
 // narrative video is on the homepage's Stories of Transformation section instead.
 const HERO_VIDEO =
   "https://res.cloudinary.com/dzydzte9h/video/upload/dental-website/all-on-4/before-and-after/dr-nick-explainer.mp4";
-// Poster: an illustrative older-adult portrait (not a patient, not Dr. Nick) —
-// warm and demographic-appropriate, and lower-risk than a patient "after" as
-// the headline image. Capped at w_1400 since the source is large.
+// Poster: matches the All-on-4 card on the parent /services/dental-implants
+// grid so the visual reads as the same treatment.
 const HERO_VIDEO_POSTER =
-  "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto,w_1400/dental-website/shared/lifestyle/senior-portrait-smile.jpg";
+  "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/dental-implants/all-on-4-card.png";
 
 // Real patient before/after pairs — consented, published with the disclaimer
 // below. No patient quotes (would make them testimonials under s.133(1)(c)).
@@ -315,14 +314,13 @@ export function AllOnFourPage() {
               initial={{ opacity: 0, scale: 0.96 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-              className="lg:col-span-5 aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl bg-black"
+              className="lg:col-span-5 aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl bg-foreground/5"
             >
               <MediaBlock
                 videoUrl={HERO_VIDEO}
                 videoPoster={HERO_VIDEO_POSTER}
                 fallbackImage={clinic2}
                 alt="All-on-4 full-arch implant treatment"
-                posterFit="contain"
                 lightboxSidebar={{
                   title: "Real clinical cases",
                   body: (

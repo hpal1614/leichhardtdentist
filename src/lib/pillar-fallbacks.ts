@@ -735,7 +735,7 @@ export const SAME_DAY_SMILE: PillarData = {
       videoUrl:
         "https://res.cloudinary.com/dzydzte9h/video/upload/dental-website/single-visit-crowns/cerec-same-day/same-day-crown-hero.mp4",
       videoPoster:
-        "https://res.cloudinary.com/dzydzte9h/video/upload/so_2,q_auto,f_auto/dental-website/same-day-smile/cerec-crowns-veneers/same-day-smile-hero.jpg",
+        "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/crowns-card.png",
       imageUrl:
         "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/crowns-card.png",
       name: "Same Day Crowns",
@@ -769,7 +769,7 @@ export const SAME_DAY_SMILE: PillarData = {
       videoUrl:
         "https://res.cloudinary.com/dzydzte9h/video/upload/dental-website/same-day-smile/cerec-crowns-veneers/same-day-smile-hero.mp4",
       videoPoster:
-        "https://res.cloudinary.com/dzydzte9h/video/upload/so_2,q_auto,f_auto/dental-website/same-day-smile/cerec-crowns-veneers/same-day-smile-hero.jpg",
+        "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/veneers-card.png",
       imageUrl:
         "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/veneers-card.png",
       name: "Same Day Veneers",

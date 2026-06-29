@@ -31,7 +31,7 @@ export function Orthodontics() {
         title={data.title}
         tagline={data.tagline}
         intro={data.intro}
-        image={data.image}
+        image={data.heroImage ?? data.image}
       />
       <SubTreatmentGrid
         eyebrow="Three paths"

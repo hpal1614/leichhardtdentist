@@ -1023,13 +1023,16 @@ export const ORTHODONTICS: PillarData = {
   intro:
     "Orthodontics at Leichhardt Dental is led by visiting clinician Dr. Sagar (Jimmy) Rao, who comes in once a month for orthodontic reviews and consultations. The approach is evidence-based and family-focused, with a strong emphasis on airway health and functional alignment — not just a straight smile. For adults seeking discreet teeth straightening we use Invisalign clear aligners, and we screen for snoring and sleep-disordered breathing with custom appliances where indicated. For children, we focus on early interventive orthodontics — guiding jaw growth and airway development, with custom palatal expanders where needed — to help prevent more invasive treatment later.",
   image: philosophyImg,
+  heroImage:
+    "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/orthodontics/pillar-hero.png",
   bentoSpan: "md:col-span-2 lg:col-span-12",
   bentoAspect: "aspect-[4/5] md:aspect-[16/9] lg:aspect-[21/9]",
   subTreatments: [
     {
       id: "invisalign",
       slug: "invisalign-clear-aligners",
-      imageUrl: IMG.technicianMaking,
+      imageUrl:
+        "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/orthodontics/invisalign-card.jpg",
       name: "Invisalign Clear Aligners",
       description:
         "Discreet teeth straightening with custom clear-tray aligners. Planned digitally with 3D scans, reviewed monthly by Dr. Jimmy.",
@@ -1078,7 +1081,8 @@ export const ORTHODONTICS: PillarData = {
     {
       id: "early-intervention",
       slug: "early-interventive-orthodontics",
-      imageUrl: IMG.toolsColorful,
+      imageUrl:
+        "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/orthodontics/early-intervention-card.jpg",
       name: "Early Interventive Orthodontics",
       description:
         "Guiding jaw growth, tooth eruption, and airway development in children to help prevent more invasive treatment later. Ideally assessed from age 7, with custom palatal expanders where indicated.",
@@ -1129,7 +1133,8 @@ export const ORTHODONTICS: PillarData = {
     {
       id: "airway",
       slug: "airway-and-functional-alignment",
-      imageUrl: IMG.glovedEquipment,
+      imageUrl:
+        "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/orthodontics/airway-card.png",
       name: "Airway, Snoring & Sleep (Adults)",
       description:
         "Adult airway and functional alignment — screening for snoring and sleep-disordered breathing, Arise home sleep studies, and custom Mandibular Advancement Splints (MAS) where indicated.",

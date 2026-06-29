@@ -163,7 +163,7 @@ const pillarGeneralDentistry = {
       _key: key(),
       id: "checkup",
       slug: slug("check-up-and-clean"),
-      imageUrl: IMG.toolsBlue,
+      imageUrl: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/general-dentistry/check-up-and-clean.jpg",
       name: "Check-up & Clean",
       description:
         "Every six months. A careful examination, professional scale and polish, oral cancer screening, and X-rays where clinically indicated. Preventive care is the single highest-value thing we do.",
@@ -183,7 +183,7 @@ const pillarGeneralDentistry = {
       _key: key(),
       id: "fillings",
       slug: slug("dental-fillings"),
-      imageUrl: IMG.equipmentClose,
+      imageUrl: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/general-dentistry/dental-fillings.jpg",
       name: "Dental Fillings",
       description:
         "Amalgam-free composite fillings using 3M ESPE and Ivoclar premium materials — designed to blend naturally with your tooth and bonded in a single visit.",
@@ -212,7 +212,7 @@ const pillarGeneralDentistry = {
       _key: key(),
       id: "bridges",
       slug: slug("dental-bridges"),
-      imageUrl: IMG.dentalModel,
+      imageUrl: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/general-dentistry/dental-bridges.jpg",
       name: "Dental Bridges",
       description:
         "A fixed, custom-made prosthesis that spans a gap where one or more teeth are missing. CEREC same-day option available — no two-week wait or messy putty impressions.",
@@ -246,7 +246,7 @@ const pillarGeneralDentistry = {
       _key: key(),
       id: "wisdom",
       slug: slug("wisdom-teeth"),
-      imageUrl: IMG.toolsTray,
+      imageUrl: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/general-dentistry/wisdom-teeth.jpg",
       name: "Wisdom Teeth",
       description:
         "Assessment and removal when impaction, crowding, or recurrent infection call for it. Not every wisdom tooth needs to come out — a careful review comes first.",
@@ -265,7 +265,7 @@ const pillarGeneralDentistry = {
       _key: key(),
       id: "root-canal",
       slug: slug("root-canal-treatment"),
-      imageUrl: IMG.instrumentsSteel,
+      imageUrl: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/general-dentistry/root-canal.jpg",
       name: "Root Canal Treatment",
       description:
         "When infection reaches the nerve of a tooth, root canal treatment removes the infection and preserves the tooth. Performed with rubber-dam isolation, rotary instrumentation, and CBCT 3D planning.",
@@ -303,7 +303,7 @@ const pillarGeneralDentistry = {
       _key: key(),
       id: "family",
       slug: slug("preventative-and-family-dentistry"),
-      imageUrl: IMG.toolsColorful,
+      imageUrl: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/general-dentistry/preventative-family.jpg",
       name: "Preventative & Family Dentistry",
       description:
         "Care for patients of all ages, including children. Mouthguards for sport, occlusal splints for grinding, early orthodontic screening, fissure sealants.",
@@ -322,7 +322,7 @@ const pillarGeneralDentistry = {
       _key: key(),
       id: "inlays",
       slug: slug("ceramic-inlays-onlays"),
-      imageUrl: IMG.jawModel,
+      imageUrl: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/ceramic-inlays-onlays-hero.jpg",
       name: "Ceramic Inlays & Onlays",
       description:
         "A conservative alternative to a full crown when a tooth is too damaged for a simple filling but doesn't yet need full coverage. A custom ceramic piece that strengthens the tooth.",
@@ -627,7 +627,7 @@ const pillarSameDaySmile = {
       _key: key(),
       id: "inlays",
       slug: slug("ceramic-inlays-onlays"),
-      imageUrl: IMG.jawModel,
+      imageUrl: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/ceramic-inlays-onlays-hero.jpg",
       name: "Ceramic Inlays & Onlays",
       description: "A custom Ivoclar e.max ceramic restoration that sits between a filling and a full crown — designed and milled chairside with CEREC and bonded in a single ~90-minute visit, keeping more of your natural tooth than a crown.",
       longDescription: "When a tooth is too damaged for a simple filling but still has enough healthy structure that it doesn't quite need a full crown, an Inlay or Onlay is the ideal evidence-based solution. Think of it as a \"partial crown\" or a custom-engineered puzzle piece. An Inlay sits inside the grooves of your tooth, while an Onlay (often called a \"three-quarter crown\") covers one or more of the biting points (cusps) to provide structural reinforcement. At Leichhardt Dental, we do not use generic lab-processed ceramics. For every restoration, we exclusively use Ivoclar e.max®—widely considered the world's best-selling and most reliable glass-ceramic. We chose Ivoclar e.max® for two critical reasons: unrivalled strength, designed to withstand the heavy biting forces of back teeth and significantly reduce the risk of your tooth fracturing; and natural aesthetics, mimicking the translucency and light-reflection of real tooth enamel so perfectly that the restoration is virtually invisible once bonded. By combining Ivoclar materials with our in-house CEREC technology, we 3D-scan your tooth (no putty required), precision-design your restoration on screen to match your bite perfectly, mill it from a solid Ivoclar e.max block in our clinic, and fit and bond it in a single 90-minute visit. A typical inlay or onlay is approximately $1,500–$1,700.",

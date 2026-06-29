@@ -44,6 +44,8 @@ export type PillarData = {
   shortDescription: string;
   intro: string;
   image: string;
+  /** Optional portrait used only for the pillar page hero (falls back to `image`). */
+  heroImage?: string;
   bentoSpan: string;
   bentoAspect: string;
   slug: string;
@@ -177,6 +179,7 @@ export function mergePillar(
     shortDescription: remote.shortDescription || fallback.shortDescription,
     intro: remote.intro || fallback.intro,
     image: remoteImage || fallback.image,
+    heroImage: fallback.heroImage,
     bentoSpan: remote.bentoSpan || fallback.bentoSpan,
     bentoAspect: remote.bentoAspect || fallback.bentoAspect,
     subTreatments: cleanTreatments(remote.subTreatments) ?? fallback.subTreatments,

@@ -34,6 +34,10 @@ export const GENERAL_DENTISTRY: PillarData = {
   number: "01",
   title: "General Dentistry.",
   slug: "general-dentistry",
+  // Warm patient-style portrait used only for the pillar page hero (the homepage
+  // bento card keeps the clinic photo below via `image`).
+  heroImage:
+    "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/general-dentistry/hero-portrait.jpg",
   tagline: "Everyday care for a healthy mouth.",
   shortDescription:
     "Routine care that prevents small problems from becoming big ones. Gentle, thorough, and built around you.",
@@ -46,7 +50,8 @@ export const GENERAL_DENTISTRY: PillarData = {
     {
       id: "checkup",
       slug: "check-up-and-clean",
-      imageUrl: IMG.toolsBlue,
+      imageUrl:
+        "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/general-dentistry/check-up-and-clean.jpg",
       name: "Check-up & Clean",
       description:
         "Every six months. A careful examination, professional scale and polish, oral cancer screening, and X-rays where clinically indicated. Preventive care is the single highest-value thing we do.",
@@ -65,7 +70,8 @@ export const GENERAL_DENTISTRY: PillarData = {
     {
       id: "fillings",
       slug: "dental-fillings",
-      imageUrl: IMG.equipmentClose,
+      imageUrl:
+        "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/general-dentistry/dental-fillings.jpg",
       name: "Dental Fillings",
       description:
         "Amalgam-free composite fillings using 3M ESPE and Ivoclar premium materials — designed to blend naturally with your tooth and bonded in a single visit.",
@@ -102,7 +108,8 @@ export const GENERAL_DENTISTRY: PillarData = {
     {
       id: "bridges",
       slug: "dental-bridges",
-      imageUrl: IMG.dentalModel,
+      imageUrl:
+        "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/general-dentistry/dental-bridges.jpg",
       name: "Dental Bridges",
       description:
         "A fixed, custom-made prosthesis that spans a gap where one or more teeth are missing. CEREC same-day option available — no two-week wait or messy putty impressions.",
@@ -167,7 +174,8 @@ export const GENERAL_DENTISTRY: PillarData = {
     {
       id: "wisdom",
       slug: "wisdom-teeth",
-      imageUrl: IMG.toolsTray,
+      imageUrl:
+        "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/general-dentistry/wisdom-teeth.jpg",
       name: "Wisdom Teeth",
       description:
         "Assessment and removal when impaction, crowding, or recurrent infection call for it. Not every wisdom tooth needs to come out — a careful review comes first.",
@@ -185,7 +193,8 @@ export const GENERAL_DENTISTRY: PillarData = {
     {
       id: "root-canal",
       slug: "root-canal-treatment",
-      imageUrl: IMG.instrumentsSteel,
+      imageUrl:
+        "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/general-dentistry/root-canal.jpg",
       name: "Root Canal Treatment",
       description:
         "When infection reaches the nerve of a tooth, root canal treatment removes the infection and preserves the tooth. Performed with rubber-dam isolation, rotary instrumentation, and CBCT 3D planning.",
@@ -249,7 +258,8 @@ export const GENERAL_DENTISTRY: PillarData = {
     {
       id: "family",
       slug: "preventative-and-family-dentistry",
-      imageUrl: IMG.toolsColorful,
+      imageUrl:
+        "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/general-dentistry/preventative-family.jpg",
       name: "Preventative & Family Dentistry",
       description:
         "Care for patients of all ages, including children. Mouthguards for sport, occlusal splints for grinding, early orthodontic screening, fissure sealants.",
@@ -782,7 +792,8 @@ export const SAME_DAY_SMILE: PillarData = {
     {
       id: "inlays",
       slug: "ceramic-inlays-onlays",
-      imageUrl: IMG.jawModel,
+      imageUrl:
+        "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/ceramic-inlays-onlays-hero.jpg",
       name: "Ceramic Inlays & Onlays",
       description:
         "A custom Ivoclar e.max ceramic restoration that sits between a filling and a full crown — designed and milled chairside with CEREC and bonded in a single ~90-minute visit, keeping more of your natural tooth than a crown.",

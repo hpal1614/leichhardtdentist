@@ -108,7 +108,9 @@ export function SubTreatmentPage() {
               initial={{ opacity: 0, scale: 0.96 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-              className="lg:col-span-5 aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl bg-foreground/5"
+              className={`lg:col-span-5 ${
+                sub.videoUrl ? "aspect-[4/5]" : "aspect-[4/3]"
+              } rounded-[2rem] overflow-hidden shadow-2xl bg-foreground/5`}
             >
               <MediaBlock
                 videoUrl={sub.videoUrl}

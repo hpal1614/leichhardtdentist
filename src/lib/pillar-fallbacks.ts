@@ -194,7 +194,7 @@ export const GENERAL_DENTISTRY: PillarData = {
       id: "root-canal",
       slug: "root-canal-treatment",
       imageUrl:
-        "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/general-dentistry/root-canal.jpg?v=warm-portrait-2026",
+        "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/general-dentistry/root-canal-warm.jpg",
       name: "Root Canal Treatment",
       description:
         "When infection reaches the nerve of a tooth, root canal treatment removes the infection and preserves the tooth. Performed with rubber-dam isolation, rotary instrumentation, and CBCT 3D planning.",

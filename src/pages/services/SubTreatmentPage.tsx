@@ -116,6 +116,8 @@ export function SubTreatmentPage() {
                 imageUrl={sub.imageUrl}
                 fallbackImage={pillar.image}
                 alt={sub.name}
+                // Hero video plays inline (muted autoplay loop), not in a modal.
+                lightbox={false}
               />
             </motion.div>
           </div>
@@ -181,51 +183,135 @@ export function SubTreatmentPage() {
               </p>
             </motion.div>
 
-            <div className="space-y-5 lg:space-y-8">
-              {sub.beforeAfter.map((c, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-60px" }}
-                  transition={{ duration: 0.6, delay: i * 0.06 }}
-                >
-                  <div className="grid sm:grid-cols-2 gap-4 lg:gap-6">
-                    <figure className="relative rounded-[2rem] overflow-hidden bg-foreground/5">
-                      <span className="absolute top-4 left-4 z-10 px-3 py-1 rounded-full bg-black/60 backdrop-blur-sm text-[10px] uppercase tracking-[0.25em] font-semibold text-white">
-                        Before
-                      </span>
-                      <div className="aspect-[4/5] overflow-hidden">
-                        <ImageWithFallback
-                          src={c.before}
-                          alt={`Before ${sub.name.toLowerCase()} treatment — case ${i + 1}`}
-                          className="w-full h-full object-cover"
-                        />
+            {sub.beforeAfter.some((c) => c.detail && c.detail.length > 0) ||
+            sub.beforeAfter.length === 1 ? (
+              /* Detail layout (mirrors All-on-4): full-width cases stacked
+                 vertically — before/after pair flush (no gap) in one frame,
+                 with an X-ray / CBCT strip and a "Case N." caption below.
+                 Also used for a single case (a lone slider card looks unbalanced). */
+              <div className="space-y-12 lg:space-y-16">
+                {sub.beforeAfter.map((c, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-60px" }}
+                    transition={{ duration: 0.6, delay: i * 0.06 }}
+                  >
+                    <div className="grid sm:grid-cols-2 rounded-[2rem] overflow-hidden bg-foreground/5">
+                      <figure className="relative">
+                        <span className="absolute top-4 left-4 z-10 px-3 py-1 rounded-full bg-black/60 backdrop-blur-sm text-[10px] uppercase tracking-[0.25em] font-semibold text-white">
+                          Before
+                        </span>
+                        <div className="aspect-[4/3] overflow-hidden">
+                          <ImageWithFallback
+                            src={c.before}
+                            alt={`Before ${sub.name.toLowerCase()} treatment — case ${i + 1}`}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                      </figure>
+                      <figure className="relative">
+                        <span className="absolute top-4 left-4 z-10 px-3 py-1 rounded-full bg-primary text-[10px] uppercase tracking-[0.25em] font-semibold text-white">
+                          After
+                        </span>
+                        <div className="aspect-[4/3] overflow-hidden">
+                          <ImageWithFallback
+                            src={c.after}
+                            alt={`After ${sub.name.toLowerCase()} treatment — case ${i + 1}`}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                      </figure>
+                    </div>
+                    {c.detail && c.detail.length > 0 && (
+                      <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 lg:gap-4 mt-4 lg:mt-5">
+                        {c.detail.map((d, j) => (
+                          <figure
+                            key={j}
+                            className="rounded-2xl overflow-hidden bg-foreground/5 border border-foreground/[0.04]"
+                          >
+                            <div className="aspect-[3/2] overflow-hidden bg-black/90">
+                              <ImageWithFallback
+                                src={d.src}
+                                alt={`${d.label} — case ${i + 1}`}
+                                className="w-full h-full object-contain"
+                              />
+                            </div>
+                            <figcaption className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground font-semibold py-2 px-3 text-center">
+                              {d.label}
+                            </figcaption>
+                          </figure>
+                        ))}
                       </div>
-                    </figure>
-                    <figure className="relative rounded-[2rem] overflow-hidden bg-foreground/5">
-                      <span className="absolute top-4 left-4 z-10 px-3 py-1 rounded-full bg-primary text-[10px] uppercase tracking-[0.25em] font-semibold text-white">
-                        After
-                      </span>
-                      <div className="aspect-[4/5] overflow-hidden">
-                        <ImageWithFallback
-                          src={c.after}
-                          alt={`After ${sub.name.toLowerCase()} treatment — case ${i + 1}`}
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                    </figure>
-                  </div>
-                  {c.caption && (
-                    <p className="mt-3 lg:mt-4 text-sm lg:text-base text-muted-foreground leading-relaxed max-w-3xl">
-                      {c.caption}
-                    </p>
-                  )}
-                </motion.div>
-              ))}
-            </div>
+                    )}
+                    {c.caption && (
+                      <p className="mt-4 text-sm lg:text-base text-muted-foreground font-light leading-relaxed max-w-3xl">
+                        {sub.beforeAfter && sub.beforeAfter.length > 1 && (
+                          <span className="font-semibold text-foreground/80 mr-2">
+                            Case {i + 1}.
+                          </span>
+                        )}
+                        {c.caption}
+                      </p>
+                    )}
+                  </motion.div>
+                ))}
+              </div>
+            ) : (
+              /* Horizontal card slider — one case per card. Inside each card the
+                 before/after are stacked (before over after) and sit flush with
+                 NO gap inside one rounded frame. Keeps the section compact. */
+              <div
+                className="flex gap-4 lg:gap-6 overflow-x-auto snap-x snap-mandatory scroll-pl-6 lg:scroll-pl-12 pb-4 -mx-6 px-6 lg:-mx-12 lg:px-12 scrollbar-hide"
+                style={{ scrollbarWidth: "none" }}
+              >
+                {sub.beforeAfter.map((c, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-60px" }}
+                    transition={{ duration: 0.6, delay: i * 0.06 }}
+                    className="flex-shrink-0 snap-start w-[80vw] sm:w-[380px] lg:w-[420px]"
+                  >
+                    <div className="rounded-2xl overflow-hidden bg-foreground/5">
+                      <figure className="relative">
+                        <span className="absolute top-3 left-3 z-10 px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-sm text-[9px] uppercase tracking-[0.2em] font-semibold text-white">
+                          Before
+                        </span>
+                        <div className="aspect-[4/3] overflow-hidden">
+                          <ImageWithFallback
+                            src={c.before}
+                            alt={`Before ${sub.name.toLowerCase()} treatment — case ${i + 1}`}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                      </figure>
+                      <figure className="relative">
+                        <span className="absolute top-3 left-3 z-10 px-2.5 py-1 rounded-full bg-primary text-[9px] uppercase tracking-[0.2em] font-semibold text-white">
+                          After
+                        </span>
+                        <div className="aspect-[4/3] overflow-hidden">
+                          <ImageWithFallback
+                            src={c.after}
+                            alt={`After ${sub.name.toLowerCase()} treatment — case ${i + 1}`}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                      </figure>
+                    </div>
+                    {c.caption && (
+                      <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
+                        {c.caption}
+                      </p>
+                    )}
+                  </motion.div>
+                ))}
+              </div>
+            )}
 
-            <p className="mt-8 text-xs lg:text-sm text-muted-foreground/80 italic max-w-3xl leading-relaxed">
+            <p className="mt-8 text-xs lg:text-sm text-muted-foreground italic max-w-3xl leading-relaxed">
               Individual results vary — this is not a guarantee of outcome. These
               are real, unaltered photographs of patients treated at this practice,
               published with their consent. What is achievable in your own case can

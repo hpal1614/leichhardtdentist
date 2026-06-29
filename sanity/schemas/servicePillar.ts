@@ -155,6 +155,22 @@ export const servicePillar = defineType({
                     { name: "before", type: "url", title: "Before image URL" },
                     { name: "after", type: "url", title: "After image URL" },
                     { name: "caption", type: "string", title: "Case caption / description (optional)" },
+                    {
+                      name: "detail",
+                      type: "array",
+                      title: "Clinical detail images (X-ray / CBCT, optional)",
+                      description: "Shown in a small strip below the before/after pair.",
+                      of: [
+                        {
+                          type: "object",
+                          fields: [
+                            { name: "src", type: "url", title: "Image URL" },
+                            { name: "label", type: "string", title: "Label (e.g. X-ray, CBCT scan)" },
+                          ],
+                          preview: { select: { title: "label", subtitle: "src" } },
+                        },
+                      ],
+                    },
                   ],
                   preview: { select: { title: "caption", subtitle: "before" } },
                 },

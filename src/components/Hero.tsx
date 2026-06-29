@@ -13,14 +13,18 @@ import { ALL_CLINICIANS } from "../lib/clinician-fallbacks";
 const DEFAULT_HERO_VIDEO =
   "https://res.cloudinary.com/dzydzte9h/video/upload/dental-website/home/hero/hero-main.mp4";
 
+// The hero clip is trimmed to a clean loop point — it restarts at this many
+// seconds rather than playing the (longer) tail of the source video.
+const HERO_LOOP_END_SECONDS = 37;
+
 const DEFAULTS = {
   eyebrow: "Leichhardt Dental Centre · Inner West Sydney",
   headline: "Where cutting edge science\nmeets honest local care.",
   subhead:
     "Twenty-five years of practice. A calm room. Evidence-based care — delivered one patient at a time.",
   primaryCtaLabel: "Book an appointment online",
-  secondaryCtaLabel: "Meet Dr. Nick",
-  secondaryCtaAnchor: "#dr-nick",
+  secondaryCtaLabel: "Meet Our Team",
+  secondaryCtaAnchor: "/about",
   trustCardName: "Dr. Nick Kulkarni",
   trustCardRole: "Principal Dentist",
   trustCardCredentials: "BDS · GradDipClinDent · PGDip Implant Dentistry",
@@ -48,7 +52,15 @@ export function Hero({ data }: HeroProps = {}) {
   const eyebrow = data?.eyebrow || DEFAULTS.eyebrow;
   const headline = data?.headline || DEFAULTS.headline;
   const subhead = data?.subhead || DEFAULTS.subhead;
-  const videoUrl = optimizeVideoUrl(data?.videoUrl || DEFAULT_HERO_VIDEO)!;
+  const rawVideo = data?.videoUrl || DEFAULT_HERO_VIDEO;
+  const videoUrl = optimizeVideoUrl(rawVideo)!;
+  // A still frame painted instantly under the video — avoids a black flash on
+  // load and gives the hero a fast LCP element while the video buffers.
+  const heroPoster = rawVideo.includes("/video/upload/")
+    ? rawVideo
+        .replace("/video/upload/", "/video/upload/so_2,w_1600,q_auto,f_auto/")
+        .replace(/\.(mp4|mov|webm|m4v)$/i, ".jpg")
+    : undefined;
   const primaryCta = data?.primaryCtaLabel || DEFAULTS.primaryCtaLabel;
   const secondaryCta = data?.secondaryCtaLabel || DEFAULTS.secondaryCtaLabel;
   const secondaryAnchor =
@@ -57,47 +69,70 @@ export function Hero({ data }: HeroProps = {}) {
   const remoteClinicians = useSanityDoc<ClinicianSanity[]>(CLINICIANS_QUERY);
   const clinicians = mergeClinicians(remoteClinicians, ALL_CLINICIANS);
 
-  // Track active card for the pagination dots on mobile/tablet
+  // Restart the background video at the trimmed loop point (37s) instead of
+  // playing the longer source tail.
+  const heroVideoRef = useRef<HTMLVideoElement>(null);
+
+  // Pagination slider. Cards-per-view is 1 on phone and 2 on desktop, so the
+  // dots track PAGES (groups of cardsPerView), not individual cards.
   const scrollRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [cardsPerView, setCardsPerView] = useState(1);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(min-width: 1024px)");
+    const update = () => setCardsPerView(mq.matches ? 2 : 1);
+    update();
+    mq.addEventListener("change", update);
+    return () => mq.removeEventListener("change", update);
+  }, []);
+
+  const pageCount = Math.max(1, Math.ceil(clinicians.length / cardsPerView));
+
+  // Reset to the first page when the breakpoint (and therefore page count) changes.
+  useEffect(() => {
+    setActiveIndex(0);
+    scrollRef.current?.scrollTo({ left: 0 });
+  }, [cardsPerView]);
+
   const handleScroll = () => {
     const el = scrollRef.current;
-    if (!el || !el.children.length) return;
-    const cardWidth = (el.children[0] as HTMLElement).offsetWidth + 10;
-    const index = Math.round(el.scrollLeft / cardWidth);
-    setActiveIndex(Math.min(Math.max(index, 0), clinicians.length - 1));
+    if (!el || !el.clientWidth) return;
+    const page = Math.round(el.scrollLeft / el.clientWidth);
+    setActiveIndex(Math.min(Math.max(page, 0), pageCount - 1));
   };
 
-  // Auto-advance every 4 seconds while the user isn't actively interacting.
-  // Only runs when the row is actually scrollable (mobile/tablet) — on desktop
-  // all 4 cards are already visible so the timer is a no-op.
+  // Auto-advance one page every 4 seconds while the row is scrollable.
   useEffect(() => {
     const el = scrollRef.current;
     if (!el) return;
-    if (el.scrollWidth <= el.clientWidth) return;
+    if (el.scrollWidth <= el.clientWidth + 4) return;
     const timer = setInterval(() => {
-      const card = el.children[0] as HTMLElement | undefined;
-      if (!card) return;
-      const cardWidth = card.offsetWidth + 10;
-      const next = (activeIndex + 1) % clinicians.length;
-      el.scrollTo({ left: cardWidth * next, behavior: "smooth" });
+      const next = (activeIndex + 1) % pageCount;
+      el.scrollTo({ left: el.clientWidth * next, behavior: "smooth" });
     }, 4000);
     return () => clearInterval(timer);
-  }, [activeIndex, clinicians.length]);
+  }, [activeIndex, pageCount]);
 
   return (
     <section className="relative h-[100svh] min-h-[620px] md:min-h-[720px] w-full overflow-hidden bg-[#111] text-white">
       {/* Ambient video background */}
       <div className="absolute inset-0 z-0">
         <video
+          ref={heroVideoRef}
           src={videoUrl}
+          poster={heroPoster}
           className="w-full h-full object-cover opacity-90"
           autoPlay
           muted
           loop
           playsInline
-          preload="auto"
+          preload="metadata"
           aria-hidden="true"
+          onTimeUpdate={() => {
+            const v = heroVideoRef.current;
+            if (v && v.currentTime >= HERO_LOOP_END_SECONDS) v.currentTime = 0;
+          }}
         />
         {/* Left-weighted gradient for text legibility */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/35 to-black/5" />
@@ -116,7 +151,7 @@ export function Hero({ data }: HeroProps = {}) {
             className="flex items-center gap-3 mb-6 lg:mb-8"
           >
             <span className="w-10 h-[1px] bg-primary" />
-            <span className="text-white/80 uppercase tracking-[0.25em] text-xs font-medium">
+            <span className="text-white/80 uppercase tracking-[0.25em] text-xs lg:text-sm font-medium">
               {eyebrow}
             </span>
           </motion.div>
@@ -155,17 +190,18 @@ export function Hero({ data }: HeroProps = {}) {
               {primaryCta}
               <ArrowRight className="ml-2.5 w-4 h-4 lg:w-5 lg:h-5 transition-transform duration-300 group-hover:translate-x-1" />
             </a>
-            <a
-              href={secondaryAnchor}
+            <Link
+              to={secondaryAnchor}
               className="px-7 py-4 lg:px-9 lg:py-5 rounded-full border border-white/30 text-white hover:bg-white/10 text-sm lg:text-base font-semibold uppercase tracking-[0.18em] transition-all duration-300 flex items-center justify-center"
             >
               {secondaryCta}
               <ArrowUpRight className="ml-2.5 w-4 h-4 lg:w-5 lg:h-5" />
-            </a>
+            </Link>
           </motion.div>
         </div>
 
-        {/* Bottom: 4 clinician cards — horizontal scroll on mobile, row on desktop */}
+        {/* Bottom: 4 clinician cards — full-width swipe slider showing 1 card per
+            view on phone and 2 per view on desktop. */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -181,7 +217,7 @@ export function Hero({ data }: HeroProps = {}) {
               <Link
                 key={c.name}
                 to={`/about#${clinicianAnchor(c.name)}`}
-                className="group flex items-center gap-3 bg-white/[0.08] backdrop-blur-xl border border-white/15 rounded-2xl p-2.5 pr-4 flex-shrink-0 min-w-full sm:min-w-[260px] lg:flex-1 lg:min-w-0 snap-start hover:bg-white/[0.12] hover:border-white/25 transition-all duration-500"
+                className="group flex items-center gap-3 bg-white/[0.08] backdrop-blur-xl border border-white/15 rounded-2xl p-2.5 pr-4 flex-shrink-0 min-w-full sm:min-w-[260px] lg:min-w-[calc(50%-0.375rem)] snap-start hover:bg-white/[0.12] hover:border-white/25 transition-all duration-500"
               >
                 <div className="relative w-12 h-12 lg:w-14 lg:h-14 rounded-xl overflow-hidden flex-shrink-0 ring-2 ring-white/20">
                   <ClinicianPortrait src={c.portrait} name={c.name} />
@@ -198,9 +234,9 @@ export function Hero({ data }: HeroProps = {}) {
             ))}
           </div>
 
-          {/* Pagination dots — visible only on mobile/tablet where cards scroll */}
-          <div className="flex justify-center gap-1.5 mt-3 lg:hidden" aria-hidden="true">
-            {clinicians.map((_, i) => (
+          {/* Pagination dots — one per page (1 card per page on phone, 2 on desktop) */}
+          <div className="flex justify-center gap-1.5 mt-3" aria-hidden="true">
+            {Array.from({ length: pageCount }).map((_, i) => (
               <span
                 key={i}
                 className={`h-1.5 rounded-full transition-all duration-300 ${

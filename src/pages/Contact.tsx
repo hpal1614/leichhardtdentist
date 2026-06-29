@@ -283,7 +283,7 @@ export function Contact() {
 
                   <label className="block mb-5">
                     <span className="text-xs uppercase tracking-wider text-muted-foreground font-semibold mb-2 block">
-                      Phone <span className="text-muted-foreground/60 normal-case tracking-normal">(optional)</span>
+                      Phone <span className="text-muted-foreground normal-case tracking-normal">(optional)</span>
                     </span>
                     <input
                       type="tel"
@@ -338,7 +338,7 @@ export function Contact() {
                     )}
                   </button>
 
-                  <p className="mt-6 text-xs text-muted-foreground/80 leading-relaxed">
+                  <p className="mt-6 text-xs text-muted-foreground leading-relaxed">
                     We typically reply within one business day. For appointment
                     bookings, the Book button is quicker.
                   </p>

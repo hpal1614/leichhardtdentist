@@ -16,7 +16,7 @@ export function StudioPage() {
             <code className="font-mono text-sm bg-secondary/50 px-2 py-1 rounded">VITE_SANITY_DATASET</code>{" "}
             in your <code className="font-mono text-sm bg-secondary/50 px-2 py-1 rounded">.env</code> file.
           </p>
-          <p className="text-sm text-muted-foreground/80">
+          <p className="text-sm text-muted-foreground">
             See <code className="font-mono text-xs">docs/sanity-setup.md</code>{" "}
             for step-by-step instructions.
           </p>

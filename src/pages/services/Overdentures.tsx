@@ -345,7 +345,7 @@ export function Overdentures() {
             </motion.figure>
           </div>
 
-          <p className="mt-8 text-xs lg:text-sm text-muted-foreground/80 italic max-w-3xl leading-relaxed">
+          <p className="mt-8 text-xs lg:text-sm text-muted-foreground italic max-w-3xl leading-relaxed">
             Individual results vary — this is not a guarantee of outcome. The
             images are real, unaltered clinical photographs of one patient
             treated at this practice, published with the patient's consent.
@@ -413,7 +413,7 @@ export function Overdentures() {
             </motion.div>
           </div>
 
-          <p className="mt-10 text-xs text-muted-foreground/80 italic max-w-3xl leading-relaxed">
+          <p className="mt-10 text-xs text-muted-foreground italic max-w-3xl leading-relaxed">
             Price is indicative and in Australian dollars. Individual cases vary;
             your final fee is confirmed in a written treatment plan after
             clinical assessment. Suitability for implant treatment depends on

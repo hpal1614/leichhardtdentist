@@ -105,10 +105,10 @@ export function TransformationGallery() {
                         </h2>
                     </div>
                     <div className="flex gap-4">
-                        <Button variant="outline" size="icon" onClick={prevSlide} className="rounded-full w-14 h-14 border-border hover:bg-black/5 text-foreground">
+                        <Button variant="outline" size="icon" onClick={prevSlide} aria-label="Previous case" className="rounded-full w-14 h-14 border-border hover:bg-black/5 text-foreground">
                             <ArrowLeft className="w-6 h-6" />
                         </Button>
-                        <Button variant="outline" size="icon" onClick={nextSlide} className="rounded-full w-14 h-14 border-border hover:bg-black/5 text-foreground">
+                        <Button variant="outline" size="icon" onClick={nextSlide} aria-label="Next case" className="rounded-full w-14 h-14 border-border hover:bg-black/5 text-foreground">
                             <ArrowRight className="w-6 h-6" />
                         </Button>
                     </div>
@@ -216,7 +216,7 @@ export function TransformationGallery() {
                 </div>
 
                 {/* AHPRA-required disclaimer — do not remove */}
-                <p className="mt-20 pt-8 border-t border-border/50 text-sm text-muted-foreground/80 leading-relaxed max-w-3xl">
+                <p className="mt-20 pt-8 border-t border-border/50 text-sm text-muted-foreground leading-relaxed max-w-3xl">
                     Individual results vary and are not guaranteed. All dental procedures carry
                     potential risks and benefits, and outcomes depend on individual clinical factors.
                     A consultation with a registered dental practitioner is required to determine

@@ -95,7 +95,7 @@ export function PricingCards({ eyebrow = "Pricing", title, intro, tiers, footnot
         </div>
 
         {footnote && (
-          <p className="mt-10 text-xs text-muted-foreground/80 italic max-w-3xl leading-relaxed">
+          <p className="mt-10 text-xs text-muted-foreground italic max-w-3xl leading-relaxed">
             {footnote}
           </p>
         )}

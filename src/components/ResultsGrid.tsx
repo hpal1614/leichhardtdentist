@@ -38,8 +38,8 @@ const stories: Story[] = [
     },
     {
         id: 2,
-        category: "CEREC",
-        treatment: "CEREC Restoration",
+        category: "Implants",
+        treatment: "All on 4",
         patient: "",
         quote: "",
         image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=800&q=80",
@@ -53,8 +53,8 @@ const stories: Story[] = [
     },
     {
         id: 3,
-        category: "Implants",
-        treatment: "Dental Implants",
+        category: "Cosmetic",
+        treatment: "Same Day Smile",
         patient: "",
         quote: "",
         image: "https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?w=800&q=80",
@@ -64,27 +64,27 @@ const stories: Story[] = [
     },
     {
         id: 4,
-        category: "Veneers",
-        treatment: "Veneers",
+        category: "Implants",
+        treatment: "All on Implants",
         patient: "",
         quote: "",
-        image: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/home/case-studies/veneers-case.jpg",
+        image: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/home/case-studies/all-on-implants-case.jpg",
     },
     {
         id: 5,
-        category: "Makeover",
-        treatment: "Smile Makeover",
+        category: "Cosmetic",
+        treatment: "Same Day Smile",
         patient: "",
         quote: "",
-        image: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/home/case-studies/makeover-case.jpg",
+        image: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/home/case-studies/same-day-smile-card.jpg",
     },
     {
         id: 6,
-        category: "Bonding",
-        treatment: "Bonding",
+        category: "Orthodontics",
+        treatment: "Braces and Implants",
         patient: "",
         quote: "",
-        image: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/home/case-studies/bonding-case.jpg",
+        image: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/home/case-studies/braces-implants-case.jpg",
     },
 ];
 
@@ -210,6 +210,7 @@ function VideoStoryCard({ story }: { story: Story }) {
                     onClick={togglePlay}
                     variant="ghost"
                     size="icon"
+                    aria-label={isPlaying ? `Pause ${story.treatment} video` : `Play ${story.treatment} video`}
                     className="w-16 h-16 rounded-full bg-white/20 hover:bg-white/30 backdrop-blur-md text-white border border-white/30 transition-all transform hover:scale-110"
                 >
                     {isPlaying ? <Pause className="w-8 h-8 fill-current" /> : <Play className="w-8 h-8 ml-1 fill-current" />}
@@ -222,6 +223,7 @@ function VideoStoryCard({ story }: { story: Story }) {
                     onClick={toggleMute}
                     variant="ghost"
                     size="icon"
+                    aria-label={isMuted ? "Unmute video" : "Mute video"}
                     className="w-10 h-10 rounded-full bg-black/40 hover:bg-black/60 backdrop-blur-md text-white border border-white/10"
                 >
                     {isMuted ? <VolumeX className="w-5 h-5" /> : <Volume2 className="w-5 h-5" />}
@@ -300,7 +302,7 @@ export function ResultsGrid() {
                     </AnimatePresence>
                 </div>
 
-                <p className="mt-12 lg:mt-16 text-center text-xs text-muted-foreground/80 italic max-w-3xl mx-auto leading-relaxed">
+                <p className="mt-12 lg:mt-16 text-center text-xs text-muted-foreground italic max-w-3xl mx-auto leading-relaxed">
                     Individual results vary — this is not a guarantee of outcome. The cases shown are real, unaltered, and published with patient consent.
                 </p>
 

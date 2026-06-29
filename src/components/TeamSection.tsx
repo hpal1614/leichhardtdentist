@@ -19,16 +19,17 @@ export function TeamSection() {
   const firstName = principal.name.replace(/^Dr\.?\s+/i, "").split(/\s+/)[0] || principal.name;
 
   return (
-    <section id="dr-nick" className="py-16 lg:py-24 bg-background relative overflow-hidden scroll-mt-24">
+    <section id="dr-nick" className="py-16 lg:py-24 bg-background relative overflow-hidden lg:overflow-visible scroll-mt-24">
       <div className="max-w-[1800px] mx-auto px-6 lg:px-12">
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
-          {/* Editorial Image - Full Height */}
+        <div className="grid lg:grid-cols-2 gap-20 lg:items-start">
+          {/* Editorial Image — pinned (position: sticky) on desktop so it holds
+              at the top while the longer bio column scrolls past it. */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 1 }}
-            className="relative h-[60vh] md:h-[80vh] lg:h-screen max-h-[1000px] rounded-3xl overflow-hidden group"
+            className="relative h-[60vh] md:h-[80vh] lg:h-[80vh] lg:max-h-[820px] rounded-3xl overflow-hidden group lg:sticky lg:top-28 lg:self-start"
           >
             <ClinicianPortrait
               src={principal.portrait}

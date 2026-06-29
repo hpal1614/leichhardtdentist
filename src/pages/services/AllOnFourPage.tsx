@@ -504,7 +504,7 @@ export function AllOnFourPage() {
             ))}
           </div>
 
-          <p className="mt-8 text-xs lg:text-sm text-muted-foreground/80 italic max-w-3xl leading-relaxed">
+          <p className="mt-8 text-xs lg:text-sm text-muted-foreground italic max-w-3xl leading-relaxed">
             Individual results vary — this is not a guarantee of outcome. These
             are real, unaltered photographs of patients treated at this practice
             with full-arch implant treatment, published with their consent. What
@@ -559,7 +559,7 @@ export function AllOnFourPage() {
             })}
           </div>
 
-          <p className="mt-10 text-xs text-muted-foreground/80 italic max-w-3xl leading-relaxed">
+          <p className="mt-10 text-xs text-muted-foreground italic max-w-3xl leading-relaxed">
             Our 3D CBCT scans are high-density clinical files used exclusively
             for internal surgical planning and are not available for external
             download or transfer.
@@ -676,7 +676,7 @@ export function AllOnFourPage() {
             </motion.div>
           </div>
 
-          <p className="mt-10 text-xs text-muted-foreground/80 italic max-w-3xl leading-relaxed">
+          <p className="mt-10 text-xs text-muted-foreground italic max-w-3xl leading-relaxed">
             All prices indicative and in Australian dollars. Final fees are
             confirmed in a written treatment plan after clinical assessment.
             Suitability for All-on-4 depends on your individual
@@ -720,7 +720,7 @@ export function AllOnFourPage() {
               </motion.div>
             ))}
           </motion.div>
-          <p className="mt-8 text-xs text-muted-foreground/80 italic max-w-3xl mx-auto text-center leading-relaxed">
+          <p className="mt-8 text-xs text-muted-foreground italic max-w-3xl mx-auto text-center leading-relaxed">
             Indicative timings only. Individual pathways vary based on healing,
             health, and clinical findings.
           </p>
@@ -793,7 +793,7 @@ export function AllOnFourPage() {
             })}
           </div>
 
-          <p className="mt-10 text-xs text-muted-foreground/80 italic max-w-3xl leading-relaxed">
+          <p className="mt-10 text-xs text-muted-foreground italic max-w-3xl leading-relaxed">
             This is general guidance only. Your specific pre-op instructions —
             including any prescriptions, fasting requirements, and stopping or
             adjusting routine medications — will be confirmed in writing by Dr.

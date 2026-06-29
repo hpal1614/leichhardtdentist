@@ -8,8 +8,11 @@ import philosophyImg from "../assets/philosophy.jpg";
 // Pexels — free for commercial use, no attribution required.
 // All hand-picked: dental tools / lab / clinical close-ups, NO recognisable
 // patient faces. Replace with real practice photography when commissioned.
-const PX = (id: number, w = 1600) =>
-  `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=${w}`;
+// Stock imagery re-hosted on Cloudinary (from Pexels, free for commercial use):
+// first-party delivery avoids third-party cookies and serves AVIF/WebP via CDN.
+// Replace with real practice photography when commissioned.
+const PX = (id: number) =>
+  `https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/stock/${id}.jpg`;
 
 const IMG = {
   toolsBlue: PX(4946338),         // tools on blue surface
@@ -353,6 +356,55 @@ export const DENTAL_IMPLANTS: PillarData = {
       ],
       risksContent:
         "Implant surgery is generally safe and well-established. Risks include infection, swelling, transient nerve sensitivity, and — rarely — implant failure where the bone does not fuse with the titanium.",
+      beforeAfter: [
+        {
+          before: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/dental-implants/single-tooth/before-and-after/case-1-before.jpg",
+          after: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/dental-implants/single-tooth/before-and-after/case-1-after.jpg",
+          caption: "Front-tooth loss can be distressing. A sporting injury in the teens led to infection and the eventual loss of a front tooth, which was replaced with a dental implant. Shown here at a 5-year follow-up.",
+          detail: [
+            { src: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/dental-implants/single-tooth/before-and-after/case-1-xray-1.jpg", label: "CBCT scan" },
+            { src: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/dental-implants/single-tooth/before-and-after/case-1-xray-2.jpg", label: "3D planning" },
+          ],
+        },
+        {
+          before: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/dental-implants/single-tooth/before-and-after/case-2-before.jpg",
+          after: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/dental-implants/single-tooth/before-and-after/case-2-after.jpg",
+          caption: "A history of trauma and infection in a front tooth, replaced with a dental implant. A high smile line — where the full tooth and gum show when smiling — makes these among the most demanding restorations to match naturally.",
+          detail: [
+            { src: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/dental-implants/single-tooth/before-and-after/case-2-xray-1.jpg", label: "CBCT scan" },
+            { src: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/dental-implants/single-tooth/before-and-after/case-2-xray-2.jpg", label: "3D planning" },
+          ],
+        },
+        {
+          before: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/dental-implants/single-tooth/before-and-after/case-3-before.jpg",
+          after: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/dental-implants/single-tooth/before-and-after/case-3-after.jpg",
+          caption: "An infected front tooth replaced with a dental implant. The 'after' image is a 10-year follow-up — the restoration continuing to function and blend with the surrounding teeth.",
+          detail: [
+            { src: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/dental-implants/single-tooth/before-and-after/case-3-xray-1.jpg", label: "X-ray (10-year)" },
+          ],
+        },
+        {
+          before: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/dental-implants/single-tooth/before-and-after/case-4-before.jpg",
+          after: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/dental-implants/single-tooth/before-and-after/case-4-after.jpg",
+          caption: "Multiple missing teeth replaced with implant-supported bridges. We take a conservative approach — teeth that can be retained are kept. A slight colour difference reflects a preference for whiter replacement teeth; in everyday smiling it isn't evident.",
+          detail: [
+            { src: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/dental-implants/single-tooth/before-and-after/case-4-xray-1.jpg", label: "Panoramic X-ray" },
+          ],
+        },
+        {
+          before: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/dental-implants/single-tooth/before-and-after/case-5-before.jpg",
+          after: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/dental-implants/single-tooth/before-and-after/case-5-after.jpg",
+          caption: "Some patients are born with congenitally (from birth) missing teeth. These are among the youngest patients we plan for: orthodontic treatment first aligns the teeth and holds the space, so a dental implant can be placed once jaw growth is complete.",
+        },
+        {
+          before: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/dental-implants/single-tooth/before-and-after/case-6-before.jpg",
+          after: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/dental-implants/single-tooth/before-and-after/case-6-after.jpg",
+          caption: "Front teeth lost to trauma, replaced with dental implants to restore a natural-looking smile.",
+          detail: [
+            { src: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/dental-implants/single-tooth/before-and-after/case-6-xray-1.jpg", label: "X-ray" },
+          ],
+        },
+      ],
       faqs: [
         {
           q: "How can I find out if an implant is right for me?",
@@ -627,6 +679,13 @@ export const SAME_DAY_SMILE: PillarData = {
     {
       id: "crowns",
       slug: "same-day-crowns",
+      // Hero banner video (PPT slide 28) — CEREC machine milling a ceramic crown.
+      // Plays inline, muted + looped. Poster reuses the shared Same Day Smile
+      // branded title card (same thumbnail as the veneers hero) for consistency.
+      videoUrl:
+        "https://res.cloudinary.com/dzydzte9h/video/upload/dental-website/single-visit-crowns/cerec-same-day/same-day-crown-hero.mp4",
+      videoPoster:
+        "https://res.cloudinary.com/dzydzte9h/video/upload/so_2,q_auto,f_auto/dental-website/same-day-smile/cerec-crowns-veneers/same-day-smile-hero.jpg",
       imageUrl:
         "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/single-visit-crowns/cerec-same-day/vita-furnace.jpg",
       name: "Same Day Crowns",
@@ -654,6 +713,13 @@ export const SAME_DAY_SMILE: PillarData = {
     {
       id: "veneers",
       slug: "same-day-veneers",
+      // Hero banner video (PPT slide 18) — veneer before/afters + CEREC same-day
+      // design workflow. Poster auto-generated from a video frame for now;
+      // swap videoPoster for the client-supplied thumbnail when provided.
+      videoUrl:
+        "https://res.cloudinary.com/dzydzte9h/video/upload/dental-website/same-day-smile/cerec-crowns-veneers/same-day-smile-hero.mp4",
+      videoPoster:
+        "https://res.cloudinary.com/dzydzte9h/video/upload/so_2,q_auto,f_auto/dental-website/same-day-smile/cerec-crowns-veneers/same-day-smile-hero.jpg",
       imageUrl:
         "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/cerec-crowns-veneers/case-1.jpg",
       name: "Same Day Veneers",
@@ -705,6 +771,11 @@ export const SAME_DAY_SMILE: PillarData = {
           before: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/cerec-crowns-veneers/before-and-after/case-7-before.jpg",
           after: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/cerec-crowns-veneers/before-and-after/case-7-after.jpg",
           caption: "A close-up of the transformation with Emax ceramic veneers, done with our in-house Same Day Smile technology.",
+        },
+        {
+          before: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/cerec-crowns-veneers/before-and-after/case-8-before.jpg",
+          after: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/cerec-crowns-veneers/before-and-after/case-8-after.jpg",
+          caption: "Long-term gum disease can create gaps between the teeth. Once the gum disease was stabilised and under control, the gaps were closed with Emax ceramic veneers — done with our in-house Same Day Smile technology.",
         },
       ],
     },
@@ -800,11 +871,12 @@ export const SAME_DAY_SMILE: PillarData = {
       imageUrl:
         "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/bonding/case-1.jpg",
       beforeAfter: [
-        { before: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/bonding/case-1-before.jpg", after: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/bonding/case-1-after.jpg" },
-        { before: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/bonding/case-2-before.jpg", after: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/bonding/case-2-after.jpg" },
-        { before: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/bonding/case-3-before.jpg", after: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/bonding/case-3-after.jpg" },
-        { before: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/bonding/case-4-before.jpg", after: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/bonding/case-4-after.jpg" },
-        { before: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/bonding/case-5-before.jpg", after: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/bonding/case-5-after.jpg" },
+        { before: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/bonding/case-1-before.jpg", after: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/bonding/case-1-after.jpg", caption: "Minimal smile intervention with only the front two teeth veneered, plus a little Zoom whitening." },
+        { before: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/bonding/case-2-before.jpg", after: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/bonding/case-2-after.jpg", caption: "A pleasant, healthy, natural-looking smile transformation — angle correction with a minimal approach, using ceramic veneers on only the front two teeth." },
+        { before: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/bonding/case-3-before.jpg", after: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/bonding/case-3-after.jpg", caption: "A minimal-intervention smile design with just the two front teeth getting ceramic veneers — minimal cost, minimal intervention, and an optimal, natural-looking result." },
+        { before: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/bonding/case-4-before.jpg", after: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/bonding/case-4-after.jpg", caption: "A simple solution of veneers on only the front two teeth — not only to create a pleasant look, but to protect the wearing-down enamel." },
+        { before: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/bonding/case-5-before.jpg", after: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/bonding/case-5-after.jpg", caption: "Natural-looking harmony and balance." },
+        { before: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/bonding/case-6-before.jpg", after: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/bonding/case-6-after.jpg", caption: "A pleasant smile transformation to suit the patient's overall age — restoring broken-down and chipped teeth in the process, using a combination of bonding and ceramic veneers." },
       ],
       name: "Composite Bonding",
       description:

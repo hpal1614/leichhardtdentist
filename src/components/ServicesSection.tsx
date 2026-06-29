@@ -55,8 +55,8 @@ export function ServicesSection() {
           </motion.div>
         </div>
 
-        {/* Bento Grid — 1 col mobile, 2 col tablet, 12 col desktop */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 lg:grid-rows-[auto_auto] gap-5 lg:gap-6">
+        {/* Uniform 2×2 grid — equal-size cards (1 col mobile, 2×2 from tablet up) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-6">
           {pillars.map((pillar, i) => (
             <motion.div
               key={pillar.slug}
@@ -64,7 +64,7 @@ export function ServicesSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.7, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
-              className={`group relative ${pillar.bentoSpan} ${pillar.bentoAspect} rounded-[2rem] overflow-hidden bg-foreground/5 isolate`}
+              className="group relative aspect-[4/5] sm:aspect-[16/11] lg:aspect-[4/3] rounded-[2rem] overflow-hidden bg-foreground/5 isolate"
             >
               {/* Background image */}
               <ImageWithFallback

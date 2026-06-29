@@ -26,7 +26,7 @@ export function Privacy() {
                         prose-li:text-muted-foreground prose-li:font-light prose-li:leading-relaxed
                         prose-strong:text-foreground prose-strong:font-semibold
                         prose-a:text-primary prose-a:no-underline hover:prose-a:underline">
-          <p className="lead text-base text-muted-foreground/80 border-l-4 border-primary pl-4 py-2 italic">
+          <p className="lead text-base text-muted-foreground border-l-4 border-primary pl-4 py-2 italic">
             This policy is a working draft and should be reviewed by a solicitor
             before launch. Dental practices have additional obligations under
             health records legislation that your legal adviser will want to

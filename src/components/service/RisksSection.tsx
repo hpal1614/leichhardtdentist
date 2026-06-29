@@ -26,7 +26,7 @@ export function RisksSection({ content }: Props) {
             <p className="text-base lg:text-lg text-muted-foreground leading-relaxed font-light">
               {content}
             </p>
-            <p className="text-sm text-muted-foreground/70 leading-relaxed mt-4 italic">
+            <p className="text-sm text-muted-foreground leading-relaxed mt-4 italic">
               All dental procedures carry potential risks and benefits. Individual
               results vary. A consultation with a registered dental practitioner is
               required to determine whether a treatment is suitable for you.

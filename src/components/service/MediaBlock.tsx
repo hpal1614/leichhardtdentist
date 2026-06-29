@@ -1,5 +1,5 @@
-import { Play } from "lucide-react";
-import { useState, type ReactNode } from "react";
+import { Play, Pause, Volume2, VolumeX } from "lucide-react";
+import { useRef, useState, type ReactNode } from "react";
 import { ImageWithFallback } from "../figma/ImageWithFallback";
 import { VideoLightbox } from "../VideoLightbox";
 import { optimizeVideoUrl } from "../../lib/cloudinary";
@@ -57,21 +57,16 @@ export function MediaBlock({
   const hasVideo = native || yt || vm;
   const previewImage = videoPoster || imageUrl || fallbackImage;
 
-  // Inline mode (the old behaviour) — used by ambient Hero video.
+  // Inline mode (the old behaviour) — ambient autoplay video with controls.
   if (hasVideo && !lightbox) {
     if (native) {
       return (
-        <div className={`relative w-full h-full overflow-hidden ${className}`}>
-          <video
-            src={optimizeVideoUrl(videoUrl)}
-            poster={videoPoster}
-            className="w-full h-full object-cover"
-            playsInline
-            muted
-            loop
-            autoPlay
-          />
-        </div>
+        <InlineNativeVideo
+          videoUrl={videoUrl}
+          videoPoster={videoPoster}
+          className={className}
+          alt={alt}
+        />
       );
     }
     return (
@@ -153,5 +148,96 @@ export function MediaBlock({
       className={`w-full h-full bg-gradient-to-br from-secondary/60 to-secondary/30 ${className}`}
       aria-hidden="true"
     />
+  );
+}
+
+/**
+ * Ambient inline video: autoplays muted on loop, but keeps a visible
+ * play/pause control and a mute toggle so the viewer stays in control.
+ */
+function InlineNativeVideo({
+  videoUrl,
+  videoPoster,
+  className = "",
+  alt = "",
+}: {
+  videoUrl?: string;
+  videoPoster?: string;
+  className?: string;
+  alt?: string;
+}) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isPlaying, setIsPlaying] = useState(true);
+  const [isMuted, setIsMuted] = useState(true);
+
+  const togglePlay = () => {
+    const v = videoRef.current;
+    if (!v) return;
+    if (v.paused) {
+      v.play();
+      setIsPlaying(true);
+    } else {
+      v.pause();
+      setIsPlaying(false);
+    }
+  };
+
+  const toggleMute = () => {
+    const v = videoRef.current;
+    if (!v) return;
+    v.muted = !v.muted;
+    setIsMuted(v.muted);
+  };
+
+  return (
+    <div className={`relative w-full h-full overflow-hidden group ${className}`}>
+      <video
+        ref={videoRef}
+        src={optimizeVideoUrl(videoUrl)}
+        poster={videoPoster}
+        className="w-full h-full object-cover"
+        playsInline
+        muted
+        loop
+        autoPlay
+        onPlay={() => setIsPlaying(true)}
+        onPause={() => setIsPlaying(false)}
+      />
+
+      {/* Thumbnail shown while paused (covers the frozen video frame) */}
+      {videoPoster && (
+        <ImageWithFallback
+          src={videoPoster}
+          alt={alt}
+          className={`absolute inset-0 w-full h-full object-cover z-[1] transition-opacity duration-300 ${
+            isPlaying ? "opacity-0 pointer-events-none" : "opacity-100"
+          }`}
+        />
+      )}
+
+      {/* Mute toggle — top right */}
+      <button
+        type="button"
+        onClick={toggleMute}
+        aria-label={isMuted ? "Unmute video" : "Mute video"}
+        className="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-black/40 hover:bg-black/60 backdrop-blur-md text-white border border-white/15 flex items-center justify-center transition-all duration-300"
+      >
+        {isMuted ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4" />}
+      </button>
+
+      {/* Play / pause — bottom right glass button (matches the homepage video cards) */}
+      <button
+        type="button"
+        onClick={togglePlay}
+        aria-label={isPlaying ? `Pause ${alt || "video"}` : `Play ${alt || "video"}`}
+        className="absolute bottom-4 right-4 lg:bottom-5 lg:right-5 z-10 w-14 h-14 lg:w-16 lg:h-16 rounded-full bg-white/20 hover:bg-white/30 backdrop-blur-md border border-white/30 flex items-center justify-center transition-all duration-300 hover:scale-110"
+      >
+        {isPlaying ? (
+          <Pause className="w-6 h-6 lg:w-7 lg:h-7 text-white fill-current" />
+        ) : (
+          <Play className="w-6 h-6 lg:w-7 lg:h-7 text-white ml-1 fill-current" />
+        )}
+      </button>
+    </div>
   );
 }

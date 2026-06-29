@@ -84,9 +84,9 @@ export function Footer() {
 
           {/* Services */}
           <div className="lg:col-span-3">
-            <h4 className="text-white/90 mb-5 text-xs uppercase tracking-[0.25em] font-semibold">
+            <h3 className="text-white/90 mb-5 text-xs uppercase tracking-[0.25em] font-semibold">
               Services
-            </h4>
+            </h3>
             <ul className="space-y-3 text-sm lg:text-base">
               {services.map((s) => (
                 <li key={s.to}>
@@ -103,9 +103,9 @@ export function Footer() {
 
           {/* Practice */}
           <div className="lg:col-span-2">
-            <h4 className="text-white/90 mb-5 text-xs uppercase tracking-[0.25em] font-semibold">
+            <h3 className="text-white/90 mb-5 text-xs uppercase tracking-[0.25em] font-semibold">
               Practice
-            </h4>
+            </h3>
             <ul className="space-y-3 text-sm lg:text-base">
               {practiceLinks.map((l) => (
                 <li key={l.to}>
@@ -122,9 +122,9 @@ export function Footer() {
 
           {/* Visit */}
           <div className="col-span-2 lg:col-span-3">
-            <h4 className="text-white/90 mb-5 text-xs uppercase tracking-[0.25em] font-semibold">
+            <h3 className="text-white/90 mb-5 text-xs uppercase tracking-[0.25em] font-semibold">
               Visit
-            </h4>
+            </h3>
             <ul className="space-y-4 text-sm lg:text-base">
               <li>
                 <a
@@ -156,10 +156,10 @@ export function Footer() {
             </ul>
 
             <div className="mt-6 pt-6 border-t border-white/10">
-              <h5 className="text-white/70 text-[11px] uppercase tracking-[0.25em] font-semibold mb-3">
+              <h4 className="text-white/70 text-[11px] uppercase tracking-[0.25em] font-semibold mb-3">
                 Hours
-              </h5>
-              <ul className="space-y-1.5 text-xs lg:text-sm text-white/50">
+              </h4>
+              <ul className="space-y-1.5 text-xs lg:text-sm text-white/70">
                 {practice.hours.map((h) => (
                   <li key={h.days} className="flex justify-between gap-4">
                     <span>{h.days}</span>
@@ -173,7 +173,7 @@ export function Footer() {
 
         {/* AHPRA disclaimer */}
         <div className="pt-8 border-t border-white/10">
-          <p className="text-xs text-white/40 leading-relaxed max-w-4xl mb-6 font-light">
+          <p className="text-xs text-white/60 leading-relaxed max-w-4xl mb-6 font-light">
             Leichhardt Dental Centre is a general dental practice regulated under the
             Health Practitioner Regulation National Law (Australia). All dental
             procedures carry potential risks and benefits; individual results vary. A
@@ -181,15 +181,15 @@ export function Footer() {
             determine whether a treatment is suitable for you.
           </p>
 
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 text-xs text-white/30">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 text-xs text-white/60">
             <p>
               &copy; {year} {practice.name}. All rights reserved.
             </p>
             <div className="flex gap-6">
-              <Link to="/privacy" className="hover:text-white/60 transition-colors">
+              <Link to="/privacy" className="hover:text-white transition-colors">
                 Privacy
               </Link>
-              <Link to="/terms" className="hover:text-white/60 transition-colors">
+              <Link to="/terms" className="hover:text-white transition-colors">
                 Terms
               </Link>
             </div>

@@ -164,7 +164,7 @@ export function DentalImplants() {
             })}
           </div>
 
-          <p className="mt-10 text-xs text-muted-foreground/80 italic max-w-3xl leading-relaxed">
+          <p className="mt-10 text-xs text-muted-foreground italic max-w-3xl leading-relaxed">
             Our 3D CBCT scans are clinical files used for internal surgical
             planning only and are not available for external download.
           </p>

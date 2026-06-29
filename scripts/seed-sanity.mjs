@@ -71,8 +71,10 @@ function toBlocks(paragraphs) {
 
 const slug = (current) => ({ _type: "slug", current });
 
-const PX = (id, w = 1600) =>
-  `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=${w}`;
+// Stock imagery re-hosted on Cloudinary (from Pexels, free for commercial use):
+// first-party delivery avoids third-party cookies and serves AVIF/WebP via CDN.
+const PX = (id) =>
+  `https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/stock/${id}.jpg`;
 
 const IMG = {
   toolsBlue: PX(4946338),
@@ -131,8 +133,8 @@ const homeHero = {
   videoUrl:
     "https://res.cloudinary.com/dzydzte9h/video/upload/dental-website/home/hero/hero-main.mp4",
   primaryCtaLabel: "Book an appointment online",
-  secondaryCtaLabel: "Meet Dr. Nick",
-  secondaryCtaAnchor: "#dr-nick",
+  secondaryCtaLabel: "Meet Our Team",
+  secondaryCtaAnchor: "/about",
   trustCardName: "Dr. Nick Kulkarni",
   trustCardRole: "Principal Dentist",
   trustCardCredentials:
@@ -409,6 +411,14 @@ const pillarDentalImplants = {
       ],
       risksContent:
         "Implant surgery is generally safe and well-established. Risks include infection, swelling, transient nerve sensitivity, and — rarely — implant failure where the bone does not fuse with the titanium.",
+      beforeAfter: [
+        { _key: key(), before: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/dental-implants/single-tooth/before-and-after/case-1-before.jpg", after: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/dental-implants/single-tooth/before-and-after/case-1-after.jpg", caption: "Front-tooth loss can be distressing. A sporting injury in the teens led to infection and the eventual loss of a front tooth, which was replaced with a dental implant. Shown here at a 5-year follow-up.", detail: [ { _key: key(), src: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/dental-implants/single-tooth/before-and-after/case-1-xray-1.jpg", label: "CBCT scan" }, { _key: key(), src: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/dental-implants/single-tooth/before-and-after/case-1-xray-2.jpg", label: "3D planning" } ] },
+        { _key: key(), before: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/dental-implants/single-tooth/before-and-after/case-2-before.jpg", after: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/dental-implants/single-tooth/before-and-after/case-2-after.jpg", caption: "A history of trauma and infection in a front tooth, replaced with a dental implant. A high smile line — where the full tooth and gum show when smiling — makes these among the most demanding restorations to match naturally.", detail: [ { _key: key(), src: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/dental-implants/single-tooth/before-and-after/case-2-xray-1.jpg", label: "CBCT scan" }, { _key: key(), src: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/dental-implants/single-tooth/before-and-after/case-2-xray-2.jpg", label: "3D planning" } ] },
+        { _key: key(), before: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/dental-implants/single-tooth/before-and-after/case-3-before.jpg", after: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/dental-implants/single-tooth/before-and-after/case-3-after.jpg", caption: "An infected front tooth replaced with a dental implant. The 'after' image is a 10-year follow-up — the restoration continuing to function and blend with the surrounding teeth.", detail: [ { _key: key(), src: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/dental-implants/single-tooth/before-and-after/case-3-xray-1.jpg", label: "X-ray (10-year)" } ] },
+        { _key: key(), before: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/dental-implants/single-tooth/before-and-after/case-4-before.jpg", after: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/dental-implants/single-tooth/before-and-after/case-4-after.jpg", caption: "Multiple missing teeth replaced with implant-supported bridges. We take a conservative approach — teeth that can be retained are kept. A slight colour difference reflects a preference for whiter replacement teeth; in everyday smiling it isn't evident.", detail: [ { _key: key(), src: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/dental-implants/single-tooth/before-and-after/case-4-xray-1.jpg", label: "Panoramic X-ray" } ] },
+        { _key: key(), before: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/dental-implants/single-tooth/before-and-after/case-5-before.jpg", after: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/dental-implants/single-tooth/before-and-after/case-5-after.jpg", caption: "Some patients are born with congenitally (from birth) missing teeth. These are among the youngest patients we plan for: orthodontic treatment first aligns the teeth and holds the space, so a dental implant can be placed once jaw growth is complete." },
+        { _key: key(), before: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/dental-implants/single-tooth/before-and-after/case-6-before.jpg", after: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/dental-implants/single-tooth/before-and-after/case-6-after.jpg", caption: "Front teeth lost to trauma, replaced with dental implants to restore a natural-looking smile.", detail: [ { _key: key(), src: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/dental-implants/single-tooth/before-and-after/case-6-xray-1.jpg", label: "X-ray" } ] },
+      ],
       faqs: [
         { _key: key(), q: "How can I find out if an implant is right for me?", a: "We offer a complimentary 30-minute consultation for new implant patients. This visit includes a free 3D scan using our in-house machine. Dr Nick will personally look at your foundations, talk through your goals, and let you know if a dental implant is the absolute best option for your smile." },
         { _key: key(), q: "Why choose an implant over a bridge?", a: "Older dental bridges require grinding down the healthy neighboring teeth to hold the new tooth in place. An implant stands completely on its own. Unlike a loose plate, an implant stays in your mouth — it does not slide around, click when you talk, or need to be taken out at night. And you can bite into apples, steak, or crunchy foods without any fear of your tooth shifting or coming loose." },
@@ -574,6 +584,8 @@ const pillarSameDaySmile = {
       _key: key(),
       id: "crowns",
       slug: slug("same-day-crowns"),
+      videoUrl: "https://res.cloudinary.com/dzydzte9h/video/upload/dental-website/single-visit-crowns/cerec-same-day/same-day-crown-hero.mp4",
+      videoPoster: "https://res.cloudinary.com/dzydzte9h/video/upload/so_2,q_auto,f_auto/dental-website/same-day-smile/cerec-crowns-veneers/same-day-smile-hero.jpg",
       imageUrl: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/single-visit-crowns/cerec-same-day/vita-furnace.jpg",
       name: "Same Day Crowns",
       description: "A full-coverage ceramic crown designed, milled, and bonded in a single appointment via CEREC. For teeth that need more than a filling can provide.",
@@ -592,6 +604,8 @@ const pillarSameDaySmile = {
       _key: key(),
       id: "veneers",
       slug: slug("same-day-veneers"),
+      videoUrl: "https://res.cloudinary.com/dzydzte9h/video/upload/dental-website/same-day-smile/cerec-crowns-veneers/same-day-smile-hero.mp4",
+      videoPoster: "https://res.cloudinary.com/dzydzte9h/video/upload/so_2,q_auto,f_auto/dental-website/same-day-smile/cerec-crowns-veneers/same-day-smile-hero.jpg",
       imageUrl: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/cerec-crowns-veneers/case-1.jpg",
       name: "Same Day Veneers",
       description: "Thin ceramic facings bonded to the front surface of a tooth to change shape, colour, or alignment. Designed digitally, milled chairside, bonded the same day.",
@@ -606,6 +620,7 @@ const pillarSameDaySmile = {
         { _key: key(), before: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/cerec-crowns-veneers/before-and-after/case-5-before.jpg", after: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/cerec-crowns-veneers/before-and-after/case-5-after.jpg", caption: "A well-deserved 60th birthday present — delivered in one day with premium Emax veneers." },
         { _key: key(), before: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/cerec-crowns-veneers/before-and-after/case-6-before.jpg", after: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/cerec-crowns-veneers/before-and-after/case-6-after.jpg", caption: "A retirement gift to self — a veneer smile makeover with premium Emax ceramic." },
         { _key: key(), before: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/cerec-crowns-veneers/before-and-after/case-7-before.jpg", after: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/cerec-crowns-veneers/before-and-after/case-7-after.jpg", caption: "A close-up of the transformation with Emax ceramic veneers, done with our in-house Same Day Smile technology." },
+        { _key: key(), before: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/cerec-crowns-veneers/before-and-after/case-8-before.jpg", after: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/cerec-crowns-veneers/before-and-after/case-8-after.jpg", caption: "Long-term gum disease can create gaps between the teeth. Once the gum disease was stabilised and under control, the gaps were closed with Emax ceramic veneers — done with our in-house Same Day Smile technology." },
       ],
     },
     {
@@ -654,6 +669,14 @@ const pillarSameDaySmile = {
       description: "Composite veneering / dental bonding — an affordable, single-visit solution for immediate smile enhancement, sculpted by hand and polished the same day.",
       longDescription: "Dental bonding, also referred to as composite veneering, provides an affordable, single-visit solution for immediate smile enhancement. Individuals with generally healthy teeth exhibiting minor wear, slight chipping, or a somewhat dulled appearance are ideal candidates. Addressing these concerns through composite resin application is both straightforward and highly effective. Those who are not yet prepared—emotionally or financially—to pursue ceramic veneers will find this an excellent interim option for improving their smile. With proper care, a composite smile design typically maintains its results for approximately 5–7 years before a transition to ceramic alternatives becomes advisable. A combined approach incorporating both ceramic and composite veneering is a strategy we frequently recommend: ceramic veneers are placed on the front 2–4 teeth requiring the most significant cosmetic improvement, while the remaining visible teeth are treated with composite bonding — delivering optimal results from both techniques while managing your total investment.",
       whatToExpect: ["Personalised Consultation: we discuss your aesthetic goals, select the ideal shade match, and map out your custom smile design", "Surface Preparation: we gently clean and prepare the tooth surface to ensure a strong, long-lasting bond", "Artistic Sculpting: our dentist meticulously layers the composite resin, shaping it by hand to match your facial features", "Curing & Final Polish: a specialized light hardens the resin instantly, followed by high-gloss polishing for a smooth, natural sheen"],
+      beforeAfter: [
+        { _key: key(), before: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/bonding/case-1-before.jpg", after: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/bonding/case-1-after.jpg", caption: "Minimal smile intervention with only the front two teeth veneered, plus a little Zoom whitening." },
+        { _key: key(), before: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/bonding/case-2-before.jpg", after: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/bonding/case-2-after.jpg", caption: "A pleasant, healthy, natural-looking smile transformation — angle correction with a minimal approach, using ceramic veneers on only the front two teeth." },
+        { _key: key(), before: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/bonding/case-3-before.jpg", after: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/bonding/case-3-after.jpg", caption: "A minimal-intervention smile design with just the two front teeth getting ceramic veneers — minimal cost, minimal intervention, and an optimal, natural-looking result." },
+        { _key: key(), before: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/bonding/case-4-before.jpg", after: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/bonding/case-4-after.jpg", caption: "A simple solution of veneers on only the front two teeth — not only to create a pleasant look, but to protect the wearing-down enamel." },
+        { _key: key(), before: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/bonding/case-5-before.jpg", after: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/bonding/case-5-after.jpg", caption: "Natural-looking harmony and balance." },
+        { _key: key(), before: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/bonding/case-6-before.jpg", after: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/bonding/case-6-after.jpg", caption: "A pleasant smile transformation to suit the patient's overall age — restoring broken-down and chipped teeth in the process, using a combination of bonding and ceramic veneers." },
+      ],
       pricing: [
         { _key: key(), name: "Composite Veneers / Bonding", price: "Approx. $550 AUD", description: "Per tooth. Flexible financing can reduce costs to as little as $60 AUD per week." },
         { _key: key(), name: "Ceramic Veneers", price: "Approx. $1,600 AUD", description: "Per tooth, for the most significant cosmetic improvement on the front teeth." },

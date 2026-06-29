@@ -26,7 +26,7 @@ export function Terms() {
                         prose-li:text-muted-foreground prose-li:font-light prose-li:leading-relaxed
                         prose-strong:text-foreground prose-strong:font-semibold
                         prose-a:text-primary prose-a:no-underline hover:prose-a:underline">
-          <p className="lead text-base text-muted-foreground/80 border-l-4 border-primary pl-4 py-2 italic">
+          <p className="lead text-base text-muted-foreground border-l-4 border-primary pl-4 py-2 italic">
             This is a working draft. Have a solicitor review it before launch —
             health practice websites have specific obligations your lawyer will
             want to tailor to your situation.

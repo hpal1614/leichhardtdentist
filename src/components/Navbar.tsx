@@ -131,6 +131,7 @@ export function Navbar() {
                         <button
                             className={`md:hidden w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ${scrolled ? "bg-black/5 text-foreground" : "bg-white/10 text-white"}`}
                             onClick={() => setMobileMenuOpen(true)}
+                            aria-label="Open menu"
                         >
                             <Menu className="w-5 h-5" />
                         </button>
@@ -150,6 +151,7 @@ export function Navbar() {
                         <button
                             className="absolute top-6 right-6 w-12 h-12 rounded-full bg-white/10 border border-white/30 flex items-center justify-center text-white hover:bg-white/20 transition-all duration-300"
                             onClick={() => setMobileMenuOpen(false)}
+                            aria-label="Close menu"
                         >
                             <X className="w-6 h-6" />
                         </button>

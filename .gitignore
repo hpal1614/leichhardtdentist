@@ -34,3 +34,4 @@ media/**/*
 
 # Cloudinary URL map (regenerated on each upload run)
 cloudinary-urls.json
+audit-screenshots/

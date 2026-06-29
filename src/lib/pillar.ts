@@ -27,10 +27,13 @@ export type PricingTier = {
   description?: string;
   items?: string[];
 };
+export type BeforeAfterDetail = { src: string; label: string };
 export type BeforeAfterPair = {
   before: string;
   after: string;
   caption?: string;
+  /** Optional clinical detail images (X-ray / CBCT) shown in a strip below the pair. */
+  detail?: BeforeAfterDetail[];
 };
 
 /** Shape consumed by page components. Images already resolved to URL strings. */
@@ -130,7 +133,14 @@ function cleanBeforeAfter(
 ): BeforeAfterPair[] | null {
   const cleaned = items
     ?.filter((i): i is BeforeAfterPair => Boolean(i.before && i.after))
-    .map((i) => ({ before: i.before, after: i.after, caption: i.caption }));
+    .map((i) => ({
+      before: i.before,
+      after: i.after,
+      caption: i.caption,
+      detail: i.detail
+        ?.filter((d): d is BeforeAfterDetail => Boolean(d?.src && d?.label))
+        .map((d) => ({ src: d.src, label: d.label })),
+    }));
   return cleaned?.length ? cleaned : null;
 }
 

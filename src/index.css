@@ -21,8 +21,8 @@
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 10%;
 
-    --primary: 20 81% 54%;
-    /* #E86A2C */
+    --primary: 20 81% 40%;
+    /* #B94A13 — terracotta, darkened from #E86A2C to meet WCAG AA (4.5:1) for small text on off-white section backgrounds */
     --primary-foreground: 0 0% 100%;
 
     --secondary: 40 30% 93%;
@@ -31,8 +31,8 @@
 
     --muted: 40 30% 95%;
     /* #F7F4F0 */
-    --muted-foreground: 0 0% 46%;
-    /* #757575 */
+    --muted-foreground: 0 0% 40%;
+    /* #666666 — darkened from #757575 to clear WCAG AA on tinted (beige) surfaces */
 
     --accent: 40 30% 87%;
     /* #E8DFD5 */
@@ -89,4 +89,18 @@
 
 .text-balance {
   text-wrap: balance;
+}
+
+/* Accessibility: honour the OS "reduce motion" setting for CSS-driven
+   animations/transitions (Tailwind's animate-* utilities, spinners, scroll
+   smoothing). Motion/Framer animations are handled by MotionConfig in App.tsx. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

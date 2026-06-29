@@ -267,13 +267,14 @@ export function About() {
           >
             <div className="max-w-[1800px] mx-auto px-6 lg:px-12">
               <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
-                {/* Portrait */}
+                {/* Portrait — pinned (position: sticky) on desktop so it holds
+                    at the top while the bio column scrolls past it. */}
                 <motion.div
                   initial={{ opacity: 0, scale: 0.96 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true, margin: "-80px" }}
                   transition={{ duration: 0.9 }}
-                  className={`lg:col-span-5 aspect-[4/5] rounded-[2rem] overflow-hidden shadow-xl ${
+                  className={`lg:col-span-5 aspect-[4/5] rounded-[2rem] overflow-hidden shadow-xl lg:sticky lg:top-28 lg:self-start ${
                     imageRight ? "lg:order-2" : "lg:order-1"
                   }`}
                 >

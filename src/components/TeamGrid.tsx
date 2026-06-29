@@ -70,6 +70,7 @@ export function TeamGrid() {
                 size="icon"
                 onClick={() => scroll("left")}
                 disabled={!canScrollLeft}
+                aria-label="Scroll to previous team members"
                 className="rounded-full w-10 h-10 lg:w-12 lg:h-12 border-foreground/20 hover:bg-foreground hover:text-background transition-all duration-300 disabled:opacity-30 disabled:hover:bg-transparent disabled:hover:text-foreground"
               >
                 <ArrowLeft className="w-4 h-4 lg:w-5 lg:h-5" />
@@ -79,6 +80,7 @@ export function TeamGrid() {
                 size="icon"
                 onClick={() => scroll("right")}
                 disabled={!canScrollRight}
+                aria-label="Scroll to next team members"
                 className="rounded-full w-10 h-10 lg:w-12 lg:h-12 border-foreground/20 hover:bg-foreground hover:text-background transition-all duration-300 disabled:opacity-30 disabled:hover:bg-transparent disabled:hover:text-foreground"
               >
                 <ArrowRight className="w-4 h-4 lg:w-5 lg:h-5" />
@@ -100,7 +102,7 @@ export function TeamGrid() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1, duration: 0.6 }}
-              className="min-w-[280px] md:min-w-[320px] lg:min-w-[350px] snap-start"
+              className="w-[280px] md:w-[320px] lg:w-[350px] shrink-0 snap-start"
             >
               <Link
                 to={`/about#${clinicianAnchor(member.name)}`}
@@ -137,7 +139,7 @@ export function TeamGrid() {
                     {member.role}
                   </p>
                   {member.qualifications && (
-                    <p className="text-xs text-muted-foreground/70 mt-1.5 font-mono">
+                    <p className="text-xs text-muted-foreground mt-1.5 font-mono">
                       {member.qualifications}
                     </p>
                   )}

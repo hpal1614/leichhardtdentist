@@ -63,7 +63,7 @@ export function DentalImplants() {
         title={data.title}
         tagline={data.tagline}
         intro={data.intro}
-        image={data.image}
+        image={data.heroImage ?? data.image}
       />
 
       {/* Clinical expertise — your dentist */}

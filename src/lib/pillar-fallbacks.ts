@@ -367,13 +367,16 @@ export const DENTAL_IMPLANTS: PillarData = {
   intro:
     "Missing teeth shouldn't hold you back from eating, smiling, or living with confidence. At Leichhardt Dental, dental implantology is the primary focus of our clinical practice. Led by Dr Nick Kulkarni — a registered specialist prosthodontist with over 25 years of extensive international clinical experience and a Fellow of the International Congress of Oral Implantologists — we combine world-class 3D imaging with advanced surgical techniques to restore your smile's permanent strength. We achieve predictable, long-term results by focusing on three strict pillars of care: unrivalled accuracy with in-house 3D CBCT imaging; 100% synthetic bone regeneration with EthOss (no donor or animal tissue); and premium Zirconia crowns, 100% made in Sydney by master technicians — we do not outsource our restorations to cheap overseas labs. We also offer metal-free zirconia implants for patients who prefer a non-metal option. Flexible payment plans are available through TLC Finance.",
   image: clinic2,
+  heroImage:
+    "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/dental-implants/pillar-hero.png",
   bentoSpan: "md:col-span-1 lg:col-span-5 lg:row-span-1",
   bentoAspect: "aspect-[4/5] md:aspect-[5/4]",
   subTreatments: [
     {
       id: "single",
       slug: "single-tooth-implants",
-      imageUrl: IMG.implantMaking,
+      imageUrl:
+        "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/dental-implants/single-tooth-card.png",
       name: "Single Tooth Implants",
       description:
         "A titanium post placed where the tooth root used to be, topped with a zirconia crown made locally in Sydney. Teeth either side are left untouched — unlike a bridge.",
@@ -473,7 +476,8 @@ export const DENTAL_IMPLANTS: PillarData = {
     {
       id: "zirconia",
       slug: "zirconia-implants",
-      imageUrl: IMG.modelEquipment,
+      imageUrl:
+        "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/dental-implants/zirconia-card.png",
       name: "Zirconia (Metal-Free) Implants",
       description:
         "At Leichhardt Dental Centre, we offer advanced zirconia implant solutions for patients seeking durable, highly aesthetic, and completely metal-free options to restore missing teeth. We use the Straumann® Pure Ceramic system.",
@@ -530,7 +534,8 @@ export const DENTAL_IMPLANTS: PillarData = {
     {
       id: "overdentures",
       slug: "implant-supported-overdentures",
-      imageUrl: IMG.dentureFitting,
+      imageUrl:
+        "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/dental-implants/overdentures-card.png",
       name: "Implant-Supported Overdentures",
       description:
         "A denture that snaps onto two or more implants rather than resting on the gums. Far more stable than a conventional denture; still removable for daily cleaning.",
@@ -579,7 +584,8 @@ export const DENTAL_IMPLANTS: PillarData = {
     {
       id: "all-on-4",
       slug: "all-on-4-implants",
-      imageUrl: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/all-on-4/before-and-after/case-2.jpg",
+      imageUrl:
+        "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/dental-implants/all-on-4-card.png",
       name: "All-on-4 Implants",
       description:
         "A fixed full arch of teeth supported by four or more implants per jaw. For patients missing most or all of their teeth, or whose current teeth cannot be saved.",

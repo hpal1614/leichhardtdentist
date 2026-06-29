@@ -194,7 +194,7 @@ export const GENERAL_DENTISTRY: PillarData = {
       id: "root-canal",
       slug: "root-canal-treatment",
       imageUrl:
-        "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/general-dentistry/root-canal.jpg",
+        "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/general-dentistry/root-canal.jpg?v=2",
       name: "Root Canal Treatment",
       description:
         "When infection reaches the nerve of a tooth, root canal treatment removes the infection and preserves the tooth. Performed with rubber-dam isolation, rotary instrumentation, and CBCT 3D planning.",
@@ -273,6 +273,38 @@ export const GENERAL_DENTISTRY: PillarData = {
       ],
       risksContent:
         "Preventative care carries minimal risk. We use low-dose digital imaging and take additional precautions for paediatric patients.",
+    },
+    {
+      id: "inlays",
+      slug: "ceramic-inlays-onlays",
+      imageUrl:
+        "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/ceramic-inlays-onlays-hero.jpg",
+      name: "Ceramic Inlays & Onlays",
+      description:
+        "A custom Ivoclar e.max ceramic restoration that sits between a filling and a full crown — designed and milled chairside with CEREC and bonded in a single ~90-minute visit, keeping more of your natural tooth than a crown.",
+      longDescription:
+        "When a tooth is too damaged for a simple filling but still has enough healthy structure that it doesn't quite need a full crown, an Inlay or Onlay is the ideal evidence-based solution. Think of it as a \"partial crown\" or a custom-engineered puzzle piece. An Inlay sits inside the grooves of your tooth, while an Onlay (often called a \"three-quarter crown\") covers one or more of the biting points (cusps) to provide structural reinforcement. At Leichhardt Dental, we do not use generic lab-processed ceramics. For every restoration, we exclusively use Ivoclar e.max®—widely considered the world's best-selling and most reliable glass-ceramic. We chose Ivoclar e.max® for two critical reasons: unrivalled strength, designed to withstand the heavy biting forces of back teeth and significantly reduce the risk of your tooth fracturing; and natural aesthetics, mimicking the translucency and light-reflection of real tooth enamel so perfectly that the restoration is virtually invisible once bonded. By combining Ivoclar materials with our in-house CEREC technology, we 3D-scan your tooth (no putty required), precision-design your restoration on screen to match your bite perfectly, mill it from a solid Ivoclar e.max block in our clinic, and fit and bond it in a single 90-minute visit. A typical inlay or onlay is approximately $1,500–$1,700.",
+      whatToExpect: [
+        "Maximum tooth preservation — we only remove the decayed part, keeping most of your healthy natural enamel",
+        "No \"putty\" impressions — a digital 3D scanner: faster, more comfortable, and more accurate",
+        "Perfect bite alignment, designed to the micron",
+        "Exceptional durability — high-strength Ivoclar e.max doesn't shrink, leak, or stain",
+        "Bonded in a single 90-minute visit — no temporary, no second appointment",
+      ],
+      processSteps: [
+        { title: "3D scan", description: "We capture a high-definition digital scan of your prepared tooth — no putty impressions needed." },
+        { title: "Design", description: "Your restoration is designed on screen and matched precisely to your bite." },
+        { title: "Mill", description: "It's milled from a solid block of Ivoclar e.max ceramic in the practice while you wait." },
+        { title: "Bond", description: "The inlay or onlay is tried in, checked, adjusted if needed, and bonded — all in a single ~90-minute visit." },
+      ],
+      risksContent:
+        "Possible risks include transient sensitivity after preparation, the small chance the nerve is affected and root canal treatment becomes necessary, and — uncommonly — chipping or debonding of the restoration over time. How long a restoration lasts depends on your bite, oral hygiene, and regular check-ups. A consultation determines whether an inlay or onlay is the right option for your tooth.",
+      faqs: [
+        { q: "What's the difference between an inlay, an onlay, and a crown?", a: "An inlay sits within the grooves on the top of the tooth; an onlay also covers one or more of the biting cusps to reinforce the tooth; a crown covers the whole tooth. Inlays and onlays are more conservative than a crown — we keep more of your healthy natural tooth." },
+        { q: "Why do you use Ivoclar e.max?", a: "Ivoclar e.max® is widely considered the world's best-selling and most reliable glass-ceramic — the gold standard. It has unrivalled strength to withstand the heavy biting forces of back teeth, and its natural aesthetics mimic real enamel so the restoration is virtually invisible once bonded. We mill it in-house with CEREC." },
+        { q: "Do I need a temporary or a second appointment?", a: "No. Because we design and mill your restoration chairside with CEREC, it's bonded the same day — typically a single ~90-minute visit." },
+        { q: "How long will it last?", a: "Ivoclar e.max restorations are durable and designed to be long-lasting, but longevity varies with your bite, habits, and oral hygiene. Regular check-ups help us keep an eye on them." },
+      ],
     },
   ],
   processSteps: [

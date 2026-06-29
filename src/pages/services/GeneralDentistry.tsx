@@ -35,7 +35,7 @@ export function GeneralDentistry() {
       />
       <SubTreatmentGrid
         eyebrow="What's included"
-        title="Six everyday treatments, one calm room."
+        title="Seven everyday treatments, one calm room."
         items={data.subTreatments}
         pillarSlug={data.slug}
         fallbackImage={data.image}

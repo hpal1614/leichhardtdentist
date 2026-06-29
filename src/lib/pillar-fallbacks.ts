@@ -721,6 +721,8 @@ export const SAME_DAY_SMILE: PillarData = {
   intro:
     "When you're ready for an aesthetic change, Same Day Smile is a planned combination of CEREC same-day ceramics, in-chair whitening, and conservative restorative work — delivered in a single appointment where possible. We use 100% Australian-made restorations and premium materials (Ivoclar e.max ceramics, 3M and Ivoclar composites), planned digitally so you see the design before any tooth is touched.",
   image: clinic3,
+  heroImage:
+    "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/pillar-hero.png",
   bentoSpan: "md:col-span-1 lg:col-span-5 lg:row-span-1",
   bentoAspect: "aspect-[4/5] md:aspect-[5/4]",
   subTreatments: [
@@ -735,7 +737,7 @@ export const SAME_DAY_SMILE: PillarData = {
       videoPoster:
         "https://res.cloudinary.com/dzydzte9h/video/upload/so_2,q_auto,f_auto/dental-website/same-day-smile/cerec-crowns-veneers/same-day-smile-hero.jpg",
       imageUrl:
-        "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/single-visit-crowns/cerec-same-day/vita-furnace.jpg",
+        "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/crowns-card.png",
       name: "Same Day Crowns",
       description:
         "A full-coverage ceramic crown designed, milled, and bonded in a single appointment via CEREC. For teeth that need more than a filling can provide.",
@@ -769,7 +771,7 @@ export const SAME_DAY_SMILE: PillarData = {
       videoPoster:
         "https://res.cloudinary.com/dzydzte9h/video/upload/so_2,q_auto,f_auto/dental-website/same-day-smile/cerec-crowns-veneers/same-day-smile-hero.jpg",
       imageUrl:
-        "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/cerec-crowns-veneers/case-1.jpg",
+        "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/veneers-card.png",
       name: "Same Day Veneers",
       description:
         "Thin ceramic facings bonded to the front surface of a tooth to change shape, colour, or alignment. Designed digitally, milled chairside, bonded the same day.",
@@ -918,7 +920,7 @@ export const SAME_DAY_SMILE: PillarData = {
       id: "bonding",
       slug: "composite-bonding",
       imageUrl:
-        "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/bonding/case-1.jpg",
+        "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/bonding-card.png",
       beforeAfter: [
         { before: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/bonding/case-1-before.jpg", after: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/bonding/case-1-after.jpg", caption: "Minimal smile intervention with only the front two teeth veneered, plus a little Zoom whitening." },
         { before: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/bonding/case-2-before.jpg", after: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/bonding/case-2-after.jpg", caption: "A pleasant, healthy, natural-looking smile transformation — angle correction with a minimal approach, using ceramic veneers on only the front two teeth." },

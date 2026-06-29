@@ -31,7 +31,7 @@ export function SameDaySmile() {
         title={data.title}
         tagline={data.tagline}
         intro={data.intro}
-        image={data.image}
+        image={data.heroImage ?? data.image}
       />
       <SubTreatmentGrid eyebrow="What we combine" title="Five treatments, planned as one." items={data.subTreatments} pillarSlug={data.slug} fallbackImage={data.image} />
       <ProcessSteps eyebrow="The process" title="From first conversation to final smile." steps={data.processSteps} />

@@ -37,7 +37,8 @@
             "tailwindcss": "^3.4.17",
             "tailwindcss-animate": "^1.0.7",
             "typescript": "~5.6.3",
-            "vite": "6.3.5"
+            "vite": "6.3.5",
+            "wrangler": "^4.106.0"
       },
       "scripts": {
             "dev": "vite",
@@ -45,6 +46,8 @@
             "build": "node scripts/generate-sitemap.mjs && vite build",
             "sync-media": "node --env-file=.env sync-media.js",
             "seed": "node --env-file=.env scripts/seed-sanity.mjs",
-            "typecheck": "tsc --noEmit"
+            "typecheck": "tsc --noEmit",
+            "deploy": "npm run build && wrangler deploy",
+            "preview": "npm run build && wrangler dev"
       }
 }

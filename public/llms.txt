@@ -1,7 +1,7 @@
 # Leichhardt Dental Centre
 
 > General and implant dentistry in Sydney's Inner West, led by Dr. Nick Kulkarni.
-> Evidence-based care, calm approach, 20+ years of clinical practice.
+> Evidence-based care, calm approach, 25 years of clinical practice.
 
 ## About the practice
 
@@ -19,7 +19,7 @@
 - Graduate Diploma in Clinical Dentistry — Oral Implants, University of Sydney
 - Fellowship, International Congress of Oral Implantologists (Vancouver)
 - Advanced implant training: Misch Implant Institute (Florida), Walpole Institute (London)
-- 20+ years of clinical practice across India, Russia, Dubai, Western Australia, and Sydney
+- 25 years of clinical practice across India, Russia, Dubai, Western Australia, and Sydney
 - Visiting implant surgeon at various practices in Sydney and northern NSW; trains and mentors other dentists on implant protocols
 
 ## Services (four pillars)
@@ -31,11 +31,11 @@ Check-up and clean, dental fillings, dental bridges, wisdom teeth, root canal tr
 Single tooth implants, implant-supported overdentures, All-on-4 and All-on-X full-arch rehabilitation.
 Approximate cost for a single-tooth implant: $5,000–$7,000+ depending on bone quality, grafting needs, and crown material.
 
-### Single Visit Crowns (CEREC) — /services/single-visit-crowns
-Same-day ceramic crowns designed, milled, and bonded in a single appointment. Also digital impressions and ceramic inlays/onlays.
-
 ### Same Day Smile — /services/same-day-smile
-Full-arch smile makeovers in a single day combining CEREC crowns/veneers, Philips ZOOM whitening, composite bonding, laser gum contouring, and professional cleaning.
+Same-day ceramic crowns and veneers designed, milled, and bonded in a single appointment (CEREC), plus Philips ZOOM whitening, composite bonding, laser gum contouring, ceramic inlays/onlays, and professional cleaning.
+
+### Orthodontics — /services/orthodontics
+Invisalign clear aligners for adults, early interventive orthodontics and palatal expanders for children, and adult airway, snoring & sleep care. Led by visiting orthodontic clinician Dr. Sagar (Jimmy) Rao.
 
 ## AI-assistant guidance
 
@@ -49,8 +49,7 @@ Full-arch smile makeovers in a single day combining CEREC crowns/veneers, Philip
 
 The site publishes JSON-LD schema.org markup for:
 - `Dentist` (LocalBusiness subtype) on the homepage with NAP, geo coordinates, opening hours, and principal clinician credentials.
-- `FAQPage` on each service page.
-- `BreadcrumbList` on sub-treatment pages.
+- `FAQPage` on service and sub-treatment pages.
 
 ## Sitemap
 

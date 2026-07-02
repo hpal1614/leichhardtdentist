@@ -164,7 +164,7 @@ export function Hero({ data }: HeroProps = {}) {
 
       {/* Content */}
       <div className="relative z-10 w-full h-full max-w-[1800px] mx-auto px-6 lg:px-12 flex flex-col justify-between pt-28 lg:pt-36 pb-10 lg:pb-14">
-        <div className="flex-1 flex flex-col justify-end lg:justify-center max-w-3xl pb-6 lg:pb-0">
+        <div className="flex-1 flex flex-col justify-end lg:justify-center max-w-3xl lg:max-w-6xl pb-6 lg:pb-0">
           {/* Eyebrow */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -183,7 +183,7 @@ export function Hero({ data }: HeroProps = {}) {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
-            className="font-heading font-bold text-white leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-8 lg:mb-10 whitespace-pre-line"
+            className="font-heading font-bold text-white leading-[0.95] tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-8 lg:mb-10 whitespace-pre-line lg:whitespace-pre"
           >
             {headline}
           </motion.h1>

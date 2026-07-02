@@ -14,8 +14,10 @@ import { ALL_CLINICIANS } from "../lib/clinician-fallbacks";
 const DEFAULT_HERO_VIDEO =
   "https://res.cloudinary.com/dzydzte9h/video/upload/dental-website/home/hero/hero-main.mp4";
 
-// The hero clip is trimmed to a clean loop point — it restarts at this many
-// seconds rather than playing the (longer) tail of the source video.
+// Cloudinary trims the delivered hero clip to this many seconds (eo_) so the
+// browser never downloads the longer source tail. Because the file itself ends
+// here, the native `loop` attribute loops cleanly at this point — no runtime
+// seek needed.
 const HERO_LOOP_END_SECONDS = 37;
 
 const DEFAULTS = {
@@ -75,8 +77,6 @@ export function Hero({ data }: HeroProps = {}) {
   const remoteClinicians = useSanityDoc<ClinicianSanity[]>(CLINICIANS_QUERY);
   const clinicians = mergeClinicians(remoteClinicians, ALL_CLINICIANS);
 
-  // Restart the background video at the trimmed loop point (37s) instead of
-  // playing the longer source tail.
   const heroVideoRef = useRef<HTMLVideoElement>(null);
   // Starts playback when visible, pauses when scrolled away, and leaves the
   // poster in place for visitors who prefer reduced motion.
@@ -151,10 +151,6 @@ export function Hero({ data }: HeroProps = {}) {
           playsInline
           preload="metadata"
           aria-hidden="true"
-          onTimeUpdate={() => {
-            const v = heroVideoRef.current;
-            if (v && v.currentTime >= HERO_LOOP_END_SECONDS) v.currentTime = 0;
-          }}
         />
         {/* Left-weighted gradient for text legibility */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/35 to-black/5" />

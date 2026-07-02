@@ -1,0 +1,5 @@
+# Cloudflare Pages SPA fallback: serve index.html (200, not a redirect) for any
+# path that isn't a real file, so client-side routes like /about and
+# /services/... work on direct load and refresh. This is the Pages-native
+# mechanism (Workers used wrangler.jsonc's not_found_handling instead).
+/*    /index.html   200

@@ -1,6 +1,18 @@
-@import "@fontsource/syne";
-@import "@fontsource/outfit";
-@import "@fontsource/crimson-pro";
+/* Load every weight the design actually uses. The bare package import only
+   ships weight 400 — headings set in font-semibold/font-bold would otherwise
+   render browser-synthesized faux bold, and font-light would silently fall
+   back to 400. */
+@import "@fontsource/syne/400.css";
+@import "@fontsource/syne/500.css";
+@import "@fontsource/syne/600.css";
+@import "@fontsource/syne/700.css";
+@import "@fontsource/outfit/300.css";
+@import "@fontsource/outfit/400.css";
+@import "@fontsource/outfit/500.css";
+@import "@fontsource/outfit/600.css";
+@import "@fontsource/outfit/700.css";
+@import "@fontsource/crimson-pro/400.css";
+@import "@fontsource/crimson-pro/400-italic.css";
 
 @tailwind base;
 @tailwind components;

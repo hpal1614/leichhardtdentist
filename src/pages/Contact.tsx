@@ -225,6 +225,15 @@ export function Contact() {
                 Tell us what's on your mind.
               </h2>
 
+              {/* Persistent live region so screen readers hear async form
+                  outcomes — a region injected together with its content is
+                  not reliably announced. */}
+              <span aria-live="polite" role="status" className="sr-only">
+                {status === "sending" && "Sending your message."}
+                {status === "success" && "Message sent. Thank you."}
+                {/* errors are announced by the visible role="alert" paragraph */}
+              </span>
+
               {status === "success" ? (
                 <div className="rounded-2xl bg-primary/10 border border-primary/20 p-6 lg:p-8 flex items-start gap-4">
                   <span className="w-9 h-9 rounded-full bg-primary/15 border border-primary/30 flex items-center justify-center shrink-0">
@@ -262,6 +271,7 @@ export function Contact() {
                       <input
                         type="text"
                         required
+                        autoComplete="name"
                         value={name}
                         onChange={(e) => setName(e.target.value)}
                         className="w-full px-4 py-3 rounded-xl bg-background border border-foreground/10 text-foreground focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
@@ -274,6 +284,7 @@ export function Contact() {
                       <input
                         type="email"
                         required
+                        autoComplete="email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         className="w-full px-4 py-3 rounded-xl bg-background border border-foreground/10 text-foreground focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
@@ -287,6 +298,7 @@ export function Contact() {
                     </span>
                     <input
                       type="tel"
+                      autoComplete="tel"
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}
                       className="w-full px-4 py-3 rounded-xl bg-background border border-foreground/10 text-foreground focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
@@ -307,7 +319,7 @@ export function Contact() {
                   </label>
 
                   {status === "error" && (
-                    <p className="mb-5 text-sm text-red-600 leading-relaxed">
+                    <p role="alert" className="mb-5 text-sm text-red-700 leading-relaxed">
                       Sorry — something went wrong sending your message. Please call{" "}
                       <a href={`tel:${practice.phoneIntl}`} className="underline font-semibold">
                         {practice.phone}

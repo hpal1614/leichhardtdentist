@@ -1,5 +1,5 @@
 import { motion, useScroll, useMotionValueEvent, AnimatePresence } from "motion/react";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "./ui/button";
@@ -33,6 +33,72 @@ export function Navbar() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [servicesOpen, setServicesOpen] = useState(false);
 
+    // Close the desktop dropdown with Escape (WCAG 1.4.13) and on route change.
+    const servicesRef = useRef<HTMLDivElement>(null);
+    useEffect(() => {
+        if (!servicesOpen) return;
+        const onKey = (e: KeyboardEvent) => {
+            if (e.key === "Escape") setServicesOpen(false);
+        };
+        const onClickOutside = (e: MouseEvent) => {
+            if (servicesRef.current && !servicesRef.current.contains(e.target as Node)) {
+                setServicesOpen(false);
+            }
+        };
+        window.addEventListener("keydown", onKey);
+        window.addEventListener("mousedown", onClickOutside);
+        return () => {
+            window.removeEventListener("keydown", onKey);
+            window.removeEventListener("mousedown", onClickOutside);
+        };
+    }, [servicesOpen]);
+    useEffect(() => {
+        setServicesOpen(false);
+    }, [pathname]);
+
+    // Mobile menu overlay: Escape to close, body scroll locked, focus moved in
+    // on open and returned to the hamburger on close, Tab kept inside (2.4.3).
+    const overlayRef = useRef<HTMLDivElement>(null);
+    const hamburgerRef = useRef<HTMLButtonElement>(null);
+    useEffect(() => {
+        if (!mobileMenuOpen) return;
+        const overlay = overlayRef.current;
+        document.body.style.overflow = "hidden";
+        const focusables = () =>
+            overlay
+                ? Array.from(
+                      overlay.querySelectorAll<HTMLElement>(
+                          'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+                      )
+                  )
+                : [];
+        focusables()[0]?.focus();
+        const onKey = (e: KeyboardEvent) => {
+            if (e.key === "Escape") {
+                setMobileMenuOpen(false);
+                return;
+            }
+            if (e.key !== "Tab") return;
+            const items = focusables();
+            if (items.length === 0) return;
+            const first = items[0];
+            const last = items[items.length - 1];
+            if (e.shiftKey && document.activeElement === first) {
+                e.preventDefault();
+                last.focus();
+            } else if (!e.shiftKey && document.activeElement === last) {
+                e.preventDefault();
+                first.focus();
+            }
+        };
+        window.addEventListener("keydown", onKey);
+        return () => {
+            window.removeEventListener("keydown", onKey);
+            document.body.style.overflow = "";
+            hamburgerRef.current?.focus();
+        };
+    }, [mobileMenuOpen]);
+
     useMotionValueEvent(scrollY, "change", (latest) => {
         const previous = scrollY.getPrevious() ?? 0;
         if (latest > previous && latest > 150) {
@@ -51,9 +117,12 @@ export function Navbar() {
     return (
         <>
             <motion.nav
+                aria-label="Main"
                 variants={{
-                    visible: { y: 0, opacity: 1 },
-                    hidden: { y: -100, opacity: 0 },
+                    // visibility:hidden after the slide-out so keyboard focus
+                    // can't land inside an invisible navbar (WCAG 2.4.11).
+                    visible: { y: 0, opacity: 1, visibility: "visible" },
+                    hidden: { y: -100, opacity: 0, transitionEnd: { visibility: "hidden" } },
                 }}
                 animate={hidden ? "hidden" : "visible"}
                 transition={{ duration: 0.35, ease: "easeInOut" }}
@@ -78,14 +147,24 @@ export function Navbar() {
                         </Link>
                         {/* Services dropdown */}
                         <div
+                            ref={servicesRef}
                             className="relative"
                             onMouseEnter={() => setServicesOpen(true)}
                             onMouseLeave={() => setServicesOpen(false)}
+                            onBlur={(e) => {
+                                // Close once keyboard focus moves past the menu
+                                if (!servicesRef.current?.contains(e.relatedTarget as Node)) {
+                                    setServicesOpen(false);
+                                }
+                            }}
                         >
                             <button
+                                type="button"
+                                onClick={() => setServicesOpen((open) => !open)}
                                 className={`px-4 py-2 lg:px-5 lg:py-2 rounded-full text-sm transition-all duration-300 flex items-center gap-1 ${scrolled ? "text-foreground/70 hover:text-foreground hover:bg-white" : "text-white/70 hover:text-white hover:bg-white/10"}`}
                                 aria-haspopup="true"
                                 aria-expanded={servicesOpen}
+                                aria-controls="services-menu"
                             >
                                 Services
                                 <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-300 ${servicesOpen ? "rotate-180" : ""}`} />
@@ -93,6 +172,7 @@ export function Navbar() {
                             <AnimatePresence>
                                 {servicesOpen && (
                                     <motion.div
+                                        id="services-menu"
                                         initial={{ opacity: 0, y: 8 }}
                                         animate={{ opacity: 1, y: 0 }}
                                         exit={{ opacity: 0, y: 8 }}
@@ -129,9 +209,11 @@ export function Navbar() {
                             <a {...BOOKING_LINK_PROPS}>Book Now</a>
                         </Button>
                         <button
+                            ref={hamburgerRef}
                             className={`md:hidden w-11 h-11 rounded-full flex items-center justify-center transition-all duration-300 ${scrolled ? "bg-black/5 text-foreground" : "bg-white/10 text-white"}`}
                             onClick={() => setMobileMenuOpen(true)}
                             aria-label="Open menu"
+                            aria-expanded={mobileMenuOpen}
                         >
                             <Menu className="w-5 h-5" />
                         </button>
@@ -143,6 +225,10 @@ export function Navbar() {
             <AnimatePresence>
                 {mobileMenuOpen && (
                     <motion.div
+                        ref={overlayRef}
+                        role="dialog"
+                        aria-modal="true"
+                        aria-label="Menu"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
@@ -165,7 +251,7 @@ export function Navbar() {
                                 All-on-4
                             </Link>
                             <div className="w-16 h-[1px] bg-white/20 mb-2" />
-                            <span className="text-xs uppercase tracking-[0.3em] text-white/40 mb-1">Services</span>
+                            <span className="text-xs uppercase tracking-[0.3em] text-white/60 mb-1">Services</span>
                             {services.map((s) => (
                                 <Link
                                     key={s.href}

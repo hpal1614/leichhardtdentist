@@ -1,4 +1,4 @@
-import { useParams, Link, Navigate } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { motion } from "motion/react";
 import { ChevronRight, ArrowLeft, Check } from "lucide-react";
 
@@ -12,6 +12,7 @@ import { ServiceCTA } from "../../components/service/ServiceCTA";
 import { PricingCards } from "../../components/service/PricingCards";
 import { ImageWithFallback } from "../../components/figma/ImageWithFallback";
 
+import { NotFound } from "../NotFound";
 import { useSanityDoc } from "../../lib/useSanityDoc";
 import { SERVICE_PILLAR_BY_SLUG_QUERY } from "../../lib/queries";
 import { mergePillar, type PillarSanity } from "../../lib/pillar";
@@ -28,7 +29,9 @@ export function SubTreatmentPage() {
     slug: pillarSlug,
   });
 
-  if (!found) return <Navigate to="/" replace />;
+  // Unknown treatment slug → a real 404 page (with its own noindex), not a
+  // silent redirect to the homepage that search engines treat as a soft-404.
+  if (!found) return <NotFound />;
 
   const fallbackPillar =
     ALL_PILLARS.find((p) => p.slug === pillarSlug) ?? found.pillar;
@@ -65,7 +68,7 @@ export function SubTreatmentPage() {
               Home
             </Link>
             <ChevronRight className="w-3.5 h-3.5" />
-            <Link to="/" className="hover:text-primary transition-colors">
+            <Link to="/#services" className="hover:text-primary transition-colors">
               Services
             </Link>
             <ChevronRight className="w-3.5 h-3.5" />

@@ -100,7 +100,7 @@ export function Overdentures() {
           >
             <Link to="/" className="hover:text-primary transition-colors">Home</Link>
             <ChevronRight className="w-3.5 h-3.5" />
-            <Link to="/" className="hover:text-primary transition-colors">Services</Link>
+            <Link to="/#services" className="hover:text-primary transition-colors">Services</Link>
             <ChevronRight className="w-3.5 h-3.5" />
             <Link to="/services/dental-implants" className="hover:text-primary transition-colors">Dental Implants</Link>
             <ChevronRight className="w-3.5 h-3.5" />

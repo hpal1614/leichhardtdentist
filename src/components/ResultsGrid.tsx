@@ -31,7 +31,9 @@ const stories: Story[] = [
         treatment: "Story of Transformation",
         patient: "",
         quote: "",
-        image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=80",
+        // Poster frame derived from the case video itself — never stock imagery
+        // in a section that asserts "cases shown are real".
+        image: "https://res.cloudinary.com/dzydzte9h/video/upload/so_24,w_800,q_auto,f_auto/dental-website/home/case-studies/story-of-transformation.jpg",
         type: "video",
         videoSrc: "https://res.cloudinary.com/dzydzte9h/video/upload/dental-website/home/case-studies/story-of-transformation.mp4",
         thumbnailTime: 24,
@@ -42,7 +44,7 @@ const stories: Story[] = [
         treatment: "All on 4",
         patient: "",
         quote: "",
-        image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=800&q=80",
+        image: "https://res.cloudinary.com/dzydzte9h/video/upload/so_18,w_800,q_auto,f_auto/dental-website/home/case-studies/all-on-4-case.jpg",
         type: "video",
         videoSrc: "https://res.cloudinary.com/dzydzte9h/video/upload/dental-website/home/case-studies/all-on-4-case.mp4",
         thumbnailTime: 18, // poster frame shown when paused
@@ -57,7 +59,7 @@ const stories: Story[] = [
         treatment: "Same Day Smile",
         patient: "",
         quote: "",
-        image: "https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?w=800&q=80",
+        image: "https://res.cloudinary.com/dzydzte9h/video/upload/so_4,w_800,q_auto,f_auto/dental-website/home/case-studies/same-day-smile-story.jpg",
         type: "video",
         videoSrc: "https://res.cloudinary.com/dzydzte9h/video/upload/dental-website/home/case-studies/same-day-smile-story.mp4",
         thumbnailTime: 4, // poster frame shown when paused (clip is only ~12.4s, plays full on loop)
@@ -87,8 +89,6 @@ const stories: Story[] = [
         image: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/home/case-studies/braces-implants-case.jpg",
     },
 ];
-
-const categories = ["All", "Veneers", "Bonding", "Implants", "Makeover"];
 
 function VideoStoryCard({ story }: { story: Story }) {
     const videoRef = useRef<HTMLVideoElement>(null);
@@ -190,7 +190,7 @@ function VideoStoryCard({ story }: { story: Story }) {
         // container stays a plain div to avoid nested interactive controls.
         <div
             onClick={togglePlay}
-            className="relative w-full h-full group bg-black cursor-pointer"
+            className="relative w-full h-full group bg-[#1a1a1a] cursor-pointer"
         >
             <video
                 ref={videoRef}
@@ -204,8 +204,8 @@ function VideoStoryCard({ story }: { story: Story }) {
                 onLoadedMetadata={handleLoadedMetadata}
                 onTimeUpdate={handleTimeUpdate}
             />
-            {/* Controls Overlay - Visible on Group Hover */}
-            <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
+            {/* Controls Overlay - Visible on Group Hover or keyboard focus */}
+            <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 focus-within:opacity-100 transition-opacity duration-300 z-20">
                 <Button
                     onClick={togglePlay}
                     variant="ghost"
@@ -218,7 +218,7 @@ function VideoStoryCard({ story }: { story: Story }) {
             </div>
 
             {/* Mute Toggle - Bottom Right */}
-            <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
+            <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 focus-within:opacity-100 transition-opacity duration-300 z-20">
                 <Button
                     onClick={toggleMute}
                     variant="ghost"
@@ -237,7 +237,9 @@ function VideoStoryCard({ story }: { story: Story }) {
 }
 
 export function ResultsGrid() {
-    const [activeCategory, setActiveCategory] = useState("All");
+    // Category filter UI is hidden for now (only 6 cards) — restore the
+    // setter together with the filter chips from git history to re-enable.
+    const [activeCategory] = useState("All");
 
     const filteredStories = activeCategory === "All"
         ? stories
@@ -284,7 +286,7 @@ export function ResultsGrid() {
                                         <>
                                             <img
                                                 src={story.image}
-                                                alt={story.treatment}
+                                                alt={`${story.treatment} — ${story.category} case photo from our practice`}
                                                 loading="lazy"
                                                 decoding="async"
                                                 className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"

@@ -3,6 +3,7 @@ import { useRef, useState, type ReactNode } from "react";
 import { ImageWithFallback } from "../figma/ImageWithFallback";
 import { VideoLightbox } from "../VideoLightbox";
 import { optimizeVideoUrl } from "../../lib/cloudinary";
+import { useAmbientVideo } from "../../lib/useAmbientVideo";
 
 type Props = {
   videoUrl?: string;
@@ -188,8 +189,11 @@ function InlineNativeVideo({
   alt?: string;
 }) {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [isPlaying, setIsPlaying] = useState(true);
+  // Starts false — playback begins when useAmbientVideo brings it into view.
+  const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(true);
+  // Defer download until near the viewport; pause again off-screen.
+  useAmbientVideo(videoRef);
 
   const togglePlay = () => {
     const v = videoRef.current;
@@ -220,8 +224,7 @@ function InlineNativeVideo({
         playsInline
         muted
         loop
-        autoPlay
-        preload="metadata"
+        preload="none"
         onPlay={() => setIsPlaying(true)}
         onPause={() => setIsPlaying(false)}
       />

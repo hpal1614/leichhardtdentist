@@ -4,10 +4,15 @@ import { motion } from "motion/react";
 import { Play, Pause, Maximize2 } from "lucide-react";
 import { Button } from "./ui/button";
 import { VideoLightbox } from "./VideoLightbox";
+import { useAmbientVideo } from "../lib/useAmbientVideo";
 import clinic1 from "../assets/clinic-1.jpg";
 
 const AMBIENT_VIDEO =
-    "https://res.cloudinary.com/dzydzte9h/video/upload/q_auto,f_auto,w_1280,c_limit/dental-website/home/hero/ambient.mov";
+    "https://res.cloudinary.com/dzydzte9h/video/upload/q_auto,f_auto,vc_auto,w_1280,c_limit/dental-website/home/hero/ambient.mov";
+
+// Still frame served instantly while the video defers/buffers.
+const AMBIENT_POSTER =
+    "https://res.cloudinary.com/dzydzte9h/video/upload/so_0,w_1280,q_auto,f_auto/dental-website/home/hero/ambient.jpg";
 
 const features = [
     { label: "Natural Light", description: "Floor-to-ceiling windows" },
@@ -18,8 +23,13 @@ const features = [
 
 export function ClinicExperience() {
     const videoRef = useRef<HTMLVideoElement>(null);
-    const [isPlaying, setIsPlaying] = useState(true);
+    // Starts false — playback begins when useAmbientVideo brings it into view,
+    // and the onPlay handler flips this to true.
+    const [isPlaying, setIsPlaying] = useState(false);
     const [lightboxOpen, setLightboxOpen] = useState(false);
+    // Nothing downloads until the section approaches the viewport; playback
+    // pauses again once it scrolls away.
+    useAmbientVideo(videoRef);
 
     const togglePlay = () => {
         const video = videoRef.current;
@@ -58,7 +68,7 @@ export function ClinicExperience() {
                             viewport={{ once: true }}
                             transition={{ duration: 0.8 }}
                         >
-                            <span className="text-primary font-bold tracking-[0.2em] uppercase text-sm mb-3 block">Our Space</span>
+                            <span className="text-primary-bright font-bold tracking-[0.2em] uppercase text-sm mb-3 block">Our Space</span>
                             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-heading font-bold text-white leading-none">
                                 A calm,<br />
                                 <span className="text-white/40">considered space.</span>
@@ -87,7 +97,7 @@ export function ClinicExperience() {
                             <p className="text-base lg:text-lg text-white/60 leading-relaxed">
                                 Warm timber flooring. Original contemporary artwork. A curved reception desk with soft ambient under-lighting. Comfortable terracotta accent chairs and natural light throughout.
                             </p>
-                            <p className="text-base lg:text-lg text-white/40 leading-relaxed italic">
+                            <p className="text-base lg:text-lg text-white/60 leading-relaxed italic">
                                 Every detail is intentional. Every choice designed to help you relax.
                             </p>
                         </motion.div>
@@ -130,12 +140,12 @@ export function ClinicExperience() {
                         <video
                             ref={videoRef}
                             src={AMBIENT_VIDEO}
+                            poster={AMBIENT_POSTER}
                             className="w-full h-full object-cover"
-                            autoPlay
                             muted
                             loop
                             playsInline
-                            preload="metadata"
+                            preload="none"
                             onPlay={() => setIsPlaying(true)}
                             onPause={() => setIsPlaying(false)}
                         />

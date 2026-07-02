@@ -14,7 +14,7 @@
  */
 export function optimizeVideoUrl(
   url?: string | null,
-  opts: { width?: number; quality?: string } = {}
+  opts: { width?: number; quality?: string; endOffset?: number } = {}
 ): string | undefined {
   if (!url) return url ?? undefined;
   if (!url.includes("res.cloudinary.com")) return url;
@@ -23,7 +23,13 @@ export function optimizeVideoUrl(
   if (/\/video\/upload\/(?:[a-z]{1,3}_[^/]+(?:,|\/))/i.test(url)) return url;
   const width = opts.width ?? 1280;
   const quality = opts.quality ?? "auto";
-  const transform = `q_${quality},f_auto,w_${width},c_limit`;
+  // vc_auto lets the CDN transcode to the smallest codec the browser supports
+  // (H.265/VP9/AV1 instead of baseline H.264) — typically 30-50% fewer bytes
+  // at the same visual quality, at no extra Cloudinary cost.
+  let transform = `q_${quality},f_auto,vc_auto,w_${width},c_limit`;
+  // eo_ trims the video server-side so the browser never downloads footage
+  // past the loop point (e.g. a 37s loop cut from a longer master).
+  if (opts.endOffset) transform += `,eo_${opts.endOffset}`;
   return url.replace("/video/upload/", `/video/upload/${transform}/`);
 }
 

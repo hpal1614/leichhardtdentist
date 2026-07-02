@@ -4,6 +4,7 @@ import { motion } from "motion/react";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { ClinicianPortrait } from "./clinician/ClinicianPortrait";
 import { optimizeVideoUrl } from "../lib/cloudinary";
+import { useAmbientVideo, prefersReducedMotion } from "../lib/useAmbientVideo";
 import { BOOKING_LINK_PROPS } from "../lib/booking";
 import { useSanityDoc } from "../lib/useSanityDoc";
 import { CLINICIANS_QUERY } from "../lib/queries";
@@ -53,7 +54,12 @@ export function Hero({ data }: HeroProps = {}) {
   const headline = data?.headline || DEFAULTS.headline;
   const subhead = data?.subhead || DEFAULTS.subhead;
   const rawVideo = data?.videoUrl || DEFAULT_HERO_VIDEO;
-  const videoUrl = optimizeVideoUrl(rawVideo, { width: 1600 })!;
+  // eo_ trims server-side at the loop point: the browser downloads 37s of
+  // video instead of the full-length master it never plays.
+  const videoUrl = optimizeVideoUrl(rawVideo, {
+    width: 1600,
+    endOffset: HERO_LOOP_END_SECONDS,
+  })!;
   // A still frame painted instantly under the video — avoids a black flash on
   // load and gives the hero a fast LCP element while the video buffers.
   const heroPoster = rawVideo.includes("/video/upload/")
@@ -72,6 +78,9 @@ export function Hero({ data }: HeroProps = {}) {
   // Restart the background video at the trimmed loop point (37s) instead of
   // playing the longer source tail.
   const heroVideoRef = useRef<HTMLVideoElement>(null);
+  // Starts playback when visible, pauses when scrolled away, and leaves the
+  // poster in place for visitors who prefer reduced motion.
+  useAmbientVideo(heroVideoRef);
 
   // Pagination slider. Cards-per-view is 1 on phone and 2 on desktop, so the
   // dots track PAGES (groups of cardsPerView), not individual cards.
@@ -95,6 +104,10 @@ export function Hero({ data }: HeroProps = {}) {
     scrollRef.current?.scrollTo({ left: 0 });
   }, [cardsPerView]);
 
+  // Pause the auto-advance while the visitor is hovering or has keyboard
+  // focus inside the row, so the cards never yank away mid-read (WCAG 2.2.2).
+  const [paused, setPaused] = useState(false);
+
   const handleScroll = () => {
     const el = scrollRef.current;
     if (!el || !el.clientWidth) return;
@@ -106,13 +119,23 @@ export function Hero({ data }: HeroProps = {}) {
   useEffect(() => {
     const el = scrollRef.current;
     if (!el) return;
+    if (paused || prefersReducedMotion()) return;
     if (el.scrollWidth <= el.clientWidth + 4) return;
     const timer = setInterval(() => {
       const next = (activeIndex + 1) % pageCount;
-      el.scrollTo({ left: el.clientWidth * next, behavior: "smooth" });
+      goToPage(next);
     }, 4000);
     return () => clearInterval(timer);
-  }, [activeIndex, pageCount]);
+  }, [activeIndex, pageCount, paused]);
+
+  const goToPage = (page: number) => {
+    const el = scrollRef.current;
+    if (!el) return;
+    el.scrollTo({
+      left: el.clientWidth * page,
+      behavior: prefersReducedMotion() ? "auto" : "smooth",
+    });
+  };
 
   return (
     <section className="relative h-[100svh] min-h-[620px] md:min-h-[720px] w-full overflow-hidden bg-[#111] text-white">
@@ -123,7 +146,6 @@ export function Hero({ data }: HeroProps = {}) {
           src={videoUrl}
           poster={heroPoster}
           className="w-full h-full object-cover opacity-90"
-          autoPlay
           muted
           loop
           playsInline
@@ -210,6 +232,10 @@ export function Hero({ data }: HeroProps = {}) {
           <div
             ref={scrollRef}
             onScroll={handleScroll}
+            onMouseEnter={() => setPaused(true)}
+            onMouseLeave={() => setPaused(false)}
+            onFocusCapture={() => setPaused(true)}
+            onBlurCapture={() => setPaused(false)}
             className="flex gap-2.5 lg:gap-3 overflow-x-auto snap-x snap-mandatory pb-1 px-1"
             style={{ scrollbarWidth: "none" }}
           >
@@ -235,10 +261,14 @@ export function Hero({ data }: HeroProps = {}) {
           </div>
 
           {/* Pagination dots — one per page (1 card per page on phone, 2 on desktop) */}
-          <div className="flex justify-center gap-1.5 mt-3" aria-hidden="true">
+          <div className="flex justify-center gap-1.5 mt-3">
             {Array.from({ length: pageCount }).map((_, i) => (
-              <span
+              <button
                 key={i}
+                type="button"
+                onClick={() => goToPage(i)}
+                aria-label={`Go to team page ${i + 1} of ${pageCount}`}
+                aria-current={i === activeIndex ? "true" : undefined}
                 className={`h-1.5 rounded-full transition-all duration-300 ${
                   i === activeIndex ? "bg-white w-5" : "bg-white/30 w-1.5"
                 }`}

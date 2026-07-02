@@ -22,7 +22,7 @@ export function ProcessSteps({ eyebrow = "The process", title, steps }: Props) {
           transition={{ duration: 0.7 }}
           className="max-w-2xl mb-14 lg:mb-20"
         >
-          <span className="text-primary font-bold tracking-[0.25em] uppercase text-xs mb-5 block">
+          <span className="text-primary-bright font-bold tracking-[0.25em] uppercase text-xs mb-5 block">
             {eyebrow}
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold leading-[1.02]">
@@ -45,7 +45,7 @@ export function ProcessSteps({ eyebrow = "The process", title, steps }: Props) {
                 aria-hidden="true"
               />
               <div className="flex flex-col lg:flex-row lg:items-baseline gap-3 lg:gap-10">
-                <span className="text-primary font-mono text-sm tracking-widest uppercase shrink-0 lg:w-16">
+                <span className="text-primary-bright font-mono text-sm tracking-widest uppercase shrink-0 lg:w-16">
                   Step {String(i + 1).padStart(2, "0")}
                 </span>
                 <div className="flex-1 max-w-3xl">

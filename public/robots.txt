@@ -2,94 +2,117 @@
 # We welcome indexing by search engines AND generative-AI crawlers so the
 # practice shows up when people ask Google, ChatGPT, Gemini, Claude, or
 # Perplexity for dental care in Sydney's Inner West.
+#
+# NOTE: crawlers obey only the single most-specific group that matches their
+# user-agent, so every named group below must carry its own /studio Disallow —
+# a Disallow in the "*" group does NOT apply to a bot that has a named group.
 
 # ─── Traditional search engines ────────────────────────────────────────
 User-agent: Googlebot
 Allow: /
+Disallow: /studio
 
 User-agent: Bingbot
 Allow: /
+Disallow: /studio
 
 User-agent: DuckDuckBot
 Allow: /
+Disallow: /studio
 
 User-agent: Applebot
 Allow: /
+Disallow: /studio
 
 # ─── Generative-AI crawlers (citation & retrieval) ─────────────────────
 # OpenAI — ChatGPT & API real-time browsing
 User-agent: OAI-SearchBot
 Allow: /
+Disallow: /studio
 
 User-agent: ChatGPT-User
 Allow: /
+Disallow: /studio
 
 # OpenAI — training corpus crawler
 User-agent: GPTBot
 Allow: /
+Disallow: /studio
 
 # Anthropic — Claude
 User-agent: ClaudeBot
 Allow: /
+Disallow: /studio
 
 User-agent: Claude-Web
 Allow: /
+Disallow: /studio
 
 User-agent: anthropic-ai
 Allow: /
+Disallow: /studio
 
 # Google — Gemini & AI Overviews training/retrieval
 User-agent: Google-Extended
 Allow: /
+Disallow: /studio
 
 # Perplexity
 User-agent: PerplexityBot
 Allow: /
+Disallow: /studio
 
 User-agent: Perplexity-User
 Allow: /
+Disallow: /studio
 
 # Common Crawl (feeds many AI systems)
 User-agent: CCBot
 Allow: /
+Disallow: /studio
 
 # You.com
 User-agent: YouBot
 Allow: /
+Disallow: /studio
 
 # Meta AI
 User-agent: Meta-ExternalAgent
 Allow: /
+Disallow: /studio
 
 User-agent: FacebookBot
 Allow: /
+Disallow: /studio
 
 # Apple Intelligence
 User-agent: Applebot-Extended
 Allow: /
+Disallow: /studio
 
 # Bytespider (TikTok / Doubao)
 User-agent: Bytespider
 Allow: /
+Disallow: /studio
 
 # Mistral
 User-agent: MistralAI-User
 Allow: /
+Disallow: /studio
 
 # Cohere
 User-agent: cohere-ai
 Allow: /
+Disallow: /studio
 
 # Amazon (Alexa, Kindle AI summaries)
 User-agent: Amazonbot
 Allow: /
+Disallow: /studio
 
 # ─── Everyone else ─────────────────────────────────────────────────────
 User-agent: *
 Allow: /
-
-# Don't crawl the CMS Studio (not user-facing content)
 Disallow: /studio
-Disallow: /studio/
 
 Sitemap: https://leichhardtdentist.com/sitemap.xml

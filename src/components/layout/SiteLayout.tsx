@@ -16,8 +16,15 @@ export function SiteLayout() {
   }, [location.pathname, location.search]);
   return (
     <div className="min-h-screen bg-background text-foreground selection:bg-primary selection:text-white">
+      {/* Skip link — visually hidden until keyboard-focused (WCAG 2.4.1) */}
+      <a
+        href="#main"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-5 focus:py-3 focus:rounded-full focus:bg-primary focus:text-white focus:text-sm focus:font-semibold focus:shadow-xl focus:outline-none focus:ring-2 focus:ring-white"
+      >
+        Skip to content
+      </a>
       <Navbar />
-      <main>
+      <main id="main">
         <Outlet />
       </main>
       <Footer />

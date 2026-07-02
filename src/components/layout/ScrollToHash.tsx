@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import { prefersReducedMotion } from "../../lib/useAmbientVideo";
 
 /**
  * Scrolls to an `#anchor` after route changes — including the initial
@@ -18,7 +19,12 @@ export function ScrollToHash() {
     const tryScroll = () => {
       const el = document.getElementById(id);
       if (el) {
-        el.scrollIntoView({ behavior: "smooth", block: "start" });
+        // JS smooth scrolling bypasses the CSS reduced-motion override, so
+        // gate it here explicitly.
+        el.scrollIntoView({
+          behavior: prefersReducedMotion() ? "auto" : "smooth",
+          block: "start",
+        });
         return true;
       }
       return false;

@@ -5,6 +5,7 @@ import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
 import { Button } from "./ui/button";
 
 import { ClinicianPortrait } from "./clinician/ClinicianPortrait";
+import { prefersReducedMotion } from "../lib/useAmbientVideo";
 import { useSanityDoc } from "../lib/useSanityDoc";
 import { CLINICIANS_QUERY } from "../lib/queries";
 import { clinicianAnchor, mergeClinicians, type ClinicianSanity } from "../lib/clinician";
@@ -39,7 +40,10 @@ export function TeamGrid() {
   const scroll = (direction: "left" | "right") => {
     if (scrollRef.current) {
       const scrollAmount = direction === "left" ? -400 : 400;
-      scrollRef.current.scrollBy({ left: scrollAmount, behavior: "smooth" });
+      scrollRef.current.scrollBy({
+        left: scrollAmount,
+        behavior: prefersReducedMotion() ? "auto" : "smooth",
+      });
       setTimeout(checkScroll, 300);
     }
   };
@@ -51,9 +55,10 @@ export function TeamGrid() {
       <div className="max-w-[1800px] mx-auto px-6 lg:px-12">
         <div className="flex flex-col md:flex-row justify-between items-end mb-8 lg:mb-12">
           <div>
-            <h3 className="text-sm font-bold tracking-[0.2em] text-primary uppercase mb-3">
+            {/* span, not a heading — an eyebrow before the h2 inverts the outline */}
+            <span className="block text-sm font-bold tracking-[0.2em] text-primary uppercase mb-3">
               The Team
-            </h3>
+            </span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-foreground mb-3">
               Meet the associates.
             </h2>

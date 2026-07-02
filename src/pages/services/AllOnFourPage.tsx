@@ -25,10 +25,6 @@ import { ImageWithFallback } from "../../components/figma/ImageWithFallback";
 
 import { BOOKING_LINK_PROPS } from "../../lib/booking";
 import { usePractice } from "../../lib/usePractice";
-import { useSanityDoc } from "../../lib/useSanityDoc";
-import { SERVICE_PILLAR_BY_SLUG_QUERY } from "../../lib/queries";
-import { mergePillar, type PillarSanity } from "../../lib/pillar";
-import { DENTAL_IMPLANTS } from "../../lib/pillar-fallbacks";
 
 import drNickImg from "../../assets/dr-nick.jpg";
 import clinic2 from "../../assets/clinic-2.webp";
@@ -237,10 +233,8 @@ const faqs = [
 
 export function AllOnFourPage() {
   const practice = usePractice();
-  const remote = useSanityDoc<PillarSanity>(SERVICE_PILLAR_BY_SLUG_QUERY, {
-    slug: "dental-implants",
-  });
-  const pillar = mergePillar(remote, DENTAL_IMPLANTS);
+  // This landing page is fully bespoke — it doesn't render pillar CMS content,
+  // so the previous useSanityDoc/mergePillar call was a wasted network fetch.
 
   return (
     <>
@@ -264,7 +258,7 @@ export function AllOnFourPage() {
           >
             <Link to="/" className="hover:text-primary transition-colors">Home</Link>
             <ChevronRight className="w-3.5 h-3.5" />
-            <Link to="/" className="hover:text-primary transition-colors">Services</Link>
+            <Link to="/#services" className="hover:text-primary transition-colors">Services</Link>
             <ChevronRight className="w-3.5 h-3.5" />
             <Link to="/services/dental-implants" className="hover:text-primary transition-colors">Dental Implants</Link>
             <ChevronRight className="w-3.5 h-3.5" />

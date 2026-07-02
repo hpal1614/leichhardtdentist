@@ -11,24 +11,8 @@ import philosophyImg from "../assets/philosophy.jpg";
 // Stock imagery re-hosted on Cloudinary (from Pexels, free for commercial use):
 // first-party delivery avoids third-party cookies and serves AVIF/WebP via CDN.
 // Replace with real practice photography when commissioned.
-const PX = (id: number) =>
-  `https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/stock/${id}.jpg`;
-
-const IMG = {
-  toolsBlue: PX(4946338),         // tools on blue surface
-  toolsColorful: PX(4297522),     // colourful dental tools on white
-  equipmentClose: PX(6627724),    // dental equipment on blue background
-  toolsTray: PX(17112256),        // tools on a sterile tray
-  instrumentsSteel: PX(6812483),  // stainless steel instruments
-  toolsBlueClotn: PX(4270969),    // tools on blue cloth
-  jawModel: PX(16309612),         // gloved hand holding jaw model
-  glovedEquipment: PX(6627662),   // gloved hands operating equipment
-  dentureFitting: PX(6502631),    // denture being fitted
-  technicianMaking: PX(13085186), // technician making clear aligner
-  implantMaking: PX(7788493),     // unrecognisable dentist making implant
-  dentalModel: PX(6502634),       // dental model with equipment
-  modelEquipment: PX(6502633),    // dental model with lab equipment
-};
+// (The old PX()/IMG stock-image lookup table was removed once every card
+// moved to real practice photography — see git history to recover it.)
 
 export const GENERAL_DENTISTRY: PillarData = {
   number: "01",

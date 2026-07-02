@@ -30,6 +30,10 @@ module.exports = {
                 primary: {
                     DEFAULT: "hsl(var(--primary))",
                     foreground: "hsl(var(--primary-foreground))",
+                    // Brighter terracotta for small text on dark (#1a1a1a)
+                    // surfaces: the default #B94A13 only reaches 3.4:1 there,
+                    // while #E86A2C clears WCAG AA at 5.4:1.
+                    bright: "#E86A2C",
                 },
                 secondary: {
                     DEFAULT: "hsl(var(--secondary))",

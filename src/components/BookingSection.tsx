@@ -17,7 +17,7 @@ export function BookingSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <p className="text-primary font-bold tracking-[0.2em] uppercase text-sm mb-4">
+          <p className="text-primary-bright font-bold tracking-[0.2em] uppercase text-sm mb-4">
             Book Now
           </p>
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-heading font-bold text-white mb-6 tracking-tight">

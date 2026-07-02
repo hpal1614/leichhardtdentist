@@ -19,6 +19,24 @@ type SanityPracticeSettings = {
 };
 
 /**
+ * The static PRACTICE object is `as const` (literal types); once CMS values
+ * are merged in, the string fields have to be widened back to plain strings.
+ */
+type PracticeInfo = Omit<
+  typeof STATIC_PRACTICE,
+  "name" | "phone" | "phoneIntl" | "phoneAlt" | "email" | "address" | "social" | "hours"
+> & {
+  name: string;
+  phone: string;
+  phoneIntl: string;
+  phoneAlt: string;
+  email: string;
+  address: { [K in keyof typeof STATIC_PRACTICE.address]: string };
+  social: { [K in keyof typeof STATIC_PRACTICE.social]: string };
+  hours: ReadonlyArray<{ days: string; time: string }>;
+};
+
+/**
  * Returns the practice settings, preferring Sanity values when present and
  * falling back to the static defaults in src/lib/practice.ts.
  *
@@ -27,7 +45,7 @@ type SanityPracticeSettings = {
  * readable JSON-LD hours, coordinates, and canonical URL don't need to live
  * in the CMS.
  */
-export function usePractice(): typeof STATIC_PRACTICE {
+export function usePractice(): PracticeInfo {
   const data = useSanityDoc<SanityPracticeSettings>(PRACTICE_SETTINGS_QUERY);
 
   if (!data) return STATIC_PRACTICE;
@@ -45,6 +63,6 @@ export function usePractice(): typeof STATIC_PRACTICE {
     email: data.email || STATIC_PRACTICE.email,
     address: { ...STATIC_PRACTICE.address, ...(data.address || {}) },
     social: { ...STATIC_PRACTICE.social, ...(data.social || {}) },
-    hours: (validHours?.length ? validHours : STATIC_PRACTICE.hours) as typeof STATIC_PRACTICE.hours,
+    hours: validHours?.length ? validHours : STATIC_PRACTICE.hours,
   };
 }

@@ -25,7 +25,7 @@ export function ServicePageHero({ pillarNumber, title, tagline, intro, image }: 
         >
           <Link to="/" className="hover:text-primary transition-colors">Home</Link>
           <ChevronRight className="w-3.5 h-3.5" />
-          <Link to="/" className="hover:text-primary transition-colors">Services</Link>
+          <Link to="/#services" className="hover:text-primary transition-colors">Services</Link>
           <ChevronRight className="w-3.5 h-3.5" />
           <span className="text-foreground">{title}</span>
         </motion.nav>

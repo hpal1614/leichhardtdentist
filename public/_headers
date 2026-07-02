@@ -1,0 +1,12 @@
+# Cloudflare Pages headers (ignored by other hosts)
+
+# Vite fingerprints everything in /assets/ — safe to cache forever.
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Basic security headers for every page.
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()

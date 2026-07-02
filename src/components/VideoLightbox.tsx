@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from "motion/react";
-import { useEffect, type ReactNode } from "react";
+import { useEffect, useRef, type ReactNode } from "react";
 import { X } from "lucide-react";
 
 type Props = {
@@ -32,16 +32,46 @@ export function VideoLightbox({
   onClose,
   sidebar,
 }: Props) {
+  const dialogRef = useRef<HTMLDivElement>(null);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+
   useEffect(() => {
     if (!videoUrl) return;
+    // Move focus into the dialog and put it back where it was on close, so
+    // aria-modal matches actual keyboard behaviour (WCAG 2.4.3).
+    const previouslyFocused = document.activeElement as HTMLElement | null;
+    closeButtonRef.current?.focus();
     const handleKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") onClose();
+      if (e.key === "Escape") {
+        onClose();
+        return;
+      }
+      if (e.key !== "Tab") return;
+      // Keep Tab cycling inside the dialog
+      const dialog = dialogRef.current;
+      if (!dialog) return;
+      const items = Array.from(
+        dialog.querySelectorAll<HTMLElement>(
+          'a[href], button:not([disabled]), video[controls], iframe, [tabindex]:not([tabindex="-1"])'
+        )
+      );
+      if (items.length === 0) return;
+      const first = items[0];
+      const last = items[items.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
     };
     window.addEventListener("keydown", handleKey);
     document.body.style.overflow = "hidden";
     return () => {
       window.removeEventListener("keydown", handleKey);
       document.body.style.overflow = "";
+      previouslyFocused?.focus();
     };
   }, [videoUrl, onClose]);
 
@@ -69,6 +99,7 @@ export function VideoLightbox({
     <AnimatePresence>
       {videoUrl && (
         <motion.div
+          ref={dialogRef}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -80,6 +111,7 @@ export function VideoLightbox({
           aria-label="Video player"
         >
           <button
+            ref={closeButtonRef}
             onClick={onClose}
             aria-label="Close video"
             className="absolute top-5 right-5 lg:top-7 lg:right-7 w-11 h-11 lg:w-12 lg:h-12 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white hover:bg-white/20 hover:border-white/30 transition-all duration-300 z-10"
@@ -106,7 +138,7 @@ export function VideoLightbox({
                 </div>
                 <aside className="lg:flex-1 lg:max-w-md text-white p-6 lg:p-8 rounded-2xl bg-white/[0.04] border border-white/10 overflow-y-auto">
                   {sidebar.title && (
-                    <h3 className="text-xs uppercase tracking-[0.25em] text-primary font-bold mb-4">
+                    <h3 className="text-xs uppercase tracking-[0.25em] text-primary-bright font-bold mb-4">
                       {sidebar.title}
                     </h3>
                   )}

@@ -6,41 +6,32 @@
     <meta name="theme-color" content="#1a1a1a" />
     <meta name="color-scheme" content="light" />
 
-    <!-- Default title/description (overridden per-route by react-helmet-async) -->
-    <title>Leichhardt Dental Centre — General & Implant Dentistry, Inner West Sydney</title>
-    <meta
-      name="description"
-      content="General and implant dentistry in Leichhardt, led by Dr. Nick Kulkarni. Evidence-based care, calm approach, 25 years of practice in Sydney's Inner West."
-    />
-
-    <!-- Canonical (homepage). Points at the production domain so the
-         *.pages.dev preview host isn't indexed as duplicate content, even for
-         crawlers that don't run the client-rendered per-route canonicals. -->
-    <link rel="canonical" href="https://leichhardtdentist.com/" />
-
-    <!-- Open Graph -->
+    <!-- Constant social tags (identical on every page) -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Leichhardt Dental Centre" />
-    <meta property="og:url" content="https://leichhardtdentist.com/" />
-    <meta property="og:title" content="Leichhardt Dental Centre — General & Implant Dentistry, Inner West Sydney" />
-    <meta
-      property="og:description"
-      content="General and implant dentistry in Leichhardt, led by Dr. Nick Kulkarni. Evidence-based care, calm approach, 25 years of practice."
-    />
     <meta property="og:locale" content="en_AU" />
     <meta property="og:image" content="https://leichhardtdentist.com/og-image.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="Leichhardt Dental Centre" />
-
-    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Leichhardt Dental Centre" />
-    <meta
-      name="twitter:description"
-      content="General and implant dentistry in Leichhardt, led by Dr. Nick Kulkarni."
-    />
     <meta name="twitter:image" content="https://leichhardtdentist.com/og-image.jpg" />
+
+    <!-- Per-route SEO tags. The prerender step (scripts/prerender.mjs) replaces
+         everything between the markers below with react-helmet-async's per-page
+         output — title, description, canonical, og/twitter, and JSON-LD. These
+         homepage defaults remain for any route that isn't prerendered (SPA
+         fallback) and are overwritten client-side by <Seo>. -->
+    <!--seo-start-->
+    <title>Leichhardt Dental Centre — General & Implant Dentistry, Inner West Sydney</title>
+    <meta name="description" content="General and implant dentistry in Leichhardt, led by Dr. Nick Kulkarni. Evidence-based care, calm approach, 25 years of practice in Sydney's Inner West." />
+    <link rel="canonical" href="https://leichhardtdentist.com/" />
+    <meta property="og:title" content="Leichhardt Dental Centre — General & Implant Dentistry, Inner West Sydney" />
+    <meta property="og:description" content="General and implant dentistry in Leichhardt, led by Dr. Nick Kulkarni. Evidence-based care, calm approach, 25 years of practice." />
+    <meta property="og:url" content="https://leichhardtdentist.com/" />
+    <meta name="twitter:title" content="Leichhardt Dental Centre" />
+    <meta name="twitter:description" content="General and implant dentistry in Leichhardt, led by Dr. Nick Kulkarni." />
+    <!--seo-end-->
 
     <!-- Favicon / app icons (the old /src/assets/logo.svg reference 404'd in
          production builds and weighed 127 KB — the PNG set below covers all

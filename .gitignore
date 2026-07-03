@@ -40,3 +40,6 @@ audit-screenshots/
 .playwright-mcp/
 /*.jpeg
 /*.png
+
+# SSR prerender build artifact
+dist-server

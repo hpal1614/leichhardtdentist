@@ -42,7 +42,8 @@
       "scripts": {
             "dev": "vite",
             "generate-sitemap": "node scripts/generate-sitemap.mjs",
-            "build": "node scripts/generate-sitemap.mjs && vite build",
+            "build": "node scripts/generate-sitemap.mjs && vite build && (npm run prerender || echo 'prerender skipped — shipping client SPA')",
+            "prerender": "vite build --ssr src/entry-server.tsx --outDir dist-server --emptyOutDir --logLevel warn && node scripts/prerender.mjs",
             "sync-media": "node --env-file=.env sync-media.js",
             "seed": "node --env-file=.env scripts/seed-sanity.mjs",
             "typecheck": "tsc --noEmit"

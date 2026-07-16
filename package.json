@@ -3,6 +3,7 @@
       "version": "0.1.0",
       "private": true,
       "dependencies": {
+            "@emailjs/browser": "^4.4.1",
             "@fontsource/crimson-pro": "^5.2.8",
             "@fontsource/outfit": "^5.2.8",
             "@fontsource/syne": "^5.2.7",

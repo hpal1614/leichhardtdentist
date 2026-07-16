@@ -1,14 +1,21 @@
 import { motion } from "motion/react";
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
 import { Phone, Mail, MapPin, Clock, ArrowRight, Check, Loader2 } from "lucide-react";
 import { Seo } from "../components/Seo";
 import { PageHero } from "../components/layout/PageHero";
 import { BOOKING_LINK_PROPS } from "../lib/booking";
 import { usePractice } from "../lib/usePractice";
-import { ENQUIRY_DELIVERY_EMAIL } from "../lib/practice";
 
 const MAP_EMBED =
   "https://www.google.com/maps?q=Shop+4+39-45+Norton+Street+Leichhardt+NSW+2040&output=embed";
+
+// EmailJS delivers submissions straight to the practice inbox (set as the
+// template's "To" address) — no backend needed. These IDs are public by design
+// (EmailJS restricts them by allowed domain), so they live in the client env.
+const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID as string;
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID as string;
+const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY as string;
 
 export function Contact() {
   const practice = usePractice();
@@ -19,37 +26,22 @@ export function Contact() {
   const [hp, setHp] = useState(""); // honeypot — bots fill this, humans don't
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
 
-  // Real delivery via FormSubmit (no backend needed). Submissions are emailed
-  // to ENQUIRY_DELIVERY_EMAIL (the monitored leads inbox), which is kept
-  // separate from the public-facing practice.email shown on the page.
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (hp) return; // honeypot tripped — silently drop (likely a bot)
     setStatus("sending");
     try {
-      const res = await fetch(`https://formsubmit.co/ajax/${ENQUIRY_DELIVERY_EMAIL}`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify({
-          name,
-          email,
-          phone: phone || "—",
-          message,
-          _subject: `Website enquiry from ${name || "a visitor"}`,
-          _template: "table",
-          _captcha: "false",
-        }),
-      });
-      const data = await res.json().catch(() => ({}));
-      if (res.ok && (data.success === true || data.success === "true")) {
-        setStatus("success");
-        setName("");
-        setEmail("");
-        setPhone("");
-        setMessage("");
-      } else {
-        setStatus("error");
-      }
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        { name, email, phone: phone || "—", message },
+        { publicKey: EMAILJS_PUBLIC_KEY }
+      );
+      setStatus("success");
+      setName("");
+      setEmail("");
+      setPhone("");
+      setMessage("");
     } catch {
       setStatus("error");
     }

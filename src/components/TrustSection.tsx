@@ -2,7 +2,7 @@ import { motion } from "motion/react";
 
 const stats = [
     { label: "Clinical Experience", value: "25", suffix: " Years" },
-    { label: "Serving Leichhardt's Inner West", value: "", suffix: "" },
+    { label: "Serving Sydney's Inner West & Leichhardt", value: "", suffix: "" },
     { label: "Dentist", value: "Dr. Nick", suffix: " Kulkarni" },
 ];
 

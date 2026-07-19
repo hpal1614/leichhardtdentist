@@ -31,11 +31,11 @@ export function ServicesSection() {
               Comprehensive Care
             </span>
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-heading font-bold text-foreground leading-[1.02] mb-6">
-              Four ways we<br />care for your smile.
+              Comprehensive<br />Dental Care.
             </h2>
             <p className="text-base lg:text-lg text-muted-foreground font-light leading-relaxed">
-              Every treatment we offer falls under one of four pillars — each one
-              practised personally by Dr. Nick, and backed by evidence-based dentistry.
+              Our vision is to offer evidence-based dental care, making dentistry
+              accessible and affordable. Here are the four ways we care for your smile.
             </p>
           </motion.div>
 

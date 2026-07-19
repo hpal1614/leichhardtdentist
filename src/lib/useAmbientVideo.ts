@@ -10,8 +10,12 @@ import { useEffect, type RefObject } from "react";
  * Honours `prefers-reduced-motion` by never auto-starting — the poster stays
  * put and any visible play control still works manually.
  */
-export function useAmbientVideo(ref: RefObject<HTMLVideoElement | null>) {
+export function useAmbientVideo(
+  ref: RefObject<HTMLVideoElement | null>,
+  { enabled = true }: { enabled?: boolean } = {}
+) {
   useEffect(() => {
+    if (!enabled) return; // caller wants tap-to-play, not ambient autoplay
     const video = ref.current;
     if (!video) return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
@@ -29,7 +33,7 @@ export function useAmbientVideo(ref: RefObject<HTMLVideoElement | null>) {
     );
     io.observe(video);
     return () => io.disconnect();
-  }, [ref]);
+  }, [ref, enabled]);
 }
 
 /** True when the visitor prefers reduced motion — use to skip JS-driven

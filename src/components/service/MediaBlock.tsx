@@ -200,8 +200,10 @@ function InlineNativeVideo({
   // Starts false — playback begins when useAmbientVideo brings it into view.
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(true);
-  // Defer download until near the viewport; pause again off-screen.
-  useAmbientVideo(videoRef);
+  // Defer download until near the viewport; pause again off-screen. Videos with
+  // a separate soundtrack don't autoplay — they wait for a tap so the audio can
+  // start from that gesture (and browsers won't block it).
+  useAmbientVideo(videoRef, { enabled: !audioUrl });
 
   const syncAudio = (force = false) => {
     const v = videoRef.current;

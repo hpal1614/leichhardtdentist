@@ -218,18 +218,36 @@ function InlineNativeVideo({
     if (v.paused) {
       v.play();
       setIsPlaying(true);
+      // Start the soundtrack from within this click (gesture), in case its
+      // muted autoplay was blocked.
+      if (audioRef.current) {
+        syncAudio(true);
+        audioRef.current.play().catch(() => {});
+      }
     } else {
       v.pause();
       setIsPlaying(false);
+      audioRef.current?.pause();
     }
   };
 
   const toggleMute = () => {
     const v = videoRef.current;
     if (!v) return;
-    v.muted = !v.muted;
-    if (audioRef.current) audioRef.current.muted = v.muted;
-    setIsMuted(v.muted);
+    const nowMuted = !v.muted;
+    v.muted = nowMuted;
+    const a = audioRef.current;
+    if (a) {
+      a.muted = nowMuted;
+      // Unmuting is a user gesture — guarantee the soundtrack is actually
+      // running and aligned (its muted autoplay may have been blocked, leaving
+      // it paused, so simply un-muting would produce silence).
+      if (!nowMuted && isPlaying) {
+        syncAudio(true);
+        a.play().catch(() => {});
+      }
+    }
+    setIsMuted(nowMuted);
   };
 
   return (

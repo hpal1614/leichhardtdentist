@@ -42,9 +42,3 @@ export const PRACTICE = {
     },
   ],
 } as const;
-
-// Inbox that actually RECEIVES website contact-form submissions. Kept separate
-// from the public-facing `email` above on purpose: the address shown to
-// visitors (the practice inbox) can differ from the inbox monitored for leads.
-// Not sourced from Sanity — this is delivery config, not display content.
-export const ENQUIRY_DELIVERY_EMAIL = "keebhutia872@gmail.com";

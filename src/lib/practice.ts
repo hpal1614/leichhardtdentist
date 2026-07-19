@@ -7,7 +7,7 @@ export const PRACTICE = {
   phoneIntl: "+61295683593",
   phoneAlt: "0475 742 607",
   phoneAltIntl: "+61475742607",
-  email: "info.leichhardtdentist@gmail.com",
+  email: "leichhardtdentist@gmail.com",
   address: {
     streetAddress: "Shop 4/39-45 Norton Street",
     addressLocality: "Leichhardt",

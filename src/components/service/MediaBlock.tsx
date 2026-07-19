@@ -237,12 +237,16 @@ function InlineNativeVideo({
     const nowMuted = !v.muted;
     v.muted = nowMuted;
     const a = audioRef.current;
-    if (a) {
-      a.muted = nowMuted;
-      // Unmuting is a user gesture — guarantee the soundtrack is actually
-      // running and aligned (its muted autoplay may have been blocked, leaving
-      // it paused, so simply un-muting would produce silence).
-      if (!nowMuted && isPlaying) {
+    if (a) a.muted = nowMuted;
+    // Unmuting is a real click, so treat it as "play with sound": make sure the
+    // video AND its soundtrack are running and aligned. (Their muted autoplay
+    // may have been blocked, which would otherwise leave un-mute silent.)
+    if (!nowMuted) {
+      if (v.paused) {
+        v.play().catch(() => {});
+        setIsPlaying(true);
+      }
+      if (a) {
         syncAudio(true);
         a.play().catch(() => {});
       }

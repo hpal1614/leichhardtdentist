@@ -4,8 +4,14 @@
 /assets/*
   Cache-Control: public, max-age=31536000, immutable
 
-# Basic security headers for every page.
+# HTML is NOT fingerprinted, so it must always be revalidated. Without this the
+# browser can serve a stale index.html that references old, already-deleted JS
+# chunks after a deploy — producing "Failed to fetch dynamically imported
+# module" / MIME-type errors. max-age=0 + must-revalidate makes every page load
+# check for the latest HTML (a cheap 304 when unchanged) so a new deploy's asset
+# hashes are picked up immediately.
 /*
+  Cache-Control: public, max-age=0, must-revalidate
   X-Content-Type-Options: nosniff
   X-Frame-Options: SAMEORIGIN
   Referrer-Policy: strict-origin-when-cross-origin

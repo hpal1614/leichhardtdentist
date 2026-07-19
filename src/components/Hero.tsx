@@ -138,7 +138,7 @@ export function Hero({ data }: HeroProps = {}) {
   };
 
   return (
-    <section className="relative h-[100svh] min-h-[620px] md:min-h-[720px] w-full overflow-hidden bg-[#111] text-white">
+    <section className="relative min-h-[100svh] w-full overflow-hidden bg-[#111] text-white">
       {/* Ambient video background */}
       <div className="absolute inset-0 z-0">
         <video
@@ -159,7 +159,7 @@ export function Hero({ data }: HeroProps = {}) {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 w-full h-full max-w-[1800px] mx-auto px-6 lg:px-12 flex flex-col justify-between pt-28 lg:pt-36 pb-10 lg:pb-14">
+      <div className="relative z-10 w-full min-h-[100svh] max-w-[1800px] mx-auto px-6 lg:px-12 flex flex-col justify-between gap-8 pt-28 lg:pt-36 pb-10 lg:pb-14">
         <div className="flex-1 flex flex-col justify-end lg:justify-center max-w-3xl lg:max-w-6xl pb-6 lg:pb-0">
           {/* Eyebrow */}
           <motion.div

@@ -42,7 +42,11 @@ export function Contact() {
       setEmail("");
       setPhone("");
       setMessage("");
-    } catch {
+    } catch (err) {
+      // Surface the real EmailJS reason (status + text) in the console so a
+      // failed send can be diagnosed without exposing internals to visitors.
+      const e = err as { status?: number; text?: string };
+      console.error("EmailJS send failed:", e?.status ?? "", e?.text ?? err);
       setStatus("error");
     }
   };

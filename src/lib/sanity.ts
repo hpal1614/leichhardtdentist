@@ -5,16 +5,27 @@ const projectId = import.meta.env.VITE_SANITY_PROJECT_ID as string | undefined;
 const dataset =
   (import.meta.env.VITE_SANITY_DATASET as string | undefined) || "production";
 
-export const isSanityConfigured = Boolean(projectId);
+// The Sanity CMS is intentionally disabled: the site renders entirely from the
+// static content in `src/lib/*-fallbacks.ts`, so every page has its real copy
+// baked in. With the CMS off, no requests go to Sanity (which was returning
+// 403s because the live domain isn't on its CORS allow-list) and `/studio`
+// shows a "not configured" notice instead of loading the editor.
+//
+// To re-enable the CMS later: set CMS_ENABLED to true, then in sanity.io/manage
+// add the live domain to the project's CORS origins and make the dataset public.
+const CMS_ENABLED = false;
 
-export const sanity: SanityClient | null = projectId
-  ? createClient({
-      projectId,
-      dataset,
-      apiVersion: "2024-01-01",
-      useCdn: true,
-    })
-  : null;
+export const isSanityConfigured = CMS_ENABLED && Boolean(projectId);
+
+export const sanity: SanityClient | null =
+  CMS_ENABLED && projectId
+    ? createClient({
+        projectId,
+        dataset,
+        apiVersion: "2024-01-01",
+        useCdn: true,
+      })
+    : null;
 
 const builder = sanity ? imageUrlBuilder(sanity) : null;
 

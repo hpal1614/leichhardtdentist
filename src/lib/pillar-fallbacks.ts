@@ -772,8 +772,8 @@ export const SAME_DAY_SMILE: PillarData = {
         "Preparation of the tooth for veneers involves removing a thin layer of enamel — this is permanent and cannot be undone. Risks include post-operative sensitivity, the possibility of root canal treatment if the nerve is affected, and chipping or debonding over time. Cases requiring complex layering or specialty aesthetics may be referred to a ceramist for traditional lab-made veneers.",
       beforeAfter: [
         {
-          before: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/cerec-crowns-veneers/before-and-after/case-1-before.jpg",
-          after: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/cerec-crowns-veneers/before-and-after/case-1-after.jpg",
+          before: "https://res.cloudinary.com/dzydzte9h/image/upload/c_fill,g_auto,ar_4:3,q_auto,f_auto/dental-website/same-day-smile/cerec-crowns-veneers/before-and-after/case-1-before.jpg",
+          after: "https://res.cloudinary.com/dzydzte9h/image/upload/c_fill,g_auto,ar_4:3,q_auto,f_auto/dental-website/same-day-smile/cerec-crowns-veneers/before-and-after/case-1-after.jpg",
           caption: "Premium Emax ceramic veneers for a durable, natural smile makeover. The after photo was taken at a 10-year follow-up appointment.",
         },
         {

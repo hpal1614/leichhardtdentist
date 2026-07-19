@@ -752,6 +752,9 @@ export const SAME_DAY_SMILE: PillarData = {
       // swap videoPoster for the client-supplied thumbnail when provided.
       videoUrl:
         "https://res.cloudinary.com/dzydzte9h/video/upload/dental-website/same-day-smile/cerec-crowns-veneers/same-day-smile-hero.mp4",
+      // The hero video ships without an audio track; this soundtrack is played
+      // in sync with it and becomes audible when the viewer unmutes.
+      audioUrl: "/audio/same-day-veneers.mp3",
       videoPoster:
         "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/veneers-card.png",
       imageUrl:

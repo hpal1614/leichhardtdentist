@@ -116,6 +116,7 @@ export function SubTreatmentPage() {
               <MediaBlock
                 videoUrl={sub.videoUrl}
                 videoPoster={sub.videoPoster}
+                audioUrl={sub.audioUrl}
                 imageUrl={sub.imageUrl}
                 fallbackImage={pillar.image}
                 alt={sub.name}

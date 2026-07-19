@@ -8,6 +8,8 @@ export type SubTreatment = {
   longDescription?: string;
   videoUrl?: string;
   videoPoster?: string;
+  /** Optional separate soundtrack for a silent hero video (served locally). */
+  audioUrl?: string;
   imageUrl?: string;
   gallery?: string[];
   beforeAfter?: BeforeAfterPair[];
@@ -101,6 +103,7 @@ function cleanTreatments(
       longDescription: i.longDescription,
       videoUrl: i.videoUrl,
       videoPoster: i.videoPoster,
+      audioUrl: i.audioUrl,
       imageUrl: i.imageUrl,
       gallery: i.gallery,
       beforeAfter: cleanBeforeAfter(i.beforeAfter) ?? undefined,

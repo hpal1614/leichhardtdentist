@@ -8,6 +8,8 @@ import { useAmbientVideo } from "../../lib/useAmbientVideo";
 type Props = {
   videoUrl?: string;
   videoPoster?: string;
+  /** Optional separate soundtrack, played in sync with an inline (non-lightbox) video. */
+  audioUrl?: string;
   imageUrl?: string;
   fallbackImage?: string;
   alt?: string;
@@ -47,6 +49,7 @@ const toEmbedUrl = (url: string) =>
 export function MediaBlock({
   videoUrl,
   videoPoster,
+  audioUrl,
   imageUrl,
   fallbackImage,
   alt = "",
@@ -86,6 +89,7 @@ export function MediaBlock({
         <InlineNativeVideo
           videoUrl={videoUrl}
           videoPoster={videoPoster}
+          audioUrl={audioUrl}
           className={className}
           alt={alt}
         />
@@ -180,20 +184,33 @@ export function MediaBlock({
 function InlineNativeVideo({
   videoUrl,
   videoPoster,
+  audioUrl,
   className = "",
   alt = "",
 }: {
   videoUrl?: string;
   videoPoster?: string;
+  audioUrl?: string;
   className?: string;
   alt?: string;
 }) {
   const videoRef = useRef<HTMLVideoElement>(null);
+  // Optional separate soundtrack for a silent video, kept in sync with it.
+  const audioRef = useRef<HTMLAudioElement>(null);
   // Starts false — playback begins when useAmbientVideo brings it into view.
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(true);
   // Defer download until near the viewport; pause again off-screen.
   useAmbientVideo(videoRef);
+
+  const syncAudio = (force = false) => {
+    const v = videoRef.current;
+    const a = audioRef.current;
+    if (!v || !a) return;
+    if (force || Math.abs(a.currentTime - v.currentTime) > 0.3) {
+      a.currentTime = v.currentTime;
+    }
+  };
 
   const togglePlay = () => {
     const v = videoRef.current;
@@ -211,6 +228,7 @@ function InlineNativeVideo({
     const v = videoRef.current;
     if (!v) return;
     v.muted = !v.muted;
+    if (audioRef.current) audioRef.current.muted = v.muted;
     setIsMuted(v.muted);
   };
 
@@ -225,9 +243,27 @@ function InlineNativeVideo({
         muted
         loop
         preload="none"
-        onPlay={() => setIsPlaying(true)}
-        onPause={() => setIsPlaying(false)}
+        onPlay={() => {
+          setIsPlaying(true);
+          if (audioRef.current) {
+            syncAudio(true);
+            audioRef.current.play().catch(() => {});
+          }
+        }}
+        onPause={() => {
+          setIsPlaying(false);
+          audioRef.current?.pause();
+        }}
+        onTimeUpdate={() => {
+          if (audioRef.current && !audioRef.current.paused) syncAudio();
+        }}
       />
+      {/* Separate soundtrack for a video that ships without an audio track.
+          Autoplays muted alongside the video (muted media autoplay is allowed)
+          and becomes audible when the viewer unmutes. */}
+      {audioUrl && (
+        <audio ref={audioRef} src={audioUrl} loop muted preload="none" />
+      )}
 
       {/* Poster shown on load and while paused (covers the frozen video frame).
           Loaded eagerly because it's the above-the-fold hero image — otherwise

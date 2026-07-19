@@ -22,6 +22,7 @@ interface Story {
     startTime?: number; // Legacy/Single segment start
     endTime?: number;   // Legacy/Single segment end
     segments?: VideoSegment[]; // Multi-segment support
+    audioSrc?: string; // Optional separate soundtrack, kept in sync with the video
 }
 
 const stories: Story[] = [
@@ -37,6 +38,7 @@ const stories: Story[] = [
         type: "video",
         videoSrc: "https://res.cloudinary.com/dzydzte9h/video/upload/dental-website/home/case-studies/story-of-transformation.mp4",
         thumbnailTime: 24,
+        audioSrc: "/audio/story-of-transformation.mp3",
     },
     {
         id: 2,
@@ -92,8 +94,20 @@ const stories: Story[] = [
 
 function VideoStoryCard({ story }: { story: Story }) {
     const videoRef = useRef<HTMLVideoElement>(null);
+    // Optional separate soundtrack (the video itself has no audio track). Kept
+    // in sync with the video's currentTime and muted state.
+    const audioRef = useRef<HTMLAudioElement>(null);
     const [isPlaying, setIsPlaying] = useState(false);
     const [isMuted, setIsMuted] = useState(true);
+
+    const syncAudioToVideo = (force = false) => {
+        const v = videoRef.current;
+        const a = audioRef.current;
+        if (!v || !a) return;
+        if (force || Math.abs(a.currentTime - v.currentTime) > 0.3) {
+            a.currentTime = v.currentTime;
+        }
+    };
     const [opacity, setOpacity] = useState(1); // For fade transitions
 
     // Determine segments or fallback to single start/end
@@ -109,6 +123,10 @@ function VideoStoryCard({ story }: { story: Story }) {
     };
 
     const handleTimeUpdate = () => {
+        // Keep the optional soundtrack aligned (also re-syncs after the native
+        // loop restarts the video at 0).
+        if (audioRef.current && !audioRef.current.paused) syncAudioToVideo();
+
         if (!videoRef.current || segments.length === 0) return;
 
         const currentTime = videoRef.current.currentTime;
@@ -158,6 +176,7 @@ function VideoStoryCard({ story }: { story: Story }) {
         if (videoRef.current) {
             if (isPlaying) {
                 videoRef.current.pause();
+                audioRef.current?.pause();
             } else {
                 // If starting from "Thumbnail" mode (which might be outside a segment or at a specific frame),
                 // check if we should jump to start of first segment?
@@ -171,6 +190,10 @@ function VideoStoryCard({ story }: { story: Story }) {
                 }
 
                 videoRef.current.play();
+                if (audioRef.current) {
+                    syncAudioToVideo(true);
+                    audioRef.current.play().catch(() => {});
+                }
             }
             setIsPlaying(!isPlaying);
         }
@@ -180,6 +203,7 @@ function VideoStoryCard({ story }: { story: Story }) {
         e.stopPropagation();
         if (videoRef.current) {
             videoRef.current.muted = !isMuted;
+            if (audioRef.current) audioRef.current.muted = !isMuted;
             setIsMuted(!isMuted);
         }
     };
@@ -204,6 +228,11 @@ function VideoStoryCard({ story }: { story: Story }) {
                 onLoadedMetadata={handleLoadedMetadata}
                 onTimeUpdate={handleTimeUpdate}
             />
+            {/* Separate soundtrack for videos that ship without an audio track.
+                Starts muted; the mute toggle and play/pause keep it in sync. */}
+            {story.audioSrc && (
+                <audio ref={audioRef} src={story.audioSrc} loop muted preload="none" />
+            )}
             {/* Controls Overlay - Visible on Group Hover or keyboard focus */}
             <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 focus-within:opacity-100 transition-opacity duration-300 z-20">
                 <Button

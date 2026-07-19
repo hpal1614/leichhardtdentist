@@ -110,13 +110,13 @@ export const GENERAL_DENTISTRY: PillarData = {
         "Preparation of neighbouring teeth is permanent — the shape cannot be undone. Bridges are durable but not lifetime devices; expect to need replacement or adjustment over 10–15 years depending on hygiene and bite forces. Where implants are clinically suitable they may offer better long-term jawbone preservation — we'll cover both options honestly at consultation.",
       beforeAfter: [
         {
-          before: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/general-dentistry/dental-bridges/before-and-after/case-1-before.jpg",
-          after: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/general-dentistry/dental-bridges/before-and-after/case-1-after.jpg",
+          before: "/bridges/case-1-before.jpg",
+          after: "/bridges/case-1-after.jpg",
           caption: "If teeth adjacent to the missing teeth need restoration, a dental bridge can be a quick, cost-effective and aesthetically pleasing way of maximising treatment outcomes.",
         },
         {
-          before: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/general-dentistry/dental-bridges/before-and-after/case-2-before.jpg",
-          after: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/general-dentistry/dental-bridges/before-and-after/case-2-after.jpg",
+          before: "/bridges/case-2-before.jpg",
+          after: "/bridges/case-2-after.jpg",
           caption: "Significant transformation achieved by a dental bridge with minimal intervention. Well-made bridges can serve 10–15 years before they need replacement.",
         },
       ],

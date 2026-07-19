@@ -28,7 +28,7 @@ export function ServicesSection() {
             className="max-w-2xl"
           >
             <span className="text-primary font-bold tracking-[0.25em] uppercase text-xs mb-5 block">
-              Comprehensive Care
+              Our Vision
             </span>
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-heading font-bold text-foreground leading-[1.02] mb-6">
               Comprehensive<br />Dental Care.

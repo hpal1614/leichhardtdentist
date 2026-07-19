@@ -229,11 +229,15 @@ function InlineNativeVideo({
         onPause={() => setIsPlaying(false)}
       />
 
-      {/* Thumbnail shown while paused (covers the frozen video frame) */}
+      {/* Poster shown on load and while paused (covers the frozen video frame).
+          Loaded eagerly because it's the above-the-fold hero image — otherwise
+          the lazy default means it isn't fetched before autoplay hides it, so it
+          only appears after the viewer first pauses. */}
       {videoPoster && (
         <ImageWithFallback
           src={videoPoster}
           alt={alt}
+          loading="eager"
           className={`absolute inset-0 w-full h-full object-cover z-[1] transition-opacity duration-300 ${
             isPlaying ? "opacity-0 pointer-events-none" : "opacity-100"
           }`}

@@ -807,8 +807,8 @@ export const SAME_DAY_SMILE: PillarData = {
           caption: "A close-up of the transformation with Emax ceramic veneers, done with our in-house Same Day Smile technology.",
         },
         {
-          before: "https://res.cloudinary.com/dzydzte9h/image/upload/c_fill,g_center,ar_4:3,q_auto,f_auto/dental-website/same-day-smile/cerec-crowns-veneers/before-and-after/case-8-before.jpg",
-          after: "https://res.cloudinary.com/dzydzte9h/image/upload/c_fill,g_center,ar_4:3,q_auto,f_auto/dental-website/same-day-smile/cerec-crowns-veneers/before-and-after/case-8-after.jpg",
+          before: "https://res.cloudinary.com/dzydzte9h/image/upload/c_fill,g_west,ar_4:3,q_auto,f_auto/dental-website/same-day-smile/cerec-crowns-veneers/before-and-after/case-8-before.jpg",
+          after: "https://res.cloudinary.com/dzydzte9h/image/upload/c_fill,g_west,ar_4:3,q_auto,f_auto/dental-website/same-day-smile/cerec-crowns-veneers/before-and-after/case-8-after.jpg",
           caption: "Long-term gum disease can create gaps between the teeth. Once the gum disease was stabilised and under control, the gaps were closed with Emax ceramic veneers — done with our in-house Same Day Smile technology.",
         },
       ],

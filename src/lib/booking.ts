@@ -1,19 +1,13 @@
 import { trackEvent } from "./analytics";
 
 /**
- * External booking portal — Dental4Windows (D4W) via Centaur.
+ * External booking portal — Dental4Windows (D4W) via Centaur, served on the
+ * practice's branded portal.dental domain.
  *
- * The practice already uses this portal on leichhardtdentist.com; all "Book"
- * CTAs across the site open it in a new tab. To change providers, update
- * BOOKING_URL here — every CTA picks it up automatically.
- *
- * NOTE: we use the token-less form of the URL on purpose. The tokenised link
- * (with a long `randomNumber`) loads the byte-for-byte identical booking page,
- * but a token can expire/rotate — so dropping it removes the only realistic way
- * the Book buttons could silently break.
+ * All "Book" CTAs across the site open this in a new tab. To change providers
+ * or links, update BOOKING_URL here — every CTA picks it up automatically.
  */
-export const BOOKING_URL =
-  "https://www.centaurportal.com/d4w/org-262/extended_search?location=283&shortVer=true";
+export const BOOKING_URL = "https://leichhardtdentist.portal.dental/";
 
 export const BOOKING_LINK_PROPS = {
   href: BOOKING_URL,

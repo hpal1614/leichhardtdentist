@@ -1,5 +1,20 @@
-# Cloudflare Pages SPA fallback: serve index.html (200, not a redirect) for any
-# path that isn't a real file, so client-side routes like /about and
-# /services/... work on direct load and refresh. This is the Pages-native
-# mechanism (Workers used wrangler.jsonc's not_found_handling instead).
+# ── Legacy WordPress URLs → closest new page (301 permanent) ─────────────
+# The old WordPress site is retired. Point its still-indexed URLs at the
+# nearest new page so Google / AI crawlers transfer ranking instead of hitting
+# a soft-404. Verified against Google's live index (Aug 2026). Order matters:
+# these must sit ABOVE the SPA catch-all below (first match wins).
+/bruxism-tmj-and-sleep-apnoea    /services/orthodontics/airway-and-functional-alignment  301
+/bruxism-tmj-and-sleep-apnoea/   /services/orthodontics/airway-and-functional-alignment  301
+/services/zoom-teeth-whitening   /services/same-day-smile/zoom-whitening                 301
+/services/zoom-teeth-whitening/  /services/same-day-smile/zoom-whitening                 301
+/about-us                        /about                                                  301
+/about-us/                       /about                                                  301
+/contact-us                      /contact                                                301
+/contact-us/                     /contact                                                301
+
+# ── Cloudflare Pages SPA fallback ────────────────────────────────────────
+# Serve index.html (200, not a redirect) for any path that isn't a real file,
+# so client-side routes like /about and /services/... work on direct load and
+# refresh. This is the Pages-native mechanism (Workers used wrangler.jsonc's
+# not_found_handling instead).
 /*    /index.html   200

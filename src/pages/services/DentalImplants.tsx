@@ -15,10 +15,11 @@ import { SERVICE_PILLAR_BY_SLUG_QUERY } from "../../lib/queries";
 import { mergePillar, type PillarSanity } from "../../lib/pillar";
 import { DENTAL_IMPLANTS } from "../../lib/pillar-fallbacks";
 
-// Dr. Nick's credentials — specialist title used per AHPRA-register
-// confirmation. Keep registration number on file as the evidence.
+// Dr. Nick's credentials — stated as factual qualifications only. He holds a
+// Master's in Prosthodontics (a degree) but is NOT a registered specialist, so
+// no "specialist" or "prosthodontist" title is used (AHPRA protected titles).
 const credentials = [
-  "Registered specialist prosthodontist (Dental Board of Australia)",
+  "Registered dentist — Dental Board of Australia",
   "Master's in Prosthodontics — I.P. Pavlov University",
   "Graduate Diploma in Oral Implants — University of Sydney",
   "Fellow, International Congress of Oral Implantologists (ICOI)",
@@ -54,7 +55,7 @@ export function DentalImplants() {
     <>
       <Seo
         title="Dental Implants & All-on-4 — Leichhardt Dental, Dr. Nick Kulkarni"
-        description="Single-tooth implants, implant-supported overdentures, and All-on-4 full-arch rehabilitation. Planned and placed by Dr. Nick Kulkarni — registered specialist prosthodontist and Fellow of the International Congress of Oral Implantologists."
+        description="Single-tooth implants, implant-supported overdentures, and All-on-4 full-arch rehabilitation. Planned and placed by Dr. Nick Kulkarni — Principal Dentist with a Master's in Prosthodontics and a Fellow of the International Congress of Oral Implantologists."
         path={`/services/${data.slug}`}
       />
       <FAQStructuredData faqs={data.faqs} />
@@ -80,13 +81,13 @@ export function DentalImplants() {
               Clinical expertise
             </span>
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-foreground leading-[1.02] mb-6">
-              Led by a specialist prosthodontist.
+              Led by an experienced implant dentist.
             </h2>
             <p className="text-base lg:text-lg text-muted-foreground font-light leading-relaxed">
               Your implant treatment is planned and placed by Dr. Nick Kulkarni
-              — a registered specialist prosthodontist with over 25 years of
-              international clinical experience, who also trains other dentists
-              in implant surgery and IV sedation.
+              — our Principal Dentist, who holds a Master's in Prosthodontics and
+              has over 25 years of international clinical experience, and who also
+              trains other dentists in implant surgery and IV sedation.
             </p>
           </motion.div>
 

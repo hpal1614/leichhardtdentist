@@ -349,7 +349,7 @@ export const DENTAL_IMPLANTS: PillarData = {
   shortDescription:
     "Titanium roots that restore function and structure — from a single tooth to a full arch. Planned with in-house 3D CBCT, EthOss synthetic bone grafting where needed, and zirconia crowns made locally in Sydney.",
   intro:
-    "Missing teeth shouldn't hold you back from eating, smiling, or living with confidence. At Leichhardt Dental, dental implantology is the primary focus of our clinical practice. Led by Dr Nick Kulkarni — a registered specialist prosthodontist with over 25 years of extensive international clinical experience and a Fellow of the International Congress of Oral Implantologists — we combine world-class 3D imaging with advanced surgical techniques to restore your smile's permanent strength. We achieve predictable, long-term results by focusing on three strict pillars of care: unrivalled accuracy with in-house 3D CBCT imaging; 100% synthetic bone regeneration with EthOss (no donor or animal tissue); and premium Zirconia crowns, 100% made in Sydney by master technicians — we do not outsource our restorations to cheap overseas labs. We also offer metal-free zirconia implants for patients who prefer a non-metal option. Flexible payment plans are available through TLC Finance.",
+    "Missing teeth shouldn't hold you back from eating, smiling, or living with confidence. At Leichhardt Dental, dental implantology is the primary focus of our clinical practice. Led by Dr Nick Kulkarni — our Principal Dentist, who holds a Master's in Prosthodontics, has over 25 years of international clinical experience and is a Fellow of the International Congress of Oral Implantologists — we combine advanced 3D imaging with modern surgical techniques to restore your smile's strength and function. We work toward predictable, long-term results by focusing on three pillars of care: high accuracy with in-house 3D CBCT imaging; 100% synthetic bone regeneration with EthOss (no donor or animal tissue); and Zirconia crowns made in Sydney by experienced technicians rather than outsourced overseas. We also offer metal-free zirconia implants for patients who prefer a non-metal option. Flexible payment plans are available through TLC Finance.",
   image: clinic2,
   heroImage:
     "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/dental-implants/pillar-hero.png",
@@ -674,7 +674,7 @@ export const DENTAL_IMPLANTS: PillarData = {
     },
     {
       q: "What is Dr. Nick's training?",
-      a: "Dr. Nick Kulkarni is a registered specialist prosthodontist with a Master's in Prosthodontics (I.P. Pavlov University) and a Graduate Diploma in Oral Implants from the University of Sydney. He is a Fellow of the International Congress of Oral Implantologists, with advanced training at the Misch Implant Institute (Florida) and the Walpole Institute (London). He also founds and directs Place Your First Implant, running live-patient implant and IV-sedation training for other dentists.",
+      a: "Dr. Nick Kulkarni is our Principal Dentist, with a Master's in Prosthodontics (I.P. Pavlov University) and a Graduate Diploma in Oral Implants from the University of Sydney. He is a Fellow of the International Congress of Oral Implantologists, with advanced training at the Misch Implant Institute (Florida) and the Walpole Institute (London). He also founds and directs Place Your First Implant, running live-patient implant and IV-sedation training for other dentists.",
     },
     {
       q: "Am I too old for implants?",

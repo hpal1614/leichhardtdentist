@@ -285,8 +285,8 @@ export function AllOnFourPage() {
                 A full-arch implant pathway for patients facing failing teeth,
                 loose dentures, or a lifetime of compromised function. Planned
                 and placed by Dr. Nick Kulkarni, with on-site diagnostics and
-                a calm, evidence-based approach the Inner West has trusted for
-                over a decade.
+                a calm, evidence-based approach we have provided in the Inner
+                West for over a decade.
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <a
@@ -559,7 +559,7 @@ export function AllOnFourPage() {
             </h2>
             <p className="text-base lg:text-lg text-muted-foreground font-light leading-relaxed">
               The pathway is staged so your implants integrate fully before
-              taking the load of a permanent restoration. Pricing below is a
+              taking the load of a final (definitive) restoration. Pricing below is a
               guide; your final, fixed quote is confirmed in writing after
               your consultation and 3D scan.
             </p>
@@ -642,8 +642,8 @@ export function AllOnFourPage() {
                   <h4 className="text-xl font-heading font-bold mb-2">Zirconia Prestige</h4>
                   <p className="text-2xl font-heading font-bold mb-3">$10,000 <span className="text-sm font-light text-white/60">AUD</span></p>
                   <p className="text-sm text-white/70 font-light leading-relaxed">
-                    Individual monolithic zirconia teeth. Maximum translucency,
-                    durability, and stain resistance.
+                    Individual monolithic zirconia teeth offering high
+                    translucency and durability, with good resistance to staining.
                   </p>
                 </div>
               </div>
@@ -797,8 +797,7 @@ export function AllOnFourPage() {
                 </h2>
                 <p className="text-base lg:text-lg text-muted-foreground font-light leading-relaxed mb-10 max-w-xl">
                   Your first consultation gives you the clarity to make an
-                  informed decision. No pressure, no surgical fees on the day,
-                  no obligation to proceed.
+                  informed decision. No pressure and no obligation to proceed.
                 </p>
 
                 <ul className="space-y-4">

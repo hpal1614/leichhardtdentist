@@ -38,9 +38,9 @@ export const GENERAL_DENTISTRY: PillarData = {
         "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/general-dentistry/check-up-and-clean.jpg",
       name: "Check-up & Clean",
       description:
-        "Every six months. A careful examination, professional scale and polish, oral cancer screening, and X-rays where clinically indicated. Preventive care is the single highest-value thing we do.",
+        "Every six months. A careful examination, professional scale and polish, oral cancer screening, and X-rays where clinically indicated. Preventive care is central to keeping your teeth healthy long-term.",
       longDescription:
-        "A dental check-up is the most important 45 minutes you can give your mouth every six months. We examine your teeth, gums, bite, and soft tissues; take X-rays when clinically indicated; perform a professional scale and polish to remove plaque and tartar; and screen for early signs of decay, gum disease, and oral cancer. Nothing about this appointment is rushed — we take the time to find small problems before they become painful ones.",
+        "A six-monthly dental check-up is an important part of keeping your mouth healthy. We examine your teeth, gums, bite, and soft tissues; take X-rays when clinically indicated; perform a professional scale and polish to remove plaque and tartar; and screen for early signs of decay, gum disease, and oral cancer. Nothing about this appointment is rushed — we take the time to find small problems before they become painful ones.",
       whatToExpect: [
         "Full visual and tactile examination",
         "X-rays if indicated (low-dose digital)",
@@ -58,13 +58,13 @@ export const GENERAL_DENTISTRY: PillarData = {
         "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/general-dentistry/dental-fillings.jpg",
       name: "Dental Fillings",
       description:
-        "Amalgam-free composite fillings using 3M ESPE and Ivoclar premium materials — designed to blend naturally with your tooth and bonded in a single visit.",
+        "Amalgam-free composite fillings using 3M ESPE and Ivoclar composite materials — designed to blend naturally with your tooth and bonded in a single visit.",
       longDescription:
-        "We are a proudly Amalgam-Free practice. We do not use traditional silver-mercury fillings. Instead, we exclusively use premium, BPA-safe composite resins and ceramics. These materials are not only safer and more biocompatible but also allow us to preserve more of your natural tooth structure during the restoration process. At Leichhardt Dental, we don't believe in \"standard\" fillings. To ensure your restoration lasts longer and looks completely natural, we use only world-leading materials from 3M ESPE and Ivoclar. These premium composites mimic the strength and light-reflection of natural enamel, so your filling is as durable as it is beautiful.",
+        "We are a proudly Amalgam-Free practice. We do not use traditional silver-mercury fillings. Instead, we use BPA-safe composite resins and ceramics. These materials are biocompatible and allow us to preserve more of your natural tooth structure during the restoration process. To help your restoration last and look natural, we use materials from 3M ESPE and Ivoclar. These composites mimic the strength and light-reflection of natural enamel, so your filling is both durable and natural-looking.",
       whatToExpect: [
-        "The \"Chameleon Effect\": these materials blend seamlessly into your tooth's unique shade, making the filling virtually invisible",
-        "Nano-Technology: ultra-fine particles make the filling smoother and more resistant to staining and wear over time",
-        "Better Comfort: advanced bonding technology reduces the \"shrinkage\" that causes post-treatment sensitivity",
+        "The \"Chameleon Effect\": these materials blend into your tooth's unique shade, so the filling is hard to notice",
+        "Fine-particle composites: ultra-fine particles give the filling a smooth finish",
+        "Modern bonding technique: designed to reduce the \"shrinkage\" that can contribute to post-treatment sensitivity",
         "Amalgam-free and BPA-safe composites (3M ESPE / Ivoclar)",
       ],
       pricing: [
@@ -77,7 +77,7 @@ export const GENERAL_DENTISTRY: PillarData = {
       faqs: [
         {
           q: "How long does a filling take?",
-          a: "Most fillings are completed in a single 30 to 45-minute appointment. Because we use high-performance curing lights, your filling is hardened instantly, and you can eat on it almost immediately.",
+          a: "Most fillings are completed in a single 30 to 45-minute appointment. Because we use modern curing lights, your filling is set during the appointment, and you can usually eat on it soon after.",
         },
         {
           q: "What is the difference between a large filling and a CEREC crown?",
@@ -131,7 +131,7 @@ export const GENERAL_DENTISTRY: PillarData = {
         },
         {
           q: "How much does a dental bridge cost in Sydney?",
-          a: "The investment depends on the number of missing teeth and the materials used. We provide a complete, transparent fee breakdown during your consultation, so you face zero financial surprises. Typically, a dental bridge to replace a single or a couple of teeth can cost about AUD 5,000–7,000, depending on the amount of work required. With payment plans this cost can be broken down to as little as AUD 45/week.",
+          a: "The investment depends on the number of missing teeth and the materials used. We provide a complete, transparent fee breakdown during your consultation, so you face zero financial surprises. Typically, a dental bridge to replace a single or a couple of teeth can cost about AUD 5,000–7,000, depending on the amount of work required. With payment plans this cost can be spread to around AUD 45/week.",
         },
         {
           q: "Can I get a dental bridge made on the same day?",
@@ -183,7 +183,7 @@ export const GENERAL_DENTISTRY: PillarData = {
       description:
         "When infection reaches the nerve of a tooth, root canal treatment removes the infection and preserves the tooth. Performed with rubber-dam isolation, rotary instrumentation, and CBCT 3D planning.",
       longDescription:
-        "When decay or trauma reaches the pulp (nerve) of a tooth, the tooth can usually still be saved with root canal treatment. The infected pulp is carefully removed, the canals are cleaned and shaped, and the space is sealed with a biocompatible filling material. A crown is typically placed afterwards to protect the tooth long-term. Modern techniques — flexible nickel-titanium rotary files, rubber-dam isolation for sterility, and 3D CBCT scans to map the canal anatomy in advance — make the procedure considerably more predictable and comfortable than its reputation suggests. Most patients describe the procedure as no different to having a standard filling. Typical investment: $1,200–$1,800 depending on complexity. We aim to keep the complete Root Canal + CEREC Crown package below $4,000 — the rationale being that if saving your natural tooth costs more than replacing it with an implant, a different conversation is needed.",
+        "When decay or trauma reaches the pulp (nerve) of a tooth, the tooth can usually still be saved with root canal treatment. The infected pulp is carefully removed, the canals are cleaned and shaped, and the space is sealed with a biocompatible filling material. A crown is typically placed afterwards to protect the tooth long-term. Modern techniques — flexible nickel-titanium rotary files, rubber-dam isolation for sterility, and 3D CBCT scans to map the canal anatomy in advance — make the procedure more predictable and more comfortable than its reputation suggests; for many people it feels similar to having a standard filling, though your experience is discussed with you beforehand. Typical investment: $1,200–$1,800 depending on complexity. We aim to keep the complete Root Canal + CEREC Crown package below $4,000 — the rationale being that if saving your natural tooth costs more than replacing it with an implant, a different conversation is needed.",
       whatToExpect: [
         "Usually 1–2 appointments of 60–90 minutes",
         "Local anaesthetic throughout",
@@ -267,9 +267,9 @@ export const GENERAL_DENTISTRY: PillarData = {
       description:
         "A custom Ivoclar e.max ceramic restoration that sits between a filling and a full crown — designed and milled chairside with CEREC and bonded in a single ~90-minute visit, keeping more of your natural tooth than a crown.",
       longDescription:
-        "When a tooth is too damaged for a simple filling but still has enough healthy structure that it doesn't quite need a full crown, an Inlay or Onlay is the ideal evidence-based solution. Think of it as a \"partial crown\" or a custom-engineered puzzle piece. An Inlay sits inside the grooves of your tooth, while an Onlay (often called a \"three-quarter crown\") covers one or more of the biting points (cusps) to provide structural reinforcement. At Leichhardt Dental, we do not use generic lab-processed ceramics. For every restoration, we use Ivoclar e.max®—one of the most widely used and well-documented glass-ceramics. We chose Ivoclar e.max® for two reasons: high strength, designed to withstand the heavy biting forces of back teeth and reduce the risk of your tooth fracturing; and natural aesthetics, mimicking the translucency and light-reflection of real tooth enamel so the restoration blends closely with your own teeth once bonded. By combining Ivoclar materials with our in-house CEREC technology, we 3D-scan your tooth (no putty required), design your restoration on screen to match your bite, mill it from a solid Ivoclar e.max block in our clinic, and fit and bond it in a single 90-minute visit. A typical inlay or onlay is approximately $1,500–$1,700.",
+        "When a tooth is too damaged for a simple filling but still has enough healthy structure that it doesn't quite need a full crown, an Inlay or Onlay is a well-established, evidence-based option. Think of it as a \"partial crown\" or a custom-engineered puzzle piece. An Inlay sits inside the grooves of your tooth, while an Onlay (often called a \"three-quarter crown\") covers one or more of the biting points (cusps) to provide structural reinforcement. For every restoration, we use Ivoclar e.max®—one of the most widely used and well-documented glass-ceramics. We chose Ivoclar e.max® for two reasons: high strength, designed to withstand the heavy biting forces of back teeth and reduce the risk of your tooth fracturing; and natural aesthetics, mimicking the translucency and light-reflection of real tooth enamel so the restoration blends closely with your own teeth once bonded. By combining Ivoclar materials with our in-house CEREC technology, we 3D-scan your tooth (no putty required), design your restoration on screen to match your bite, mill it from a solid Ivoclar e.max block in our clinic, and fit and bond it in a single 90-minute visit. A typical inlay or onlay is approximately $1,500–$1,700.",
       whatToExpect: [
-        "Maximum tooth preservation — we only remove the decayed part, keeping most of your healthy natural enamel",
+        "Conservative tooth preparation — we remove only the decayed part, keeping most of your healthy natural enamel",
         "No \"putty\" impressions — a digital 3D scanner: faster, more comfortable, and more accurate",
         "Precise bite alignment, designed to the micron",
         "Exceptional durability — high-strength Ivoclar e.max doesn't shrink, leak, or stain",
@@ -365,10 +365,10 @@ export const DENTAL_IMPLANTS: PillarData = {
       description:
         "A titanium post placed where the tooth root used to be, topped with a zirconia crown made locally in Sydney. Teeth either side are left untouched — unlike a bridge.",
       longDescription:
-        "If you have a single missing tooth, or a tooth that is badly broken and cannot be saved, you do not have to rely on traditional options. At Leichhardt Dental Centre, we offer single dental implants. This modern treatment replaces one missing tooth from the root up, giving you a fixed, natural tooth-like solution that looks, feels, and functions just like a real tooth. Every single implant procedure at our clinic is personally looked after by our principal dentist, Dr Nick Kulkarni. The most critical part of a successful result is careful planning, correct surgical technique, and respecting your natural biology. Dr Nick draws on scientific evidence so your new tooth works in harmony with your body, looking natural and functioning well. To support your safety, every single implant placement is done under hospital-grade sterile conditions. We use established brands like BioHorizons and Implant Direct — American-made systems backed by rigorous quality assurance. We use our own advanced 3D scanner (CBCT) right here in the office, creating a highly detailed 3D digital map of your mouth so Dr Nick can check the exact shape, density, and height of your foundations before any treatment begins. Where there is not enough natural foundation left, we rebuild the area using a 100% synthetic material called EthOss — because it is entirely lab-made, it avoids the risk of cross-contamination linked to older human or animal materials, and over time your body absorbs it, turning it into your own tissue. A single implant is made of three simple parts: the Anchor, a tiny, medical-grade metal anchor that sits gently below your gums; the Connector, a small attachment piece that sits just above the gum line; and the New Tooth, a custom-made porcelain crown designed to match the shape and colour of your surrounding teeth exactly.",
+        "If you have a single missing tooth, or a tooth that is badly broken and cannot be saved, you do not have to rely on traditional options. At Leichhardt Dental Centre, we offer single dental implants. This modern treatment replaces one missing tooth from the root up, giving you a fixed replacement designed to look and function like a natural tooth. Every single implant procedure at our clinic is personally looked after by our principal dentist, Dr Nick Kulkarni. The most critical part of a successful result is careful planning, correct surgical technique, and respecting your natural biology. Dr Nick draws on scientific evidence so your new tooth works in harmony with your body, looking natural and functioning well. To support your safety, every single implant placement is done under strict sterile conditions. We use established brands like BioHorizons and Implant Direct — American-made systems backed by quality assurance. We use our own advanced 3D scanner (CBCT) right here in the office, creating a highly detailed 3D digital map of your mouth so Dr Nick can check the exact shape, density, and height of your foundations before any treatment begins. Where there is not enough natural foundation left, we rebuild the area using a 100% synthetic material called EthOss — because it is entirely lab-made, it avoids the risk of cross-contamination linked to older human or animal materials, and over time your body absorbs it, turning it into your own tissue. A single implant is made of three simple parts: the Anchor, a tiny, medical-grade metal anchor that sits gently below your gums; the Connector, a small attachment piece that sits just above the gum line; and the New Tooth, a custom-made porcelain crown designed to match the shape and colour of your surrounding teeth exactly.",
       whatToExpect: [
         "Personally looked after by Dr Nick Kulkarni",
-        "Full hospital-grade sterile conditions",
+        "Strict sterile conditions",
         "Established, trusted brands (BioHorizons & Implant Direct)",
         "Advanced in-house CBCT for precise planning",
         "100% synthetic EthOss bone grafting where needed",
@@ -453,7 +453,7 @@ export const DENTAL_IMPLANTS: PillarData = {
         },
         {
           q: "Are there payment plans available?",
-          a: "Yes. We believe quality care should be accessible. We offer flexible payment plans through our trusted financing partners, TLC Finance. This allows you to break down the cost of your treatment into manageable pieces, starting from as little as $50 per week.",
+          a: "Yes. We believe quality care should be accessible. We offer flexible payment plans through our trusted financing partners, TLC Finance. This allows you to break down the cost of your treatment into manageable weekly instalments, from around $50 per week.",
         },
       ],
     },
@@ -464,18 +464,18 @@ export const DENTAL_IMPLANTS: PillarData = {
         "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/dental-implants/zirconia-card.png",
       name: "Zirconia (Metal-Free) Implants",
       description:
-        "At Leichhardt Dental Centre, we offer advanced zirconia implant solutions for patients seeking durable, highly aesthetic, and completely metal-free options to restore missing teeth. We use the Straumann® Pure Ceramic system.",
+        "At Leichhardt Dental Centre, we offer zirconia implant solutions for patients seeking durable, natural-looking, and completely metal-free options to restore missing teeth. We use the Straumann® Pure Ceramic system.",
       longDescription:
-        "Over the past 60 years, dental implantology has evolved into one of the most highly researched and predictable fields of modern dentistry. While titanium has long been the traditional cornerstone of tooth replacement, modern innovation has introduced a high-performance alternative: Zirconia (ceramic) implants. At Leichhardt Dental Centre, we offer advanced zirconia implant solutions for patients seeking durable, highly aesthetic, and completely metal-free options to restore missing teeth. Both titanium and zirconia possess a critical property known as osseointegration—the biological process where your natural jawbone securely grows around and fuses to the implant surface. Because the body does not recognize either material as a foreign object, both offer highly stable foundations for replacement teeth. However, zirconia implants are rapidly emerging as the preferred choice for individuals who prioritize non-metal dental treatments or have specific systemic sensitivities. While titanium is generally well-tolerated, clinical studies indicate that titanium hypersensitivity affects roughly 0.6% of the population, and for patients with known metal allergies or multi-system chemical sensitivities, non-metallic zirconia eliminates the risk of a localized hypersensitive reaction. While zirconia is incredibly strong and highly resistant to wear, it possesses less material flexibility than titanium; because of this structural stiffness, long-term clinical data (currently spanning 5 to 10 years) suggests they should be selected with precise clinical oversight, and zirconia implants require careful placement planning, particularly when replacing heavy-stress back molars or when treating patients who chronically clench or grind their teeth (bruxism). In Sydney, a single complete Straumann® Pure Ceramic Zirconia implant—including the surgical fixture, abutment, and premium porcelain crown—typically ranges from $5,500 to $7,500.",
+        "Over the past 60 years, dental implantology has evolved into one of the most researched and predictable fields of modern dentistry. While titanium has long been the traditional cornerstone of tooth replacement, an alternative is now available: Zirconia (ceramic) implants. At Leichhardt Dental Centre, we offer zirconia implant solutions for patients seeking durable, natural-looking, and completely metal-free options to restore missing teeth. Both titanium and zirconia possess a property known as osseointegration—the biological process where your natural jawbone grows around and fuses to the implant surface. Because the body does not recognize either material as a foreign object, both offer stable foundations for replacement teeth. Zirconia implants may suit individuals who prefer non-metal dental treatments or have specific systemic sensitivities. Titanium is generally well-tolerated, but a small proportion of people can have a hypersensitivity reaction to metal; because zirconia contains no metal, it avoids the possibility of a metal-related hypersensitivity reaction. Zirconia is strong and resistant to wear, but it has less material flexibility than titanium; because of this structural stiffness, long-term clinical data (currently spanning 5 to 10 years) suggests they should be selected with precise clinical oversight, and zirconia implants require careful placement planning, particularly when replacing heavy-stress back molars or when treating patients who chronically clench or grind their teeth (bruxism). In Sydney, a single complete Straumann® Pure Ceramic Zirconia implant—including the surgical fixture, abutment, and porcelain crown—typically ranges from $5,500 to $7,500.",
       whatToExpect: [
         "Natural Aesthetics: naturally white and opaque for a clean cosmetic finish at the gumline",
         "Corrosion Resistance: a bio-inert ceramic that does not corrode or release metallic ions",
-        "Superior Hygiene & Health: accumulates significantly less bacterial plaque than titanium",
+        "Metal-Free Material: a ceramic surface with no metal components",
         "Completely metal-free — Straumann® Pure Ceramic",
         "Long-term clinical data currently spanning 5 to 10 years",
       ],
       pricing: [
-        { name: "Single complete Straumann® Pure Ceramic Zirconia implant", price: "$5,500–$7,500", description: "Includes the surgical fixture, abutment, and premium porcelain crown. Zirconia reflects a 20% to 30% premium over titanium ($4,000–$6,500). Your exact investment depends on the location of the missing tooth and your jawbone density." },
+        { name: "Single complete Straumann® Pure Ceramic Zirconia implant", price: "$5,500–$7,500", description: "Includes the surgical fixture, abutment, and porcelain crown. Zirconia reflects a 20% to 30% premium over titanium ($4,000–$6,500). Your exact investment depends on the location of the missing tooth and your jawbone density." },
         { name: "Bone grafting or sinus lift (if required)", price: "$500–$2,500", description: "If a tooth was lost long ago and the jawbone has receded, supportive procedures may be needed before placement. Dr Nick identifies this during your initial 3D scan." },
       ],
       processSteps: [
@@ -495,11 +495,11 @@ export const DENTAL_IMPLANTS: PillarData = {
       faqs: [
         {
           q: "How much do Zirconia dental implants cost compared to Titanium?",
-          a: "In Australia, the cost of a single, complete traditional titanium implant generally falls between $4,000 and $6,500. Because zirconia is an advanced ceramic material requiring complex diamond-tooled manufacturing and custom laboratory processing, zirconia implants reflect a 20% to 30% premium. In Sydney, a single complete Straumann® Pure Ceramic Zirconia implant—including the surgical fixture, abutment, and premium porcelain crown—typically ranges from $5,500 to $7,500. Your exact investment depends entirely on the anatomical location of the missing tooth and your unique jawbone density.",
+          a: "In Australia, the cost of a single, complete traditional titanium implant generally falls between $4,000 and $6,500. Because zirconia is an advanced ceramic material requiring complex diamond-tooled manufacturing and custom laboratory processing, zirconia implants reflect a 20% to 30% premium. In Sydney, a single complete Straumann® Pure Ceramic Zirconia implant—including the surgical fixture, abutment, and porcelain crown—typically ranges from $5,500 to $7,500. Your exact investment depends entirely on the anatomical location of the missing tooth and your unique jawbone density.",
         },
         {
           q: "What is included in the total treatment cost?",
-          a: "At Leichhardt Dental Centre, we practice full financial transparency. Your comprehensive zirconia implant package covers: Advanced Digital Diagnostics (high-resolution intraoral 3D scanning and treatment mapping); Premium Componentry (the genuine, Swiss-engineered Straumann® Pure Ceramic implant fixture); Surgical Placement (the physical implant surgery and all necessary post-operative clinical review checks with Dr Nick); and The Final Restoration (a custom-milled, highly aesthetic porcelain crown designed to match your surrounding teeth seamlessly).",
+          a: "At Leichhardt Dental Centre, we practice full financial transparency. Your comprehensive zirconia implant package covers: Advanced Digital Diagnostics (high-resolution intraoral 3D scanning and treatment mapping); Componentry (the genuine, Swiss-engineered Straumann® Pure Ceramic implant fixture); Surgical Placement (the physical implant surgery and all necessary post-operative clinical review checks with Dr Nick); and The Final Restoration (a custom-milled porcelain crown designed to match your surrounding teeth).",
         },
         {
           q: "Are there any hidden or additional costs?",
@@ -511,7 +511,7 @@ export const DENTAL_IMPLANTS: PillarData = {
         },
         {
           q: "Do you offer flexible dental payment options?",
-          a: "Absolutely. We believe that choosing premium, bio-inert dental care should fit comfortably within your family budget. We offer interest-free dental payment plans that allow you to distribute the cost of your premium ceramic implant into structured weekly or monthly instalments over your active healing period.",
+          a: "Absolutely. We believe that choosing bio-inert dental care should fit comfortably within your family budget. We offer interest-free dental payment plans that allow you to distribute the cost of your ceramic implant into structured weekly or monthly instalments over your active healing period.",
         },
       ],
     },
@@ -617,7 +617,7 @@ export const DENTAL_IMPLANTS: PillarData = {
     {
       title: "Final restoration",
       description:
-        "Once the implant is fully integrated, we take a digital impression and fit your permanent crown, bridge, or fixed arch — matched in shape and shade to your other teeth.",
+        "Once the implant is fully integrated, we take a digital impression and fit your final (definitive) crown, bridge, or fixed arch — matched in shape and shade to your other teeth.",
     },
   ],
   secondaryProcessTitle: "The All-on-4 journey.",
@@ -666,7 +666,7 @@ export const DENTAL_IMPLANTS: PillarData = {
     },
     {
       q: "How much does a single implant cost?",
-      a: "An investment for a complete single dental implant ranges from $5,000 to $6,500+. This includes your initial 3D planning scans, the surgical placement of the premium titanium implant fixture, the custom abutment, and your locally made Zirconia crown. We provide fully itemized quotes upfront with zero hidden fees.",
+      a: "An investment for a complete single dental implant ranges from $5,000 to $6,500+. This includes your initial 3D planning scans, the surgical placement of the titanium implant fixture, the custom abutment, and your locally made Zirconia crown. We provide fully itemized quotes upfront with zero hidden fees.",
     },
     {
       q: "Do you offer payment plans?",
@@ -703,7 +703,7 @@ export const SAME_DAY_SMILE: PillarData = {
   shortDescription:
     "Same-day crowns, veneers, ceramic inlays/onlays, and whitening — designed digitally, milled chairside via CEREC, bonded in a single visit.",
   intro:
-    "When you're ready for an aesthetic change, Same Day Smile is a planned combination of CEREC same-day ceramics, in-chair whitening, and conservative restorative work — delivered in a single appointment where possible. We use 100% Australian-made restorations and premium materials (Ivoclar e.max ceramics, 3M and Ivoclar composites), planned digitally so you see the design before any tooth is touched.",
+    "When you're ready for an aesthetic change, Same Day Smile is a planned combination of CEREC same-day ceramics, in-chair whitening, and conservative restorative work — delivered in a single appointment where possible. We use Australian-made restorations and high-strength materials (Ivoclar e.max ceramics, 3M and Ivoclar composites), planned digitally so you see the design before any tooth is touched.",
   image: clinic3,
   heroImage:
     "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/pillar-hero.png",
@@ -726,11 +726,11 @@ export const SAME_DAY_SMILE: PillarData = {
       description:
         "A full-coverage ceramic crown designed, milled, and bonded in a single appointment via CEREC. For teeth that need more than a filling can provide.",
       longDescription:
-        "A CEREC same-day crown rebuilds a tooth that has lost too much structure for a simple filling — a cracked, heavily restored, or root-treated tooth. The tooth is prepared, scanned in 3D, designed on screen, and milled from a solid ceramic block while you wait. The final restoration is bonded the same day. No impression trays, no temporary, no second visit. Our crowns are designed and milled in-house, then finished by local Sydney master technicians where additional staining or layering is needed.",
+        "A CEREC same-day crown rebuilds a tooth that has lost too much structure for a simple filling — a cracked, heavily restored, or root-treated tooth. The tooth is prepared, scanned in 3D, designed on screen, and milled from a solid ceramic block while you wait. The final restoration is bonded the same day. No impression trays, no temporary, no second visit. Our crowns are designed and milled in-house, then finished by local Sydney dental technicians where additional staining or layering is needed.",
       whatToExpect: [
         "90 minutes to 2 hours total in the chair",
         "Local anaesthetic throughout",
-        "Premium ceramic milled while you wait (~20 minutes)",
+        "Ceramic milled while you wait (~20 minutes)",
         "Shade-matched to your neighbouring teeth",
         "Bonded same day — no temporary needed",
       ],
@@ -768,7 +768,7 @@ export const SAME_DAY_SMILE: PillarData = {
         "Digital smile design preview before any tooth is touched",
         "Shade-matched to your whitening result (if applicable)",
         "Milled and bonded same day",
-        "Premium ceramic — no metal",
+        "High-strength ceramic — no metal",
         "From ~$1,600 per tooth; weekly payment options",
       ],
       risksContent:
@@ -777,12 +777,12 @@ export const SAME_DAY_SMILE: PillarData = {
         {
           before: "/veneers/case-1-before.jpg",
           after: "/veneers/case-1-after.jpg",
-          caption: "Premium Emax ceramic veneers for a durable, natural smile makeover. The after photo was taken at a 10-year follow-up appointment.",
+          caption: "Emax ceramic veneers for a durable, natural smile makeover. The after photo was taken at a 10-year follow-up appointment.",
         },
         {
           before: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/cerec-crowns-veneers/before-and-after/case-2-before.jpg",
           after: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/cerec-crowns-veneers/before-and-after/case-2-after.jpg",
-          caption: "Premium ceramic veneers standing the test of time — in service for 10 years and continuing to do so.",
+          caption: "Ceramic veneers; the after photo was taken at a 10-year review appointment.",
         },
         {
           before: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/cerec-crowns-veneers/before-and-after/case-3-before.jpg",
@@ -797,12 +797,12 @@ export const SAME_DAY_SMILE: PillarData = {
         {
           before: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/cerec-crowns-veneers/before-and-after/case-5-before.jpg",
           after: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/cerec-crowns-veneers/before-and-after/case-5-after.jpg",
-          caption: "A well-deserved 60th birthday present — delivered in one day with premium Emax veneers.",
+          caption: "A 60th birthday present — delivered in one day with Emax veneers.",
         },
         {
           before: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/cerec-crowns-veneers/before-and-after/case-6-before.jpg",
           after: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/cerec-crowns-veneers/before-and-after/case-6-after.jpg",
-          caption: "A retirement gift to self — a veneer smile makeover with premium Emax ceramic.",
+          caption: "A retirement gift to self — a veneer smile makeover with Emax ceramic.",
         },
         {
           before: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/cerec-crowns-veneers/before-and-after/case-7-before.jpg",
@@ -825,9 +825,9 @@ export const SAME_DAY_SMILE: PillarData = {
       description:
         "A custom Ivoclar e.max ceramic restoration that sits between a filling and a full crown — designed and milled chairside with CEREC and bonded in a single ~90-minute visit, keeping more of your natural tooth than a crown.",
       longDescription:
-        "When a tooth is too damaged for a simple filling but still has enough healthy structure that it doesn't quite need a full crown, an Inlay or Onlay is the ideal evidence-based solution. Think of it as a \"partial crown\" or a custom-engineered puzzle piece. An Inlay sits inside the grooves of your tooth, while an Onlay (often called a \"three-quarter crown\") covers one or more of the biting points (cusps) to provide structural reinforcement. At Leichhardt Dental, we do not use generic lab-processed ceramics. For every restoration, we use Ivoclar e.max®—one of the most widely used and well-documented glass-ceramics. We chose Ivoclar e.max® for two reasons: high strength, designed to withstand the heavy biting forces of back teeth and reduce the risk of your tooth fracturing; and natural aesthetics, mimicking the translucency and light-reflection of real tooth enamel so the restoration blends closely with your own teeth once bonded. By combining Ivoclar materials with our in-house CEREC technology, we 3D-scan your tooth (no putty required), design your restoration on screen to match your bite, mill it from a solid Ivoclar e.max block in our clinic, and fit and bond it in a single 90-minute visit. A typical inlay or onlay is approximately $1,500–$1,700.",
+        "When a tooth is too damaged for a simple filling but still has enough healthy structure that it doesn't quite need a full crown, an Inlay or Onlay is a well-established, evidence-based option. Think of it as a \"partial crown\" or a custom-engineered puzzle piece. An Inlay sits inside the grooves of your tooth, while an Onlay (often called a \"three-quarter crown\") covers one or more of the biting points (cusps) to provide structural reinforcement. For every restoration, we use Ivoclar e.max®—one of the most widely used and well-documented glass-ceramics. We chose Ivoclar e.max® for two reasons: high strength, designed to withstand the heavy biting forces of back teeth and reduce the risk of your tooth fracturing; and natural aesthetics, mimicking the translucency and light-reflection of real tooth enamel so the restoration blends closely with your own teeth once bonded. By combining Ivoclar materials with our in-house CEREC technology, we 3D-scan your tooth (no putty required), design your restoration on screen to match your bite, mill it from a solid Ivoclar e.max block in our clinic, and fit and bond it in a single 90-minute visit. A typical inlay or onlay is approximately $1,500–$1,700.",
       whatToExpect: [
-        "Maximum Tooth Preservation: we only remove the decayed part, keeping most of your healthy natural enamel",
+        "Conservative Tooth Preparation: we remove only the decayed part, keeping most of your healthy natural enamel",
         "No \"Putty\" Impressions: a digital 3D scanner — faster, more comfortable, and more accurate than traditional moulds",
         "Precise Bite Alignment: designed to the micron so your bite feels well balanced",
         "Strong and Durable: high-strength Ivoclar e.max — resists shrinking, leaking, and staining, providing a durable seal that helps protect against future decay",
@@ -911,16 +911,16 @@ export const SAME_DAY_SMILE: PillarData = {
       beforeAfter: [
         { before: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/bonding/case-1-before.jpg", after: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/bonding/case-1-after.jpg", caption: "Minimal smile intervention with only the front two teeth veneered, plus a little Zoom whitening." },
         { before: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/bonding/case-2-before.jpg", after: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/bonding/case-2-after.jpg", caption: "A pleasant, healthy, natural-looking smile transformation — angle correction with a minimal approach, using ceramic veneers on only the front two teeth." },
-        { before: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/bonding/case-3-before.jpg", after: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/bonding/case-3-after.jpg", caption: "A minimal-intervention smile design with just the two front teeth getting ceramic veneers — minimal cost, minimal intervention, and an optimal, natural-looking result." },
+        { before: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/bonding/case-3-before.jpg", after: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/bonding/case-3-after.jpg", caption: "A minimal-intervention smile design with just the two front teeth getting ceramic veneers — minimal cost, minimal intervention, and a natural-looking result." },
         { before: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/bonding/case-4-before.jpg", after: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/bonding/case-4-after.jpg", caption: "A simple solution of veneers on only the front two teeth — not only to create a pleasant look, but to protect the wearing-down enamel." },
         { before: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/bonding/case-5-before.jpg", after: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/bonding/case-5-after.jpg", caption: "Natural-looking harmony and balance." },
         { before: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/bonding/case-6-before.jpg", after: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/same-day-smile/bonding/case-6-after.jpg", caption: "A pleasant smile transformation to suit the patient's overall age — restoring broken-down and chipped teeth in the process, using a combination of bonding and ceramic veneers." },
       ],
       name: "Composite Bonding",
       description:
-        "Composite veneering / dental bonding — an affordable, single-visit solution for immediate smile enhancement, sculpted by hand and polished the same day.",
+        "Composite veneering / dental bonding — a single-visit option for smile enhancement, sculpted by hand and polished the same day.",
       longDescription:
-        "Dental bonding, also referred to as composite veneering, provides an affordable, single-visit solution for immediate smile enhancement. Individuals with generally healthy teeth exhibiting minor wear, slight chipping, or a somewhat dulled appearance are ideal candidates. Addressing these concerns through composite resin application is both straightforward and highly effective. Those who are not yet prepared—emotionally or financially—to pursue ceramic veneers will find this an excellent interim option for improving their smile. With proper care, a composite smile design typically maintains its results for approximately 5–7 years before a transition to ceramic alternatives becomes advisable. A combined approach incorporating both ceramic and composite veneering is a strategy we frequently recommend: ceramic veneers are placed on the front 2–4 teeth requiring the most significant cosmetic improvement, while the remaining visible teeth are treated with composite bonding — delivering optimal results from both techniques while managing your total investment.",
+        "Dental bonding, also referred to as composite veneering, provides a single-visit option for smile enhancement. Individuals with generally healthy teeth exhibiting minor wear, slight chipping, or a somewhat dulled appearance are typically suitable candidates. Addressing these concerns through composite resin application is a straightforward, well-established approach. Those who are not yet prepared—emotionally or financially—to pursue ceramic veneers may find this a useful interim option for improving their smile. With proper care, a composite smile design typically maintains its appearance for approximately 5–7 years before a transition to ceramic alternatives becomes advisable. A combined approach incorporating both ceramic and composite veneering is a strategy we frequently recommend: ceramic veneers are placed on the front 2–4 teeth requiring the most cosmetic improvement, while the remaining visible teeth are treated with composite bonding — using each material where it works best while managing your total cost.",
       whatToExpect: [
         "Personalised Consultation: we discuss your aesthetic goals, select the ideal shade match, and map out your custom smile design",
         "Surface Preparation: we gently clean and prepare the tooth surface to ensure a strong, long-lasting bond",
@@ -928,15 +928,15 @@ export const SAME_DAY_SMILE: PillarData = {
         "Curing & Final Polish: a specialized light hardens the resin instantly, followed by high-gloss polishing for a smooth, natural sheen",
       ],
       pricing: [
-        { name: "Composite Veneers / Bonding", price: "Approx. $550 AUD", description: "Per tooth. Flexible financing can reduce costs to as little as $60 AUD per week." },
+        { name: "Composite Veneers / Bonding", price: "Approx. $550 AUD", description: "Per tooth. Flexible weekly payment options are available." },
         { name: "Ceramic Veneers", price: "Approx. $1,600 AUD", description: "Per tooth, for the most significant cosmetic improvement on the front teeth." },
       ],
       risksContent:
         "Your composite resin requires a short window to fully cure and stabilize. For the first 48 hours, avoid staining materials (coffee, tea, red wine, berries, and dark sauces), expect mild temporary sensitivity to hot or cold foods, stick to softer foods, and do not bite down hard on your front teeth. Long-term, brush and floss daily with a non-abrasive fluoride toothpaste, limit staining agents and tobacco, refrain from biting hard objects like ice, pens, or fingernails, wear a custom nightguard if you grind your teeth, and visit us every six months for professional cleaning and veneer maintenance.",
       faqs: [
         { q: "How long do composite veneers last?", a: "With proper care, a composite smile design typically maintains its results for approximately 5–7 years before a transition to ceramic alternatives becomes advisable." },
-        { q: "How much does composite bonding cost?", a: "Composite veneers / bonding are approximately $550 AUD per tooth, while ceramic veneers are approximately $1,600 AUD per tooth. Flexible financing is available across all treatment options, with the potential to reduce costs to as little as $60 AUD per week." },
-        { q: "Can I combine ceramic and composite veneers?", a: "Yes — a combined approach is a strategy we frequently recommend. Ceramic veneers are placed on the front 2–4 teeth requiring the most significant cosmetic improvement, and the remaining visible teeth are treated with composite bonding. This delivers optimal results from both techniques while managing your total investment." },
+        { q: "How much does composite bonding cost?", a: "Composite veneers / bonding are approximately $550 AUD per tooth, while ceramic veneers are approximately $1,600 AUD per tooth. Flexible financing is available across all treatment options, with weekly payment options available." },
+        { q: "Can I combine ceramic and composite veneers?", a: "Yes — a combined approach is a strategy we frequently recommend. Ceramic veneers are placed on the front 2–4 teeth requiring the most cosmetic improvement, and the remaining visible teeth are treated with composite bonding. This uses each material where it works best while managing your total cost." },
         { q: "How do I get started?", a: "Should you wish to explore a meaningful yet cost-conscious enhancement, we welcome you to schedule a 30-minute assessment to determine whether dental bonding or composite veneering is a suitable option for your needs." },
       ],
     },
@@ -992,7 +992,7 @@ export const SAME_DAY_SMILE: PillarData = {
     },
     {
       q: "What materials do you use?",
-      a: "Premium ceramics from Ivoclar (e.max) for crowns, veneers, inlays, and onlays — milled chairside via CEREC. Composite resins from 3M ESPE and Ivoclar for bonding and fillings. All restorations are designed and milled in-house, then finished by local Sydney master technicians where lab work is required. No overseas lab work.",
+      a: "Ceramics from Ivoclar (e.max) for crowns, veneers, inlays, and onlays — milled chairside via CEREC. Composite resins from 3M ESPE and Ivoclar for bonding and fillings. All restorations are designed and milled in-house, then finished by local Sydney dental technicians where lab work is required. No overseas lab work.",
     },
   ],
   ctaHeadline: "Curious what your smile could look like?",
@@ -1026,9 +1026,9 @@ export const ORTHODONTICS: PillarData = {
       longDescription:
         "Invisalign uses a series of custom clear aligners to gradually move your teeth into a better position — without metal brackets or wires. We begin with a 3D digital scan and Invisalign's planning software to map your tooth movements before treatment starts, so you can see the projected result and estimated timeline at your first planning consultation. You wear each set of trays for about one to two weeks, around 22 hours a day, removing them only to eat, drink, brush, and floss. Dr. Jimmy reviews your progress every 6–8 weeks at his monthly visits and hands over your next sets. Most adult cases take 6–18 months depending on complexity. For many adults, aligners do more than straighten teeth — gently widening a narrow upper arch can create \"tongue space\" that supports clearer nighttime breathing. Treatment is fully bundled: all 3D scans and planning, your complete aligner series, progress checkups, any end-of-treatment refinement aligners, and a set of retainers to hold your result.",
       whatToExpect: [
-        "Virtually Invisible: the clear material lets you undergo treatment discreetly, without impacting your professional or social life",
+        "Discreet: the clear aligners are difficult to notice during everyday wear",
         "Completely Removable: take your aligners out to eat, drink, brush, and floss normally, making it easier to maintain excellent oral hygiene",
-        "Enhanced Comfort: custom-moulded from smooth medical-grade plastic, eliminating the painful lip and cheek irritation often caused by metal wires and brackets",
+        "Comfort: custom-moulded from smooth medical-grade plastic, which avoids the lip and cheek irritation that metal wires and brackets can cause",
         "Worn around 22 hours per day; reviews every 6–8 weeks with Dr. Jimmy",
         "Refinement aligners and retainers included; typically 6–18 months for adults",
       ],
@@ -1142,7 +1142,7 @@ export const ORTHODONTICS: PillarData = {
         { title: "Airway screening", description: "An initial assessment at Leichhardt Dental Centre. If a sleep issue is suspected, you're set up with an Arise home sleep study kit to take away." },
         { title: "Home sleep study", description: "You wear the lightweight, non-invasive sensors for a single night in your own bed, then drop the kit back the next morning. The data is analysed by independent, qualified sleep physicians." },
         { title: "Digital scan & fabrication", description: "If a MAS is indicated, a 3D intraoral scan (no putty) is used to custom-make a slim, medical-grade appliance." },
-        { title: "Fitting & titration", description: "The appliance is fitted and gradually fine-tuned over the first few months to bring your jaw to the optimal breathing position." },
+        { title: "Fitting & titration", description: "The appliance is fitted and gradually fine-tuned over the first few months to bring your jaw to a more open breathing position." },
         { title: "Follow-up care", description: "Regular reviews over the first 6 months track your sleep improvements and protect your jaw joint health." },
       ],
       risksContent:

@@ -22,7 +22,7 @@ const HERO_LOOP_END_SECONDS = 37;
 
 const DEFAULTS = {
   eyebrow: "Leichhardt Dental Centre · Inner West Sydney",
-  headline: "Where cutting edge science\nmeets honest local care.",
+  headline: "Where evidence-based science\nmeets honest local care.",
   subhead:
     "Twenty-five years of practice. A calm room. Evidence-based care — delivered one patient at a time.",
   primaryCtaLabel: "Book an appointment online",

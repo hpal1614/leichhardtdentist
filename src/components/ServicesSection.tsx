@@ -35,7 +35,7 @@ export function ServicesSection() {
             </h2>
             <p className="text-base lg:text-lg text-muted-foreground font-light leading-relaxed">
               Our vision is to offer evidence-based dental care, making dentistry
-              accessible and affordable. Here are the four ways we care for your smile.
+              accessible. Here are the four ways we care for your smile.
             </p>
           </motion.div>
 

@@ -166,9 +166,9 @@ const pillarGeneralDentistry = {
       imageUrl: "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/general-dentistry/check-up-and-clean.jpg",
       name: "Check-up & Clean",
       description:
-        "Every six months. A careful examination, professional scale and polish, oral cancer screening, and X-rays where clinically indicated. Preventive care is central to keeping your teeth healthy long-term.",
+        "A regular preventive visit — a careful examination, professional scale and polish, oral cancer screening, and X-rays where clinically indicated. Preventive care is central to keeping your teeth healthy long-term.",
       longDescription:
-        "A six-monthly dental check-up is an important part of keeping your mouth healthy. We examine your teeth, gums, bite, and soft tissues; take X-rays when clinically indicated; perform a professional scale and polish to remove plaque and tartar; and screen for early signs of decay, gum disease, and oral cancer. Nothing about this appointment is rushed — we take the time to find small problems before they become painful ones.",
+        "Regular dental check-ups are an important part of keeping your mouth healthy. We examine your teeth, gums, bite, and soft tissues; take X-rays when clinically indicated; perform a professional scale and polish to remove plaque and tartar; and screen for early signs of decay, gum disease, and oral cancer. Nothing about this appointment is rushed — we take the time to find small problems before they become painful ones.",
       whatToExpect: [
         "Full visual and tactile examination",
         "X-rays if indicated (low-dose digital)",
@@ -233,7 +233,7 @@ const pillarGeneralDentistry = {
       ],
       faqs: [
         { _key: key(), q: "What is the difference between a dental bridge and an implant?", a: "A bridge uses adjacent teeth for support and requires grinding down healthy enamel. An implant is an independent titanium root placed directly into the jawbone, preserving surrounding teeth." },
-        { _key: key(), q: "Is a dental bridge or an implant better for me?", a: "Our evidence-based approach prioritizes your long-term bone health and budget. Implants are often superior for preserving jawbone, but bridges provide an excellent, fast solution if adjacent teeth already need crowns." },
+        { _key: key(), q: "Is a dental bridge or an implant better for me?", a: "Our evidence-based approach prioritizes your long-term bone health and budget. Implants often do more to preserve jawbone, while bridges can be a good, fast solution when adjacent teeth already need crowns." },
         { _key: key(), q: "How much does a dental bridge cost in Sydney?", a: "The investment depends on the number of missing teeth and the materials used. We provide a complete, transparent fee breakdown during your consultation, so you face zero financial surprises. Typically, a dental bridge to replace a single or a couple of teeth can cost about AUD 5,000–7,000, depending on the amount of work required. With payment plans this cost can be spread to around AUD 45/week." },
         { _key: key(), q: "Can I get a dental bridge made on the same day?", a: "Yes, in many cases. Using our advanced in-house CEREC digital technology, we can scan your mouth, design, and mill your custom porcelain bridge right here in the clinic. This eliminates the need for temporary bridges or a second appointment two weeks later." },
         { _key: key(), q: "How does CEREC technology work for bridges?", a: "Instead of messy, uncomfortable putty impressions, we use a high-precision 3D intraoral scanner. Our computer-aided design (CAD) software creates a 3D blueprint of your bridge, which is instantly carved from a solid block of durable, tooth-coloured ceramic in our milling machine." },
@@ -296,7 +296,7 @@ const pillarGeneralDentistry = {
         { _key: key(), q: "How many appointments will I need?", a: "Most root canal treatments are completed across two comfortable visits. The first visit removes the infection and relieves your pain. The second visit ensures the canals are sterile before permanently sealing them." },
         { _key: key(), q: "Do I need a crown after a root canal?", a: "Yes, in almost all cases. A tooth becomes brittle and fragile once its living nerve is removed. To protect your investment and prevent the tooth from cracking, we strongly recommend placing a tooth-coloured crown. Thanks to our in-house CEREC technology, we can often design and fit this custom crown in a single visit." },
         { _key: key(), q: "How much does a Root Canal cost?", a: "At Leichhardt Dental, we believe in honest advice and no financial surprises. Our root canal treatments generally range between $1,200 and $1,800, depending on the complexity of the tooth. Front teeth usually have a single canal and are at the lower end of the range; back molars are more complex, often having three or four canals, which requires more time and precision." },
-        { _key: key(), q: "What happens if I choose not to get a root canal?", a: "An untreated inner-tooth infection will not clear up on its own. The bacteria will eventually destroy the surrounding jawbone, causing severe swelling and abscesses. The only alternative at that stage is extracting the tooth completely, which requires more expensive implant or bridge work to fix." },
+        { _key: key(), q: "What happens if I choose not to get a root canal?", a: "An untreated inner-tooth infection will not clear up on its own. Left untreated, the infection can spread to the surrounding jawbone, causing swelling and abscesses. At that stage the tooth usually needs to be extracted, which then requires implant or bridge work to replace it." },
       ],
     },
     {
@@ -404,7 +404,7 @@ const pillarDentalImplants = {
         { _key: key(), name: "Single dental implant", price: "$5,000–$7,500", description: "The final amount depends entirely on the unique complexity of your specific procedure, such as the amount of bone grafting needed to create a strong foundation." },
       ],
       processSteps: [
-        { _key: key(), title: "Step 1: The Plan", description: "Dr Nick takes a digital 3D look at your mouth to map out the safest spot for your new tooth." },
+        { _key: key(), title: "Step 1: The Plan", description: "Dr Nick takes a digital 3D look at your mouth to map out a safe, well-planned position for your new tooth." },
         { _key: key(), title: "Step 2: The Placement", description: "The small anchor and the protective synthetic material are gently placed into the mouth under local numbing." },
         { _key: key(), title: "Step 3: The Healing", description: "We wait a few months to let everything settle and bond completely with your body." },
         { _key: key(), title: "Step 4: The Final Touch", description: "Your precision-crafted, custom tooth is securely attached to the anchor, completing your smile." },
@@ -532,7 +532,7 @@ const pillarDentalImplants = {
   ],
   processSteps: [
     { _key: key(), title: "Consultation & 3D imaging", description: "Dr. Nick reviews your medical and dental history and takes a low-dose 3D CT scan. This lets us see the bone volume, nerve position, and exact space available — no guesswork." },
-    { _key: key(), title: "Digital surgical planning", description: "Using the CT data, we plan the implant position on screen before touching a scalpel. Safer, more predictable, and more precise than conventional planning." },
+    { _key: key(), title: "Digital surgical planning", description: "Using the CT data, we plan the implant position on screen before touching a scalpel — supporting precise, predictable planning before surgery begins." },
     { _key: key(), title: "Implant placement", description: "A minor surgical procedure, usually under local anaesthetic. For larger cases like All-on-4, sedation or general anaesthesia is available. You go home the same day." },
     { _key: key(), title: "Osseointegration (healing)", description: "Over the next 3–6 months, the titanium implant fuses with your jawbone. A temporary tooth or bridge can often be worn during this phase." },
     { _key: key(), title: "Final restoration", description: "Once the implant is fully integrated, we take a digital impression and fit your permanent crown, bridge, or fixed arch — matched in shape and shade to your other teeth." },
@@ -549,7 +549,7 @@ const pillarDentalImplants = {
   risksContent:
     "Dental implant surgery is generally safe and well-established, but carries risks including infection, bleeding, swelling, transient nerve sensitivity, sinus involvement in the upper jaw, and — rarely — implant failure where osseointegration does not occur. Long-term success depends on oral hygiene, general health, and regular maintenance visits.",
   faqs: [
-    { _key: key(), q: "Does it hurt?", a: "Implant placement is performed under local anaesthetic (or sedation for larger cases). Most patients report less post-op discomfort than a tooth extraction." },
+    { _key: key(), q: "Does it hurt?", a: "Implant placement is performed under local anaesthetic (or sedation for larger cases). Any post-operative discomfort is usually mild and settles within a few days." },
     { _key: key(), q: "How long does the whole process take?", a: "For a single implant: typically 3–6 months from placement to final crown. For All-on-4: implants and same-day teeth on day one, final prosthesis after 3–6 months of healing." },
     { _key: key(), q: "How much does a single implant cost?", a: "An investment for a complete single dental implant ranges from $5,000 to $6,500+. This includes your initial 3D planning scans, the surgical placement of the premium titanium implant fixture, the custom abutment, and your locally made Zirconia crown. We provide fully itemized quotes upfront with zero hidden fees." },
     { _key: key(), q: "Do you offer payment plans?", a: "Yes — we partner with TLC Finance to offer flexible, low-interest payment plans, allowing you to spread the cost over manageable weekly or fortnightly instalments." },
@@ -681,7 +681,7 @@ const pillarSameDaySmile = {
         { _key: key(), name: "Composite Veneers / Bonding", price: "Approx. $550 AUD", description: "Per tooth. Flexible weekly payment options are available." },
         { _key: key(), name: "Ceramic Veneers", price: "Approx. $1,600 AUD", description: "Per tooth, for the most significant cosmetic improvement on the front teeth." },
       ],
-      risksContent: "Your composite resin requires a short window to fully cure and stabilize. For the first 48 hours, avoid staining materials (coffee, tea, red wine, berries, and dark sauces), expect mild temporary sensitivity to hot or cold foods, stick to softer foods, and do not bite down hard on your front teeth. Long-term, brush and floss daily with a non-abrasive fluoride toothpaste, limit staining agents and tobacco, refrain from biting hard objects like ice, pens, or fingernails, wear a custom nightguard if you grind your teeth, and visit us every six months for professional cleaning and veneer maintenance.",
+      risksContent: "Your composite resin requires a short window to fully cure and stabilize. For the first 48 hours, avoid staining materials (coffee, tea, red wine, berries, and dark sauces), expect mild temporary sensitivity to hot or cold foods, stick to softer foods, and do not bite down hard on your front teeth. Long-term, brush and floss daily with a non-abrasive fluoride toothpaste, limit staining agents and tobacco, refrain from biting hard objects like ice, pens, or fingernails, wear a custom nightguard if you grind your teeth, and visit us regularly for professional cleaning and veneer maintenance.",
       faqs: [
         { _key: key(), q: "How long do composite veneers last?", a: "With proper care, a composite smile design typically maintains its results for approximately 5–7 years before a transition to ceramic alternatives becomes advisable." },
         { _key: key(), q: "How much does composite bonding cost?", a: "Composite veneers / bonding are approximately $550 AUD per tooth, while ceramic veneers are approximately $1,600 AUD per tooth. Flexible financing is available across all treatment options, with weekly payment options available." },
@@ -878,7 +878,7 @@ const clinicianSilvina = {
     "When she steps away from the chair, Dr Silvina believes in embracing life's simple pleasures. She is an avid reader who loves getting lost in a great book, exploring new travel destinations, and spending meaningful, relaxed quality time bonding with her loved ones.",
   ]),
   quote:
-    "The true beauty of dentistry is its diversity. One day I am meticulously crafting a complex full-mouth rehabilitation, and the next, I am welcoming a child for their very first dental visit. No matter the treatment, my goal is always to ensure my patients feel completely safe, comfortable, and truly heard.",
+    "The true beauty of dentistry is its diversity. One day I am meticulously crafting a complex full-mouth rehabilitation, and the next, I am welcoming a child for their very first dental visit. No matter the treatment, my goal is always to help my patients feel safe, comfortable, and truly heard.",
   order: 2,
 };
 
@@ -899,7 +899,7 @@ const clinicianLeah = {
     "When she steps away from the dental chair, Dr Leah's world completely revolves around her family. As a proud mum to her beautiful baby girl, she deeply understands the busy schedules, real-life budgets, and health anxieties of local Leichhardt parents. To keep her own mind and body focused, she loves nothing more than packing up for a family weekend of bushwalking, exploring the outdoors, and enjoying nature.",
   ]),
   quote:
-    "Being part of a family practice means gaining your trust over a lifetime—from a child's very first check-up to a senior's ongoing care. My goal is to listen carefully, explain things clearly, and support your health journey in a space where you always feel completely safe.",
+    "Being part of a family practice means gaining your trust over a lifetime—from a child's very first check-up to a senior's ongoing care. My goal is to listen carefully, explain things clearly, and support your health journey in a space where you always feel safe and supported.",
   order: 3,
 };
 
@@ -917,7 +917,7 @@ const clinicianJimmy = {
     "Known warmly around the practice as Dr Jimmy, his approach to dentistry is defined by optimism and clear communication. Outside the clinic, his lifestyle is centred around health and personal vitality. He is an avid fitness enthusiast who believes that staying physically active keeps his mind energized and sharp allowing him to maintain the peak concentration required for intricate clinical procedures. When he isn't studying modern orthodontic movements, he is usually working out, following his favorite sports, or unwinding with his family.",
     "Since graduating with a Bachelor of Dental Surgery in 2002, Dr Jimmy has pursued expansive international training, including a rigorous two-year postgraduate focus on orthodontics. He validated his Australian dental registration in 2012 and has spent over a decade practicing extensively across NSW. To ensure our patients have access to tailored alignment care, Dr Jimmy visits Leichhardt Dental Centre once a month.",
     "He is particularly passionate about Early Interventive Orthodontics. Dr Jimmy's philosophy is simple: the less time a patient spends in treatment, the better. By assessing children early in their development, he focuses on Airway Awareness—screening for breathing issues as part of overall care; Functional Alignment—guiding jaw growth and tooth eruption, which may reduce the need for more involved treatment during the teenage years; and Holistic Health—looking beyond a straight smile to the bite and airway. Individual results vary and are discussed at consultation.",
-    "A Light-Hearted, Friendly Space: Dr Jimmy understands that dental visits can feel daunting for children and adults alike. He keeps his surgery bright, welcoming, and conversational, ensuring everyone feels heard and completely safe. Modern Technology: For those seeking discreet teeth straightening, Dr Jimmy uses Invisalign® technology. During your monthly review, he uses their digital planning software and internationally manufactured clear tray systems to track your progress and keep your treatment on path. Honest, Plain-English Advice: Dr Jimmy believes in clinical transparency. He uses 3D scans to show you exactly how teeth can move, explains the biological \"why\" behind his recommendations, and empowers you to make informed decisions for your family's health.",
+    "A Light-Hearted, Friendly Space: Dr Jimmy understands that dental visits can feel daunting for children and adults alike. He keeps his surgery bright, welcoming, and conversational, helping everyone feel heard and at ease. Modern Technology: For those seeking discreet teeth straightening, Dr Jimmy uses Invisalign® technology. During your monthly review, he uses their digital planning software and internationally manufactured clear tray systems to track your progress and keep your treatment on path. Honest, Plain-English Advice: Dr Jimmy believes in clinical transparency. He uses 3D scans to show you exactly how teeth can move, explains the biological \"why\" behind his recommendations, and empowers you to make informed decisions for your family's health.",
   ]),
   quote:
     "Orthodontics is about more than just a straight smile — it's about establishing a healthy foundation for a lifetime of better breathing and overall well-being.",

@@ -38,9 +38,9 @@ export const GENERAL_DENTISTRY: PillarData = {
         "https://res.cloudinary.com/dzydzte9h/image/upload/q_auto,f_auto/dental-website/general-dentistry/check-up-and-clean.jpg",
       name: "Check-up & Clean",
       description:
-        "Every six months. A careful examination, professional scale and polish, oral cancer screening, and X-rays where clinically indicated. Preventive care is central to keeping your teeth healthy long-term.",
+        "A regular preventive visit — a careful examination, professional scale and polish, oral cancer screening, and X-rays where clinically indicated. Preventive care is central to keeping your teeth healthy long-term.",
       longDescription:
-        "A six-monthly dental check-up is an important part of keeping your mouth healthy. We examine your teeth, gums, bite, and soft tissues; take X-rays when clinically indicated; perform a professional scale and polish to remove plaque and tartar; and screen for early signs of decay, gum disease, and oral cancer. Nothing about this appointment is rushed — we take the time to find small problems before they become painful ones.",
+        "Regular dental check-ups are an important part of keeping your mouth healthy. We examine your teeth, gums, bite, and soft tissues; take X-rays when clinically indicated; perform a professional scale and polish to remove plaque and tartar; and screen for early signs of decay, gum disease, and oral cancer. Nothing about this appointment is rushed — we take the time to find small problems before they become painful ones.",
       whatToExpect: [
         "Full visual and tactile examination",
         "X-rays if indicated (low-dose digital)",
@@ -127,7 +127,7 @@ export const GENERAL_DENTISTRY: PillarData = {
         },
         {
           q: "Is a dental bridge or an implant better for me?",
-          a: "Our evidence-based approach prioritizes your long-term bone health and budget. Implants are often superior for preserving jawbone, but bridges provide an excellent, fast solution if adjacent teeth already need crowns.",
+          a: "Our evidence-based approach prioritizes your long-term bone health and budget. Implants often do more to preserve jawbone, while bridges can be a good, fast solution when adjacent teeth already need crowns.",
         },
         {
           q: "How much does a dental bridge cost in Sydney?",
@@ -235,7 +235,7 @@ export const GENERAL_DENTISTRY: PillarData = {
         },
         {
           q: "What happens if I choose not to get a root canal?",
-          a: "An untreated inner-tooth infection will not clear up on its own. The bacteria will eventually destroy the surrounding jawbone, causing severe swelling and abscesses. The only alternative at that stage is extracting the tooth completely, which requires more expensive implant or bridge work to fix.",
+          a: "An untreated inner-tooth infection will not clear up on its own. Left untreated, the infection can spread to the surrounding jawbone, causing swelling and abscesses. At that stage the tooth usually needs to be extracted, which then requires implant or bridge work to replace it.",
         },
       ],
     },
@@ -378,7 +378,7 @@ export const DENTAL_IMPLANTS: PillarData = {
         { name: "Single dental implant", price: "$5,000–$7,500", description: "The final amount depends entirely on the unique complexity of your specific procedure, such as the amount of bone grafting needed to create a strong foundation." },
       ],
       processSteps: [
-        { title: "Step 1: The Plan", description: "Dr Nick takes a digital 3D look at your mouth to map out the safest spot for your new tooth." },
+        { title: "Step 1: The Plan", description: "Dr Nick takes a digital 3D look at your mouth to map out a safe, well-planned position for your new tooth." },
         { title: "Step 2: The Placement", description: "The small anchor and the protective synthetic material are gently placed into the mouth under local numbing." },
         { title: "Step 3: The Healing", description: "We wait a few months to let everything settle and bond completely with your body." },
         { title: "Step 4: The Final Touch", description: "Your precision-crafted, custom tooth is securely attached to the anchor, completing your smile." },
@@ -602,7 +602,7 @@ export const DENTAL_IMPLANTS: PillarData = {
     {
       title: "Digital surgical planning",
       description:
-        "Using the CT data, we plan the implant position on screen before touching a scalpel. Safer, more predictable, and more precise than conventional planning.",
+        "Using the CT data, we plan the implant position on screen before touching a scalpel — supporting precise, predictable planning before surgery begins.",
     },
     {
       title: "Implant placement",
@@ -658,7 +658,7 @@ export const DENTAL_IMPLANTS: PillarData = {
   faqs: [
     {
       q: "Does it hurt?",
-      a: "Implant placement is performed under local anaesthetic (or sedation for larger cases). Most patients report less post-op discomfort than a tooth extraction.",
+      a: "Implant placement is performed under local anaesthetic (or sedation for larger cases). Any post-operative discomfort is usually mild and settles within a few days.",
     },
     {
       q: "How long does the whole process take?",
@@ -932,7 +932,7 @@ export const SAME_DAY_SMILE: PillarData = {
         { name: "Ceramic Veneers", price: "Approx. $1,600 AUD", description: "Per tooth, for the most significant cosmetic improvement on the front teeth." },
       ],
       risksContent:
-        "Your composite resin requires a short window to fully cure and stabilize. For the first 48 hours, avoid staining materials (coffee, tea, red wine, berries, and dark sauces), expect mild temporary sensitivity to hot or cold foods, stick to softer foods, and do not bite down hard on your front teeth. Long-term, brush and floss daily with a non-abrasive fluoride toothpaste, limit staining agents and tobacco, refrain from biting hard objects like ice, pens, or fingernails, wear a custom nightguard if you grind your teeth, and visit us every six months for professional cleaning and veneer maintenance.",
+        "Your composite resin requires a short window to fully cure and stabilize. For the first 48 hours, avoid staining materials (coffee, tea, red wine, berries, and dark sauces), expect mild temporary sensitivity to hot or cold foods, stick to softer foods, and do not bite down hard on your front teeth. Long-term, brush and floss daily with a non-abrasive fluoride toothpaste, limit staining agents and tobacco, refrain from biting hard objects like ice, pens, or fingernails, wear a custom nightguard if you grind your teeth, and visit us regularly for professional cleaning and veneer maintenance.",
       faqs: [
         { q: "How long do composite veneers last?", a: "With proper care, a composite smile design typically maintains its results for approximately 5–7 years before a transition to ceramic alternatives becomes advisable." },
         { q: "How much does composite bonding cost?", a: "Composite veneers / bonding are approximately $550 AUD per tooth, while ceramic veneers are approximately $1,600 AUD per tooth. Flexible financing is available across all treatment options, with weekly payment options available." },

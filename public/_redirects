@@ -3,14 +3,29 @@
 # nearest new page so Google / AI crawlers transfer ranking instead of hitting
 # a soft-404. Verified against Google's live index (Aug 2026). Order matters:
 # these must sit ABOVE the SPA catch-all below (first match wins).
-/bruxism-tmj-and-sleep-apnoea    /services/orthodontics/airway-and-functional-alignment  301
-/bruxism-tmj-and-sleep-apnoea/   /services/orthodontics/airway-and-functional-alignment  301
-/services/zoom-teeth-whitening   /services/same-day-smile/zoom-whitening                 301
-/services/zoom-teeth-whitening/  /services/same-day-smile/zoom-whitening                 301
-/about-us                        /about                                                  301
-/about-us/                       /about                                                  301
-/contact-us                      /contact                                                301
-/contact-us/                     /contact                                                301
+# NOTE: old URLs whose path is identical to a new route (e.g. /services/dental-implants/,
+# /services/orthodontics/, /services/same-day-smile/composite-bonding/) already resolve to
+# the new page via the prerendered directory index, so they need no rule here.
+/about-us                                   /about                                                     301
+/about-us/                                  /about                                                     301
+/contact-us                                 /contact                                                   301
+/contact-us/                                /contact                                                   301
+/bruxism-tmj-and-sleep-apnoea               /services/orthodontics/airway-and-functional-alignment     301
+/bruxism-tmj-and-sleep-apnoea/              /services/orthodontics/airway-and-functional-alignment     301
+/services/zoom-teeth-whitening              /services/same-day-smile/zoom-whitening                    301
+/services/zoom-teeth-whitening/             /services/same-day-smile/zoom-whitening                    301
+/services/cerec-single-visit-restoration    /services/same-day-smile/same-day-crowns                   301
+/services/cerec-single-visit-restoration/   /services/same-day-smile/same-day-crowns                   301
+/services/aesthetic-dentistry               /services/same-day-smile                                   301
+/services/aesthetic-dentistry/              /services/same-day-smile                                   301
+/services/same-day-smile-make-overs         /services/same-day-smile                                   301
+/services/same-day-smile-make-overs/        /services/same-day-smile                                   301
+/services/root-canal-treatment              /services/general-dentistry/root-canal-treatment           301
+/services/root-canal-treatment/             /services/general-dentistry/root-canal-treatment           301
+/dentures                                   /services/dental-implants/implant-supported-overdentures   301
+/dentures/                                  /services/dental-implants/implant-supported-overdentures   301
+/dentist-open-6-days                        /                                                          301
+/dentist-open-6-days/                       /                                                          301
 
 # ── Cloudflare Pages SPA fallback ────────────────────────────────────────
 # Serve index.html (200, not a redirect) for any path that isn't a real file,

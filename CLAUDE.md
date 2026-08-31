@@ -6,12 +6,12 @@ A multi-page React/Vite marketing site for an Australian dental practice (Leichh
 
 ## Stack
 - React 18 + TypeScript (strict, enforced via `npm run typecheck`) + Vite 6 (SWC)
-- react-router-dom 7 (`createBrowserRouter`, client-rendered SPA — no SSR/prerender)
+- react-router-dom 7 (`createBrowserRouter`); routes are prerendered to static HTML at build time via `scripts/prerender.mjs` + `src/entry-server.tsx` — best-effort, the build falls back to a client-only SPA if prerender fails
 - Tailwind CSS 3 + a minimal shadcn set in [src/components/ui/](src/components/ui/) (accordion + button only)
 - Motion (Framer Motion) for animation; `MotionConfig reducedMotion="user"` in App.tsx
 - Sanity CMS (`useSanityDoc` + static fallbacks in `src/lib/*-fallbacks.ts`; Studio mounted at `/studio`)
 - Cloudinary for all video + most imagery (`src/lib/cloudinary.ts` adds `q_auto,f_auto,vc_auto,w_,c_limit`)
-- Booking = external Centaur/D4W portal via `src/lib/booking.ts` (`BOOKING_LINK_PROPS`); contact form posts to FormSubmit (`ENQUIRY_DELIVERY_EMAIL` in `src/lib/practice.ts`)
+- Booking = external Centaur/D4W portal via `src/lib/booking.ts` (`BOOKING_LINK_PROPS`); contact form sends via EmailJS from `src/pages/Contact.tsx` (recipient is configured in the EmailJS template, not in the repo)
 - Deployed on Vercel (`vercel.json` rewrites everything to `index.html`)
 
 ## Scripts
@@ -46,10 +46,10 @@ See [.claude/context/ahpra-compliance.md](.claude/context/ahpra-compliance.md) f
 
 ## Known gaps (non-compliance / tech debt)
 - **Most July 2026 AHPRA copy findings are now fixed** (Aug 2026, in `src/lib/*-fallbacks.ts` and the Sanity seed): the "registered specialist prosthodontist" claim has been removed everywhere — Dr Nick holds a Master's in Prosthodontics but is NOT a registered specialist, so he is described as "Principal Dentist" with that degree stated as a factual qualification; free-consultation inducements, "permanent seal"/"100% of the infection"/"world-class"/"guaranteeing… perfect"/"best-selling"/"unrivalled"/"flawless" language have all been reworded. **Still open:** "Stories of Transformation" video soundtracks need a testimonial check; Sanity content itself was not re-seeded (CMS is disabled — the seed script is corrected so re-seeding is safe).
-- Pure client-side rendering: per-route meta/JSON-LD only exist after JS runs, so AI crawlers and social scrapers see an empty shell — prerendering the ~27 routes is the known fix.
+- Prerendering is best-effort: `npm run build` swallows a prerender failure and ships the client-only SPA, in which per-route meta/JSON-LD only exist after JS runs — check `dist/` actually contains per-route HTML before deploying.
 - `public/llms.txt` lists a non-existent "Single Visit Crowns" pillar and omits Orthodontics; claims BreadcrumbList schema that isn't implemented.
 - Sanity Studio (5.3 MB lazy chunk) ships on the marketing domain at `/studio`; ideally move to a separate subdomain (`sanity deploy`).
-- Contact-form leads deliver to a personal Gmail via free FormSubmit; move to a practice-controlled inbox / accountable form backend.
+- Contact-form leads deliver to a personal Gmail via EmailJS; move to a practice-controlled inbox / accountable form backend.
 - `useSanityDoc` has no cache/dedup — the homepage fires the clinicians query 3× and practice settings up to 7×.
 - `styled-components` looks unused in src/ but is a required peer dependency of Sanity Studio — do not remove it.
 - No ESLint / Prettier / tests / CI.

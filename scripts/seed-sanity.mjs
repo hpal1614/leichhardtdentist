@@ -278,7 +278,6 @@ const pillarGeneralDentistry = {
         "Modern rotary instrumentation",
         "3D CBCT scan for complex/molar cases",
         "Same-day CEREC crown afterwards for protection",
-        "From $1,200; complete RCT + crown package kept below $4,000",
       ],
       processSteps: [
         { _key: key(), title: "Diagnosis & 3D scan", description: "We confirm the infection with examination and (where the tooth is complex) a 3D CBCT scan that maps every canal before we begin — so the treatment plan and quote are fixed, not estimated." },
@@ -552,7 +551,7 @@ const pillarDentalImplants = {
     { _key: key(), q: "Does it hurt?", a: "Implant placement is performed under local anaesthetic (or sedation for larger cases). Any post-operative discomfort is usually mild and settles within a few days." },
     { _key: key(), q: "How long does the whole process take?", a: "For a single implant: typically 3–6 months from placement to final crown. For All-on-4: implants and same-day teeth on day one, final prosthesis after 3–6 months of healing." },
     { _key: key(), q: "How much does a single implant cost?", a: "An investment for a complete single dental implant ranges from $5,000 to $6,500+. This includes your initial 3D planning scans, the surgical placement of the premium titanium implant fixture, the custom abutment, and your locally made Zirconia crown. We provide fully itemized quotes upfront with zero hidden fees." },
-    { _key: key(), q: "Do you offer payment plans?", a: "Yes — we partner with TLC Finance to offer flexible, low-interest payment plans, allowing you to spread the cost over manageable weekly or fortnightly instalments." },
+    { _key: key(), q: "Do you offer payment plans?", a: "Yes. We partner with TLC Finance, who offer payment plans for dental treatment so you can spread the cost into regular instalments. Our team can walk you through the options at your consultation." },
     { _key: key(), q: "What is Dr. Nick's implant training?", a: "Dr. Nick Kulkarni is our Principal Dentist, with a Master's in Prosthodontics and a Graduate Diploma in Oral Implants from the University of Sydney. He is a Fellow of the International Congress of Oral Implantologists, with advanced training at the Misch Implant Institute (Florida) and the Walpole Institute (London)." },
     { _key: key(), q: "Am I too old for implants?", a: "Age alone isn't a barrier. What matters is general health, medication history, and bone volume — all of which are assessed at your consultation." },
     { _key: key(), q: "What if I don't have enough bone?", a: "We use EthOss — a synthetic biomaterial — for bone grafting where needed. It's animal-free and donor-free, and is absorbed and replaced by your own bone within months. The 3D scan tells us what's feasible in your case." },

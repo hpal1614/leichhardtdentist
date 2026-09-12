@@ -26,6 +26,7 @@ export const PRACTICE = {
     instagram: "https://www.instagram.com/leichhardt_dental/",
     tiktok: "https://www.tiktok.com/@leichhardtdentalcentre",
     twitter: "https://twitter.com/LeichhardtDC",
+    youtube: "https://www.youtube.com/@nick-kulkarni-dentistry",
   },
   openingHoursSpec: [
     {

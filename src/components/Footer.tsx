@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Instagram, Facebook, Phone, Mail, MapPin, Twitter } from "lucide-react";
+import { Instagram, Facebook, Phone, Mail, MapPin, Twitter, Youtube } from "lucide-react";
 import logoBadge from "../assets/logo-badge.jpg";
 import { usePractice } from "../lib/usePractice";
 
@@ -78,6 +78,15 @@ export function Footer() {
                 className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-primary hover:border-primary transition-all duration-300"
               >
                 <Twitter className="w-4 h-4 text-white/70" />
+              </a>
+              <a
+                href={practice.social.youtube}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="YouTube"
+                className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-primary hover:border-primary transition-all duration-300"
+              >
+                <Youtube className="w-4 h-4 text-white/70" />
               </a>
             </div>
           </div>

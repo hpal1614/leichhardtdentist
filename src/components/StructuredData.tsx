@@ -32,6 +32,10 @@ export function DentistStructuredData() {
       { "@type": "Place", name: "Inner West Sydney" },
     ],
     medicalSpecialty: ["Dentistry", "ImplantDentistry"],
+    // Ties the practice's social profiles (including Dr. Nick's YouTube
+    // channel) to this entity, so search engines can tell they're the same
+    // business rather than unrelated accounts.
+    sameAs: Object.values(practice.social),
     employee: {
       "@type": "Person",
       name: practice.principal,

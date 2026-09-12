@@ -43,9 +43,10 @@
       "scripts": {
             "dev": "vite",
             "generate-sitemap": "node scripts/generate-sitemap.mjs",
-            "build": "node scripts/generate-sitemap.mjs && vite build && (npm run prerender || echo 'prerender skipped — shipping client SPA')",
+            "build": "node scripts/generate-sitemap.mjs && vite build && (npm run prerender || echo 'prerender skipped \u2014 shipping client SPA')",
             "prerender": "vite build --ssr src/entry-server.tsx --outDir dist-server --emptyOutDir --logLevel warn && node scripts/prerender.mjs",
             "sync-media": "node --env-file=.env sync-media.js",
+            "sync-youtube": "node scripts/sync-youtube.mjs",
             "verify-seed": "node scripts/verify-seed-parity.mjs",
             "seed": "npm run verify-seed && node --env-file=.env scripts/seed-sanity.mjs",
             "seed:force": "node --env-file=.env scripts/seed-sanity.mjs",

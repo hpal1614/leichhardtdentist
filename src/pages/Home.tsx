@@ -10,6 +10,7 @@ import { ClinicExperience } from "../components/ClinicExperience";
 import { ResultsGrid } from "../components/ResultsGrid";
 import { TeamSection } from "../components/TeamSection";
 import { TeamGrid } from "../components/TeamGrid";
+import { YouTubeSection } from "../components/YouTubeSection";
 import { BookingSection } from "../components/BookingSection";
 
 export function Home() {
@@ -31,6 +32,7 @@ export function Home() {
       <ResultsGrid />
       <TeamSection />
       <TeamGrid />
+      <YouTubeSection />
       <BookingSection />
     </>
   );
